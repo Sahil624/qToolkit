@@ -1,0 +1,144 @@
+learning_objective_tree:
+  - lo_id: "LO-INTRO"
+    summary: "Notebook introduction and content lookup."
+    learning_objectives:
+      - "2.1 Students will understand the basics of measuring a qubit." 
+      - "2.2 Reinforce basis selection using the Quantum Space Explorer Game" 
+      - "2.3 Students will understand the notion of entangled quantum systems." 
+      - "2.4 Students will understand the notion of entangled decoherence systems." 
+      - "2.5 Model Entanglement and Decoherence using the Quantum Snakes and Ladders Game." 
+    kolb_phase: "N/A"
+    estimated_time_mins: 1
+    prerequisites: []
+    keywords:
+      - "introduction"
+      - "lookup"
+    content_type:
+      - "reading"
+    difficulty: "beginner"
+    notebook_content_ids:
+      - "LO-2.1"
+      - "LO-2.2"
+      - "LO-2.3"
+      - "LO-2.4"
+      - "LO-2.5"
+
+  - lo_id: "LO-2.1"
+    summary: "Understanding the fundamentals of measuring a single qubit."
+    learning_objectives:
+      - "Students will understand the basics of measuring a qubit." 
+    kolb_phase: "AC"
+    estimated_time_mins: 5
+    prerequisites: []
+    keywords:
+      - "measurement"
+      - "basis"
+      - "collapse"
+      - "information loss"
+    content_type:
+      - "reading"
+    difficulty: "beginner"
+    covered_by:
+      - "QPHEN-01-S2-1"
+
+  - lo_id: "LO-2.2"
+    summary: "Reinforce basis selection concepts through a game."
+    learning_objectives:
+      - "Reinforce basis selection using the Quantum Space Explorer Game" 
+    kolb_phase: "CE"
+    estimated_time_mins: 10
+    prerequisites:
+      - "LO-2.1"
+    keywords:
+      - "game"
+      - "basis selection"
+      - "simulation"
+      - "interactive"
+    content_type:
+      - "game"
+    difficulty: "beginner"
+    covered_by:
+      - "QPHEN-01-GAME-1"
+
+  - lo_id: "LO-2.3"
+    summary: "Learn the concept of quantum entanglement."
+    learning_objectives:
+      - "Students will understand the notion of entangled quantum systems." 
+    kolb_phase: "AC"
+    estimated_time_mins: 5
+    prerequisites:
+      - "LO-2.1"
+    keywords:
+      - "entanglement"
+      - "correlation"
+      - "non-local"
+    content_type:
+      - "reading"
+    difficulty: "intermediate"
+    covered_by:
+      - "QPHEN-01-S2-3"
+
+  - lo_id: "LO-2.4"
+    summary: "Learn how environmental noise causes decoherence in entangled systems."
+    learning_objectives:
+      - "Students will understand the notion of entangled decoherence systems." 
+    kolb_phase: "AC"
+    estimated_time_mins: 5
+    prerequisites:
+      - "LO-2.3"
+    keywords:
+      - "decoherence"
+      - "noise"
+      - "environment"
+      - "entanglement"
+    content_type:
+      - "reading"
+    difficulty: "intermediate"
+    covered_by:
+      - "QPHEN-01-S2-4"
+
+  - lo_id: "LO-2.5"
+    summary: "Model entanglement and decoherence with an interactive game."
+    learning_objectives:
+      - "Model Entanglement and Decoherence using the Quantum Snakes and Ladders Game." 
+    kolb_phase: "CE"
+    estimated_time_mins: 10
+    prerequisites:
+      - "LO-2.4"
+    keywords:
+      - "game"
+      - "entanglement"
+      - "decoherence"
+      - "simulation"
+      - "interactive"
+    content_type:
+      - "game"
+    difficulty: "intermediate"
+    covered_by:
+      - "QPHEN-01-GAME-2"
+
+cell_metadata:
+  - cell_id: "QPHEN-01-INTRO"
+    order: 1
+    cell_type: "text"
+    title: "Learning Outcomes"
+  - cell_id: "QPHEN-01-S2-1"
+    order: 2
+    cell_type: "text"
+    title: "2.1 Measuring a Qubit"
+  - cell_id: "QPHEN-01-GAME-1"
+    order: 3
+    cell_type: "game"
+    title: "2.2 Quantum Space Explorer Game"
+  - cell_id: "QPHEN-01-S2-3"
+    order: 4
+    cell_type: "text"
+    title: "2.3 Understanding Quantum Entanglement"
+  - cell_id: "QPHEN-01-S2-4"
+    order: 5
+    cell_type: "text"
+    title: "2.4 Understanding Decoherence in Entangled Systems"
+  - cell_id: "QPHEN-01-GAME-2"
+    order: 6
+    cell_type: "game"
+    title: "2.5 Model Entanglement and Decoherence using the Quantum Snakes and Ladders Game."

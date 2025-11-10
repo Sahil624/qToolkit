@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quantum Asteroid Blaster</title>
+  </head>
+  <body>
+    <!-- <div id="gameContainer"> -->
+        <div id="canvas"></div>
+        <div id="startOverlay">
+          <h1>Quantum Space Explorer: Beam Select</h1>
+          <p>
+           A mysterious energy anomaly has appeared, causing strange objects to drift into our sector. These objects are quantumly unstable and are reacting in an unexpected way. You are assigned as a pilot to learn and destroy this anomaly.
+           </p>
+             <p>
+            You have been provided with a specialized Quantum Blaster that uses quantum measurements to generate energy to destroy these objects. You have to make strategic decision and learn how to use it to effectively destroy these strange objects.
+            </p>
+          <p>
+           <br>
+             Use <b>left-click</b> to activate a <b>Computational Beam</b>, and <b>right-click</b> to activate a <b>Hadamard Beam</b>.
+             </p>
+            <p>
+             By using appropriate beam on each object, you will be able to destroy them.
+           </p>
+
+            <p>
+               Please be aware that if you hit an object with an inappropriate beam, its state will change and it will start moving in a new direction with increased speed.
+           </p>
+         <button id="startButton">Engage!</button>
+          <button id="toggleButton">Show Technical Explanation</button>
+          <div id="technicalExplanation" class="hidden">
+            <h2>Technical Explanation</h2>
+             <p>
+                In this game, you are using quantum measurements to fire projectiles, and you have the option to choose between two different measurement bases: the computational basis and the Hadamard basis. These choices affect how your projectiles will behave.
+             </p>
+             <h3>Computational Basis</h3>
+             <p>
+             When using the <b>Computational Beam</b> (left click), you are measuring the qubits using a <b>Computational Basis</b>.
+                The computational basis consists of two quantum states: `|0>` (represented as  `[1, 0]`) and `|1>` (represented as `[0, 1]`).
+              </p>
+                <ul>
+                  <li>
+                      Measuring a qubit in the state  `|0>` in the computational basis will always yield the outcome `|0>`.
+                   </li>
+                    <li>
+                      Measuring a qubit in the state  `|1>` in the computational basis will always yield the outcome `|1>`.
+                   </li>
+                    <li>
+                     Superposition states like `|+>` or `|->` will produce a probabilistic outcome with equal probability of `|0>` or `|1>`.
+                   </li>
+                  </ul>
+              <h3>Hadamard Basis</h3>
+             <p>
+                When using the <b>Hadamard Beam</b> (right click), you are measuring the qubits using a <b>Hadamard Basis</b>.
+                 The Hadamard basis also consists of two quantum states, these states are called superposition states: `|+>` (represented as `[1/√2, 1/√2]`) and `|->` (represented as `[1/√2, -1/√2]`).
+             </p>
+             <ul>
+                <li>
+                   Measuring a qubit in the state `|+>` in the Hadamard basis will always yield the outcome `|+>`.
+               </li>
+               <li>
+                  Measuring a qubit in the state `|->` in the Hadamard basis will always yield the outcome `|->`.
+               </li>
+                <li>
+                    Computational basis states like `|0>` or `|1>` will give probabilistic results of  `|+>` and `|->` with equal probability when measured in hadamard basis.
+                </li>
+             </ul>
+
+             <p>
+              The different objects are vulnerable to projectiles fired after measurement using these different bases. As you play you will learn more about how these two types of basis behave when making a measurement.
+              </p>
+          </div>
+
+        <div id="legend">
+            <div class = "legend-item">
+              <img src = "src/images/Spaceship_Asset_one.png" alt = "player icon" />
+               <p>Quantum Blaster</p>
+           </div>
+
+            <div class = "legend-item">
+              <img src = "src/images/enemy_blue.png" alt = "enemy1 icon" />
+                <p>Object vulnerable to Computational Beam</p>
+            </div>
+             <div class = "legend-item">
+                <img src = "src/images/enemy_green.png" alt = "enemy2 icon" />
+                 <p>Object vulnerable to Hadamard Beam</p>
+             </div>
+        </div>
+
+          <p>
+           <b>Controls:</b><br>
+             Mouse: for direction<br>
+             Spacebar: for firing thrusters
+          </p>
+      </div>
+    </div>
+     <script type="module" src="/src/index.ts"></script>
+  </body>
+</html>

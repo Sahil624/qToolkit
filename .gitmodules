@@ -1,0 +1,3 @@
+[submodule "q-sim"]
+	path = q-sim
+	url = https://github.com/ksucybersec/q-sim

@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Snakes and Ladders</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/dice.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div id="welcome" class="game" hidden>
+        <header>
+            <h1>Welcome to the Quantum Snakes and Ladders</h1>
+            <p>To begin: select number of players and click start</p>
+            <input id="player-num" type="number" min="2" max="4" value="2" />
+            <button id="start-btn" class="button">Start</button>
+        </header>
+    </div>
+
+    <div id="gameboard" class="game">
+        <div class="info-section">
+            <h1 class="game-name">Quantum Snakes and Ladders</h1>
+            <div class="controls">
+
+                <div class="player-panels">
+                    <div class="player-panel">
+                        <div class="player-info">
+                            <h3>Player 1</h3>
+                            <!-- <div class="piece-positions">
+                                <span><b>Piece 1:</b> <span id="p1-pos1">1</span></span>
+                                <span><b>Piece 2:</b> <span id="p1-pos2">1</span></span>
+                            </div> -->
+                        </div>
+                        <div class="entangle-token">
+                            <button class="token-button" id="p1-token">
+                                <img src="css/img/entanglement.png" alt="Token" title="Entangle Both Pieces">
+                                <span class="token-count" id="token-count-1">1</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="player-panel">
+                        <div class="player-info">
+                            <h3>Player 2</h3>
+                            <!-- <div class="piece-positions">
+                                <span><b>Piece 1:</b> <span id="p1-pos1">1</span></span>
+                                <span><b>Piece 2:</b> <span id="p1-pos2">1</span></span>
+                            </div> -->
+                        </div>
+                        <div class="entangle-token">
+                            <button class="token-button" id="p2-token">
+                                <img src="css/img/entanglement.png" alt="Token" title="Entangle Both Pieces">
+                                <span class="token-count" id="token-count-2">1</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="event-log" class="info-scroll"></div>
+                <div class="dice-wrapper">
+                    <div class="dice-throw-section">
+                        <div id="piece-controls" class="hidden">
+                            <button id="move-piece-1-btn" class="button move-piece-btn accent-pulse-button">Move Piece
+                                1</button>
+                            <button id="move-piece-2-btn" class="button move-piece-btn accent-pulse-button">Move Piece
+                                2</button>
+                        </div>
+                        <button id="roll-dice" class="button accent-pulse-button">Roll Dice</button>
+                        <p id="dice-results" class="inline m-0 m-lr"></p>
+                        <div class="diceWrap">
+                            <div class="dice">
+                                <div class="diceFace front"></div>
+                                <div class="diceFace up"></div>
+                                <div class="diceFace left"></div>
+                                <div class="diceFace right"></div>
+                                <div class="diceFace bottom"></div>
+                                <div class="diceFace back"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="win" hidden>
+                    <h3 id="win-text" class="inline m-0 m-lr">You win!</h3>
+                    <button id="restart-btn" class="button">Restart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="board-wrapper">
+            <div class="wrapper">
+                <img class="board-image" src="css/img/SnakeLadder_nb.png" alt="Snakes and Ladders Board">
+                <div id="board"></div>
+            </div>
+        </div>
+    </div>
+
+    <button class="drawerBtn open" id="open-drawer">?</button>
+    <div id="drawer">
+        <button class="drawerBtn close" id="close-drawer">X</button>
+
+
+        <h2>Legend</h2>
+        <ul>
+            <li>
+                <div class="player" style="height: 4px;width: 4px;"></div> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- Player's
+                Piece
+            </li>
+            <li><img src="css/img/entanglement.png" alt="Entanglement Source Icon" class="icon"> - <strong
+                    style="color: blue">Entanglement Source</strong>: Landing on this square gives 1 entanglement token.
+            </li>
+            <!-- <li><img src="css/img/quantum-repeater.png" alt="Repeater Icon" class="icon"> - <strong
+                    style="color: green">Repeater</strong>: Extends the maximum entanglement distance if within range of
+                your entangled pieces.</li> -->
+        </ul>
+
+        <hr>
+
+        <h2>Gameplay</h2>
+        <ol>
+            <li>
+                <p>Each player controls <strong>two pieces</strong>. The goal is to be the first player to reach the
+                    final square (100) with <strong>both</strong> of your pieces.</p>
+            </li>
+            <li>
+                <p>Players take turns rolling the dice. After rolling, you'll choose which one of your two pieces to
+                    move. The number on the dice indicates how many spaces the selected piece will move.</p>
+            </li>
+            <li>
+                <p><strong>Entanglement:</strong> Players can use an Entanglement Token to entangle their two pieces.
+                    Entanglement lasts for a maximum of 5 dice rolls.
+                </p>
+                <ul>
+                    <li><strong>Activating Entanglement:</strong> A player can activate entanglement by using an
+                        Entanglement Token.
+                        Each player starts with 1 token. Players can use their tokens at any time before rolling the
+                        dice,
+                        choosing which piece to start the entanglement with.
+                        The token is then removed until the next turn.
+                    </li>
+                    <li>
+                        <strong>Mirrored Movement:</strong> While entangled, the movement of one piece is mirrored by
+                        the other.
+                        If a player moves one piece forward two spaces, the other piece will also attempt to move
+                        forward two spaces.
+                    </li>
+                    <li>
+                        <strong>Blocked Movement:</strong> If one entangled piece is blocked from moving (e.g., by the
+                        edge of the
+                        board or another piece), only the unblocked piece will move.
+                    </li>
+                    <li>
+                        <strong>Ladders and Snakes:</strong> If an entangled piece lands on a ladder or a snake, both
+                        pieces will
+                        be affected (both will teleport via the ladder or both will slide down the snake).
+                    </li>
+                </ul>
+            </li>
+            <!-- <li>
+                <p><strong>Entanglement Range:</strong> Entanglement has a limited range. If the distance between your
+                    two entangled pieces exceeds the maximum entanglement distance, the entanglement will break.</p>
+                <ul>
+                    <li>The maximum entanglement distance is initially <strong>5 squares</strong> (measured by Manhattan
+                        distance: the sum of the horizontal and vertical distances).</li>
+                    <li>The glow around your entangled pieces will become dimmer as they move further apart, indicating
+                        that they are approaching the entanglement limit.</li>
+                </ul>
+            </li> -->
+            <!-- <li>
+                <p><strong>Quantum Repeaters:</strong> Landing on a <strong style="color: green">Repeater</strong>
+                    square (represented by the <img src="css/img/quantum-repeater.png" alt="Repeater Icon" class="icon">
+                    icon) can extend the entanglement range. For each repeater within a distance of <strong>3
+                        squares</strong> from either of your entangled pieces, the maximum entanglement distance
+                    increases by <strong>2 squares</strong>.</p>
+            </li> -->
+            <li>
+                <p><strong>Breaking Entanglement:</strong> Entanglement breaks under the following conditions:</p>
+                <ul>
+                    <li>One of your pieces lands on a <strong style="color: red">Snake</strong>. This also causes the
+                        piece to slide down to the bottom of the snake.</li>
+                    <!-- <li>The distance between your entangled pieces exceeds the maximum entanglement distance.</li> -->
+                    <li>The entanglement time limit expires. Entanglement lasts for a maximum of <strong>5 dice
+                            rolls</strong>. The aura around your pieces will blink during the last 2 dice rolls,
+                        indicating the time limit is approaching.</li>
+                </ul>
+            </li>
+            <li>
+                <p><strong>Ladders:</strong> When a piece lands at the base of a <strong
+                        style="color: #DAA520">Ladder</strong> , it immediately climbs to the top of the ladder.</p>
+            </li>
+            <li>
+                <p><strong>Snakes:</strong> When a piece lands on the head of a <strong
+                        style="color: red">Snake</strong>, it slides down to the bottom of the snake.</p>
+            </li>
+            <li>
+                <p><strong>Winning:</strong> The first player to reach the final square (100) with <strong>both</strong>
+                    of their pieces wins the game.</p>
+            </li>
+        </ol>
+
+        <style>
+            .icon {
+                height: 20px;
+                /* Adjust as needed */
+                width: 20px;
+                /* Adjust as needed */
+                vertical-align: middle;
+                /* Align icons with text */
+            }
+        </style>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="module" src="script/main.js"></script>
+    <script type="module" src="script/index.js"></script>
+    <script src="script/dice.js"></script>
+</body>
+
+</html>

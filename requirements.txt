@@ -1,0 +1,8 @@
+jupyterlab
+numpy
+matplotlib
+ipywidgets
+cryptography
+faiss-cpu
+jupyter-server-mathjax
+voila

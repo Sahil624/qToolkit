@@ -1,0 +1,14 @@
+# Changes here will be overwritten by Copier; NEVER EDIT MANUALLY
+_commit: v4.4.0
+_src_path: https://github.com/jupyterlab/extension-template
+author_email: smangotr@students.kennesaw.edu
+author_name: Sahil Mangotra
+has_binder: false
+has_settings: true
+kind: frontend-and-server
+labextension_name: edu_agents
+project_short_description: A bunch of AI agents useful for education
+python_name: edu_agents
+repository: ''
+test: false
+

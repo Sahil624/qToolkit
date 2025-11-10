@@ -1,0 +1,67 @@
+{
+    "../content/unit01_quantum_foundations/01_the_qbit/01_the_qbit.ipynb": {
+        "enabled": true,
+        "qa_generated": 156,
+        "last_processed_utc": "2025-09-12T15:23:11.684735"
+    },
+    "../content/unit01_quantum_foundations/01_the_qbit/.ipynb_checkpoints/01_the_qbit-checkpoint.ipynb": {
+        "enabled": true,
+        "qa_generated": 77,
+        "last_processed_utc": "2025-09-12T15:24:13.560115"
+    },
+    "../content/unit01_quantum_foundations/02_quantum_phenomena/02_quantum_phenomena.ipynb": {
+        "enabled": true,
+        "qa_generated": 30,
+        "last_processed_utc": "2025-09-12T15:24:50.544072"
+    },
+    "../content/unit01_quantum_foundations/02_quantum_phenomena/.ipynb_checkpoints/02_quantum_phenomena-checkpoint.ipynb": {
+        "enabled": true,
+        "qa_generated": 27,
+        "last_processed_utc": "2025-09-12T15:25:05.290006"
+    },
+    "../content/.ipynb_checkpoints/master-checkpoint.ipynb": {
+        "enabled": true,
+        "qa_generated": 13,
+        "last_processed_utc": "2025-09-12T15:25:12.877989"
+    },
+    "../content/unit03_quantum_and_post_quantum_cryptography/06_post_quantum_cryptography/06_post_quantum_cryptography.ipynb": {
+        "enabled": true,
+        "qa_generated": 31,
+        "last_processed_utc": "2025-09-12T15:25:45.119000"
+    },
+    "../content/unit03_quantum_and_post_quantum_cryptography/06_post_quantum_cryptography/.ipynb_checkpoints/06_post_quantum_cryptography-checkpoint.ipynb": {
+        "enabled": true,
+        "qa_generated": 32,
+        "last_processed_utc": "2025-09-12T15:26:03.397045"
+    },
+    "../content/unit03_quantum_and_post_quantum_cryptography/05_quantum_key_distribution/05_quantum_key_distribution.ipynb": {
+        "enabled": true,
+        "qa_generated": 44,
+        "last_processed_utc": "2025-09-12T15:26:42.611111"
+    },
+    "../content/unit03_quantum_and_post_quantum_cryptography/05_quantum_key_distribution/.ipynb_checkpoints/05_quantum_key_distribution-checkpoint.ipynb": {
+        "enabled": true,
+        "qa_generated": 44,
+        "last_processed_utc": "2025-09-12T15:27:09.591626"
+    },
+    "../content/unit02_principles_of_quantum_communication/04_core_protocols/04_core_protocols.ipynb": {
+        "enabled": true,
+        "qa_generated": 34,
+        "last_processed_utc": "2025-09-12T15:27:39.207419"
+    },
+    "../content/unit02_principles_of_quantum_communication/04_core_protocols/.ipynb_checkpoints/04_core_protocols-checkpoint.ipynb": {
+        "enabled": true,
+        "qa_generated": 33,
+        "last_processed_utc": "2025-09-12T15:28:01.101821"
+    },
+    "../content/unit02_principles_of_quantum_communication/03_fundamental_rules/03_fundamental_rules.ipynb": {
+        "enabled": true,
+        "qa_generated": 18,
+        "last_processed_utc": "2025-09-12T15:28:11.481335"
+    },
+    "../content/unit02_principles_of_quantum_communication/03_fundamental_rules/.ipynb_checkpoints/03_fundamental_rules-checkpoint.ipynb": {
+        "enabled": true,
+        "qa_generated": 18,
+        "last_processed_utc": "2025-09-12T15:28:19.390443"
+    }
+}

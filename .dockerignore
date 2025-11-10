@@ -1,0 +1,22 @@
+# Git and Docker
+.git
+.gitignore
+.dockerignore
+Dockerfile
+
+# Python artifacts
+__pycache__/
+*.pyc
+.venv
+
+# Node.js artifacts - prevent these from being copied from host machine
+# The builder stage handles creating them inside the container.
+node_modules
+content/games/ozma/node_modules
+content/games/ozma/dist
+content/games/snake_n_ladders/node_modules
+content/games/snake_n_ladders/dist
+
+# Generated files
+generated_course
+course/data

@@ -1,0 +1,23 @@
+@import url('base.css');
+
+/* Add to your extension's CSS file */
+.jp-chat-fab-widget {
+  pointer-events: none; /* Allow clicks to pass through the widget container */
+}
+
+.jp-chat-fab-widget * {
+  pointer-events: auto; /* Re-enable pointer events for FAB and chat elements */
+}
+
+.fab-button {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.fab-button:active {
+  transform: scale(0.95) !important;
+}
+
+/* Ensure FAB appears above JupyterLab elements */
+.jp-chat-fab-widget .fab-button {
+  z-index: 10000 !important;
+}

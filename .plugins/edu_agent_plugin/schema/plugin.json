@@ -1,0 +1,8 @@
+{
+  "jupyter.lab.shortcuts": [],
+  "title": "edu_agents",
+  "description": "edu_agents settings.",
+  "type": "object",
+  "properties": {},
+  "additionalProperties": false
+}

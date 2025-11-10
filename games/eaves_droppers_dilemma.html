@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Eavesdropper's Dilemma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+        }
+        .qubit {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 15%;
+            transform: translateY(-50%);
+            transition: left 1.5s cubic-bezier(0.4, 0, 0.6, 1);
+        }
+        .basis-icon {
+            width: 30px;
+            height: 30px;
+            stroke-width: 3;
+        }
+        .modal {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .modal-hidden {
+            opacity: 0;
+            transform: scale(0.95);
+            pointer-events: none;
+        }
+        .modal-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-gray-200 flex items-center justify-center h-screen">
+
+    <div class="w-full max-w-5xl mx-auto p-4 md:p-8 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700">
+        <div class="text-center mb-6">
+            <h1 class="text-3xl md:text-4xl font-bold text-cyan-400">The Eavesdropper's Dilemma</h1>
+            <p class="text-gray-400 mt-2">Can you intercept a quantum key without getting caught?</p>
+        </div>
+
+        <!-- Game Area -->
+        <div id="game-area" class="relative h-24 bg-gray-900/50 rounded-lg border border-gray-700 mb-6 flex items-center justify-between px-8">
+            <div class="text-center">
+                <p class="font-bold text-lg text-green-400">ALICE (Sender)</p>
+            </div>
+            <div id="qubit-path" class="w-full h-full absolute top-0 left-0">
+                <!-- Qubit will be animated here -->
+            </div>
+            <div class="text-center">
+                <p class="font-bold text-lg text-blue-400">BOB (Receiver)</p>
+            </div>
+        </div>
+        
+        <!-- Eve's Control Panel -->
+        <div id="eve-controls" class="text-center p-6 bg-gray-700 rounded-lg opacity-0 transition-opacity duration-500">
+             <p id="qubit-counter" class="text-lg font-semibold mb-4"></p>
+            <p class="text-lg font-medium mb-4">A qubit is in transit! You can't clone it. <br> You must <span class="text-yellow-400">measure it</span> to learn its state. Choose your measurement basis:</p>
+            <div class="flex justify-center gap-4">
+                <button id="measure-rectilinear" class="basis-btn group flex items-center gap-3 px-6 py-3 bg-fuchsia-600 hover:bg-fuchsia-500 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-200">
+                    <svg class="basis-icon text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"></path></svg>
+                    <span class="text-lg font-bold text-white">Rectilinear (+)</span>
+                </button>
+                <button id="measure-diagonal" class="basis-btn group flex items-center gap-3 px-6 py-3 bg-indigo-600 hover:bg-indigo-500 rounded-lg shadow-lg transform hover:scale-105 transition-transform duration-200">
+                    <svg class="basis-icon text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    <span class="text-lg font-bold text-white">Diagonal (X)</span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Start Screen -->
+        <div id="start-screen" class="text-center p-6">
+            <h2 class="text-xl font-semibold mb-4">Welcome to the Game!</h2>
+            <div class="text-gray-400 max-w-2xl mx-auto mb-6 space-y-4">
+                <p>This is a fun guessing game where you play as a spy! Your mission is to intercept a secret quantum code.</p>
+                <p>The twist is based on a real quantum physics rule: the <strong>No-Cloning Theorem</strong>. It means you can't copy the quantum messages. Instead, you have to guess how to read each one. A wrong guess can change the message, leaving behind clues that you were there!</p>
+                <p>Just relax, have fun, and make your best guess for each of the 8 rounds. At the end, we'll see if you got away with it or if your "footprints" gave you away!</p>
+            </div>
+            <button id="start-game" class="px-8 py-3 bg-cyan-500 text-gray-900 font-bold rounded-lg shadow-lg hover:bg-cyan-400 transform hover:scale-105 transition-all">Start Transmission</button>
+        </div>
+
+    </div>
+
+    <!-- Results Modal -->
+    <div id="results-modal" class="modal modal-hidden fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center p-4">
+        <div class="bg-gray-800 rounded-2xl shadow-2xl p-8 border border-gray-700 w-full max-w-4xl text-center">
+            <h2 id="modal-title" class="text-4xl font-bold mb-4"></h2>
+            <p id="modal-qber" class="text-2xl font-mono bg-gray-900 inline-block px-4 py-2 rounded-lg mb-4"></p>
+            <p id="modal-explanation" class="text-gray-400 mb-6 max-w-xl mx-auto"></p>
+            
+            <div class="mb-6 pt-6 border-t border-gray-700 text-left">
+                <h3 class="text-xl font-semibold text-cyan-400 mb-3 text-center">What Happened & What We Learned</h3>
+                <p class="text-gray-400 text-center max-w-3xl mx-auto">
+                    Any errors in the final key (shown below) occurred when your measurement basis didn't match Alice's. By measuring, you were forced to guess, and a wrong guess had a 50% chance of altering the qubit's state permanently. You couldn't make a copy to check later because the <strong>No-Cloning Theorem</strong> forbids it.
+                    <br><br>
+                    This disturbance is the core of quantum security. The errors you left behind are the "footprints" that allowed Alice and Bob to detect you.
+                </p>
+            </div>
+
+            <div class="overflow-x-auto rounded-lg border border-gray-700" style="max-height: 250px;">
+                <table class="w-full text-sm">
+                    <thead class="bg-gray-700 sticky top-0">
+                        <tr>
+                            <th class="p-3">Qubit</th>
+                            <th class="p-3">Alice's Basis</th>
+                            <th class="p-3">Eve's Guess</th>
+                            <th class="p-3">Bob's Basis</th>
+                            <th class="p-3">Alice's Bit</th>
+                            <th class="p-3">Bob's Bit</th>
+                            <th class="p-3">Key Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="results-table-body">
+                        <!-- Results will be populated here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <button id="play-again" class="mt-8 px-8 py-3 bg-cyan-500 text-gray-900 font-bold rounded-lg shadow-lg hover:bg-cyan-400 transform hover:scale-105 transition-all">Play Again</button>
+        </div>
+    </div>
+
+    <script>
+        const KEY_LENGTH = 5;
+        let gameState = {};
+
+        const startGameBtn = document.getElementById('start-game');
+        const startScreen = document.getElementById('start-screen');
+        const gameArea = document.getElementById('game-area');
+        const eveControls = document.getElementById('eve-controls');
+        const qubitCounter = document.getElementById('qubit-counter');
+        const measureRectilinearBtn = document.getElementById('measure-rectilinear');
+        const measureDiagonalBtn = document.getElementById('measure-diagonal');
+        const resultsModal = document.getElementById('results-modal');
+        const playAgainBtn = document.getElementById('play-again');
+
+        function initGame() {
+            gameState = {
+                currentQubit: 0,
+                aliceBits: [],
+                aliceBases: [],
+                eveBases: [],
+                bobBases: [],
+                bobBits: [],
+                isEveDetected: false,
+            };
+            for (let i = 0; i < KEY_LENGTH; i++) {
+                gameState.aliceBits.push(Math.round(Math.random()));
+                gameState.aliceBases.push(Math.random() < 0.5 ? 'R' : 'D'); // Rectilinear or Diagonal
+                gameState.bobBases.push(Math.random() < 0.5 ? 'R' : 'D');
+            }
+            startScreen.style.display = 'none';
+            eveControls.style.opacity = '0';
+            eveControls.style.pointerEvents = 'none';
+            resultsModal.classList.add('modal-hidden');
+            resultsModal.classList.remove('modal-visible');
+
+            // Clear results table
+            const tableBody = document.getElementById('results-table-body');
+            tableBody.innerHTML = '';
+            
+            setTimeout(sendNextQubit, 500);
+        }
+
+        function sendNextQubit() {
+            if (gameState.currentQubit >= KEY_LENGTH) {
+                analyzeResults();
+                return;
+            }
+            
+            qubitCounter.textContent = `Intercepting Qubit ${gameState.currentQubit + 1} of ${KEY_LENGTH}`;
+
+            const qubitPath = document.getElementById('qubit-path');
+            const qubit = document.createElement('div');
+            qubit.className = 'qubit bg-cyan-400 shadow-lg shadow-cyan-400/50';
+            qubitPath.innerHTML = ''; // Clear previous qubit
+            qubitPath.appendChild(qubit);
+
+            setTimeout(() => {
+                qubit.style.left = '50%';
+                qubit.style.transform = 'translateY(-50%) translateX(-50%)';
+            }, 100);
+
+            setTimeout(() => {
+                eveControls.style.opacity = '1';
+                eveControls.style.pointerEvents = 'auto';
+            }, 1600);
+        }
+
+        function eveMeasures(eveBasis) {
+            eveControls.style.opacity = '0';
+            eveControls.style.pointerEvents = 'none';
+            gameState.eveBases.push(eveBasis);
+
+            const aliceBasis = gameState.aliceBases[gameState.currentQubit];
+            const aliceBit = gameState.aliceBits[gameState.currentQubit];
+            const bobBasis = gameState.bobBases[gameState.currentQubit];
+
+            let bitForBob;
+
+            if (aliceBasis === eveBasis) {
+                // Eve guessed correctly, no state change
+                bitForBob = aliceBit;
+            } else {
+                // Eve guessed incorrectly, state collapses randomly
+                bitForBob = Math.round(Math.random());
+            }
+
+            let finalBobBit;
+            if (eveBasis === bobBasis) {
+                // Bob measures in the same basis Eve prepared
+                finalBobBit = bitForBob;
+            } else {
+                // Bob measures in a different basis, result is random
+                finalBobBit = Math.round(Math.random());
+            }
+
+            gameState.bobBits.push(finalBobBit);
+
+            const qubit = document.querySelector('.qubit');
+            if(qubit) {
+                qubit.style.left = '85%';
+                qubit.style.transform = 'translateY(-50%)';
+            }
+            
+            gameState.currentQubit++;
+            setTimeout(sendNextQubit, 1600);
+        }
+
+        function analyzeResults() {
+            let matchingBasesCount = 0;
+            let errors = 0;
+            const tableBody = document.getElementById('results-table-body');
+            tableBody.innerHTML = ''; // Clear table before populating
+
+            for (let i = 0; i < KEY_LENGTH; i++) {
+                const aliceBasis = gameState.aliceBases[i];
+                const bobBasis = gameState.bobBases[i];
+                
+                // For the purpose of the summary table, we show what would happen
+                // if they compared this qubit.
+                if (aliceBasis === bobBasis) {
+                    matchingBasesCount++;
+                    if (gameState.aliceBits[i] !== gameState.bobBits[i]) {
+                        errors++;
+                    }
+                }
+                
+                let keyStatus = '<td class="p-3 text-center text-gray-500">Discarded</td>';
+                let rowClass = 'bg-gray-800/50';
+
+                if (aliceBasis === bobBasis) {
+                    rowClass = 'bg-gray-800 font-semibold';
+                    if (gameState.aliceBits[i] !== gameState.bobBits[i]) {
+                        keyStatus = '<td class="p-3 text-center text-red-400 font-bold">ERROR</td>';
+                    } else {
+                        keyStatus = '<td class="p-3 text-center text-green-400">OK</td>';
+                    }
+                }
+                
+                const eveGuessCorrect = gameState.aliceBases[i] === gameState.eveBases[i];
+
+                const row = `
+                    <tr class="border-b border-gray-700 ${rowClass}">
+                        <td class="p-3 text-center">${i + 1}</td>
+                        <td class="p-3 text-center">${aliceBasis === 'R' ? '+' : 'X'}</td>
+                        <td class="p-3 text-center ${eveGuessCorrect ? 'text-green-400' : 'text-red-400'}">${gameState.eveBases[i] === 'R' ? '+' : 'X'}</td>
+                        <td class="p-3 text-center">${bobBasis === 'R' ? '+' : 'X'}</td>
+                        <td class="p-3 text-center">${gameState.aliceBits[i]}</td>
+                        <td class="p-3 text-center">${gameState.bobBits[i]}</td>
+                        ${keyStatus}
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            }
+
+            const qber = (matchingBasesCount > 0) ? (errors / matchingBasesCount) * 100 : 0;
+            
+            const modalTitle = document.getElementById('modal-title');
+            const modalQber = document.getElementById('modal-qber');
+            const modalExplanation = document.getElementById('modal-explanation');
+
+            modalQber.textContent = `QBER: ${qber.toFixed(1)}%`;
+
+            if (qber > 15) { // Detection threshold
+                modalTitle.textContent = "BUSTED! Eavesdropping Detected!";
+                modalTitle.className = "text-4xl font-bold mb-4 text-red-500";
+                modalExplanation.textContent = "Your measurements introduced a high error rate. Alice and Bob discarded the key, knowing it was compromised. Because you couldn't clone the qubits, your snooping was discovered!";
+            } else {
+                modalTitle.textContent = "Success... for now.";
+                modalTitle.className = "text-4xl font-bold mb-4 text-green-400";
+                modalExplanation.textContent = "You got lucky! The error rate you introduced was low enough to pass as noise. With more qubits, however, the chance of detection increases dramatically.";
+            }
+
+            resultsModal.classList.remove('modal-hidden');
+            resultsModal.classList.add('modal-visible');
+        }
+
+        startGameBtn.addEventListener('click', initGame);
+        measureRectilinearBtn.addEventListener('click', () => eveMeasures('R'));
+        measureDiagonalBtn.addEventListener('click', () => eveMeasures('D'));
+        playAgainBtn.addEventListener('click', initGame);
+
+        // Initial setup
+        eveControls.style.opacity = '0';
+        eveControls.style.pointerEvents = 'none';
+
+    </script>
+</body>
+</html>
+
+

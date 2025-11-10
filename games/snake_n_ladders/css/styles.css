@@ -1,0 +1,412 @@
+* {
+  font-family: "Roboto", serif;
+}
+
+body {
+  background-image: url(img/bg-forest.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  display: flex;
+  color: rgb(34, 34, 34);
+  margin: 0;
+  backdrop-filter: blur(5px);
+}
+
+header,
+footer {
+  text-align: center;
+  background-color: rgba(245, 245, 220, 0.5);
+  box-shadow: 2px 2px 2px gray;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#drawer {
+  height: 100vh;
+  width: 0;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: rgba(245, 245, 220, 0.8);
+  overflow-x: hidden;
+  transition: 0.5s;
+  /* padding: 16px; */
+}
+
+.drawerBtn {
+  position: absolute;
+  top: 0;
+  height: 60px;
+  width: 60px;
+  border: 5px ridge silver;
+  border-radius: 30%;
+  background-color: #f5f5dc;
+  font-size: 30px;
+}
+
+.drawerBtn.open {
+  left: 0;
+}
+
+.drawerBtn.close {
+  right: 0;
+}
+
+/* disable scrollbar */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* .board-wrapper {
+  width: 60%;
+  position: relative;
+  height: 100%;
+}
+
+.board-image {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+
+}
+
+#board {
+  grid-template-columns: repeat(10, 70px);
+  grid-template-rows: repeat(10, 70px);
+  border: 15px ridge silver;
+  padding: 12px;
+} */
+
+.board-wrapper {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  position: relative; /* For absolute positioning of child elements */
+  /*height: 100%;  Full height of parent */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.board-image {
+  height: 100%; /* Full height of parent */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain; /* Ensures image is fully visible */
+  width: 800px;
+  height: 800px;    
+  filter: brightness(0.6);
+}
+#boardCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10; /* Ensure canvas is above the board image */
+}
+#board {
+  position: absolute; /* Position on top of image */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* padding: 10px; */
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tile {
+  position: relative;
+  /* margin: 1.7px; */
+  /* padding: 5px 5px; */
+  font-size: x-small;
+  font-weight: bold;
+  box-sizing: border-box;
+  /* display: inline-block; */
+  width: 10%;
+  height: 10%;
+
+  border: 1px solid #ccc;
+}
+
+.player {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 10px ridge cadetblue;
+  margin: auto;
+  background-color: lightblue;
+  z-index: 100;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  text-align: center;
+  font-weight: bolder;
+  font-size: 15px;
+}
+
+.ladder-start {
+  background-color: rgba(218, 165, 32, 0.2);
+  border: 10px ridge goldenrod;
+  position: absolute;
+  height: 5px;
+  transform-origin: top left;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.Snake-start {
+  background-color: rgba(165, 42, 42, 0.2);
+  border: 10px ridge darksalmon;
+  position: absolute;
+  height: 5px;
+  transform-origin: top left;
+  z-index: 50;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.coords {
+  position: absolute;
+  margin: 0;
+  top: 0;
+}
+
+.button {
+  padding: 5px 10px;
+  background-color: silver;
+  color: rgb(34, 34, 34);
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 2px 2px px gray;
+  border: none;
+  /* border: solid 2px rgb(34, 34, 34); */
+}
+
+.button:disabled {
+  background-color: lightgray;
+  box-shadow: inset 2px 2px 5px gray;
+}
+
+.move-piece-btn {
+  margin: 10px 0;
+}
+
+#dice-results {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.game {
+  margin: auto;
+}
+
+.inline {
+  display: inline-block;
+}
+
+.m-0 {
+  margin: 0;
+}
+
+.m-lr {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.controls {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center; */
+  padding: 10px;
+  height: calc(100% - 110px);
+}
+
+.player-panels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.player-panel {
+  /* Make more cartoony (like a greenboard) */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background: rgba(249 255 255 / 70%);
+  /* border-radius: 16px; */
+  width: 100%;
+  margin: 0 16px 0 0;
+  border-radius: 8px;
+}
+
+.piece-positions {
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.player-info {
+  flex-grow: 1;
+  padding: 0 16px;
+}
+
+.token-button {
+  width: 90px;
+  height: 48px;
+  background: transparent;
+  border-radius: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.token-button img {
+  width: 100%;
+  height: 100%;
+}
+
+.token-button.disabled img{
+  filter: grayscale(100%);
+}
+
+#piece-controls {
+  display: grid;
+}
+
+.info-scroll {
+  height: calc(100% - 400px);
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 20px;
+  background: rgba(249 255 255 / 70%);
+  border-radius: 16px;
+}
+
+
+@keyframes shadow-pulse
+{
+  0% {
+    box-shadow: 0 0 0 0px rgba(0, 112, 244, 0.4);
+  }
+  100% {
+    box-shadow: 0 0 7px 25px rgba(0, 112, 244, 0);
+  }
+}
+
+.accent-pulse-button {
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  background: #0070F4;
+  border-radius: 50px;
+  animation: shadow-pulse 1.5s infinite;
+  font-size: 1.8rem;
+}
+
+.dice-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 180px;
+  background: rgb(255 255 255 / 60%);
+  padding: 0 12px;
+  border-radius: 32px;
+}
+
+.dice-throw-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.diceWrap {
+  margin-right: 32px;
+}
+
+#gameboard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 100vh;
+  height: 100vh;
+  width: 100%;
+}
+
+#gameboard>.info-section {
+  height: 100vh;
+  margin: 16px 8px;
+  width: 40%;
+  padding-right: 24px;
+}
+
+#gameboard .game-name {
+  margin: 24px 8px 24px 60px;
+  height: 44px;
+}
+
+.entanglement-source {
+  background: url(./img/entanglement.png);
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center 8px;
+}
+
+.repeater {    
+  background: url(./img/quantum-repeater.png);
+  background-size: 60%;
+  background-repeat: no-repeat;
+  background-position: 95% 90%;
+}
+
+.snake-image {
+  position: absolute;
+  /* Important for positioning */
+  z-index: 20;
+  /* Make sure snakes are above tiles but below players */
+  pointer-events: none;
+  /* Allow clicks to go through the snake image */
+  /* Add any other styling for the snake image here */
+}
+
+
+.entangled {
+  transform: scale(1);
+  animation: pulse-piece 1s infinite;
+}
+
+@keyframes pulse-piece {
+  0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(95, 158, 160, 0.7);
+  }
+
+  70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 10px rgba(95, 158, 160, 0.3);
+  }
+
+  100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(95, 158, 160, 0);
+  }
+}

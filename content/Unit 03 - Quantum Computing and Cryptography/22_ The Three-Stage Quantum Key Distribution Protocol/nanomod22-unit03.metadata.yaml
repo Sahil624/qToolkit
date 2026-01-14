@@ -1,0 +1,542 @@
+learning_objective_tree:
+  title:
+  - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+  global_prerequisites: []
+  objectives:
+  - lo_id: LO-22-01
+    summary: Students will understand the concept of double lock cryptography.
+    covered_by:
+    - m22-Background
+    learning_objectives: []
+    estimated_time_mins: 1
+    concepts:
+    - 3stage background
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-22-02
+    summary: Students will know the working of three-stage quantum key distribution
+      protocol.
+    covered_by:
+    - m22-3stageQkd
+    - m22-3stageQkd2
+    - m22-3stageQkdFlow
+    learning_objectives: []
+    estimated_time_mins: 3
+    concepts:
+    - 3 Stage Qkd Protocol
+    - 3 stage QKD protocol
+    - 3Stage Protocol Flow
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-22-03
+    summary: Students will be able to apply the concepts of orthogonality of basis,
+      measurement and indistinguishability of non-orthogonal states.
+    covered_by:
+    - m22-3Stage-Simulator-heading
+    - m22-3Stage-Simulator
+    learning_objectives: []
+    estimated_time_mins: 2
+    concepts:
+    - The 3Stage protocol simulator
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-22-04
+    summary: Students will apply the principle of quantum entanglement and Bell's
+      inequality to construct a quantum key distribution protocol.
+    covered_by:
+    - m22-Introduction-EntanglementQKD
+    - m22-EPRbasedQkd
+    - m22-EPRbasedQkdFlow
+    learning_objectives: []
+    estimated_time_mins: 3
+    concepts:
+    - EPR based QKD Protocol
+    - Introduction to Entanglement based QKD
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-22-05
+    summary: Students will be able to use Bell's inequality to check for eavesdropping.
+    covered_by:
+    - m22-E91-Protocol
+    learning_objectives: []
+    estimated_time_mins: 1
+    concepts:
+    - E91 Protocol
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-22-06
+    summary: Students will be able to simulate Key distribution of three-stage and
+      E91 protocols.
+    covered_by:
+    - m22-SimulationExercises
+    learning_objectives: []
+    estimated_time_mins: 1
+    concepts:
+    - EPR based QKD Protocol Research Suggestions
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m22-LearningOutcomes
+  title: 22. The Three-Stage Quantum Key Distribution Protocol & Entanglement based
+    QKD
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes: []
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Learning Outcomes
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-Background
+  title: 22.1 Background
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - 3stage background
+  outcomes: []
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Background
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-3stageQkd
+  title: The 3-Stage QKD Protocol
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m22-Background
+  concepts:
+  - 3 stage QKD protocol
+  outcomes: []
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: the 3-Stage QKD Protocol
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-3stageQkd2
+  title: m22-3stageQkd2
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m22-Background
+  - m22-3stageQkd
+  concepts:
+  - 3 Stage Qkd Protocol
+  outcomes: []
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: The 3-Stage QKD protocol
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-3stageQkdFlow
+  title: The Protocol Flow
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m22-Background
+  - m22-3stageQkd
+  - m22-3stageQkd2
+  concepts:
+  - 3Stage Protocol Flow
+  outcomes: []
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: The Protocol Flow
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-3Stage-Simulator-heading
+  title: 3-Stage QKD Simulator (Interactive)
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - The 3Stage protocol simulator
+  outcomes: []
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: The 3Stage Protocol Simulator
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-3Stage-Simulator
+  title: '"Enter a measurement basis in the format {x, y}, where x and y are in degrees:"'
+  type: code
+  estimated_time: '1'
+  prerequisites:
+  - m22-Background
+  - m22-3stageQkd
+  - m22-3stageQkd2
+  - m22-3stageQkdFlow
+  concepts:
+  - The 3Stage protocol simulator
+  outcomes: []
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: The 3Stage Protocol Simulator
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-ProjectandResearch3Stage
+  title: Project/Further Research Suggestions
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Project and further Research Questions
+  outcomes: []
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Project / Further Research Suggestions
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-Introduction-EntanglementQKD
+  title: 22.2 Introduction
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Introduction to Entanglement based QKD
+  outcomes: []
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Introduction
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-EPRbasedQkd
+  title: 22.3 EPR Based QKD Protocol
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m22-Introduction-EntanglementQKD
+  concepts:
+  - EPR based QKD Protocol
+  outcomes: []
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: EPR based QKD Protocol
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-EPRbasedQkdFlow
+  title: The Protocol Flow
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m22-Introduction-EntanglementQKD
+  - m22-EPRbasedQkd
+  concepts:
+  - EPR based QKD Protocol
+  outcomes: []
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: EPR based QKD Protocol
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-E91-Protocol
+  title: 22.4 The E91 Protocol
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m22-Introduction-EntanglementQKD
+  - m22-EPRbasedQkd
+  concepts:
+  - E91 Protocol
+  outcomes: []
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: E91 Protocol
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-EPRbasedQkdResearchQuestions
+  title: Project/Research Suggestions
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - EPR based QKD Protocol Research Suggestions
+  outcomes: []
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: EPR based QKD Protocol Research Suggestions
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-SimulationExercises
+  title: m22-SimulationExercises
+  type: code
+  estimated_time: '1'
+  prerequisites:
+  - m22-3stageQkdFlow
+  - m22-E91-Protocol
+  concepts:
+  - EPR based QKD Protocol Research Suggestions
+  outcomes: []
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Simulator Exercises
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD
+- cell_id: m22-endofModule
+  title: End of Nanomodule 22
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - end of Module
+  outcomes: []
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: End of Module
+    module_outcomes:
+    - Students will understand the concept of double lock cryptography.
+    - Students will know the working of three-stage quantum key distribution protocol.
+    - Students will be able to apply the concepts of orthogonality of basis, measurement
+      and indistinguishability of non-orthogonal states.
+    - Students will apply the principle of quantum entanglement and Bell's inequality
+      to construct a quantum key distribution protocol.
+    - Students will be able to use Bell's inequality to check for eavesdropping.
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - The Three-Stage Quantum Key Distribution Protocol & Entanglement based QKD

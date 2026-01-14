@@ -1,0 +1,482 @@
+learning_objective_tree:
+  title:
+  - Overview of Tensor Analysis
+  global_prerequisites:
+  - Linear Algebra
+  - Complex Numbers
+  - Introduction to Programming
+  - Python Basics
+  objectives:
+  - lo_id: LO-08-01
+    summary: Students will understand the definition of Tensor Product and the joint
+      Basis for two systems.
+    covered_by:
+    - m8-TensorProduct
+    - m8-JointBasis
+    - m8-ExampleTensorProduct
+    learning_objectives:
+    - Understand the use of tensor products in describing joint states of quantum
+      systems
+    - Identify the components and structure of a tensor product
+    - Learn the properties of tensor products, including distribution over addition
+      and respect for scalar multiplication
+    - Understand the concept of a joint basis for tensor product spaces
+    - Determine the basis for the tensor product of two vector spaces
+    - Comprehend how the dimension of the tensor product space is calculated
+    - Demonstrate the calculation of tensor products through examples
+    - Apply the concept of tensor products to vectors
+    - Visualize the structure of a tensor product of two vectors
+    estimated_time_mins: 8
+    concepts:
+    - Tensor Product
+    - Tensor Products
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-08-02
+    summary: Students will be able to perform tensor of matrices and vectors.
+    covered_by:
+    - m8-Quiz-8.1
+    learning_objectives:
+    - Calculate tensor products involving both real and complex vectors
+    - Apply knowledge of vector operations to solve tensor product problems
+    - Self-assess understanding of tensor products and their properties
+    estimated_time_mins: 10
+    concepts:
+    - Tensor Product
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-08-03
+    summary: Students will understand the Inseperability of quantum systems in context
+      of tensor products.
+    covered_by:
+    - m8-Entanglement
+    learning_objectives:
+    - Understand the concept of entanglement in the context of tensor products
+    - Identify systems that cannot be decomposed into tensor products of smaller vectors
+    - Recognize the implications of entanglement for quantum systems
+    estimated_time_mins: 1
+    concepts:
+    - Tensor Products
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-08-04
+    summary: Students will understand computing tensor products.
+    covered_by:
+    - m8-TensorProductMatrices
+    - m8-ExamplesTensorProductMatrices
+    learning_objectives:
+    - Extend the concept of tensor products to matrices
+    - Construct operators for joint system states using tensor products
+    - Understand how to perform tensor product operations on matrices
+    - Demonstrate the calculation of tensor products of matrices including complex
+      numbers
+    - Visualize the process of scalar multiplying a matrix by each element of another
+      matrix in the context of tensor products
+    - Apply the concept of tensor products to complex matrices
+    estimated_time_mins: 7
+    concepts:
+    - Tensor Product Matrices
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-08-05
+    summary: Students will learn the properties of Tensor Product of Matrices.
+    covered_by:
+    - m8-PropertiesTensorProductMatrices
+    learning_objectives:
+    - Understand and apply the associativity property of tensor products of matrices
+    - Learn how the tensor product respects the adjoint operation
+    - Identify key properties of tensor products in the context of matrix operations
+    estimated_time_mins: 1
+    concepts:
+    - Tensor Product Matrices
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-08-06
+    summary: Students will implement a program that computes the Tensor product of
+      two matrices.
+    covered_by:
+    - m8-final-quiz
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m8-LearningOutcomes
+  title: 8. Overview of Tensor Analysis
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Prove properties of tensor products of matrices and vectors
+  - Compute tensor products
+  - Implement a program to compute the tensor product of two matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Learning Outcomes
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-TensorProduct
+  title: 8.1 Tensor Product
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-OperationsComplexVectors
+  - m4-OperationsScalar
+  - m4-AdditiveIdentityInverse
+  - m4-quiz-4.1
+  - m4-quiz-4.1-interactive
+  concepts:
+  - Tensor Products
+  outcomes:
+  - Understand the use of tensor products in describing joint states of quantum systems
+  - Identify the components and structure of a tensor product
+  - Learn the properties of tensor products, including distribution over addition
+    and respect for scalar multiplication
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Tensor Product
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-JointBasis
+  title: 8.2 Joint Basis for $\mathbb{V}$ and $\mathbb{V'}$
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m5-Basis
+  - m8-TensorProduct
+  concepts:
+  - Tensor Products
+  outcomes:
+  - Understand the concept of a joint basis for tensor product spaces
+  - Determine the basis for the tensor product of two vector spaces
+  - Comprehend how the dimension of the tensor product space is calculated
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Joint Basis of 2 complex systems
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-ExampleTensorProduct
+  title: '8.3 Examples: Tensor Product'
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m8-TensorProduct
+  - m8-JointBasis
+  concepts:
+  - Tensor Product
+  outcomes:
+  - Demonstrate the calculation of tensor products through examples
+  - Apply the concept of tensor products to vectors
+  - Visualize the structure of a tensor product of two vectors
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Example Tensor Product
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-ExampleTensorProductComplex
+  title: m8-ExampleTensorProductComplex
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m8-TensorProduct
+  - m8-JointBasis
+  - m8-ExampleTensorProduct
+  concepts:
+  - Tensor Product
+  outcomes:
+  - Calculate the tensor product of complex vectors
+  - Understand the effect of complex numbers in tensor product calculations
+  - Visualize the result of a tensor product involving complex vectors
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Example Tensor Product
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts, including those involving complex numbers
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-Quiz-8.1
+  title: Quiz 8.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '10'
+  prerequisites:
+  - m8-TensorProduct
+  - m8-JointBasis
+  - m8-ExampleTensorProduct
+  - m8-ExampleTensorProductComplex
+  concepts:
+  - Tensor Product
+  outcomes:
+  - Calculate tensor products involving both real and complex vectors
+  - Apply knowledge of vector operations to solve tensor product problems
+  - Self-assess understanding of tensor products and their properties
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m8-Quiz-8.1-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-Quiz-8.1-interactive
+  title: m8-Quiz-8.1-interactive
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m8-TensorProduct
+  - m8-JointBasis
+  - m8-ExampleTensorProduct
+  - m8-ExampleTensorProductComplex
+  concepts:
+  - Tensor Product
+  outcomes:
+  - Calculate tensor products involving both real and complex vectors
+  - Apply knowledge of vector operations to solve tensor product problems
+  - Self-assess understanding of tensor products and their properties
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m8-Quiz-8.1
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1 interactive
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-Entanglement
+  title: 8.4 Inseparability of Systems (Entanglement)
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m8-TensorProduct
+  - m8-JointBasis
+  - m8-ExampleTensorProduct
+  - m8-ExampleTensorProductComplex
+  - m8-Quiz-8.1
+  - m8-Quiz-8.1-interactive
+  concepts:
+  - Tensor Products
+  outcomes:
+  - Understand the concept of entanglement in the context of tensor products
+  - Identify systems that cannot be decomposed into tensor products of smaller vectors
+  - Recognize the implications of entanglement for quantum systems
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Inseperability of Systems
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-TensorProductMatrices
+  title: 8.5 Tensor Product of Matrices
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-MatrixMultiplication
+  - m8-TensorProduct
+  - m8-Entanglement
+  concepts:
+  - Tensor Product Matrices
+  outcomes:
+  - Extend the concept of tensor products to matrices
+  - Construct operators for joint system states using tensor products
+  - Understand how to perform tensor product operations on matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Tensor Product of matrices
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-ExamplesTensorProductMatrices
+  title: 8.6 Examples of Tensor Product of Matrices
+  type: markdown
+  estimated_time: '4'
+  prerequisites:
+  - m8-TensorProductMatrices
+  concepts:
+  - Tensor Product Matrices
+  outcomes:
+  - Demonstrate the calculation of tensor products of matrices including complex numbers
+  - Visualize the process of scalar multiplying a matrix by each element of another
+    matrix in the context of tensor products
+  - Apply the concept of tensor products to complex matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Example of Tensor Product of Matrices
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis
+- cell_id: m8-PropertiesTensorProductMatrices
+  title: 8.7 Properties of Tensor Product of Matrices
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m8-TensorProductMatrices
+  - m8-ExamplesTensorProductMatrices
+  concepts:
+  - Tensor Product Matrices
+  outcomes:
+  - Understand and apply the associativity property of tensor products of matrices
+  - Learn how the tensor product respects the adjoint operation
+  - Identify key properties of tensor products in the context of matrix operations
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Properties of Tensor Product of Matrices
+    module_outcomes:
+    - Gain a foundational understanding of tensor analysis
+    - Develop the ability to work with tensor products in mathematical and computational
+      contexts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Overview of Tensor Analysis

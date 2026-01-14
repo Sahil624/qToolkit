@@ -9,77 +9,61 @@ import tornado
 from .v_db.peer_agent import PeerAgent
 from .course_completed import mark_course_if_completed
 from .v_db.vector_db_manager import get_db_manager_instance
+from .prompt import get_peer_prompt, get_tutor_prompt, format_chat_history
 
-def get_peer_prompt(user_query: str, context_string: str) -> str:
-    """Builds the complete prompt for the Peer Agent."""
+# # This helper function would be in your Python server logic
+# def _format_chat_history(history: list[dict]) -> str:
+#     """Converts the message list from the front-end into a clean string for the LLM."""
+#     if not history:
+#         return "No recent conversation history."
     
-    return f"""
-    You are a student peer, a friendly study buddy learning alongside the user.
-    Your personality is friendly, but you are also very concise.
-
-    Answer the student's question *using only* the course notes provided above. This is the only information you have.
-
-    **CRITICAL RULES FOR YOUR RESPONSE:**
-    1.  **KEEP IT SHORT.** Your answers must be brief and to the point. 1-3 sentences is ideal.
-    2.  **DO NOT ASK THE STUDENT ANY QUESTIONS.** End your answer cleanly. Do not say "Does that make sense?" or "What do you think?".
-    3.  **If the answer is not in the notes, just say "Hmm, I don't think we've covered that yet" or "Sorry, that's not in my notes."**
-    4.  Use simple, informal terms (e.g., "My notes say...").
-    5.  **DO NOT** use any outside knowledge.
-    """
-
-# This helper function would be in your Python server logic
-def _format_chat_history(history: list[dict]) -> str:
-    """Converts the message list from the front-end into a clean string for the LLM."""
-    if not history:
-        return "No recent conversation history."
+#     formatted_history = []
+#     for msg in history:
+#         # Use simple role names
+#         role = "Student" if msg.get('sender') == 'user' else "Agent"
+#         formatted_history.append(f"{role}: {msg.get('text', '')}")
     
-    formatted_history = []
-    for msg in history:
-        # Use simple role names
-        role = "Student" if msg.get('sender') == 'user' else "Agent"
-        formatted_history.append(f"{role}: {msg.get('text', '')}")
+#     return "\n".join(formatted_history)
+
+# def get_tutor_prompt(
+#     user_query: str, 
+#     context_string: str,
+#     chat_history: list[dict]  # This is the new parameter
+# ) -> str:
+#     """
+#     Builds the complete prompt for the Tutor Agent during an escalation,
+#     now with conversation history.
+#     """
     
-    return "\n".join(formatted_history)
-
-def get_tutor_prompt(
-    user_query: str, 
-    context_string: str,
-    chat_history: list[dict]  # This is the new parameter
-) -> str:
-    """
-    Builds the complete prompt for the Tutor Agent during an escalation,
-    now with conversation history.
-    """
+#     # Format the history for the prompt
+#     history_string = _format_chat_history(chat_history)
+#     peer_answer = chat_history[-1]['text'] if chat_history else "No previous answer."
     
-    # Format the history for the prompt
-    history_string = _format_chat_history(chat_history)
-    peer_answer = chat_history[-1]['text'] if chat_history else "No previous answer."
-    
-    return f"""
-    You are an expert Tutor and course instructor.
-    Your tone is encouraging, supportive, clear, and precise.
+#     return f"""
+#     You are an expert Tutor and course instructor.
+#     Your tone is encouraging, supportive, clear, and precise.
 
-    First, here is the recent conversation history to give you context:
-    ---
-    [CONVERSATION HISTORY]
-    {history_string}
-    ---
+#     First, here is the recent conversation history to give you context:
+#     ---
+#     [CONVERSATION HISTORY]
+#     {history_string}
+#     ---
 
-    **YOUR CURRENT TASK:**
-    A student is asking for a deeper explanation of a concept from that conversation.
-    - Their peer (a fellow student) just gave this simple answer: "{peer_answer}"
+#     **YOUR CURRENT TASK:**
+#     A student is asking for a deeper explanation of a concept from that conversation.
+#     - Their peer (a fellow student) just gave this simple answer: "{peer_answer}"
 
-    Your job is to provide a comprehensive, expert-level follow-up. You can affirm what the peer said, but then go into much more detail, using the conversation history for context.
+#     Your job is to provide a comprehensive, expert-level follow-up. You can affirm what the peer said, but then go into much more detail, using the conversation history for context.
 
-    Please provide a detailed and accurate explanation based *only* on the provided course context.
+#     Please provide a detailed and accurate explanation based *only* on the provided course context.
 
-    CRITICAL RULES FOR YOUR RESPONSE:
-    1.  **BE COMPREHENSIVE:** This is an expert answer. Explain concepts thoroughly, define technical terms, and be precise.
-    2.  **DO NOT ASK THE STUDENT ANY QUESTIONS.** End your answer cleanly.
-    3.  **STICK TO THE CONTEXT.** You must base your answer on the course materials provided.
+#     CRITICAL RULES FOR YOUR RESPONSE:
+#     1.  **BE COMPREHENSIVE:** This is an expert answer. Explain concepts thoroughly, define technical terms, and be precise.
+#     2.  **DO NOT ASK THE STUDENT ANY QUESTIONS.** End your answer cleanly.
+#     3.  **STICK TO THE CONTEXT.** You must base your answer on the course materials provided.
 
-    Your Expert Answer:
-    """
+#     Your Expert Answer:
+#     """
 
 class AskAgentHandler(APIHandler):
     """
@@ -105,10 +89,14 @@ class AskAgentHandler(APIHandler):
             query = data.get("query")
             agent_type = data.get("agent_type", "peer") # e.g., 'peer' or 'tutor'
             completed_lo_ids = data.get("student_completed_lo_ids", None)
+            current_lo_id = data.get("current_lo_id", None)
             history = data.get("history", [])
 
             if not completed_lo_ids:
                 completed_lo_ids = self.db_manager.get_completed_lo_ids()
+
+            if current_lo_id and current_lo_id not in completed_lo_ids:
+                completed_lo_ids.append(current_lo_id)
 
             if agent_type not in ['peer', 'tutor']:
                 raise ValueError(f"Unknown agent_type: {agent_type}")
@@ -119,9 +107,9 @@ class AskAgentHandler(APIHandler):
             # For now, we'll just echo the query back as a fake answer
             print(f"Received query for {agent_type}: {query}")
             if agent_type == 'peer':
-                answer = self.peer_agent.answer_question(query, get_peer_prompt("", ""), completed_lo_ids=completed_lo_ids)
+                answer = self.peer_agent.answer_question(query, get_peer_prompt(), completed_lo_ids=completed_lo_ids, chat_history = history)
             else:
-                answer = self.peer_agent.answer_question(query, get_tutor_prompt("", "", history), completed_lo_ids = None)
+                answer = self.peer_agent.answer_question(query, get_tutor_prompt(query, history), completed_lo_ids = None, chat_history = history)
 
             # 3. Send the response back to the front-end
             self.finish(json.dumps({
@@ -186,6 +174,7 @@ class CourseTrackerHandler(APIHandler):
             return_data['max_course_progress'] = max_progress
             tracking_data = self.db_manager.get_full_tracking_data()
             return_data['tracking_data'] = tracking_data
+            return_data['manifest'] = self.db_manager.get_course_manifest_copy()
 
             self.finish(json.dumps(return_data))
 
@@ -224,13 +213,30 @@ class VectorDatabaseHandler(APIHandler):
 
     @tornado.web.authenticated
     def get(self):
-        try:
-            self.finish(json.dumps({
-                'metadata': self.db_manager.metadata
-            }))
-        except Exception as e:
-            self.set_status(500)
-            self.finish(json.dumps({"error": str(e)}))
+        query = self.get_argument("query", None)
+        lo_id_str = self.get_argument("lo_ids", None)
+
+        if lo_id_str:
+            completed_lo_ids = lo_id_str.split(",")
+        else:
+            completed_lo_ids = None
+
+        if query:
+            context_chunks = self.db_manager.filter_with_lo_ids(
+                query=query, lo_ids=completed_lo_ids, num_results=2
+            )
+            context_str = "\n\n".join(context_chunks)
+
+            self.set_status(200)
+            self.finish(context_str)
+        else:
+            try:
+                self.finish(json.dumps({
+                    'metadata': self.db_manager.metadata
+                }))
+            except Exception as e:
+                self.set_status(500)
+                self.finish(json.dumps({"error": str(e)}))
 
 def setup_handlers(web_app):
     host_pattern = ".*$"

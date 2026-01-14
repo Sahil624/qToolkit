@@ -1,0 +1,544 @@
+learning_objective_tree:
+  title:
+  - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+  global_prerequisites:
+  - Linear Algebra
+  - Complex Numbers
+  - Introduction to Programming
+  - Python Basics
+  - Complex Vector Spaces
+  objectives:
+  - lo_id: LO-05-01
+    summary: Students will understand and apply the concept of linear independence.
+    covered_by:
+    - m5-LinearDependenceIndependence
+    - m5-ExamplesLinearDependenceIndependence
+    - m5-Quiz-5.1
+    - m5-Quiz-5.1-interactive
+    learning_objectives:
+    - Understand the concepts of linear combination and linear independence in complex
+      vector spaces
+    - Apply these concepts to analyze the structure of complex vector spaces
+    - Identify examples of linearly dependent and independent sets of vectors
+    - Apply criteria to determine linear dependence and independence
+    - Show that a given set of vectors is not linearly independent
+    - Apply the concept of linear independence to specific examples
+    - Show that a given set of vectors is not linearly independent
+    - Apply the concept of linear independence to specific examples
+    estimated_time_mins: 46
+    concepts:
+    - Linear Dependence and Independence
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-05-02
+    summary: Students will understand and apply the concept of basis and dimension
+      of a complex vector space.
+    covered_by:
+    - m5-Basis
+    - m5-Dimension
+    - m5-Quiz-5.2
+    - m5-Quiz-5.2-interactive
+    learning_objectives:
+    - Understand the concept of a basis in complex vector spaces
+    - Identify examples of basis sets, including orthonormal bases
+    - Understand the concept of the dimension of a complex vector space
+    - Relate the dimension to the number of vectors in a basis set
+    - "Verify that given sets are basis for \u21022"
+    - "Verify that given sets are basis for \u21022"
+    estimated_time_mins: 13
+    concepts:
+    - Basis and Dimension
+    - Basis and Dimensions
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-05-03
+    summary: Students will understand and the apply the concept of transisition Matrices.
+    covered_by:
+    - m5-TransitionMatrices
+    - m5-Quiz-5.3
+    - m5-Quiz-5.3-interactive
+    learning_objectives:
+    - Understand the concept of transition matrices and their application in changing
+      basis of vectors
+    - Identify the role of Hadamard matrix in quantum computing for basis conversion
+    - Represent vectors in the Hadamard basis
+    - Prove that the Hadamard matrix is its own inverse
+    - Represent vectors in the Hadamard basis
+    - Prove that the Hadamard matrix is its own inverse
+    estimated_time_mins: 55
+    concepts:
+    - Transition Matrices
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m5-LearningOutcomes
+  title: '5. Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Understand and apply the concept of linear independence in complex vector spaces
+  - Understand and apply the concept of basis and dimension of a complex vector space
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Learning Outcomes
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Complex Vector Spaces Linear Combination, Independence, Basis and Dimensions
+- cell_id: m5-LinearDependenceIndependence
+  title: 5.1 Linear Dependence and Independence
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-ComplexVectorSpaces
+  concepts:
+  - Linear Dependence and Independence
+  outcomes:
+  - Understand the concepts of linear combination and linear independence in complex
+    vector spaces
+  - Apply these concepts to analyze the structure of complex vector spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Linear Dependence and Independence
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-ExamplesLinearDependenceIndependence
+  title: 5.2 Examples of Linear Dependence and Independence
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m5-LinearDependenceIndependence
+  concepts:
+  - Linear Dependence and Independence
+  outcomes:
+  - Identify examples of linearly dependent and independent sets of vectors
+  - Apply criteria to determine linear dependence and independence
+  extra_props:
+    editable: true
+    jp-MarkdownHeadingCollapsed: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Examples of Linear Dependence and Independence
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Quiz-5.1
+  title: Quiz 5.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '20'
+  prerequisites:
+  - m5-LinearDependenceIndependence
+  - m5-ExamplesLinearDependenceIndependence
+  concepts:
+  - Linear Dependence and Independence
+  outcomes:
+  - Show that a given set of vectors is not linearly independent
+  - Apply the concept of linear independence to specific examples
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m5-Quiz-5.1-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Quiz-5.1-interactive
+  title: m5-Quiz-5.1-interactive
+  type: code
+  estimated_time: '20'
+  prerequisites:
+  - m5-LinearDependenceIndependence
+  - m5-ExamplesLinearDependenceIndependence
+  concepts:
+  - Linear Dependence and Independence
+  outcomes:
+  - Show that a given set of vectors is not linearly independent
+  - Apply the concept of linear independence to specific examples
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m5-Quiz-5.1
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1 interactive
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Basis
+  title: 5.3 Basis
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m5-LinearDependenceIndependence
+  - m5-ExamplesLinearDependenceIndependence
+  concepts:
+  - Basis and Dimension
+  outcomes:
+  - Understand the concept of a basis in complex vector spaces
+  - Identify examples of basis sets, including orthonormal bases
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Basis
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Dimension
+  title: 5.4 Dimension
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m5-Basis
+  concepts:
+  - Basis and Dimension
+  outcomes:
+  - Understand the concept of the dimension of a complex vector space
+  - Relate the dimension to the number of vectors in a basis set
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Dimension
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Quiz-5.2
+  title: Quiz 5.2 Self Assessment Quiz
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m5-Basis
+  - m5-Dimension
+  concepts:
+  - Basis and Dimension
+  outcomes:
+  - "Verify that given sets are basis for \u21022"
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m5-Quiz-5.2-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 2
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Quiz-5.2-interactive
+  title: m5-Quiz-5.2-interactive
+  type: code
+  estimated_time: '5'
+  prerequisites:
+  - m5-Basis
+  concepts:
+  - Basis and Dimensions
+  outcomes:
+  - "Verify that given sets are basis for \u21022"
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m5-Quiz-5.2
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 2 interactive
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-TransitionMatrices
+  title: 5.5 Transition Matrices
+  type: markdown
+  estimated_time: '5'
+  prerequisites:
+  - m4-MatrixMultiplication
+  - m5-Basis
+  - m5-Dimension
+  - m5-Quiz-5.2
+  - m5-Quiz-5.2-interactive
+  concepts:
+  - Transition Matrices
+  outcomes:
+  - Understand the concept of transition matrices and their application in changing
+    basis of vectors
+  - Identify the role of Hadamard matrix in quantum computing for basis conversion
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Transition Matrices
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    - Learn the application of transition matrices in the context of quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Quiz-5.3
+  title: Quiz 5.3 Self Assessment Quiz
+  type: markdown
+  estimated_time: '25'
+  prerequisites:
+  - m5-TransitionMatrices
+  concepts:
+  - Transition Matrices
+  outcomes:
+  - Represent vectors in the Hadamard basis
+  - Prove that the Hadamard matrix is its own inverse
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m5-Quiz-5.3-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 3
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    - Learn the application of transition matrices in the context of quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Quiz-5.3-interactive
+  title: m5-Quiz-5.3-interactive
+  type: code
+  estimated_time: '25'
+  prerequisites:
+  - m5-TransitionMatrices
+  concepts:
+  - Transition Matrices
+  outcomes:
+  - Represent vectors in the Hadamard basis
+  - Prove that the Hadamard matrix is its own inverse
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m5-Quiz-5.3
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 3 interactive
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    - Learn the application of transition matrices in the context of quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-Conclusions
+  title: 5.6 Conclusions
+  type: markdown
+  estimated_time: '2'
+  prerequisites: []
+  concepts:
+  - Conclusions
+  outcomes:
+  - Summarize the concepts of linear dependence and independence, basis, dimension,
+    and transition matrices in complex vector spaces
+  - Prepare for the upcoming lessons on inner product, norm, orthogonal vectors, and
+    projections
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Conclusions
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    - Learn the application of transition matrices in the context of quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+- cell_id: m5-finalQuiz-information
+  title: 'Final Quiz 5  is in a separate notebook with filename: finalquiz5.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: final Quiz 5
+    module_outcomes:
+    - Understand advanced concepts in complex vector spaces including linear combinations,
+      independence, basis, and dimensions
+    - Develop the ability to analyze complex vector spaces in terms of these advanced
+      concepts
+    - Learn the application of transition matrices in the context of quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'

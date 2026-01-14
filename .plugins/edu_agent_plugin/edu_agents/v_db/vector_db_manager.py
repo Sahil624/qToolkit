@@ -1,4 +1,4 @@
-from typing import Union, List
+from typing import Dict, Union, List
 
 import faiss
 import numpy as np
@@ -21,7 +21,7 @@ class VectorDBManager:
       Run `ollama pull nomic-embed-text` in your terminal.
     """
 
-    def __init__(self, path: str = "./faiss_db", ollama_model: str = 'nomic-embed-text', ollama_base_url: str = 'http://localhost:11434'):
+    def __init__(self, path: str = "./faiss_db", ollama_model: str = 'nomic-embed-text', ollama_base_url: str = os.getenv("OLLAMA_API_URL", "http://localhost:11434")):
         """
         Initializes the VectorDBManager with FAISS and Ollama.
 
@@ -38,6 +38,7 @@ class VectorDBManager:
         # 1. Configure Ollama settings
         self.ollama_model = ollama_model
         self.ollama_api_url = f"{ollama_base_url}/api/embeddings"
+        print(f"Using Ollama model: {self.ollama_model} and API URL: {self.ollama_api_url}")
         
         # The embedding dimension depends on the Ollama model.
         # 'mxbai-embed-large' has a dimension of 1024.
@@ -59,6 +60,8 @@ class VectorDBManager:
             # Use IndexFlatL2 for simple L2 distance search
             self.index = faiss.IndexFlatL2(self.embedding_dim)
             self.metadata = {}
+
+        print(f"Initialized FAISS index with {self.index.ntotal} vectors.")
 
     def _get_ollama_embedding(self, text: str) -> np.ndarray:
         """Generates an embedding for the given text using the Ollama API."""
@@ -91,6 +94,24 @@ class VectorDBManager:
         with open(self.metadata_file, 'wb') as f:
             pickle.dump(self.metadata, f)
         print("Save complete.")
+
+    def save_course_manifest_copy(self, manifest: Dict):
+        """Saves a copy of the course manifest to the database directory."""
+        manifest_path = os.path.join(self.db_path, "course_manifest_copy.json")
+        with open(manifest_path, 'w') as f:
+            json.dump(manifest, f, indent=4)
+        print(f"Saved course manifest copy to {manifest_path}.")
+    
+    def get_course_manifest_copy(self) -> Dict:
+        """Retrieves the copy of the course manifest from the database directory."""
+        manifest_path = os.path.join(self.db_path, "course_manifest_copy.json")
+        if os.path.exists(manifest_path):
+            with open(manifest_path, 'r') as f:
+                manifest = json.load(f)
+            return manifest
+        else:
+            print("Course manifest copy not found.")
+            return {}
 
     def add_lesson_content(self, content: str, lesson_number: int, source_notebook: str, cell_id: str = None, cell_title: str = None, learning_objectives: list = None, learning_objective_ids: list = None):
         """
@@ -367,7 +388,7 @@ def get_db_manager_instance(**parameter_overrides):
     initialize_parameters = {
         'path': db_path,
         'ollama_model':  'nomic-embed-text',
-        'ollama_base_url': 'http://localhost:11434'
+        'ollama_base_url': os.getenv("OLLAMA_API_URL", "http://localhost:11434")
     }
     initialize_parameters.update(parameter_overrides)
     return VectorDBManager(**initialize_parameters)

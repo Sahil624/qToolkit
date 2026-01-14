@@ -1,0 +1,638 @@
+learning_objective_tree:
+  title: General Single-Qubit Measurement
+  global_prerequisites:
+  - Linear Algebra
+  - Complex Numbers
+  - Quantum Mechanics Fundamentals
+  objectives:
+  - lo_id: LO-13-01
+    summary: Students will understand the theory behind projective measurements.
+    covered_by:
+    - m13-QuantumMeasurements
+    - m13-ComputingTheProjection
+    learning_objectives:
+    - Introduce the general theory behind single-qubit measurements in quantum mechanics
+    - Differentiate between the three types of quantum measurements
+    - Focus on understanding projective or von Neumann measurements
+    - Compute the projection of a qubit onto a basis state
+    - Apply the concept of orthonormal basis to simplify the projection computation
+    - Understand the mathematical representation of qubit projection on pure states
+    estimated_time_mins: 2
+    concepts:
+    - Projection
+    - Quantum Measurements
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-13-02
+    summary: Students will understand the measurement postulate in quantum mechanics
+      for projective measurements.
+    covered_by:
+    - m13-ComputingTheProjection
+    - m13-TheProjectionOperators
+    - m13-MeasurementOperatorIdentity
+    - m13-ExampleProjectionOperators
+    - m13-ApplyingProjectionOperators
+    learning_objectives:
+    - Compute the projection of a qubit onto a basis state
+    - Apply the concept of orthonormal basis to simplify the projection computation
+    - Understand the mathematical representation of qubit projection on pure states
+    - Define and understand the concept of a projection operator in quantum mechanics
+    - Apply projection operators to qubits for projecting onto specific basis states
+    - Comprehend the mathematical framework and implications of using projection operators
+    - Understand the relationship between projection operators and the identity operator
+      in quantum mechanics
+    - Grasp the concept that projecting a state twice yields the same result as projecting
+      it once
+    - Learn that repeated measurements in the same basis produce consistent results
+    - Calculate the projection of a specific qubit onto the standard basis using projection
+      operators
+    - Demonstrate the application of projection operators to determine the outcome
+      probabilities for a given qubit state
+    - Apply knowledge of quantum mechanics and linear algebra to solve practical problems
+    - Apply projection operators to a given qubit to compute outcomes in the standard
+      basis
+    - Calculate the probabilities of the qubit collapsing to each basis state upon
+      measurement
+    - Demonstrate the mathematical process of determining a quantum state's measurement
+      outcomes
+    estimated_time_mins: 5
+    concepts:
+    - Projection
+    - Projection Operators
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-13-03
+    summary: Students will be able to compute the projection operators for a basis.
+    covered_by:
+    - m13-QuantumMeasurementPostulate
+    - m13-ComputationalBasisMeasurement
+    - m13-PostMeasurementStates
+    - m13-quiz-13.1
+    learning_objectives:
+    - Understand the quantum measurement postulate and its implications on the measurement
+      process
+    - Calculate the probability of different measurement outcomes and the post-measurement
+      state of a quantum system
+    - Recognize the condition under which the measurement postulate simplifies to
+      projective measurement
+    - Identify the projection operators as measurement operators for the computational
+      or standard basis
+    - Understand the properties of Hermitian operators in the context of quantum measurements
+    - Calculate the probabilities of obtaining specific measurement outcomes for a
+      given quantum state
+    - Calculate the post-measurement state of a quantum system for given outcomes
+    - Understand the role of global phase in the post-measurement state and its non-effect
+      on the state
+    - Relate the post-measurement states to the computational basis states, acknowledging
+      the insignificance of global phase
+    - Identify measurement operators for given basis sets
+    - Calculate the probability of collapse for specific qubits with respect to these
+      operators
+    - Determine the final state of a qubit after measurement based on calculated probabilities
+    estimated_time_mins: 8
+    concepts:
+    - Quantum Measurement Postulate
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-13-04
+    summary: Students will be able to calculate the probabilities of outcomes for
+      a given basis using projection operator and determine the final state of the
+      qubit.
+    covered_by: []
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-13-05
+    summary: Students will understand the density matrix formulation and will be able
+      to apply it for projective measurements.
+    covered_by:
+    - m13-DensityMatrices
+    - m13-DensityMatricesMeasurementExample
+    - m13-DensityMatricesExpansion
+    - m13-quiz-13.2
+    learning_objectives:
+    - Introduce the concept of density matrices as an alternative representation of
+      quantum states
+    - Explain the necessity of density matrices for describing mixed states and their
+      probabilistic nature
+    - Understand the application of density matrices in representing individual qubits
+      within entangled systems
+    - Derive density matrices for specific quantum states
+    - Understand how to represent mixed states with density matrices
+    - Calculate the probabilities of measurement outcomes for quantum states represented
+      by density matrices
+    - Perform detailed expansions for calculating probabilities using density matrices
+    - Apply linear algebra techniques to density matrices for outcome probability
+      calculations
+    - Interpret the mathematical results of density matrix expansions in the context
+      of quantum measurements
+    - Compute density matrices for quantum systems based on the probability of qubit
+      preparations
+    - Calculate outcome probabilities for given quantum system states using the density
+      matrix approach
+    - Apply quantum mechanics principles to analyze and solve problems involving mixed
+      state preparations and measurements
+    estimated_time_mins: 8
+    concepts:
+    - Density Matrices
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m13-LearningOutcome
+  title: 13. General Single-Qubit Measurement
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Understand the theory behind projective measurements in quantum mechanics
+  - Grasp the measurement postulate specific to projective measurements
+  - Compute projection operators for different bases
+  - Calculate probabilities of measurement outcomes using projection operators
+  - Learn density matrix formulation and apply it to projective measurements
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the principles and applications of projective measurements in quantum
+      mechanics
+    - Apply mathematical tools to analyze quantum measurement outcomes
+    - Utilize density matrix formulation for a deeper understanding of quantum states
+      and measurements
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-QuantumMeasurements
+  title: 13.1 Quantum Measurements
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Quantum Measurements
+  outcomes:
+  - Introduce the general theory behind single-qubit measurements in quantum mechanics
+  - Differentiate between the three types of quantum measurements
+  - Focus on understanding projective or von Neumann measurements
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Grasp the fundamental concepts of quantum measurement theory
+    - Distinguish between various quantum measurement types and their applications
+    - Deepen knowledge on projective measurements and their significance in quantum
+      mechanics
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-ComputingTheProjection
+  title: 13.2 Computing the Projection
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m6-InnerProduct
+  - m6-OrthogonalVectors
+  - m6-OrthogonalBasis
+  - m6-Projection
+  - m13-QuantumMeasurements
+  concepts:
+  - Projection
+  outcomes:
+  - Compute the projection of a qubit onto a basis state
+  - Apply the concept of orthonormal basis to simplify the projection computation
+  - Understand the mathematical representation of qubit projection on pure states
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the process of computing projections in quantum mechanics
+    - Apply linear algebra techniques to analyze projections of qubits
+    - Comprehend the significance of orthonormal basis in quantum measurement computations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-TheProjectionOperators
+  title: 13.3 The Projection Operators
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m13-ComputingTheProjection
+  concepts:
+  - Projection Operators
+  outcomes:
+  - Define and understand the concept of a projection operator in quantum mechanics
+  - Apply projection operators to qubits for projecting onto specific basis states
+  - Comprehend the mathematical framework and implications of using projection operators
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the use and significance of projection operators in quantum state analysis
+    - Analyze and compute the effects of projection on qubit states within a given
+      basis
+    - Enhance understanding of quantum measurement theory through the application
+      of projection operators
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-MeasurementOperatorIdentity
+  title: m13-MeasurementOperatorIdentity
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m13-TheProjectionOperators
+  concepts:
+  - Projection Operators
+  outcomes:
+  - Understand the relationship between projection operators and the identity operator
+    in quantum mechanics
+  - Grasp the concept that projecting a state twice yields the same result as projecting
+    it once
+  - Learn that repeated measurements in the same basis produce consistent results
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the construction and significance of the measurement operator in
+      quantum measurements
+    - Analyze the properties of projection operators and their effect on quantum states
+    - Acknowledge the foundational principles of quantum mechanics reflected in measurement
+      consistency
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-ExampleProjectionOperators
+  title: Example
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m13-TheProjectionOperators
+  - m13-MeasurementOperatorIdentity
+  concepts:
+  - Projection Operators
+  outcomes:
+  - Calculate the projection of a specific qubit onto the standard basis using projection
+    operators
+  - Demonstrate the application of projection operators to determine the outcome probabilities
+    for a given qubit state
+  - Apply knowledge of quantum mechanics and linear algebra to solve practical problems
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the practical application of projection operators in quantum measurement
+    - Enhance problem-solving skills in the context of quantum state analysis
+    - Deepen understanding of the measurement process in quantum mechanics
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-ApplyingProjectionOperators
+  title: m13-ApplyingProjectionOperators
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m13-TheProjectionOperators
+  - m13-MeasurementOperatorIdentity
+  - m13-ExampleProjectionOperators
+  concepts:
+  - Projection Operators
+  outcomes:
+  - Apply projection operators to a given qubit to compute outcomes in the standard
+    basis
+  - Calculate the probabilities of the qubit collapsing to each basis state upon measurement
+  - Demonstrate the mathematical process of determining a quantum state's measurement
+    outcomes
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the application of projection operators in the context of quantum measurements
+    - Analyze and predict the behavior of quantum states upon measurement
+    - Utilize mathematical principles to solve problems related to quantum state projections
+      and measurement outcomes
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-QuantumMeasurementPostulate
+  title: Quantum Measurement Postulate
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Quantum Measurement Postulate
+  outcomes:
+  - Understand the quantum measurement postulate and its implications on the measurement
+    process
+  - Calculate the probability of different measurement outcomes and the post-measurement
+    state of a quantum system
+  - Recognize the condition under which the measurement postulate simplifies to projective
+    measurement
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the foundational principles of quantum measurement as described by
+      the measurement postulate
+    - Apply the measurement postulate to analyze quantum systems and predict measurement
+      outcomes
+    - Relate the general framework of quantum measurement to the specific case of
+      projective measurements
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-ComputationalBasisMeasurement
+  title: m13-ComputationalBasisMeasurement
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m13-QuantumMeasurementPostulate
+  concepts:
+  - Quantum Measurement Postulate
+  outcomes:
+  - Identify the projection operators as measurement operators for the computational
+    or standard basis
+  - Understand the properties of Hermitian operators in the context of quantum measurements
+  - Calculate the probabilities of obtaining specific measurement outcomes for a given
+    quantum state
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply measurement operators to determine outcomes in the computational basis
+    - Analyze the role of Hermitian operators in the framework of quantum measurement
+    - Master the computation of measurement outcome probabilities for quantum states
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-PostMeasurementStates
+  title: m13-PostMeasurementStates
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m13-QuantumMeasurementPostulate
+  - m13-ComputationalBasisMeasurement
+  concepts:
+  - Quantum Measurement Postulate
+  outcomes:
+  - Calculate the post-measurement state of a quantum system for given outcomes
+  - Understand the role of global phase in the post-measurement state and its non-effect
+    on the state
+  - Relate the post-measurement states to the computational basis states, acknowledging
+    the insignificance of global phase
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the process of determining post-measurement states in quantum mechanics
+    - Apply principles of quantum mechanics to analyze the effects of measurement
+      on a quantum system
+    - Recognize the practical implications of global phase differences in quantum
+      states post-measurement
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-quiz-13.1
+  title: Self-Assessment Quiz 1
+  type: markdown
+  estimated_time: '5'
+  prerequisites:
+  - m13-QuantumMeasurementPostulate
+  - m13-ComputationalBasisMeasurement
+  - m13-PostMeasurementStates
+  concepts:
+  - Quantum Measurement Postulate
+  outcomes:
+  - Identify measurement operators for given basis sets
+  - Calculate the probability of collapse for specific qubits with respect to these
+    operators
+  - Determine the final state of a qubit after measurement based on calculated probabilities
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Enhance understanding of measurement operators and their applications in quantum
+      measurements
+    - Apply quantum mechanics principles to solve practical problems involving quantum
+      state collapse
+    - Master the computation of outcome probabilities and post-measurement states
+      in quantum mechanics
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-DensityMatrices
+  title: Density Matrices
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Density Matrices
+  outcomes:
+  - Introduce the concept of density matrices as an alternative representation of
+    quantum states
+  - Explain the necessity of density matrices for describing mixed states and their
+    probabilistic nature
+  - Understand the application of density matrices in representing individual qubits
+    within entangled systems
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Grasp the fundamental principles and motivations behind the use of density matrices
+      in quantum mechanics
+    - Apply the concept of density matrices to describe mixed and pure states, as
+      well as parts of entangled systems
+    - Prepare for more advanced topics in quantum mechanics involving multi-qubit
+      systems and entanglement
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-DensityMatricesMeasurementExample
+  title: Example of Measurement
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m13-DensityMatrices
+  concepts:
+  - Density Matrices
+  outcomes:
+  - Derive density matrices for specific quantum states
+  - Understand how to represent mixed states with density matrices
+  - Calculate the probabilities of measurement outcomes for quantum states represented
+    by density matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply density matrix formulation to analyze quantum systems and their measurement
+      outcomes
+    - Comprehend mixed states and their representation via density matrices
+    - Master the calculation of outcome probabilities for systems represented by density
+      matrices
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-DensityMatricesExpansion
+  title: m13-DensityMatricesExpansion
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m13-DensityMatrices
+  - m13-DensityMatricesMeasurementExample
+  concepts:
+  - Density Matrices
+  outcomes:
+  - Perform detailed expansions for calculating probabilities using density matrices
+  - Apply linear algebra techniques to density matrices for outcome probability calculations
+  - Interpret the mathematical results of density matrix expansions in the context
+    of quantum measurements
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Deepen understanding of density matrix applications in quantum mechanics
+    - Master the computation and interpretation of measurement outcome probabilities
+    - Enhance skills in applying mathematical operations to quantum state analysis
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-quiz-13.2
+  title: Self Assessment Quiz 2
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m13-DensityMatrices
+  - m13-DensityMatricesMeasurementExample
+  - m13-DensityMatricesExpansion
+  concepts:
+  - Density Matrices
+  outcomes:
+  - Compute density matrices for quantum systems based on the probability of qubit
+    preparations
+  - Calculate outcome probabilities for given quantum system states using the density
+    matrix approach
+  - Apply quantum mechanics principles to analyze and solve problems involving mixed
+    state preparations and measurements
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the process of deriving density matrices for mixed quantum states
+    - Analyze quantum systems and predict measurement outcomes using density matrices
+    - Enhance problem-solving skills in quantum mechanics through practical application
+      of density matrix concepts
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement
+- cell_id: m13-finalQuiz-information
+  title: 'Final Quiz 13  is in a separate notebook with filename: finalquiz13.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the process of deriving density matrices for mixed quantum states
+    - Analyze quantum systems and predict measurement outcomes using density matrices
+    - Enhance problem-solving skills in quantum mechanics through practical application
+      of density matrix concepts
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - General Single-Qubit Measurement

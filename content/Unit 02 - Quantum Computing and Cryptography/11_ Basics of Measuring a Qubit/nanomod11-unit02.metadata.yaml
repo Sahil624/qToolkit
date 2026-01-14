@@ -1,0 +1,394 @@
+learning_objective_tree:
+  title: Basics of Measuring a Qubit
+  global_prerequisites:
+  - Linear Algebra
+  - Complex Numbers
+  - Introduction to Quantum Mechanics
+  objectives:
+  - lo_id: LO-11-01
+    summary: Students will understand the basics of measuring a qubit.
+    covered_by:
+    - m11-MeasuringAQubit
+    learning_objectives:
+    - Understand the process and implications of measuring a single qubit
+    - Grasp the concept of orthonormal basis in the context of quantum measurement
+    - Learn how the measurement process changes the state of a quantum system
+    - Recognize the limitations of information extraction from a quantum state due
+      to measurement
+    estimated_time_mins: 7
+    concepts:
+    - Loss of Information
+    - Measurement Basis
+    - Orthonormal Basis
+    - Probabilities of Collapse
+    - Quantum State Collapse
+    - Single-Qubit Measurement
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-11-02
+    summary: Students will be able to compute the probabilities of outcomes upon measurement.
+    covered_by:
+    - m11-MeasuringAQubit
+    learning_objectives:
+    - Understand the process and implications of measuring a single qubit
+    - Grasp the concept of orthonormal basis in the context of quantum measurement
+    - Learn how the measurement process changes the state of a quantum system
+    - Recognize the limitations of information extraction from a quantum state due
+      to measurement
+    estimated_time_mins: 7
+    concepts:
+    - Loss of Information
+    - Measurement Basis
+    - Orthonormal Basis
+    - Probabilities of Collapse
+    - Quantum State Collapse
+    - Single-Qubit Measurement
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-11-03
+    summary: Student will be able to compute transition amplitudes from one state
+      to the other.
+    covered_by:
+    - m11-TransitionAmplitudes
+    - m11-ComplexQubitTransition
+    - m11-GeneralTransitionAmplitudes
+    - m11-ExampleTransitionAmplitude
+    learning_objectives:
+    - Understand how to compute transition amplitudes for quantum states
+    - Learn the process of determining probabilities of state collapse through inner
+      products
+    - Grasp the concept of state transition in quantum mechanics and how it's quantified
+    - Calculate transition amplitudes for complex qubit states
+    - Understand the application of the dagger operation in computing inner products
+      for complex vectors
+    - Determine probabilities of quantum state collapse to specific states
+    - Calculate the probability amplitude of transitioning from one quantum state
+      to another
+    - Understand the significance of orthogonal states in quantum mechanics
+    - Learn the importance of using an orthonormal basis in quantum measurements
+    - Demonstrate how to calculate the probability amplitude of a qubit collapsing
+      to a specific state
+    - Apply the concept of orthonormal basis to represent qubits and compute transition
+      probabilities
+    - Understand the procedure for computing inner products using bra-ket notation
+    estimated_time_mins: 7
+    concepts:
+    - Transition Amplitudes
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-11-04
+    summary: Student will understand the notion of global and local phase and their
+      interpretations.
+    covered_by:
+    - m11-GlobalAndRelativePhases
+    - m11-Quiz-11.1
+    learning_objectives:
+    - Understand the concept of global phase and its lack of physical significance
+    - Learn about relative phase and its impact on the uniqueness of quantum states
+    - Differentiate between qubits that are equivalent and those that are distinct
+      due to relative phases
+    - Calculate measurement outcomes and transition amplitudes for given qubits in
+      different bases
+    - Apply the inner product to compute transition amplitudes accurately
+    - Distinguish between equivalent and distinct quantum states based on global and
+      relative phases
+    estimated_time_mins: 9
+    concepts:
+    - Global Phase and Relative Phase
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m11-LearningOutcome
+  title: 11. Basics of Measuring a Qubit
+  type: markdown
+  estimated_time: '2'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Understand the basics of measuring a qubit
+  - Compute the probabilities of outcomes upon measurement
+  - Compute transition amplitudes from one state to another
+  - Understand the notion of global and local phase and their interpretations
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Grasp the foundational concepts involved in the measurement of a qubit
+    - Apply principles to compute probabilities and transition amplitudes in quantum
+      systems
+    - Understand and interpret the significance of global and local phases in quantum
+      mechanics
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit
+- cell_id: m11-MeasuringAQubit
+  title: 11.1 Measuring a Qubit
+  type: markdown
+  estimated_time: '7'
+  prerequisites:
+  - m6-OrthogonalBasis
+  - m10-Qubits
+  - m10-QubitsAndMeasurement
+  concepts:
+  - Single-Qubit Measurement
+  - Quantum State Collapse
+  - Orthonormal Basis
+  - Measurement Basis
+  - Loss of Information
+  - Probabilities of Collapse
+  outcomes:
+  - Understand the process and implications of measuring a single qubit
+  - Grasp the concept of orthonormal basis in the context of quantum measurement
+  - Learn how the measurement process changes the state of a quantum system
+  - Recognize the limitations of information extraction from a quantum state due to
+    measurement
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the foundational principles of qubit measurement
+    - Analyze the effects of measurement on quantum states and the resulting loss
+      of information
+    - Acknowledge the empirical basis of quantum measurement principles and their
+      practical implications
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit
+- cell_id: m11-TransitionAmplitudes
+  title: 11.2 Transition Amplitudes
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m10-QubitsAndMeasurement
+  concepts:
+  - Transition Amplitudes
+  outcomes:
+  - Understand how to compute transition amplitudes for quantum states
+  - Learn the process of determining probabilities of state collapse through inner
+    products
+  - Grasp the concept of state transition in quantum mechanics and how it's quantified
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply knowledge of linear algebra to compute transition amplitudes in quantum
+      systems
+    - Analyze the relationship between transition amplitudes and probabilities of
+      quantum state collapse
+    - Master the mathematical framework underlying quantum state transitions
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit
+- cell_id: m11-ComplexQubitTransition
+  title: m11-ComplexQubitTransition
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-MatricesComplexVectorSpaces
+  - m11-TransitionAmplitudes
+  concepts:
+  - Transition Amplitudes
+  outcomes:
+  - Calculate transition amplitudes for complex qubit states
+  - Understand the application of the dagger operation in computing inner products
+    for complex vectors
+  - Determine probabilities of quantum state collapse to specific states
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the computation of transition amplitudes for complex quantum states
+    - Apply complex number theory and linear algebra in quantum mechanics contexts
+    - Analyze and predict the outcomes of quantum state measurements
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit
+- cell_id: m11-GeneralTransitionAmplitudes
+  title: m11-GeneralTransitionAmplitudes
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m6-OrthogonalBasis
+  - m11-TransitionAmplitudes
+  concepts:
+  - Transition Amplitudes
+  outcomes:
+  - Calculate the probability amplitude of transitioning from one quantum state to
+    another
+  - Understand the significance of orthogonal states in quantum mechanics
+  - Learn the importance of using an orthonormal basis in quantum measurements
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the process and calculations involved in determining transition amplitudes
+    - Appreciate the role of orthonormal bases in ensuring distinguishable measurement
+      outcomes
+    - Apply principles of orthogonality and superposition to understand quantum state
+      measurements
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit
+- cell_id: m11-ExampleTransitionAmplitude
+  title: m11-ExampleTransitionAmplitude
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m11-TransitionAmplitudes
+  - m11-ComplexQubitTransition
+  - m11-GeneralTransitionAmplitudes
+  concepts:
+  - Transition Amplitudes
+  outcomes:
+  - Demonstrate how to calculate the probability amplitude of a qubit collapsing to
+    a specific state
+  - Apply the concept of orthonormal basis to represent qubits and compute transition
+    probabilities
+  - Understand the procedure for computing inner products using bra-ket notation
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the calculation of transition probabilities in quantum mechanics
+    - Utilize bra-ket notation effectively to represent quantum states and their transitions
+    - Enhance understanding of quantum measurements through practical computation
+      examples
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit
+- cell_id: m11-GlobalAndRelativePhases
+  title: 11.3 Global and Relative Phases
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m11-MeasuringAQubit
+  concepts:
+  - Global Phase and Relative Phase
+  outcomes:
+  - Understand the concept of global phase and its lack of physical significance
+  - Learn about relative phase and its impact on the uniqueness of quantum states
+  - Differentiate between qubits that are equivalent and those that are distinct due
+    to relative phases
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the implications of global and relative phases on quantum state representations
+    - Analyze the equivalence and distinctiveness of quantum states based on phase
+      information
+    - Apply the concepts of global and relative phases in quantum computing and cryptography
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit
+- cell_id: m11-Quiz-11.1
+  title: Quiz 11.1 (Self Assessment)
+  type: markdown
+  estimated_time: '7'
+  prerequisites:
+  - m11-MeasuringAQubit
+  - m11-TransitionAmplitudes
+  - m11-ComplexQubitTransition
+  - m11-GeneralTransitionAmplitudes
+  - m11-ExampleTransitionAmplitude
+  concepts:
+  - Global Phase and Relative Phase
+  outcomes:
+  - Calculate measurement outcomes and transition amplitudes for given qubits in different
+    bases
+  - Apply the inner product to compute transition amplitudes accurately
+  - Distinguish between equivalent and distinct quantum states based on global and
+    relative phases
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Analyze and predict the outcomes of quantum measurements in various bases
+    - Demonstrate proficiency in computing transition amplitudes using inner product
+      calculations
+    - Understand the concept of quantum state equivalence and distinctness
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit
+- cell_id: m11-finalQuiz-information
+  title: 'Final Quiz 11  is in a separate notebook with filename: finalquiz11.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Analyze and predict the outcomes of quantum measurements in various bases
+    - Demonstrate proficiency in computing transition amplitudes using inner product
+      calculations
+    - Understand the concept of quantum state equivalence and distinctness
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Measuring a Qubit

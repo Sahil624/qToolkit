@@ -1,0 +1,559 @@
+learning_objective_tree:
+  title:
+  - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+  global_prerequisites:
+  - Linear Algebra
+  - Complex Numbers
+  - Introduction to Programming
+  - Python Basics
+  - Complex Vector Spaces
+  objectives:
+  - lo_id: LO-06-01
+    summary: Students will understand the definition and properties of inner product
+      of vectors and matrices.
+    covered_by:
+    - m6-InnerProduct
+    - m6-PropertiesInnerProduct
+    - m6-ExamplesInnerProduct
+    learning_objectives:
+    - Understand the definition of inner product for complex vector spaces
+    - Distinguish the inner product calculation for vectors and matrices
+    - Understand and apply the properties of inner product in complex vector spaces
+    - Calculate the inner product for given vector and matrix examples
+    estimated_time_mins: 11
+    concepts:
+    - Inner Product and Properties
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-06-02
+    summary: Students will be able to compute the inner product.
+    covered_by:
+    - m6-Quiz-6.1
+    - m6-Quiz-6.1-interactive
+    learning_objectives:
+    - Compute the inner product for given vectors and matrices
+    - Prove specific properties of the inner product
+    - Compute the inner product for given vectors and matrices
+    - Prove specific properties of the inner product
+    estimated_time_mins: 25
+    concepts:
+    - Inner Product and Properties
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-06-03
+    summary: Students will be able to compute the norm of a vector.
+    covered_by:
+    - m6-NormVector
+    - m6-Quiz-6.2
+    - m6-Quiz-6.2-interactive
+    learning_objectives:
+    - Understand and compute the norm of a vector using the inner product
+    - Apply the concept of norm to determine the length of vectors in complex vector
+      spaces
+    - Numerically verify the norm properties for given vectors
+    - Apply the concepts of vector addition and scalar multiplication to verify norm
+      properties
+    - Numerically verify the norm properties for given vectors
+    - Apply the concepts of vector addition and scalar multiplication to verify norm
+      properties
+    estimated_time_mins: 28
+    concepts:
+    - Norm of a Vector
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-06-04
+    summary: Students will understand and apply the concept of orthogonal/orthonormal
+      vectors and basis.
+    covered_by:
+    - m6-OrthogonalVectors
+    - m6-OrthogonalBasis
+    learning_objectives:
+    - Understand the concept of orthogonal vectors and their characteristics
+    - Identify orthogonal vectors through inner product calculations
+    - Understand the concept of orthogonal and orthonormal basis in complex vector
+      spaces
+    - Identify basis sets that are orthogonal and/or orthonormal
+    estimated_time_mins: 6
+    concepts:
+    - Orthogonal Vectors
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-06-05
+    summary: Students will be able to represent a vector using a given basis set.
+    covered_by:
+    - m6-OrthogonalBasis
+    learning_objectives:
+    - Understand the concept of orthogonal and orthonormal basis in complex vector
+      spaces
+    - Identify basis sets that are orthogonal and/or orthonormal
+    estimated_time_mins: 3
+    concepts:
+    - Orthogonal Vectors
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-06-06
+    summary: Students will understand and apply the projection of one vector onto
+      another vector.
+    covered_by:
+    - m6-Projection
+    learning_objectives:
+    - Understand the concept of projection in the context of inner product and vector
+      spaces
+    - Apply the inner product to calculate the projection of one vector onto another
+    estimated_time_mins: 3
+    concepts:
+    - Orthogonal Vectors
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-06-07
+    summary: Student will synthesize concepts to write Python programs to determine
+      the norm and inner product of vectors and matrices.
+    covered_by:
+    - m6-final-quiz
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m6-LearningOutcomes
+  title: 6. Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - 'Complex Vector Spaces: Linear Combination, Independence, Basis and Dimensions'
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Understand the definition and properties of inner product
+  - Compute the inner product of vectors and matrices
+  - Compute the norm of a vector
+  - Understand and apply the concept of orthogonal/orthonormal vectors and basis
+  - Represent a vector using a given basis set
+  - Understand and apply the concept of projection of one vector onto another
+  - Write Python programs to determine the norm and inner product
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Learning Outcomes
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-InnerProduct
+  title: 6.1 Inner Product
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-ComplexVectorSpaces
+  concepts:
+  - Inner Product and Properties
+  outcomes:
+  - Understand the definition of inner product for complex vector spaces
+  - Distinguish the inner product calculation for vectors and matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-PropertiesInnerProduct
+  title: 6.2 Properties of Inner Product
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m6-InnerProduct
+  concepts:
+  - Inner Product and Properties
+  outcomes:
+  - Understand and apply the properties of inner product in complex vector spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Properties of Inner Product
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-ExamplesInnerProduct
+  title: '6.3 Examples: Inner Product'
+  type: markdown
+  estimated_time: '5'
+  prerequisites:
+  - m6-InnerProduct
+  - m6-PropertiesInnerProduct
+  concepts:
+  - Inner Product and Properties
+  outcomes:
+  - Calculate the inner product for given vector and matrix examples
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Examples of Inner Product
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-Quiz-6.1
+  title: Quiz 6.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '10'
+  prerequisites:
+  - m6-InnerProduct
+  - m6-PropertiesInnerProduct
+  - m6-ExamplesInnerProduct
+  concepts:
+  - Inner Product and Properties
+  outcomes:
+  - Compute the inner product for given vectors and matrices
+  - Prove specific properties of the inner product
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m6-Quiz-6.1-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-Quiz-6.1-interactive
+  title: m6-Quiz-6.1-interactive
+  type: code
+  estimated_time: '15'
+  prerequisites:
+  - m6-InnerProduct
+  - m6-PropertiesInnerProduct
+  - m6-ExamplesInnerProduct
+  concepts:
+  - Inner Product and Properties
+  outcomes:
+  - Compute the inner product for given vectors and matrices
+  - Prove specific properties of the inner product
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m6-Quiz-6.1
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1 interactive
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-NormVector
+  title: 6.4 Norm of a Vector
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m6-InnerProduct
+  - m6-PropertiesInnerProduct
+  - m6-ExamplesInnerProduct
+  - m6-Quiz-6.1
+  - m6-Quiz-6.1-interactive
+  concepts:
+  - Norm of a Vector
+  outcomes:
+  - Understand and compute the norm of a vector using the inner product
+  - Apply the concept of norm to determine the length of vectors in complex vector
+    spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Norm of a Vector
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-Quiz-6.2
+  title: Quiz 6.2 Self Assessment Quiz
+  type: markdown
+  estimated_time: '10'
+  prerequisites:
+  - m6-NormVector
+  concepts:
+  - Norm of a Vector
+  outcomes:
+  - Numerically verify the norm properties for given vectors
+  - Apply the concepts of vector addition and scalar multiplication to verify norm
+    properties
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m6-Quiz-6.2-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 2
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-Quiz-6.2-interactive
+  title: m6-Quiz-6.2-interactive
+  type: code
+  estimated_time: '15'
+  prerequisites:
+  - m6-NormVector
+  concepts:
+  - Norm of a Vector
+  outcomes:
+  - Numerically verify the norm properties for given vectors
+  - Apply the concepts of vector addition and scalar multiplication to verify norm
+    properties
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m6-Quiz-6.2
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 2 interactive
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-OrthogonalVectors
+  title: 6.5 Orthogonal Vectors
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m6-InnerProduct
+  - m6-PropertiesInnerProduct
+  - m6-ExamplesInnerProduct
+  - m6-Quiz-6.1
+  - m6-Quiz-6.1-interactive
+  concepts:
+  - Orthogonal Vectors
+  outcomes:
+  - Understand the concept of orthogonal vectors and their characteristics
+  - Identify orthogonal vectors through inner product calculations
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Orthogonal Vectors
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-OrthogonalBasis
+  title: 6.6 Orthogonal Basis
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m5-Basis
+  - m5-Dimension
+  - m6-OrthogonalVectors
+  concepts:
+  - Orthogonal Vectors
+  outcomes:
+  - Understand the concept of orthogonal and orthonormal basis in complex vector spaces
+  - Identify basis sets that are orthogonal and/or orthonormal
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Orthogonal Basis
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-Projection
+  title: 6.7 Projection
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m3-polarRepresentation
+  - m6-InnerProduct
+  - m6-PropertiesInnerProduct
+  - m6-ExamplesInnerProduct
+  - m6-Quiz-6.1
+  - m6-Quiz-6.1-interactive
+  - m6-NormVector
+  - m6-Quiz-6.2
+  - m6-Quiz-6.2-interactive
+  - m6-OrthogonalBasis
+  concepts:
+  - Orthogonal Vectors
+  outcomes:
+  - Understand the concept of projection in the context of inner product and vector
+    spaces
+  - Apply the inner product to calculate the projection of one vector onto another
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Projection
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces
+- cell_id: m6-finalQuiz-information
+  title: 'Final Quiz 6  is in a separate notebook with filename: finalquiz6.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: final Quiz 6
+    module_outcomes:
+    - Master the operations on vectors and matrices in complex vector spaces
+    - Develop the skills to apply these operations in practical scenarios
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Properties and Operations on Vectors and Matrices in Complex Vector Spaces

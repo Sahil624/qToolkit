@@ -51,6 +51,7 @@ htmlcov/
 *.bak
 *.swp
 *.swo
+logs/
 
 # Jupyter Notebook
 .ipynb_checkpoints
@@ -61,3 +62,5 @@ htmlcov/
 # Generated files
 generated_course
 data/**/*.json
+case_studies
+scheduler_trace.json

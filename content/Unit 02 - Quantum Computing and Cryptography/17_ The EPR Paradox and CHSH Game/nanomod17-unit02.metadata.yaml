@@ -1,0 +1,348 @@
+learning_objective_tree:
+  title: The EPR Paradox and CHSH Game
+  global_prerequisites:
+  - Quantum Mechanics Fundamentals
+  - Linear Algebra
+  - Probability
+  objectives:
+  - lo_id: LO-17-01
+    summary: Students will understand the significance of EPR pairs and their implications.
+    covered_by:
+    - m17-EPRParadox
+    - m17-EntanglementAndSeparation
+    learning_objectives:
+    - Understand the concept of changing the basis of Bell pairs and its significance
+    - Learn how to express a Bell state in the Hadamard basis
+    - Grasp the mathematical transformation involved in changing the basis of a Bell
+      pair
+    - Explore the persistence of entanglement in physically separated qubits
+    - Analyze the implications of basis change on the measurement outcomes of entangled
+      qubits
+    - Understand that the consistent outcomes across different bases support the entanglement
+      of qubits
+    estimated_time_mins: 2
+    concepts:
+    - EPR Paradox
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-17-02
+    summary: Students will understand Bell's inequality and CHSH game that verifies
+      Bell's inequality.
+    covered_by:
+    - m17-RotationalInvarianceOfBellState
+    - m17-CHSHInequality
+    - m17-QuantumAdvantageCHSH
+    - m17-CHSHGameStrategy
+    - m17-CHSHGameOutcome
+    learning_objectives:
+    - Understand the concept of rotational invariance in the context of Bell states
+    - Learn the implications of measuring qubits in a Bell pair in different bases
+    - Grasp the correlation between measurement outcomes of entangled qubits in various
+      bases
+    - Understand the CHSH inequality and its foundations in disproving hidden variable
+      theories
+    - Learn the setup of the CHSH game involving Alice and Bob and the rules governing
+      their inputs and outputs
+    - Grasp the implications of CHSH inequality for classical and quantum scenarios
+    - Explore the possibility of surpassing classical limits in the CHSH game using
+      quantum mechanics
+    - Understand how sharing a Bell pair enables Alice and Bob to achieve a higher
+      probability of winning
+    - Learn the quantum strategy that provides an advantage over classical scenarios
+      in the CHSH game
+    - Detail the strategy used by Alice and Bob in the CHSH game involving the choice
+      of measurement bases
+    - Understand the significance of the chosen bases for measuring qubits in the
+      context of the CHSH game
+    - Grasp the coordinated approach between Alice and Bob to maximize their probability
+      of winning in a quantum scenario
+    - Explain the outcome of the CHSH game in terms of measurement outputs and the
+      achieved winning probability
+    - Understand why Alice and Bob meet the condition on outputs with a high probability
+      using quantum strategies
+    - Grasp the significance of the bases' angle displacement in maximizing the winning
+      probability
+    estimated_time_mins: 5
+    concepts:
+    - CHSH Inequality
+    - Rotational Invariance
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m17-LearningOutcome
+  title: 17. The EPR Paradox and CHSH Game
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Understand the significance of EPR pairs and their implications in quantum mechanics
+  - Learn about Bell's inequality and the CHSH game that verifies Bell's inequality
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the foundational concepts of the EPR paradox and its importance in
+      the study of quantum entanglement
+    - Master the understanding of Bell's inequality and its experimental verification
+      through the CHSH game
+    - Prepare for advanced exploration of quantum entanglement and its applications
+      in quantum information science
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    - Probability
+    module_title:
+    - The EPR Paradox and CHSH Game
+- cell_id: m17-EPRParadox
+  title: 17.1 The EPR paradox
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - EPR Paradox
+  outcomes:
+  - Understand the concept of changing the basis of Bell pairs and its significance
+  - Learn how to express a Bell state in the Hadamard basis
+  - Grasp the mathematical transformation involved in changing the basis of a Bell
+    pair
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the concept of basis transformation for Bell states and its implications
+      in quantum mechanics
+    - Develop skills in applying linear algebra techniques to quantum states and their
+      representations
+    - Prepare for advanced discussions on the EPR paradox and its role in quantum
+      entanglement and nonlocality
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    module_title:
+    - The EPR Paradox and CHSH Game
+- cell_id: m17-EntanglementAndSeparation
+  title: m17-EntanglementAndSeparation
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m17-EPRParadox
+  concepts:
+  - EPR Paradox
+  outcomes:
+  - Explore the persistence of entanglement in physically separated qubits
+  - Analyze the implications of basis change on the measurement outcomes of entangled
+    qubits
+  - Understand that the consistent outcomes across different bases support the entanglement
+    of qubits
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the non-local properties of quantum entanglement and its verification
+      through measurement
+    - Master the concept of entanglement persistence across spatial separation and
+      basis changes
+    - Prepare for advanced discussions on quantum nonlocality, the EPR paradox, and
+      their foundational role in quantum information science
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    module_title:
+    - The EPR Paradox and CHSH Game
+- cell_id: m17-RotationalInvarianceOfBellState
+  title: 17.2 Rotational Invariance of Bell State
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m17-EntanglementAndSeparation
+  concepts:
+  - Rotational Invariance
+  outcomes:
+  - Understand the concept of rotational invariance in the context of Bell states
+  - Learn the implications of measuring qubits in a Bell pair in different bases
+  - Grasp the correlation between measurement outcomes of entangled qubits in various
+    bases
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the concept of rotational invariance and its significance in Bell states
+    - Develop skills in analyzing the outcomes of quantum measurements on entangled
+      states across different bases
+    - Prepare for advanced exploration of quantum entanglement, Bell's theorem, and
+      their experimental verifications
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    module_title:
+    - The EPR Paradox and CHSH Game
+- cell_id: m17-CHSHInequality
+  title: 17.3 CHSH Inequality
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - CHSH Inequality
+  outcomes:
+  - Understand the CHSH inequality and its foundations in disproving hidden variable
+    theories
+  - Learn the setup of the CHSH game involving Alice and Bob and the rules governing
+    their inputs and outputs
+  - Grasp the implications of CHSH inequality for classical and quantum scenarios
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the significance of CHSH inequality in the context of quantum mechanics
+      and its departure from classical physics
+    - Analyze the CHSH game and its relevance to understanding the non-classical results
+      achievable through quantum entanglement
+    - "Prepare for advanced discussions on quantum nonlocality, Bell\u2019s theorem,\
+      \ and their experimental verification"
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    - Probability
+    module_title:
+    - The EPR Paradox and CHSH Game
+- cell_id: m17-QuantumAdvantageCHSH
+  title: m17-QuantumAdvantageCHSH
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m17-CHSHInequality
+  concepts:
+  - CHSH Inequality
+  outcomes:
+  - Explore the possibility of surpassing classical limits in the CHSH game using
+    quantum mechanics
+  - Understand how sharing a Bell pair enables Alice and Bob to achieve a higher probability
+    of winning
+  - Learn the quantum strategy that provides an advantage over classical scenarios
+    in the CHSH game
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the concept of quantum advantage in the context of the CHSH game
+    - Analyze the role of entanglement in achieving outcomes that defy classical physics
+      expectations
+    - Prepare for advanced exploration of quantum entanglement and its practical applications
+      in quantum information science
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    - Probability
+    module_title:
+    - The EPR Paradox and CHSH Game
+- cell_id: m17-CHSHGameStrategy
+  title: m17-CHSHGameStrategy
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m17-CHSHInequality
+  - m17-QuantumAdvantageCHSH
+  concepts:
+  - CHSH Inequality
+  outcomes:
+  - Detail the strategy used by Alice and Bob in the CHSH game involving the choice
+    of measurement bases
+  - Understand the significance of the chosen bases for measuring qubits in the context
+    of the CHSH game
+  - Grasp the coordinated approach between Alice and Bob to maximize their probability
+    of winning in a quantum scenario
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the quantum strategy involving measurement bases selection in the CHSH
+      game
+    - Analyze the effectiveness of quantum mechanics principles in achieving superior
+      outcomes compared to classical strategies
+    - Prepare for advanced discussions on quantum communication protocols and strategies
+      leveraging entanglement
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    - Probability
+    module_title:
+    - The EPR Paradox and CHSH Game
+- cell_id: m17-CHSHGameOutcome
+  title: m17-CHSHGameOutcome
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m17-CHSHInequality
+  - m17-QuantumAdvantageCHSH
+  - m17-CHSHGameStrategy
+  concepts:
+  - CHSH Inequality
+  outcomes:
+  - Explain the outcome of the CHSH game in terms of measurement outputs and the achieved
+    winning probability
+  - Understand why Alice and Bob meet the condition on outputs with a high probability
+    using quantum strategies
+  - Grasp the significance of the bases' angle displacement in maximizing the winning
+    probability
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the quantum mechanics principles underlying the success of the CHSH
+      game strategy
+    - Analyze the quantum advantage in achieving outcomes beyond classical limitations
+    - Prepare for advanced studies in quantum information theory, focusing on entanglement
+      and nonlocal correlations
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    - Probability
+    module_title:
+    - The EPR Paradox and CHSH Game
+- cell_id: m17-finalQuiz-information
+  title: Final quiz can be found in finalquiz17.ipynb.
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the quantum mechanics principles underlying the success of the CHSH
+      game strategy
+    - Analyze the quantum advantage in achieving outcomes beyond classical limitations
+    - Prepare for advanced studies in quantum information theory, focusing on entanglement
+      and nonlocal correlations
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    - Probability
+    module_title:
+    - The EPR Paradox and CHSH Game

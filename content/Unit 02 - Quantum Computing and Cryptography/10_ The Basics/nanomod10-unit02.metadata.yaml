@@ -1,0 +1,546 @@
+learning_objective_tree:
+  title: Basics of Quantum Computing/Cryptography
+  global_prerequisites:
+  - Linear Algebra
+  - Complex Numbers
+  - Introduction to Quantum Mechanics
+  objectives:
+  - lo_id: LO-10-01
+    summary: Students will be able to model two level quantum systems using vector
+      and ket representations.
+    covered_by:
+    - m10-ClassicalBits
+    - m10-Qubits
+    - m10-KetNotation
+    learning_objectives:
+    - Understand the concept of classical bits as a two-dimensional system
+    - Learn different physical representations of bits
+    - Grasp how to represent the knowledge of a system's state using probability vectors.
+    - Understand the transition from classical bits to qubits in quantum computing
+    - Learn the representation of quantum states with complex numbers
+    - Grasp the concept of probability amplitudes and their significance in quantum
+      state representation
+    - Learn Dirac's (ket) notation for representing quantum states
+    - Understand the concept of superposition as a fundamental difference between
+      quantum and classical systems
+    - Appreciate the simplicity and generality of ket notation in expressing quantum
+      states
+    estimated_time_mins: 7
+    concepts:
+    - Classical Bits
+    - Ket Notation
+    - Qubits
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-10-02
+    summary: Students will understand the notions qubit, amplitude and probability
+      of collapse.
+    covered_by:
+    - m10-QubitsAndMeasurement
+    - m10-LinearCombinationAndExample
+    - m10-quiz-10.1
+    - m10-quiz-10.1-interactive
+    learning_objectives:
+    - Understand the process and consequences of measuring a quantum state
+    - Learn how quantum states collapse to classical states upon measurement
+    - Grasp the limitations of information extraction from a quantum state due to
+      the nature of measurement
+    - Understand how qubits can be represented as linear combinations of basis states
+    - Learn the concept of canonical basis in the context of quantum computing
+    - Grasp how to calculate the probability of a qubit collapsing to a specific state
+      upon measurement
+    - Identify valid qubit representations from a list of examples
+    - Practice normalizing coefficients to convert invalid expressions into valid
+      qubits
+    - Identify valid qubit representations from a list of examples
+    - Practice normalizing coefficients to convert invalid expressions into valid
+      qubits
+    estimated_time_mins: 14
+    concepts:
+    - Linear Combination
+    - Qubits and Measurement
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-10-03
+    summary: Students will understand the notion of superposition.
+    covered_by:
+    - m10-Superposition
+    learning_objectives:
+    - Understand the concept of superposition as a fundamental aspect of quantum systems
+    - Differentiate between quantum superposition and classical probabilistic states
+    - Grasp the implications of quantum measurement on superposed states
+    estimated_time_mins: 3
+    concepts:
+    - Superposition
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-10-04
+    summary: Students will be able to change between basis representations for a given
+      qubit.
+    covered_by:
+    - m10-Basis
+    learning_objectives:
+    - Understand the concept of basis in the context of vector spaces and quantum
+      mechanics
+    - Learn how to represent vectors as linear combinations of basis vectors
+    - Grasp the importance of orthonormality and how to determine if vectors are orthogonal
+      or orthonormal
+    - Familiarize with Dirac's bra-ket notation for expressing inner products
+    estimated_time_mins: 1
+    concepts:
+    - Basis
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-10-05
+    summary: Students will be able to determine if it is a Superposition or Not Superposition
+    covered_by:
+    - m10-SuperpositionOrNotSuperposition
+    - m10-quiz-10.2
+    - m10-quiz-10.2-interactive
+    learning_objectives:
+    - Understand the dependency of superposition on the choice of basis
+    - Learn how the standard basis and Hadamard basis provide different perspectives
+      on superposition
+    - Grasp the concept of changing bases and its effect on the interpretation of
+      quantum states
+    - Identify which qubits are in superposition with respect to the standard basis
+    - Propose an alternative basis where these qubits are not considered to be in
+      superposition
+    - Identify which qubits are in superposition with respect to the standard basis
+    - Propose an alternative basis where these qubits are not considered to be in
+      superposition
+    estimated_time_mins: 16
+    concepts:
+    - Superposition
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m10-LearningOutcome
+  title: 10. Basics of Quantum Computing/Cryptography
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Model two level quantum systems using vector and ket representations
+  - Understand qubit, amplitude, and probability of collapse
+  - Grasp the concept of superposition
+  - Change between basis representations for a given qubit.
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master modeling of two-level quantum systems and their representations
+    - Understand fundamental quantum computing and cryptography concepts such as qubits,
+      superposition, and basis change
+    - Apply knowledge to perform basic operations and transformations within the quantum
+      computing framework
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-ClassicalBits
+  title: 10.1 Classical Bits
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m9-ProbabilisticModel
+  concepts:
+  - Classical Bits
+  outcomes:
+  - Understand the concept of classical bits as a two-dimensional system
+  - Learn different physical representations of bits
+  - Grasp how to represent the knowledge of a system's state using probability vectors.
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Understand the basics of classical computing systems and their representation
+    - Apply the concept of probability vectors to represent states of a classical
+      bit
+    - Differentiate between classical and quantum systems in terms of state representation
+      and physical realization
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-Qubits
+  title: 10.2 Qubits
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m10-ClassicalBits
+  concepts:
+  - Qubits
+  outcomes:
+  - Understand the transition from classical bits to qubits in quantum computing
+  - Learn the representation of quantum states with complex numbers
+  - Grasp the concept of probability amplitudes and their significance in quantum
+    state representation
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - 'Comprehend the foundational element of quantum computing: the qubit'
+    - Understand the role of complex numbers in describing the state of a quantum
+      system
+    - Differentiate between classical and quantum information representation
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-KetNotation
+  title: 10.3 Ket Notation
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m10-Qubits
+  concepts:
+  - Ket Notation
+  outcomes:
+  - Learn Dirac's (ket) notation for representing quantum states
+  - Understand the concept of superposition as a fundamental difference between quantum
+    and classical systems
+  - Appreciate the simplicity and generality of ket notation in expressing quantum
+    states
+  extra_props:
+    editable: true
+    hidePrompt: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the representation of quantum states using Dirac's notation
+    - Grasp the foundational principles of quantum theory, particularly the concept
+      of superposition
+    - Differentiate between the representation and capabilities of quantum and classical
+      information systems
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-QubitsAndMeasurement
+  title: 10.4 Qubits and Measurement
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m10-KetNotation
+  concepts:
+  - Qubits and Measurement
+  outcomes:
+  - Understand the process and consequences of measuring a quantum state
+  - Learn how quantum states collapse to classical states upon measurement
+  - Grasp the limitations of information extraction from a quantum state due to the
+    nature of measurement
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the interaction between measurement and quantum states
+    - Analyze the probabilistic nature of quantum measurements and their outcomes
+    - Acknowledge the inherent limitations in observing quantum states directly
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    - Basic Probability
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-LinearCombinationAndExample
+  title: 10.5 Linear Combination and Example
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m5-LinearDependenceIndependence
+  - m5-ExamplesLinearDependenceIndependence
+  - m10-QubitsAndMeasurement
+  concepts:
+  - Linear Combination
+  outcomes:
+  - Understand how qubits can be represented as linear combinations of basis states
+  - Learn the concept of canonical basis in the context of quantum computing
+  - Grasp how to calculate the probability of a qubit collapsing to a specific state
+    upon measurement
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply linear algebra principles to represent and manipulate qubits
+    - Analyze examples of qubit states and their measurement outcomes
+    - Master the foundational concepts of quantum state representation and measurement
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-quiz-10.1
+  title: Quiz 10.1 (Self Assessment)
+  type: markdown
+  estimated_time: '5'
+  prerequisites:
+  - m10-Qubits
+  - m10-QubitsAndMeasurement
+  concepts:
+  - Linear Combination
+  outcomes:
+  - Identify valid qubit representations from a list of examples
+  - Practice normalizing coefficients to convert invalid expressions into valid qubits
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates:
+    - m10-quiz-10.1-interactive
+    cell_interactive: 'false'
+    module_outcomes:
+    - Evaluate and correct qubit representations for validity
+    - Apply normalization techniques to align with the principles of quantum state
+      representation
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-quiz-10.1-interactive
+  title: m10-quiz-10.1-interactive
+  type: code
+  estimated_time: '5'
+  prerequisites:
+  - m10-Qubits
+  - m10-QubitsAndMeasurement
+  concepts:
+  - Linear Combination
+  outcomes:
+  - Identify valid qubit representations from a list of examples
+  - Practice normalizing coefficients to convert invalid expressions into valid qubits
+  extra_props:
+    cell_alternates:
+    - m10-quiz-10.1
+    cell_interactive: 'false'
+    module_outcomes:
+    - Evaluate and correct qubit representations for validity
+    - Apply normalization techniques to align with the principles of quantum state
+      representation
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-Superposition
+  title: 10.6 Superposition
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m10-Qubits
+  - m10-QubitsAndMeasurement
+  - m10-LinearCombinationAndExample
+  concepts:
+  - Superposition
+  outcomes:
+  - Understand the concept of superposition as a fundamental aspect of quantum systems
+  - Differentiate between quantum superposition and classical probabilistic states
+  - Grasp the implications of quantum measurement on superposed states
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend superposition as a distinguishing feature of quantum mechanics
+    - Analyze the behavior and implications of quantum states before and after measurement
+    - Recognize the departure from classical modeling to quantum modeling of systems
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-Basis
+  title: 10.7 Basis
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m5-Basis
+  - m6-InnerProduct
+  - m10-LinearCombinationAndExample
+  concepts:
+  - Basis
+  outcomes:
+  - Understand the concept of basis in the context of vector spaces and quantum mechanics
+  - Learn how to represent vectors as linear combinations of basis vectors
+  - Grasp the importance of orthonormality and how to determine if vectors are orthogonal
+    or orthonormal
+  - Familiarize with Dirac's bra-ket notation for expressing inner products
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply the concept of basis and orthonormality in quantum state representation
+    - Analyze and compute inner products using Dirac's notation
+    - Master the foundational aspects of quantum mechanics through the understanding
+      of vector space representations
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-SuperpositionOrNotSuperposition
+  title: 10.8 Superposition or Not Superposition!
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m10-Superposition
+  - m10-Basis
+  concepts:
+  - Superposition
+  outcomes:
+  - Understand the dependency of superposition on the choice of basis
+  - Learn how the standard basis and Hadamard basis provide different perspectives
+    on superposition
+  - Grasp the concept of changing bases and its effect on the interpretation of quantum
+    states
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Analyze the role of basis in determining superposition of quantum states
+    - Apply knowledge of basis change to understand quantum state representation in
+      different scenarios
+    - Explore the concept of superposition within the framework of quantum computing
+      and cryptography
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-quiz-10.2
+  title: Quiz 10.2 (Self Assessment)
+  type: markdown
+  estimated_time: '4'
+  prerequisites:
+  - m10-SuperpositionOrNotSuperposition
+  concepts:
+  - Superposition
+  outcomes:
+  - Identify which qubits are in superposition with respect to the standard basis
+  - Propose an alternative basis where these qubits are not considered to be in superposition
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m10-quiz-10.2-interactive
+    cell_interactive: 'false'
+    module_outcomes:
+    - Evaluate quantum states for superposition in various bases
+    - Demonstrate the ability to apply the concept of basis change in quantum state
+      analysis
+    - Deepen understanding of the foundational principles of quantum mechanics through
+      self-assessment
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-quiz-10.2-interactive
+  title: m10-quiz-10.2-interactive
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m10-SuperpositionOrNotSuperposition
+  concepts:
+  - Superposition
+  outcomes:
+  - Identify which qubits are in superposition with respect to the standard basis
+  - Propose an alternative basis where these qubits are not considered to be in superposition
+  extra_props:
+    cell_alternates:
+    - m10-quiz-10.2
+    cell_interactive: 'true'
+    module_outcomes:
+    - Evaluate quantum states for superposition in various bases
+    - Demonstrate the ability to apply the concept of basis change in quantum state
+      analysis
+    - Deepen understanding of the foundational principles of quantum mechanics through
+      self-assessment
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-finalQuiz-information
+  title: 'Final Quiz 10  is in a separate notebook with filename: finalquiz10.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Evaluate quantum states for superposition in various bases
+    - Demonstrate the ability to apply the concept of basis change in quantum state
+      analysis
+    - Deepen understanding of the foundational principles of quantum mechanics through
+      self-assessment
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography

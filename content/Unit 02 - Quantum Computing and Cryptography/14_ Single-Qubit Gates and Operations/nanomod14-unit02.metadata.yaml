@@ -1,0 +1,350 @@
+learning_objective_tree:
+  title: Single-Qubit Gates and Operations
+  global_prerequisites:
+  - Linear Algebra
+  - Quantum Mechanics Fundamentals
+  - Complex Numbers
+  objectives:
+  - lo_id: LO-14-01
+    summary: Students will understand and will be able to apply common single-qubit
+      operations (gates).
+    covered_by:
+    - m14-TransformationsOnQubits
+    - m14-SingleQubitTransformations
+    - m14-PauliMatrices
+    - m14-quiz-14.1
+    learning_objectives:
+    - Understand how basic operations on qubits can be represented using unitary matrices
+    - Grasp the concept of a unitary operator mapping input quantum states to output
+      quantum states
+    - Learn the significance of inner product preservation in unitary transformations
+    - Understand and apply the Hadamard transform for single qubit transformations
+    - Grasp the concept and application of the rotation operator in qubit transformations
+    - Verify the unitary property of rotation operators and analyze their effects
+      on quantum states
+    - Understand the role and characteristics of Pauli matrices in quantum mechanics
+    - Learn the effects of Pauli matrices as single qubit operations, including bit-flip
+      and phase-flip
+    - Analyze the behavior of Pauli matrices in different bases and their properties
+      as Hermitian operators
+    - Prove the unitarity of Pauli gates
+    - Verify the properties of phase shift gates and the square-root of NOT gate
+    - Enhance understanding of fundamental quantum gates and their mathematical proofs
+    estimated_time_mins: 5
+    concepts:
+    - Pauli Matrices
+    - Qubit Transformations
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-14-02
+    summary: Students will be able to build sequential quantum circuits for single
+      qubits.
+    covered_by:
+    - m14-BuildingCircuits
+    learning_objectives:
+    - Understand the basic structure and flow of quantum circuits
+    - Learn how to represent sequential single-qubit operations in circuit form
+    - Grasp the convention of writing linear expressions for quantum circuits and
+      their operations
+    estimated_time_mins: 1
+    concepts:
+    - Building Quantum Circuits
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-14-03
+    summary: Students will be able to compute the effect of given sequential quantum
+      circuit on a qubit.
+    covered_by:
+    - m14-ComputingCircuitOperation
+    - m14-quiz-14.2
+    learning_objectives:
+    - Compute the overall effect of a quantum circuit on a qubit
+    - Apply the rule of operator multiplication to determine the output state of a
+      qubit after circuit operations
+    - Understand the process of transforming a qubit through sequential gate operations
+      in a quantum circuit
+    - Compute the effect of specified quantum circuits on given qubits
+    - Analyze the transformation of qubits through sequential application of quantum
+      gates
+    - Develop observations based on the outcomes of circuit operations on qubits
+    estimated_time_mins: 3
+    concepts:
+    - Building Quantum Circuits
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m14-LearningOutcome
+  title: 14. Single-Qubit Gates and Operations
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Understand and apply common single-qubit operations and gates
+  - Build sequential quantum circuits for single qubits
+  - Compute the effect of a given sequential quantum circuit on a qubit
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the principles and application of single-qubit gates in quantum computing
+    - Design and analyze sequential quantum circuits involving single qubits
+    - Apply knowledge of quantum mechanics and linear algebra to simulate the effects
+      of quantum operations on qubits
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations
+- cell_id: m14-TransformationsOnQubits
+  title: 14.1 Transformations on Qubits
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m7-UnitaryMatrices
+  concepts:
+  - Qubit Transformations
+  outcomes:
+  - Understand how basic operations on qubits can be represented using unitary matrices
+  - Grasp the concept of a unitary operator mapping input quantum states to output
+    quantum states
+  - Learn the significance of inner product preservation in unitary transformations
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the mathematical principles behind qubit transformations and quantum
+      operations
+    - Apply the concept of unitary transformations to analyze the effects of operations
+      on quantum states
+    - Master the understanding of unitary matrices and their properties in the context
+      of quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations
+- cell_id: m14-SingleQubitTransformations
+  title: 14.2 Single Qubit Transformations
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Qubit Transformations
+  outcomes:
+  - Understand and apply the Hadamard transform for single qubit transformations
+  - Grasp the concept and application of the rotation operator in qubit transformations
+  - Verify the unitary property of rotation operators and analyze their effects on
+    quantum states
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the application of key single qubit transformations in quantum computing
+    - Analyze the impact of various operators on qubit states, including rotation
+      and Hadamard transforms
+    - Develop a deep understanding of the mathematical foundations underlying qubit
+      operations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations
+- cell_id: m14-PauliMatrices
+  title: 14.3 Pauli Matrices
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Pauli Matrices
+  outcomes:
+  - Understand the role and characteristics of Pauli matrices in quantum mechanics
+  - Learn the effects of Pauli matrices as single qubit operations, including bit-flip
+    and phase-flip
+  - Analyze the behavior of Pauli matrices in different bases and their properties
+    as Hermitian operators
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the application and implications of Pauli matrices in single qubit transformations
+    - Apply the concepts of bit-flip and phase-flip operations in quantum computing
+    - Develop a comprehensive understanding of the mathematical properties of Pauli
+      matrices and their quantum mechanical significance
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations
+- cell_id: m14-quiz-14.1
+  title: Self-Assessment Quiz 1
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m14-TransformationsOnQubits
+  - m14-SingleQubitTransformations
+  - m14-PauliMatrices
+  concepts:
+  - Pauli Matrices
+  outcomes:
+  - Prove the unitarity of Pauli gates
+  - Verify the properties of phase shift gates and the square-root of NOT gate
+  - Enhance understanding of fundamental quantum gates and their mathematical proofs
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Demonstrate proficiency in verifying the unitarity of quantum gates
+    - Apply mathematical techniques to prove the properties of specific quantum gates
+    - Deepen the theoretical foundation in quantum computing through problem-solving
+      and proofs
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations
+- cell_id: m14-BuildingCircuits
+  title: 14.4 Building Circuits
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m14-PauliMatrices
+  concepts:
+  - Building Quantum Circuits
+  outcomes:
+  - Understand the basic structure and flow of quantum circuits
+  - Learn how to represent sequential single-qubit operations in circuit form
+  - Grasp the convention of writing linear expressions for quantum circuits and their
+    operations
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Develop the ability to construct and analyze simple quantum circuits
+    - Apply knowledge of quantum mechanics to simulate the effects of sequential quantum
+      gates on qubits
+    - Familiarize with the conventions used in quantum circuit diagrams and their
+      mathematical representations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations
+- cell_id: m14-ComputingCircuitOperation
+  title: 14.5 Computing the Circuit Operation
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m14-BuildingCircuits
+  concepts:
+  - Building Quantum Circuits
+  outcomes:
+  - Compute the overall effect of a quantum circuit on a qubit
+  - Apply the rule of operator multiplication to determine the output state of a qubit
+    after circuit operations
+  - Understand the process of transforming a qubit through sequential gate operations
+    in a quantum circuit
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the calculation of quantum circuit effects on qubits using operator multiplication
+    - Analyze and predict the outcomes of applying multiple sequential gates on a
+      quantum state
+    - Develop a comprehensive understanding of the principles underlying quantum circuit
+      operation
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations
+- cell_id: m14-quiz-14.2
+  title: Self-Assessment Quiz 2
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m14-BuildingCircuits
+  - m14-ComputingCircuitOperation
+  concepts:
+  - Building Quantum Circuits
+  outcomes:
+  - Compute the effect of specified quantum circuits on given qubits
+  - Analyze the transformation of qubits through sequential application of quantum
+    gates
+  - Develop observations based on the outcomes of circuit operations on qubits
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply knowledge of quantum gates to simulate their effects on qubits within
+      circuits
+    - Master the analytical skills needed to deduce the effects of quantum circuits
+    - Enhance understanding of quantum computing through hands-on circuit computation
+      and analysis
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations
+- cell_id: m14-finalQuiz-information
+  title: 'Final Quiz 14 is in a separate notebook with filename: finalquiz14.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply knowledge of quantum gates to simulate their effects on qubits within
+      circuits
+    - Master the analytical skills needed to deduce the effects of quantum circuits
+    - Enhance understanding of quantum computing through hands-on circuit computation
+      and analysis
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Single-Qubit Gates and Operations

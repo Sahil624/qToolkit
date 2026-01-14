@@ -1,0 +1,541 @@
+learning_objective_tree:
+  title: From Probabilistic Systems to Quantum Systems
+  global_prerequisites:
+  - Basic Probability
+  - Linear Algebra
+  - Introduction to Quantum Physics
+  objectives:
+  - lo_id: LO-12-01
+    summary: Student will understand the bloch Sphere reprenstation for a qubit.
+    covered_by:
+    - m12-BlochSphere
+    - m12-BlochSphereContd
+    - m12-BlochSphereContd2
+    learning_objectives:
+    - Understand the Bloch sphere representation of qubits
+    - Learn how to map a generic qubit onto the Bloch sphere
+    - Grasp the significance of quantum operations as rotations on the Bloch sphere
+    - Understand the effect of complex multiplication on the physical state of a qubit
+    - Learn the process of phase elimination to simplify the representation of a qubit
+    - Grasp the concept of normalization condition in reducing the parameters defining
+      a qubit
+    - Understand the effect of complex multiplication on the physical state of a qubit
+    - Learn the process of phase elimination to simplify the representation of a qubit
+    - Grasp the concept of normalization condition in reducing the parameters defining
+      a qubit
+    estimated_time_mins: 5
+    concepts:
+    - Bloch Sphere
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-12-02
+    summary: Student will be able to simulate bloch Sphere qubit
+    covered_by:
+    - m12-BlochSphereVisualization
+    - m12-InteractiveBlochSphereSimulation
+    - m12-GeometryOfBlochSphere
+    learning_objectives:
+    - Rename parameters for simplicity in mapping qubits onto the Bloch sphere
+    - Understand how a qubit is represented on the Bloch sphere using two free parameters
+    - Learn to compute the necessary components of a qubit given theta and phi for
+      Bloch sphere visualization
+    - Simulate an interactive Bloch sphere to visualize qubit states
+    - Manipulate theta and phi parameters to explore qubit orientation on the Bloch
+      sphere
+    - Adjust azimuth and elevation to view the Bloch sphere from different perspectives
+    - Identify the north and south poles of the Bloch sphere and their corresponding
+      quantum states
+    - Understand the geometric significance of theta and phi angles in the representation
+      of qubits
+    - Visualize the orientation of qubit states on the Bloch sphere relative to the
+      Z axis and the equator
+    estimated_time_mins: 5
+    concepts:
+    - Bloch Sphere
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-12-03
+    summary: Students will understand the notion of qubits and types of operations
+      that can be applied to them.
+    covered_by:
+    - m12-Simple2DRepresentation
+    - m12-BlochSphere2dVisualization
+    - m12-InteractiveBlochSphere2dSimulation
+    - m12-UnitCircleVisualization
+    - m12-InteractiveUnitCircleSimulation
+    learning_objectives:
+    - Understand the simplification of qubit representation to a 2D model
+    - Learn the significance of the global phase and its non-measurable effect on
+      qubit representation
+    - Grasp the concept of normalization in the context of qubit representation on
+      a unit circle
+    - Rename parameters for simplicity in mapping qubits onto the Bloch sphere
+    - Understand how a qubit is represented on the Bloch sphere using two free parameters
+    - Learn to compute the necessary components of a qubit given theta and phi for
+      Bloch sphere visualization
+    - Simulate an interactive Bloch sphere to visualize qubit states
+    - Manipulate theta and phi parameters to explore qubit orientation on the Bloch
+      sphere
+    - Adjust azimuth and elevation to view the Bloch sphere from different perspectives
+    - Rename parameters for simplicity in mapping qubits onto the Bloch sphere
+    - Understand how a qubit is represented on the Bloch sphere using two free parameters
+    - Learn to compute the necessary components of a qubit given theta and phi for
+      Bloch sphere visualization
+    - Simulate an interactive Bloch sphere to visualize qubit states
+    - Manipulate theta and phi parameters to explore qubit orientation on the Bloch
+      sphere
+    - Adjust azimuth and elevation to view the Bloch sphere from different perspectives
+    estimated_time_mins: 9
+    concepts:
+    - 2D Representation
+    - Bloch Sphere
+    - Interactive Simulation
+    - Qubit Visualization
+    - Spherical Coordinates
+    - View Manipulation
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-12-04
+    summary: Student will be able to simulate the 2D representation
+    covered_by: []
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m12- QuantumSimulationSetup
+  title: It is important to run this cell before starting with this notebook
+  type: code
+  estimated_time: '2'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Set up a quantum computing simulation environment using Python libraries
+  - Perform numerical computations relevant to quantum mechanics using numpy
+  - Create interactive visualizations to explore quantum systems with ipywidgets and
+    matplotlib
+  - Understand the basics of using qutip for quantum system simulations
+  extra_props:
+    scrolled: true
+    slideshow:
+      slide_type: skip
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Visualize qubits on the Bloch sphere and understand their geometric interpretation
+    - Apply polar form conversions to describe qubits in terms of angles on the Bloch
+      sphere
+    - Comprehend the limitations of the Bloch sphere visualization for multiple qubits
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Visualizing a Qubit
+- cell_id: m12-LearningOutcome
+  title: 12. Visualizing a qubit
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Understand the Bloch sphere representation of qubits
+  - Learn how to map a generic qubit onto the Bloch sphere
+  - Grasp the significance of quantum operations as rotations on the Bloch sphere
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Visualize qubits on the Bloch sphere and understand their geometric interpretation
+    - Apply polar form conversions to describe qubits in terms of angles on the Bloch
+      sphere
+    - Comprehend the limitations of the Bloch sphere visualization for multiple qubits
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Visualizing a Qubit
+- cell_id: m12-BlochSphere
+  title: 12.1 Bloch Sphere
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m9-QuantumTheoryAtWork
+  - m10-KetNotation
+  concepts:
+  - Bloch Sphere
+  outcomes:
+  - Understand the Bloch sphere representation of qubits
+  - Learn how to map a generic qubit onto the Bloch sphere
+  - Grasp the significance of quantum operations as rotations on the Bloch sphere
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Visualize qubits on the Bloch sphere and understand their geometric interpretation
+    - Apply polar form conversions to describe qubits in terms of angles on the Bloch
+      sphere
+    - Comprehend the limitations of the Bloch sphere visualization for multiple qubits
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Visualizing a Qubit
+- cell_id: m12-BlochSphereContd
+  title: Block Sphere Contd.
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m12-BlochSphere
+  concepts:
+  - Bloch Sphere
+  outcomes:
+  - Understand the effect of complex multiplication on the physical state of a qubit
+  - Learn the process of phase elimination to simplify the representation of a qubit
+  - Grasp the concept of normalization condition in reducing the parameters defining
+    a qubit
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply complex number manipulation to simplify qubit representation
+    - Visualize and understand qubits on the Bloch sphere with reduced parameters
+    - Master the normalization condition and its implications for qubit representation
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-BlochSphereContd2
+  title: Block Sphere Contd.
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m12-BlochSphereContd
+  concepts:
+  - Bloch Sphere
+  outcomes:
+  - Understand the effect of complex multiplication on the physical state of a qubit
+  - Learn the process of phase elimination to simplify the representation of a qubit
+  - Grasp the concept of normalization condition in reducing the parameters defining
+    a qubit
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply complex number manipulation to simplify qubit representation
+    - Visualize and understand qubits on the Bloch sphere with reduced parameters
+    - Master the normalization condition and its implications for qubit representation
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-BlochSphereVisualization
+  title: m12-BlochSphereVisualization
+  type: code
+  estimated_time: '2'
+  prerequisites:
+  - m12-BlochSphere
+  - m12-BlochSphereContd
+  - m12-BlochSphereContd2
+  concepts:
+  - Bloch Sphere
+  outcomes:
+  - Rename parameters for simplicity in mapping qubits onto the Bloch sphere
+  - Understand how a qubit is represented on the Bloch sphere using two free parameters
+  - Learn to compute the necessary components of a qubit given theta and phi for Bloch
+    sphere visualization
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Visualize and understand the complete state of a qubit using the Bloch sphere
+    - Master the mathematical transformation of qubit components for Bloch sphere
+      plotting
+    - Interactively explore the geometric representation of qubits
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-InteractiveBlochSphereSimulation
+  title: Run this cell to simulate an interactive Bloch sphere
+  type: code
+  estimated_time: '2'
+  prerequisites:
+  - m12-BlochSphere
+  - m12-BlochSphereContd
+  - m12-BlochSphereContd2
+  concepts:
+  - Bloch Sphere
+  outcomes:
+  - Simulate an interactive Bloch sphere to visualize qubit states
+  - Manipulate theta and phi parameters to explore qubit orientation on the Bloch
+    sphere
+  - Adjust azimuth and elevation to view the Bloch sphere from different perspectives
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Engage with the geometric representation of qubits on the Bloch sphere through
+      interactive simulation
+    - Develop a deeper understanding of qubit orientations and their implications
+      in quantum computing
+    - Master the use of interactive Python tools for quantum simulations
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Python Programming
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-GeometryOfBlochSphere
+  title: Geometry of Bloch Sphere
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m12-BlochSphereVisualization
+  - m12-InteractiveBlochSphereSimulation
+  concepts:
+  - Bloch Sphere
+  outcomes:
+  - Identify the north and south poles of the Bloch sphere and their corresponding
+    quantum states
+  - Understand the geometric significance of theta and phi angles in the representation
+    of qubits
+  - Visualize the orientation of qubit states on the Bloch sphere relative to the
+    Z axis and the equator
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Grasp the geometric aspects of qubit representation on the Bloch sphere
+    - Apply the concepts of spherical coordinates to describe qubit orientations
+    - Enhance understanding of the spatial relationships between quantum states on
+      the Bloch sphere
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-Simple2DRepresentation
+  title: 12.2 Simple 2-D representation
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m12-GeometryOfBlochSphere
+  concepts:
+  - 2D Representation
+  outcomes:
+  - Understand the simplification of qubit representation to a 2D model
+  - Learn the significance of the global phase and its non-measurable effect on qubit
+    representation
+  - Grasp the concept of normalization in the context of qubit representation on a
+    unit circle
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Visualize qubits within the simplified framework of a 2D unit circle
+    - Apply normalization principles to understand qubit representations
+    - Acknowledge the practical aspects of omitting global phase in visual representations
+      of qubits
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-BlochSphere2dVisualization
+  title: m12-BlochSphere2dVisualization
+  type: code
+  estimated_time: '2'
+  prerequisites:
+  - m12-Simple2DRepresentation
+  concepts:
+  - 2D Representation
+  outcomes:
+  - Rename parameters for simplicity in mapping qubits onto the Bloch sphere
+  - Understand how a qubit is represented on the Bloch sphere using two free parameters
+  - Learn to compute the necessary components of a qubit given theta and phi for Bloch
+    sphere visualization
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Visualize and understand the complete state of a qubit using the Bloch sphere
+    - Master the mathematical transformation of qubit components for Bloch sphere
+      plotting
+    - Interactively explore the geometric representation of qubits
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-InteractiveBlochSphere2dSimulation
+  title: Run this cell to simulate an interactive unit circle
+  type: code
+  estimated_time: '2'
+  prerequisites:
+  - m12-Simple2DRepresentation
+  - m12-BlochSphere2dVisualization
+  concepts:
+  - 2D Representation
+  outcomes:
+  - Simulate an interactive Bloch sphere to visualize qubit states
+  - Manipulate theta and phi parameters to explore qubit orientation on the Bloch
+    sphere
+  - Adjust azimuth and elevation to view the Bloch sphere from different perspectives
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Engage with the geometric representation of qubits on the Bloch sphere through
+      interactive simulation
+    - Develop a deeper understanding of qubit orientations and their implications
+      in quantum computing
+    - Master the use of interactive Python tools for quantum simulations
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Python Programming
+    - ipywidgets
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-UnitCircleVisualization
+  title: m12-UnitCircleVisualization
+  type: code
+  estimated_time: '2'
+  prerequisites:
+  - m12-BlochSphere
+  - m12-BlochSphereContd
+  - m12-BlochSphereContd2
+  concepts:
+  - 2D Representation
+  outcomes:
+  - Rename parameters for simplicity in mapping qubits onto the Bloch sphere
+  - Understand how a qubit is represented on the Bloch sphere using two free parameters
+  - Learn to compute the necessary components of a qubit given theta and phi for Bloch
+    sphere visualization
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Visualize and understand the complete state of a qubit using the Bloch sphere
+    - Master the mathematical transformation of qubit components for Bloch sphere
+      plotting
+    - Interactively explore the geometric representation of qubits
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-InteractiveUnitCircleSimulation
+  title: Run this cell to simulate an interactive unit circle
+  type: code
+  estimated_time: '2'
+  prerequisites:
+  - m12-UnitCircleVisualization
+  concepts:
+  - Bloch Sphere
+  - Interactive Simulation
+  - Qubit Visualization
+  - Spherical Coordinates
+  - View Manipulation
+  outcomes:
+  - Simulate an interactive Bloch sphere to visualize qubit states
+  - Manipulate theta and phi parameters to explore qubit orientation on the Bloch
+    sphere
+  - Adjust azimuth and elevation to view the Bloch sphere from different perspectives
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Engage with the geometric representation of qubits on the Bloch sphere through
+      interactive simulation
+    - Develop a deeper understanding of qubit orientations and their implications
+      in quantum computing
+    - Master the use of interactive Python tools for quantum simulations
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    - Python Programming
+    module_title:
+    - Quantum State Representation and Visualization
+- cell_id: m12-finalQuiz-information
+  title: End of nanomodule 12
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Visualize qubits on the Bloch sphere and understand their geometric interpretation
+    - Apply polar form conversions to describe qubits in terms of angles on the Bloch
+      sphere
+    - Comprehend the limitations of the Bloch sphere visualization for multiple qubits
+    module_prereqs:
+    - Linear Algebra
+    - Trigonometry
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Visualizing a Qubit

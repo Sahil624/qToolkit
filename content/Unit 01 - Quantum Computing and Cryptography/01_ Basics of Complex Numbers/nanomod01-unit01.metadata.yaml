@@ -1,0 +1,485 @@
+learning_objective_tree:
+  title: The Basics of Complex Numbers
+  global_prerequisites:
+  - Algebra
+  - Introduction to Programming
+  - Python Basics
+  objectives:
+  - lo_id: LO-01-01
+    summary: Students will master the concept of complex number representations.
+    covered_by:
+    - m1-warmup
+    - m1-background
+    - m1-imaginaryNumbers
+    - m1-quiz-1.1
+    - m1-quiz-1.1-interactive
+    - m1-complexNumbers
+    learning_objectives:
+    - Test the Understanding on how to solve quadratic equations with real and complex
+      solutions
+    - Identify the place of complex numbers within the hierarchy of number systems
+    - Discuss the necessity of complex numbers in describing certain physical systems
+    - Understand the foundational role of complex numbers in quantum computing and
+      cryptography
+    - Identify and differentiate between various number systems, leading up to and
+      including real numbers
+    - Recognize the emergence and necessity of complex numbers in extending the real
+      number system
+    - Understand the motivation behind the introduction of complex numbers
+    - Learn the definition and properties of the imaginary unit i
+    - Perform arithmetic operations with imaginary numbers and recognize patterns
+      in powers of i
+    - Solve quadratic equations involving imaginary numbers
+    - Simplify expressions involving powers of the imaginary unit i
+    - Solve quadratic equations involving imaginary numbers
+    - Simplify expressions involving powers of the imaginary unit i
+    - Define complex numbers and understand their composition
+    - Identify the real and imaginary parts of a complex number
+    - Recognize complex numbers as a broader set of numbers encompassing real and
+      imaginary numbers
+    estimated_time_mins: 24
+    concepts:
+    - Complex Numbers
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-01-02
+    summary: Students will be able to perform basic additive and multiplicative operations
+      on complex numbers.
+    covered_by:
+    - m1-operationsComplex
+    - m1-quiz-1.2
+    - m1-quiz-1.2-interactive
+    learning_objectives:
+    - Perform addition and multiplication operations on complex numbers
+    - Understand how to combine real and imaginary parts in arithmetic operations
+    - Apply the defined operations to solve problems involving complex numbers
+    - Solve quadratic equations with complex solutions
+    - Perform addition, multiplication, and scalar multiplication operations on complex
+      numbers
+    - Apply algebraic methods to complex number operations for solving problems
+    - Solve quadratic equations with complex solutions
+    - Perform addition, multiplication, and scalar multiplication operations on complex
+      numbers
+    - Apply algebraic methods to complex number operations for solving problems
+    estimated_time_mins: 18
+    concepts:
+    - Operations on Complex Numbers
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-01-03
+    summary: Students will be able to implement Python programs that perform basic
+      operations of addition and multiplication on complex numbers.
+    covered_by:
+    - m1-final-quiz
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m1-LearningOutcomes
+  title: 1. The Basics of Complex Numbers
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Know the outcomes of learning Basics of Complex Numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Learing Outcomes
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-warmup
+  title: 1.1 Warm-up
+  type: markdown
+  estimated_time: '2'
+  prerequisites: []
+  concepts:
+  - Complex Numbers
+  outcomes:
+  - Test the Understanding on how to solve quadratic equations with real and complex
+    solutions
+  - Identify the place of complex numbers within the hierarchy of number systems
+  - Discuss the necessity of complex numbers in describing certain physical systems
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Warmup Questions
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-background
+  title: 1.2 Background
+  type: markdown
+  estimated_time: '2'
+  prerequisites: []
+  concepts:
+  - Complex Numbers
+  outcomes:
+  - Understand the foundational role of complex numbers in quantum computing and cryptography
+  - Identify and differentiate between various number systems, leading up to and including
+    real numbers
+  - Recognize the emergence and necessity of complex numbers in extending the real
+    number system
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Real Numbers
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-imaginaryNumbers
+  title: 1.3 Imaginary Numbers
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m1-background
+  concepts:
+  - Complex Numbers
+  outcomes:
+  - Understand the motivation behind the introduction of complex numbers
+  - Learn the definition and properties of the imaginary unit i
+  - Perform arithmetic operations with imaginary numbers and recognize patterns in
+    powers of i
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Imaginary Numbers
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-quiz-1.1
+  title: Quiz 1.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '5'
+  prerequisites:
+  - m1-imaginaryNumbers
+  concepts:
+  - Complex Numbers
+  outcomes:
+  - Solve quadratic equations involving imaginary numbers
+  - Simplify expressions involving powers of the imaginary unit i
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m1-quiz-1.1-interactive
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 1
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-quiz-1.1-interactive
+  title: m1-quiz-1.1-interactive
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m1-imaginaryNumbers
+  concepts:
+  - Complex Numbers
+  outcomes:
+  - Solve quadratic equations involving imaginary numbers
+  - Simplify expressions involving powers of the imaginary unit i
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m1-quiz-1.1
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1 interactive
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-complexNumbers
+  title: 1.4 Complex Numbers
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m1-imaginaryNumbers
+  - m1-quiz-1.1
+  - m1-quiz-1.1-interactive
+  concepts:
+  - Complex Numbers
+  outcomes:
+  - Define complex numbers and understand their composition
+  - Identify the real and imaginary parts of a complex number
+  - Recognize complex numbers as a broader set of numbers encompassing real and imaginary
+    numbers
+  extra_props:
+    editable: true
+    jp-MarkdownHeadingCollapsed: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Complex Numbers
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-operationsComplex
+  title: 1.5 Operations on Complex Numbers
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m1-complexNumbers
+  concepts:
+  - Operations on Complex Numbers
+  outcomes:
+  - Perform addition and multiplication operations on complex numbers
+  - Understand how to combine real and imaginary parts in arithmetic operations
+  - Apply the defined operations to solve problems involving complex numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Operations on Complex Numbers
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-quiz-1.2
+  title: Quiz 1.2 Self Assessment Quiz
+  type: markdown
+  estimated_time: '5'
+  prerequisites:
+  - m1-operationsComplex
+  - m1-complexNumbers
+  concepts:
+  - Operations on Complex Numbers
+  outcomes:
+  - Solve quadratic equations with complex solutions
+  - Perform addition, multiplication, and scalar multiplication operations on complex
+    numbers
+  - Apply algebraic methods to complex number operations for solving problems
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m1-quiz-1.2-interactive
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 2
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-quiz-1.2-interactive
+  title: m1-quiz-1.2-interactive
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m1-operationsComplex
+  - m1-complexNumbers
+  concepts:
+  - Operations on Complex Numbers
+  outcomes:
+  - Solve quadratic equations with complex solutions
+  - Perform addition, multiplication, and scalar multiplication operations on complex
+    numbers
+  - Apply algebraic methods to complex number operations for solving problems
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m1-quiz-1.2
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 2 interactive
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-quiz-1.3-interactive
+  title: m1-quiz-1.3-interactive
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - 'm1-imaginaryNumbers '
+  - m1-complexNumbers
+  - m1-operationsComplex
+  - m1-quiz-1.1
+  - m1-quiz-1.1-interactive
+  - m1-quiz-1.2
+  - m1-quiz-1.2-interactive
+  concepts:
+  - Operations on Complex Numbers
+  outcomes:
+  - Solve quadratic equations with complex solutions
+  - Perform addition, multiplication, and scalar multiplication operations on complex
+    numbers
+  - Apply algebraic methods to complex number operations for solving problems
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 3 interactive
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-summary
+  title: 1.6 Summary
+  type: markdown
+  estimated_time: '3'
+  prerequisites: []
+  concepts:
+  - Summary
+  outcomes:
+  - Recap the basic operations on complex numbers
+  - Preview the advanced operations and geometrical interpretations of complex numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Summary
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers
+- cell_id: m1-finalQuiz-information
+  title: 'Final Quiz 1 is in a separate notebook with filename: finalquiz1.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Final Quiz 1
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers

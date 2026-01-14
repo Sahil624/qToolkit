@@ -5,7 +5,7 @@ import os
 import ipywidgets as widgets
 from IPython.display import display, Markdown
 from .vector_db_manager import VectorDBManager, get_db_manager_instance
-import logging
+from ..prompt import get_rewrite_prompt
 
 class PeerAgent:
     """
@@ -16,7 +16,7 @@ class PeerAgent:
                  db_path: str,
                  ollama_embed_model: str = 'nomic-embed-text',
                  ollama_chat_model: str = 'llama3.1:8b',
-                 ollama_base_url: str = 'http://localhost:11434'):
+                 ollama_base_url: str = os.getenv("OLLAMA_API_URL", "http://localhost:11434")):
         """Initializes the PeerAgent's backend."""
         self.db_manager = get_db_manager_instance()
         self.ollama_chat_model = ollama_chat_model
@@ -38,11 +38,25 @@ class PeerAgent:
             print(error_message)
             return error_message    
 
-    def answer_question(self, query: str, persona_prompt: str, completed_lo_ids: Union[list, None] = None) -> str:
+    def answer_question(self, query: str, persona_prompt: str, completed_lo_ids: Union[list, None] = None, chat_history = []) -> str:
         """
         Answers a student's question using the RAG pipeline.
         This method now accepts the persona prompt directly.
         """
+        
+        if chat_history:
+            # If we have history, the user might be saying "it" or "that".
+            # We need to rewrite the query to be standalone for the vector search.
+            print(f"Contextualizing query: '{query}'...")
+            rewrite_prompt = get_rewrite_prompt(query, chat_history)
+            rewritten = self._call_ollama_llm(rewrite_prompt)
+            
+            # Basic cleanup in case the model is chatty
+            clean_rewritten = rewritten.strip().replace("\"", "")
+            if clean_rewritten and len(clean_rewritten) < 200: # Sanity check length
+                print(f"Rewrote query for search: '{clean_rewritten}'")
+                query = clean_rewritten
+                
         context_chunks = self.db_manager.filter_with_lo_ids(
             query=query, lo_ids=completed_lo_ids, num_results=2
         )
@@ -50,19 +64,24 @@ class PeerAgent:
         if not context_str:
             context_str = "I couldn't find anything specific about that in my notes."
             print("No context found for the query in the vector database.")
-        else:
-            print(f"Context found for the query:\n{context_str}\n{'-'*40}")
+        # else:
+        #     print(f"Context found for the query:\n{context_str}\n{'-'*40}")
 
         prompt = f"""{persona_prompt}
 
-Here is some context from my notes:
+### COURSE NOTES (Source Material)
 ---
 {context_str}
 ---
+"""
 
-Based ONLY on the context above and my persona, answer the following question. If the context doesn't have the answer, say you don't know.
+        # In case of tutor, query is already in prompt
+        if completed_lo_ids is not None:
+            prompt += f"""
 
-Question: "{query}"
+### TASK
+Based ONLY on the "Course Notes" above and your persona, answer the following question.
+Question: "{query}"            
 """
         return self._call_ollama_llm(prompt)
 

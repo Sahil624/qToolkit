@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { LabIcon, infoIcon, runIcon } from '@jupyterlab/ui-components';
 import { makeApiRequest } from './handler';
+import { InfoDialog } from './info-dialog';
 import Markdown from 'react-markdown';
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'
@@ -36,6 +37,8 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
     { sender: 'peer', text: "Hey! I'm your study buddy. Ask me anything about the course notes, and I'll try my best to explain it." }
   ]);
   const [isLoading, setIsLoading] = useState(false);
+  const [isInfoOpen, setIsInfoOpen] = useState(false);
+
   const messagesEndRef = useRef<null | HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -53,22 +56,45 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
     const style = document.createElement('style');
     style.id = styleId;
     style.innerHTML = `
-      .chat-panel-container {
+     .chat-panel-container {
         display: flex;
         flex-direction: column;
         height: 100%;
         background-color: var(--jp-layout-color1);
         font-family: var(--jp-ui-font-family);
         color: var(--jp-ui-font-color1);
+        position: relative; /* For absolute positioning of overlay */
       }
       .chat-header {
-        padding: 10px 12px;
+        padding: 6px 12px;
         background: var(--jp-brand-color1);
         color: white;
         font-weight: bold;
-        text-align: center;
+        display: flex;
+        justify-content: space-between; /* Space for info button */
+        align-items: center;
         flex-shrink: 0;
         border-bottom: 1px solid var(--jp-border-color1);
+        height: 40px;
+        box-sizing: border-box;
+      }
+      .header-title {
+        flex-grow: 1;
+        text-align: center;
+      }
+      .header-btn {
+        color: #fff;
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        padding: 4px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+      }
+      .header-btn:hover {
+        background-color: rgba(255,255,255,0.2);
       }
       .message-list {
         flex-grow: 1;
@@ -151,6 +177,133 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
         width: 14px;
         height: 14px;
       }
+
+      /* Info Dialog Styles */
+      .info-dialog-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 100;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding-top: 20px;
+      }
+      .info-dialog {
+        background-color: var(--jp-layout-color1);
+        width: 90%;
+        max-height: 90%;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        border: 1px solid var(--jp-border-color1);
+      }
+      .info-header {
+        padding: 10px 15px;
+        border-bottom: 1px solid var(--jp-border-color2);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.1em;
+      }
+      .close-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--jp-ui-font-color1);
+      }
+      .info-content {
+        padding: 15px;
+        overflow-y: auto;
+      }
+      .info-section {
+        margin-bottom: 20px;
+      }
+      .info-section h3 {
+        margin-top: 0;
+        border-bottom: 1px solid var(--jp-border-color2);
+        padding-bottom: 5px;
+        margin-bottom: 10px;
+        color: var(--jp-ui-font-color0);
+      }
+      .progress-bar-container {
+        background-color: var(--jp-layout-color3);
+        height: 10px;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+      .progress-bar {
+        background-color: var(--jp-success-color1);
+        height: 100%;
+      }
+      .progress-text {
+        text-align: right;
+        font-size: 0.9em;
+        margin-top: 4px;
+        color: var(--jp-ui-font-color2);
+      }
+      
+      /* Roadmap Styles */
+      .roadmap-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .roadmap-item {
+        display: flex;
+        align-items: center;
+        padding: 6px 0;
+        font-size: 0.95em;
+        border-left: 2px solid var(--jp-border-color2);
+        padding-left: 10px;
+        margin-left: 5px;
+        position: relative;
+      }
+      .status-dot {
+        position: absolute;
+        left: -6px;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--jp-layout-color3);
+        border: 2px solid var(--jp-layout-color1);
+      }
+      .roadmap-item.completed { color: var(--jp-ui-font-color2); }
+      .roadmap-item.completed .status-dot { background-color: var(--jp-success-color1); }
+      
+      .roadmap-item.current { font-weight: bold; color: var(--jp-brand-color1); }
+      .roadmap-item.current .status-dot { background-color: var(--jp-brand-color1); width: 12px; height: 12px; left: -7px; }
+      
+      .check-mark { margin-left: auto; color: var(--jp-success-color1); }
+      .current-badge { 
+        margin-left: auto; 
+        background: var(--jp-brand-color1); 
+        color: white; 
+        font-size: 0.75em; 
+        padding: 2px 6px; 
+        border-radius: 10px; 
+      }
+
+      .reindex-btn {
+        width: 100%;
+        padding: 8px;
+        background-color: var(--jp-error-color1);
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+      }
+      .reindex-btn:disabled { opacity: 0.7; cursor: not-allowed; }
     `;
     document.head.appendChild(style);
 
@@ -159,6 +312,17 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
       if (styleElement) styleElement.remove();
     };
   }, []);
+
+  const getCurrentOpenedLOid = (): string | null => {
+    // get Lo ID from url (ex "http://localhost:8888/voila/render/generated_course/LO-3.1/LO-3.1.ipynb" LO ID is "LO-3.1")
+    const pathParts = window.location.pathname.split('/');
+    for (let i = 0; i < pathParts.length; i++) {
+      if (pathParts[i].startsWith('LO-')) {
+        return pathParts[i];
+      }
+    }
+    return null;
+  }
 
   const handleSendMessage = async () => {
     if (!inputValue.trim()) return;
@@ -180,11 +344,15 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
       }
     }
 
+    const currentLOid = getCurrentOpenedLOid();
+
     try {
       const response = await makeApiRequest('/ask', {
         query: query,
         agent_type: 'peer',
         student_progress: studentProgress,
+        current_lo_id: currentLOid,
+        history: messages,
       }, {
         method: 'POST',
       });
@@ -248,7 +416,19 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
     <div className="chat-panel-container">
       <div className="chat-header">
           Q-Toolkit Assistant
+          
+          <button className="header-btn" onClick={() => setIsInfoOpen(true)} title="Course Info">
+           <infoIcon.react tag="span" />
+         </button>
       </div>
+      
+      {/* Info Dialog Overlay */}
+      <InfoDialog 
+        isOpen={isInfoOpen} 
+        onClose={() => setIsInfoOpen(false)} 
+        currentLOid={getCurrentOpenedLOid()}
+      />
+
       <div className="message-list">
         {messages.map((msg, index) => (
           <div key={index} className={`message-container ${msg.sender}`}>

@@ -1,1 +1,1 @@
-docker run --rm -it --network host qeducationtoolkit:latest 
+docker run -e OLLAMA_API_URL="http://localhost:11435" --rm -it --network host qeducationtoolkit:latest 

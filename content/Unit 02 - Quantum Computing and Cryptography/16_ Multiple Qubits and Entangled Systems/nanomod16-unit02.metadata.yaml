@@ -1,0 +1,443 @@
+learning_objective_tree:
+  title: Multiple Qubits and Entangled Systems
+  global_prerequisites:
+  - Linear Algebra
+  - Quantum Mechanics Fundamentals
+  - Quantum State Representation
+  objectives:
+  - lo_id: LO-16-01
+    summary: Students will be able to create joint state representations of quantum
+      systems with multiple qubits.
+    covered_by:
+    - m16-TwoQubitSystems
+    - m16-Measurement
+    - m16-PartialMeasurement
+    - m16-PartialMeasurementExample
+    - m16-quiz-16.1
+    learning_objectives:
+    - Understand the concept of superposition in two-qubit systems
+    - Learn how to represent the state of a two-qubit system in superposition
+    - Grasp the potential states a two-qubit system can occupy based on the superposition
+      principle
+    - Calculate the probabilities of different outcomes when measuring two-qubit systems
+    - Understand the concept of state collapse upon measurement in quantum mechanics
+    - Determine the new state of a two-qubit system after measurement
+    - Understand the process and implications of performing a partial measurement
+      on a two-qubit system
+    - Calculate the probability of observing a specific outcome for one qubit while
+      ignoring the other
+    - Determine and normalize the new state of the system after a partial measurement
+    - Apply the partial measurement process to a specific quantum state example
+    - Calculate the new state of the quantum system based on the outcome of a partial
+      measurement
+    - Demonstrate the normalization process for the new state after partial measurement
+    - Compute the measurement probability for all possible outcomes of given quantum
+      states
+    - Determine the probability of outcomes and the final state of the system after
+      a partial measurement of the first qubit
+    - Calculate the probabilities of outcomes and the final state after measuring
+      the second qubit for specific quantum states
+    estimated_time_mins: 7
+    concepts:
+    - Measurement
+    - Two Qubit Systems
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-16-02
+    summary: Students will understand the notion of entangled quantum systems.
+    covered_by:
+    - m16-EntangledSystems
+    learning_objectives:
+    - Understand the concept of entanglement in quantum systems involving multiple
+      qubits
+    - Learn how to represent the state of a composite system as a tensor product of
+      individual qubit states
+    - Grasp the significance of entanglement in quantum computing and information
+      theory
+    estimated_time_mins: 1
+    concepts:
+    - Entangled Systems
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-16-03
+    summary: Students will be able to perform measurements on joint quantum states.
+    covered_by:
+    - m16-ReverseQuestionDecomposition
+    - m16-MeasuringTheBellState
+    - m16-quiz-16.2
+    learning_objectives:
+    - Investigate the possibility of decomposing a general two-qubit state into the
+      tensor product of two individual qubit states
+    - Understand through an example that such decomposition is not always possible
+    - Learn the specific case of the Bell state and why it represents an entangled
+      system that defies simple decomposition
+    - Understand the phenomenon of entanglement through the example of measuring a
+      Bell state
+    - Learn about the implications of quantum measurement on entangled particles,
+      regardless of distance
+    - Grasp the historical context and resolution of the apparent contradiction between
+      entanglement and the theory of relativity
+    - Evaluate the dependency of entanglement on the decomposition of the quantum
+      system
+    - Analyze a given four-qubit state to determine entanglement with respect to different
+      decompositions
+    - Assess the entanglement status of a specific quantum state
+    estimated_time_mins: 4
+    concepts:
+    - Measuring Bell State
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-16-04
+    summary: Students will be able to perform partial-measurements on joint quantum
+      states.
+    covered_by: []
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m16-LearningOutcome
+  title: 16. Multiple Qubits and Entangled Systems
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Create joint state representations of quantum systems with multiple qubits
+  - Understand the notion of entangled quantum systems
+  - Perform measurements on joint quantum states
+  - Perform partial-measurements on joint quantum states
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend and apply concepts of joint state representation in multi-qubit systems
+    - Analyze entangled systems and their unique properties
+    - Master the techniques for performing both complete and partial measurements
+      on quantum states
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Quantum State Representation
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-TwoQubitSystems
+  title: 16.1 Two Qubit Systems
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m15-MultiQubitSystems
+  concepts:
+  - Two Qubit Systems
+  outcomes:
+  - Understand the concept of superposition in two-qubit systems
+  - Learn how to represent the state of a two-qubit system in superposition
+  - Grasp the potential states a two-qubit system can occupy based on the superposition
+    principle
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the principles of superposition in the context of two-qubit systems
+    - Develop the skills to represent and analyze the states of two-qubit systems
+    - Prepare for advanced exploration of quantum mechanics involving multiple qubits
+      and entanglement
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-Measurement
+  title: 16.2 Measurement
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m16-TwoQubitSystems
+  concepts:
+  - Measurement
+  outcomes:
+  - Calculate the probabilities of different outcomes when measuring two-qubit systems
+  - Understand the concept of state collapse upon measurement in quantum mechanics
+  - Determine the new state of a two-qubit system after measurement
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply quantum mechanics principles to perform measurements on two-qubit systems
+    - Analyze the outcomes of quantum measurements and their probabilistic nature
+    - Master the process of determining post-measurement states in quantum systems
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Probability
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-PartialMeasurement
+  title: 16.3 Partial Measurement
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m16-Measurement
+  concepts:
+  - Measurement
+  outcomes:
+  - Understand the process and implications of performing a partial measurement on
+    a two-qubit system
+  - Calculate the probability of observing a specific outcome for one qubit while
+    ignoring the other
+  - Determine and normalize the new state of the system after a partial measurement
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the concept and technique of partial measurements in multi-qubit systems
+    - Apply knowledge of quantum mechanics to analyze partial measurement outcomes
+      and their effects on the system
+    - Develop the skill to compute and normalize post-measurement states in quantum
+      mechanics
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Probability
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-PartialMeasurementExample
+  title: Example
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m16-Measurement
+  - m16-PartialMeasurement
+  concepts:
+  - Measurement
+  outcomes:
+  - Apply the partial measurement process to a specific quantum state example
+  - Calculate the new state of the quantum system based on the outcome of a partial
+    measurement
+  - Demonstrate the normalization process for the new state after partial measurement
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Enhance problem-solving skills in quantum mechanics through practical application
+      of partial measurement concepts
+    - Master the computation of post-measurement quantum states in the context of
+      partial measurements
+    - Deepen understanding of the effects of measurements on multi-qubit systems
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Probability
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-quiz-16.1
+  title: Quiz 16.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m16-Measurement
+  - m16-PartialMeasurement
+  - m16-PartialMeasurementExample
+  concepts:
+  - Measurement
+  outcomes:
+  - Compute the measurement probability for all possible outcomes of given quantum
+    states
+  - Determine the probability of outcomes and the final state of the system after
+    a partial measurement of the first qubit
+  - Calculate the probabilities of outcomes and the final state after measuring the
+    second qubit for specific quantum states
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the calculation of measurement probabilities and post-measurement states
+      in multi-qubit systems
+    - Apply concepts of partial measurement to analyze quantum systems and predict
+      outcomes
+    - Enhance problem-solving skills in quantum mechanics through the computation
+      of quantum state transformations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Probability
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-EntangledSystems
+  title: 16.4 Entangled Systems
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m16-TwoQubitSystems
+  concepts:
+  - Entangled Systems
+  outcomes:
+  - Understand the concept of entanglement in quantum systems involving multiple qubits
+  - Learn how to represent the state of a composite system as a tensor product of
+    individual qubit states
+  - Grasp the significance of entanglement in quantum computing and information theory
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the principles and representation of entangled quantum systems
+    - Develop the skills to analyze and construct entangled states in quantum mechanics
+    - Prepare for advanced studies in quantum computing, including algorithms and
+      protocols leveraging entanglement
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-ReverseQuestionDecomposition
+  title: 16.5 Can we ask the reverse question?
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m15-Decomposability
+  concepts:
+  - Measuring Bell State
+  outcomes:
+  - Investigate the possibility of decomposing a general two-qubit state into the
+    tensor product of two individual qubit states
+  - Understand through an example that such decomposition is not always possible
+  - Learn the specific case of the Bell state and why it represents an entangled system
+    that defies simple decomposition
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the limitations of decomposing certain quantum states into simpler
+      tensor products
+    - Analyze the properties of entangled systems through the example of the Bell
+      state
+    - Prepare for advanced quantum mechanics concepts involving entanglement and non-decomposable
+      states
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-MeasuringTheBellState
+  title: 16.6 Measuring the Bell state
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m16-ReverseQuestionDecomposition
+  concepts:
+  - Measuring Bell State
+  outcomes:
+  - Understand the phenomenon of entanglement through the example of measuring a Bell
+    state
+  - Learn about the implications of quantum measurement on entangled particles, regardless
+    of distance
+  - Grasp the historical context and resolution of the apparent contradiction between
+    entanglement and the theory of relativity
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the concept of quantum entanglement and its impact on the understanding
+      of quantum mechanics
+    - Analyze the role of quantum measurement in entangled systems and its non-local
+      effects
+    - Prepare for advanced studies in quantum information theory, including the exploration
+      of no-go theorems and their implications
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-quiz-16.2
+  title: Quiz 16.2 Self Assessment Quiz
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m16-EntangledSystems
+  - m16-ReverseQuestionDecomposition
+  - m16-MeasuringTheBellState
+  concepts:
+  - Measuring Bell State
+  outcomes:
+  - Evaluate the dependency of entanglement on the decomposition of the quantum system
+  - Analyze a given four-qubit state to determine entanglement with respect to different
+    decompositions
+  - Assess the entanglement status of a specific quantum state
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Develop analytical skills to assess entanglement in quantum systems based on
+      their decomposition
+    - Apply quantum mechanics principles to explore the entanglement properties of
+      multi-qubit states
+    - Enhance problem-solving abilities in quantum mechanics through practical examination
+      of quantum states
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-finalQuiz-information
+  title: 'Final Quiz 16 is in a separate notebook with filename: finalquiz16.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Develop analytical skills to assess entanglement in quantum systems based on
+      their decomposition
+    - Apply quantum mechanics principles to explore the entanglement properties of
+      multi-qubit states
+    - Enhance problem-solving abilities in quantum mechanics through practical examination
+      of quantum states
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multiple Qubits and Entangled Systems

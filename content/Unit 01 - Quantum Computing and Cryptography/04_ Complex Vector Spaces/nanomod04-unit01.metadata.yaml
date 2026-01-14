@@ -1,0 +1,727 @@
+learning_objective_tree:
+  title:
+  - Complex Vector Spaces
+  global_prerequisites:
+  - Linear Algebra
+  - Complex Numbers
+  - Introduction to Programming
+  - Python Basics
+  objectives:
+  - lo_id: LO-04-01
+    summary: Students will understand the concept and definition of Complex Vector
+      Spaces.
+    covered_by:
+    - m4-Background
+    learning_objectives:
+    - Understand the concept of complex vector spaces
+    - Identify examples of complex vectors in different dimensions
+    estimated_time_mins: 2
+    concepts:
+    - Complex Vector Spaces
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-04-02
+    summary: Students will be able to perform basic operation in Complex Vector Spaces.
+    covered_by:
+    - m4-OperationsComplexVectors
+    - m4-OperationsScalar
+    learning_objectives:
+    - Understand and perform addition of complex vectors
+    - Apply commutative and associative properties in vector addition
+    - Understand and perform addition of complex vectors as a scalar
+    estimated_time_mins: 6
+    concepts:
+    - Operations with Complex Vector Spaces
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-04-03
+    summary: Students will prove properties of Complex Vector Spaces and operations.
+    covered_by:
+    - m4-quiz-4.1
+    - m4-quiz-4.1-interactive
+    - m4-ComplexVectorSpaces
+    - m4-MatricesComplexVectorSpaces
+    - m4-PropertiesTransposeConjugateDagger
+    - m4-quiz-4.2
+    - m4-quiz-4.2-interactive
+    learning_objectives:
+    - Compute addition and subtraction of complex vectors
+    - Perform scalar multiplication on complex vectors
+    - Verify properties of complex vector spaces numerically
+    - Compute addition and subtraction of complex vectors
+    - Perform scalar multiplication on complex vectors
+    - Verify properties of complex vector spaces numerically
+    - Understand the definition of complex vector spaces
+    - Identify operations and properties in complex vector spaces
+    - Understand matrices as complex vector spaces
+    - 'Identify and perform additional operations for matrices: transpose, conjugate,
+      and dagger'
+    - Understand the properties of transpose, conjugate, and dagger operations
+    - Apply properties of these operations to complex matrices
+    - Numerically verify the properties of transpose, conjugate, and dagger operations
+      for complex matrices
+    - Numerically verify the properties of transpose, conjugate, and dagger operations
+      for complex matrices
+    estimated_time_mins: 66
+    concepts:
+    - Matrices and Complex Vector Spaces
+    - Operations with Complex Vector Spaces
+    - Properties of Transpose, Conjugate and Dagger Operations
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-04-04
+    summary: Students will be able to perform matrix operations and understand and
+      use their properties.
+    covered_by:
+    - m4-MatrixMultiplication
+    - m4-IdentityMatrix
+    - m4-PropertiesMatrixMultiplication
+    - m4-quiz-4.3
+    - m4-quiz-4.3-interactive
+    learning_objectives:
+    - Understand and perform matrix multiplication in complex vector spaces
+    - Recognize the non-commutative nature of matrix multiplication
+    - Understand the role of the identity matrix in matrix multiplication
+    - Identify the identity matrix and its properties within complex vector spaces
+    - Understand and apply the properties of matrix multiplication within complex
+      vector spaces
+    - Numerically verify the properties of matrix multiplication within complex vector
+      spaces
+    - Numerically verify the properties of matrix multiplication within complex vector
+      spaces
+    estimated_time_mins: 60
+    concepts:
+    - Matrix Multiplication and Properties
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-04-05
+    summary: Student will be able to implement programs that performs addition, multiplication,
+      transpose, conjugate and dagger operations on vectors and matrices.
+    covered_by:
+    - m4-final-quiz
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m4-LearningOutcomes
+  title: 4. Complex Vector Spaces
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Know the outcomes of learning Complex Vector Spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Learning Outcomes
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-Background
+  title: 4.1 Background
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m1-complexNumbers
+  concepts:
+  - Complex Vector Spaces
+  outcomes:
+  - Understand the concept of complex vector spaces
+  - Identify examples of complex vectors in different dimensions
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: 'Complex Vector Space '
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-OperationsComplexVectors
+  title: 4.2 Operations of Complex Vectors
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-Background
+  concepts:
+  - Operations with Complex Vector Spaces
+  outcomes:
+  - Understand and perform addition of complex vectors
+  - Apply commutative and associative properties in vector addition
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Operations of Complex Vectors
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-OperationsScalar
+  title: 4.3 Operations with a scalar
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-Background
+  concepts:
+  - Operations with Complex Vector Spaces
+  outcomes:
+  - Understand and perform addition of complex vectors as a scalar
+  extra_props:
+    editable: true
+    jp-MarkdownHeadingCollapsed: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Opeartions with a scalar
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-AdditiveIdentityInverse
+  title: 4.4 Additive Identity and Inverse
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m4-Background
+  concepts:
+  - Operations with Complex Vector Spaces
+  outcomes:
+  - Understand the concept of additive identity and additive inverse in complex vector
+    spaces
+  - Compute the additive inverse of complex vectors
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Additive Identity and Inverse
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-quiz-4.1
+  title: Quiz 4.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '5'
+  prerequisites:
+  - m4-OperationsComplexVectors
+  - m4-OperationsScalar
+  - m4-AdditiveIdentityInverse
+  concepts:
+  - Operations with Complex Vector Spaces
+  outcomes:
+  - Compute addition and subtraction of complex vectors
+  - Perform scalar multiplication on complex vectors
+  - Verify properties of complex vector spaces numerically
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m4-quiz-4.1-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-quiz-4.1-interactive
+  title: m4-quiz-4.1-interactive
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m4-OperationsComplexVectors
+  - m4-OperationsScalar
+  - m4-AdditiveIdentityInverse
+  concepts:
+  - Operations with Complex Vector Spaces
+  outcomes:
+  - Compute addition and subtraction of complex vectors
+  - Perform scalar multiplication on complex vectors
+  - Verify properties of complex vector spaces numerically
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m4-quiz-4.1
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1 interactive
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-ComplexVectorSpaces
+  title: 4.5 Complex Vector Spaces
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-OperationsComplexVectors
+  - m4-OperationsScalar
+  - m4-AdditiveIdentityInverse
+  - m4-quiz-4.1
+  - m4-quiz-4.1-interactive
+  concepts:
+  - Operations with Complex Vector Spaces
+  outcomes:
+  - Understand the definition of complex vector spaces
+  - Identify operations and properties in complex vector spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Complex Vector Spaces Properties
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-MatricesComplexVectorSpaces
+  title: 4.6 Matrices and Complex Vector Spaces
+  type: markdown
+  estimated_time: '4'
+  prerequisites:
+  - m4-Background
+  - m4-ComplexVectorSpaces
+  concepts:
+  - Matrices and Complex Vector Spaces
+  outcomes:
+  - Understand matrices as complex vector spaces
+  - 'Identify and perform additional operations for matrices: transpose, conjugate,
+    and dagger'
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Matrices and Complex Vector Spaces
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-PropertiesTransposeConjugateDagger
+  title: 4.7 Properties of Transpose, Conjugate and Dagger Operations
+  type: markdown
+  estimated_time: '4'
+  prerequisites:
+  - m4-MatricesComplexVectorSpaces
+  concepts:
+  - Properties of Transpose, Conjugate and Dagger Operations
+  outcomes:
+  - Understand the properties of transpose, conjugate, and dagger operations
+  - Apply properties of these operations to complex matrices
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Properties of Transpose, Conjugate and Dagger Operations
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-quiz-4.2
+  title: Quiz 4.2 Self Assessment Quiz
+  type: markdown
+  estimated_time: '20'
+  prerequisites:
+  - m4-ComplexVectorSpaces
+  - m4-MatricesComplexVectorSpaces
+  - m4-PropertiesTransposeConjugateDagger
+  concepts:
+  - Properties of Transpose, Conjugate and Dagger Operations
+  outcomes:
+  - Numerically verify the properties of transpose, conjugate, and dagger operations
+    for complex matrices
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates:
+    - m4-quiz-4.2-interactive
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 2
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-quiz-4.2-interactive
+  title: m4-quiz-4.2-interactive
+  type: code
+  estimated_time: '20'
+  prerequisites:
+  - m4-ComplexVectorSpaces
+  - m4-MatricesComplexVectorSpaces
+  - m4-PropertiesTransposeConjugateDagger
+  concepts:
+  - Properties of Transpose, Conjugate and Dagger Operations
+  outcomes:
+  - Numerically verify the properties of transpose, conjugate, and dagger operations
+    for complex matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m4-quiz-4.2
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 2 interactive
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-MatrixMultiplication
+  title: 4.8 Matrix Multiplication
+  type: markdown
+  estimated_time: '4'
+  prerequisites:
+  - m4-OperationsComplexVectors
+  concepts:
+  - Matrix Multiplication and Properties
+  outcomes:
+  - Understand and perform matrix multiplication in complex vector spaces
+  - Recognize the non-commutative nature of matrix multiplication
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Matrix Multiplication
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-IdentityMatrix
+  title: 4.9 Identity Matrix
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m4-MatrixMultiplication
+  concepts:
+  - Matrix Multiplication and Properties
+  outcomes:
+  - Understand the role of the identity matrix in matrix multiplication
+  - Identify the identity matrix and its properties within complex vector spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Identity Matrix
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-PropertiesMatrixMultiplication
+  title: 4.10 Properties of Matrix Multiplication
+  type: markdown
+  estimated_time: '4'
+  prerequisites:
+  - m4-MatrixMultiplication
+  - m4-IdentityMatrix
+  concepts:
+  - Matrix Multiplication and Properties
+  outcomes:
+  - Understand and apply the properties of matrix multiplication within complex vector
+    spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Properties of Matrix Multiplication
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-quiz-4.3
+  title: Quiz 4.3 Self Assessment Quiz
+  type: markdown
+  estimated_time: '25'
+  prerequisites:
+  - m4-MatrixMultiplication
+  - m4-IdentityMatrix
+  - m4-PropertiesMatrixMultiplication
+  - m4-quiz-4.2
+  - m4-quiz-4.2-interactive
+  concepts:
+  - Matrix Multiplication and Properties
+  outcomes:
+  - Numerically verify the properties of matrix multiplication within complex vector
+    spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m4-quiz-4.3-interactive
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 3
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-quiz-4.3-interactive
+  title: m4-quiz-4.3-interactive
+  type: code
+  estimated_time: '25'
+  prerequisites:
+  - m4-MatrixMultiplication
+  - m4-IdentityMatrix
+  - m4-PropertiesMatrixMultiplication
+  - m4-quiz-4.2
+  - m4-quiz-4.2-interactive
+  concepts:
+  - Matrix Multiplication and Properties
+  outcomes:
+  - Numerically verify the properties of matrix multiplication within complex vector
+    spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m4-quiz-4.3
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 3 interactive
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-Conclusions
+  title: 4.11 Conclusions
+  type: markdown
+  estimated_time: '2'
+  prerequisites: []
+  concepts:
+  - Conclusions
+  outcomes:
+  - Summarize the concepts of complex vector spaces and their operations
+  - Prepare for the upcoming lessons on linear independence and basis for complex
+    vector spaces
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Conclusions
+    module_outcomes:
+    - Understand the concept of vector spaces in the context of complex numbers
+    - Learn basic operations within Complex Vector Spaces
+    - Understand and apply matrix operations in Complex Vector Spaces
+    - Develop programming skills for operations on complex vectors and matrices
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Complex Vector Spaces
+- cell_id: m4-finalQuiz-information
+  title: 'Final Quiz 4 is in a separate notebook with filename: finalquiz4.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: final Quiz 4
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers

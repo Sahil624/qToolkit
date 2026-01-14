@@ -1,0 +1,524 @@
+learning_objective_tree:
+  title: Multi-qubit Systems
+  global_prerequisites:
+  - Linear Algebra
+  - Quantum Mechanics Fundamentals
+  - Single-Qubit Operations
+  objectives:
+  - lo_id: LO-15-01
+    summary: Students will represent the state of a multi-qubit system.
+    covered_by:
+    - m15-MultiQubitSystems
+    - m15-ExponentialGrowthInStateSpace
+    - m15-RepresentingAQubyte
+    - m15-TensorProductOfVectorSpacesRecap
+    - m15-OrthogonalBasis
+    - m15-Decomposability
+    learning_objectives:
+    - Understand the necessity and functionality of multi-qubit systems in quantum
+      computing
+    - Learn about the concepts of entangled qubits and their applications in quantum
+      cryptography and teleportation
+    - Appreciate the complexity and potential of multi-qubit operations, including
+      gates that operate on multiple qubits
+    - Understand the exponential growth in the state space of quantum systems with
+      increasing qubits
+    - Compare and contrast the state space of classical and quantum systems
+    - Learn about entanglement as a fundamental quantum phenomenon with no classical
+      counterpart
+    - Learn how to represent the state of a quantum register holding eight qubits,
+      or a qubyte
+    - Understand the process and significance of taking the tensor product of individual
+      qubit states
+    - Appreciate the resulting vector space dimensionality from combining qubits through
+      tensor products
+    - Recap the concept of tensor product of vector spaces and its significance in
+      quantum mechanics
+    - Understand how to construct the basis set for the tensor product of two vector
+      spaces
+    - Appreciate the notation and properties of tensor products in the context of
+      quantum computing
+    - Understand the orthonormal property of basis sets resulting from the tensor
+      product of orthonormal bases
+    - Learn the dimensional properties of tensor products involving vector spaces
+    - Grasp the implications of tensor product dimensions on the complexity of quantum
+      systems
+    - Understand the concept of decomposability in the context of tensor products
+      of vector spaces
+    - Recognize that not all elements in a tensor product space can be decomposed
+      into simpler tensor products
+    - Grasp the implications of this limitation for analyzing and representing quantum
+      states
+    estimated_time_mins: 8
+    concepts:
+    - Exponential Growth in State Space
+    - Multi-Qubit Systems
+    - Orthogonal Basis
+    - Tensor Product
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-15-02
+    summary: Students will be able to construct the basis for a multi-qubit system.
+    covered_by:
+    - m15-StateSpaceOfANQubitSystem
+    - m15-WhichQubitBelongsToWhom
+    - m15-VectorNotationForJointState
+    - m15-JointStateVectorForm
+    - m15-GlobalPhaseMultiQubit
+    - m15-quiz-15.1
+    learning_objectives:
+    - Understand the representation of the state space for a joint n-qubit system
+    - Learn how to construct the basis for an n-qubit system in standard vector spaces
+    - Grasp the shorthand notation for representing joint quantum states
+    - Understand how to represent joint quantum systems with qubits controlled by
+      different entities
+    - Learn the notation and methods for keeping track of qubit ownership in multi-qubit
+      systems
+    - Grasp the concept of representing complex quantum systems involving multiple
+      controllers
+    - Understand the challenges of using vector notation to represent joint states
+      in multi-qubit systems
+    - Learn the importance of establishing a well-defined order for qubits in joint
+      state representation
+    - Grasp the method of representing joint states without ambiguity in the absence
+      of subscripts or grouping in vector notation
+    - Express the joint state of multiple qubits in vector form, using the standard
+      basis for representation
+    - Understand the construction and significance of the standard basis vectors in
+      representing joint quantum states
+    - Learn the methodological approach to structuring and interpreting vector representations
+      of quantum systems
+    - Understand the concept of global phase in the context of joint quantum states
+    - Recognize that quantum states differing only in a global phase represent the
+      same physical state
+    - Apply the principle of global phase equivalence to multi-qubit systems
+    - Represent given qubits in joint state using both Ket and vector notations
+    - Translate specified quantum states into the Bell basis representation
+    - Apply knowledge of quantum state notation and transformation in practical exercises
+    estimated_time_mins: 7
+    concepts:
+    - Global Phase
+    - State Space of n-qubit System
+    - Which Qubits belongs to whom
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m15-LearningOutcome
+  title: 15. Multi-qubit Systems
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Represent the state of a multi-qubit system
+  - Construct the basis for a multi-qubit system
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Understand and apply concepts for representing multi-qubit systems
+    - Develop skills in constructing and utilizing the basis for multi-qubit systems
+      in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Single-Qubit Operations
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-MultiQubitSystems
+  title: 15.1 Multi-qubit Systems
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Multi-Qubit Systems
+  outcomes:
+  - Understand the necessity and functionality of multi-qubit systems in quantum computing
+  - Learn about the concepts of entangled qubits and their applications in quantum
+    cryptography and teleportation
+  - Appreciate the complexity and potential of multi-qubit operations, including gates
+    that operate on multiple qubits
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Gain a comprehensive understanding of multi-qubit systems and their representation
+    - Explore the significant quantum computing concepts and technologies enabled
+      by multi-qubit systems
+    - Prepare for advanced quantum computing topics, including quantum cryptography
+      and teleportation
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Single-Qubit Operations
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-ExponentialGrowthInStateSpace
+  title: 15.2 Exponential Growth in State Space
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m15-MultiQubitSystems
+  concepts:
+  - Exponential Growth in State Space
+  outcomes:
+  - Understand the exponential growth in the state space of quantum systems with increasing
+    qubits
+  - Compare and contrast the state space of classical and quantum systems
+  - Learn about entanglement as a fundamental quantum phenomenon with no classical
+    counterpart
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the vast potential of quantum computing stemming from the exponential
+      growth of state space
+    - Grasp the concept of entanglement and its significance in quantum computing
+    - Prepare for advanced discussions on quantum computing architectures and algorithms
+      involving multi-qubit systems
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-RepresentingAQubyte
+  title: Representing a qubyte
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m15-MultiQubitSystems
+  concepts:
+  - Exponential Growth in State Space
+  outcomes:
+  - Learn how to represent the state of a quantum register holding eight qubits, or
+    a qubyte
+  - Understand the process and significance of taking the tensor product of individual
+    qubit states
+  - Appreciate the resulting vector space dimensionality from combining qubits through
+    tensor products
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the concept of qubyte representation and the mathematical operations
+      involved
+    - Develop an understanding of the complex vector spaces resulting from multi-qubit
+      systems
+    - Prepare for advanced exploration of quantum computing algorithms and systems
+      architecture involving multi-qubit registers
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-TensorProductOfVectorSpacesRecap
+  title: 15.3 Tensor Product of Vector Spaces (Recap)
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m8-TensorProduct
+  - m8-JointBasis
+  concepts:
+  - Tensor Product
+  outcomes:
+  - Recap the concept of tensor product of vector spaces and its significance in quantum
+    mechanics
+  - Understand how to construct the basis set for the tensor product of two vector
+    spaces
+  - Appreciate the notation and properties of tensor products in the context of quantum
+    computing
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Deepen understanding of the mathematical framework underpinning quantum systems
+    - Apply knowledge of tensor products to explore the structure and representation
+      of multi-qubit systems
+    - Prepare for advanced topics in quantum computing involving the manipulation
+      and analysis of complex quantum states
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-OrthogonalBasis
+  title: Orthogonal Basis
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m6-OrthogonalBasis
+  - m8-Quiz-8.1
+  - m8-Quiz-8.1-interactive
+  concepts:
+  - Orthogonal Basis
+  outcomes:
+  - Understand the orthonormal property of basis sets resulting from the tensor product
+    of orthonormal bases
+  - Learn the dimensional properties of tensor products involving vector spaces
+  - Grasp the implications of tensor product dimensions on the complexity of quantum
+    systems
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the construction and properties of orthonormal bases in multi-qubit
+      systems
+    - Apply principles of linear algebra to analyze the structure and dimensionality
+      of quantum states
+    - Prepare for advanced quantum computing concepts involving high-dimensional quantum
+      systems
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-Decomposability
+  title: m15-Decomposability
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m15-OrthogonalBasis
+  concepts:
+  - Orthogonal Basis
+  outcomes:
+  - Understand the concept of decomposability in the context of tensor products of
+    vector spaces
+  - Recognize that not all elements in a tensor product space can be decomposed into
+    simpler tensor products
+  - Grasp the implications of this limitation for analyzing and representing quantum
+    states
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the challenges in decomposing elements of a tensor product space
+    - Analyze the structure and representation of quantum states in the framework
+      of tensor product spaces
+    - Prepare for complex discussions on quantum state manipulation and entanglement
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-StateSpaceOfANQubitSystem
+  title: 15.4 State Space of a n-qubit System
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m15-TensorProductOfVectorSpacesRecap
+  concepts:
+  - State Space of n-qubit System
+  outcomes:
+  - Understand the representation of the state space for a joint n-qubit system
+  - Learn how to construct the basis for an n-qubit system in standard vector spaces
+  - Grasp the shorthand notation for representing joint quantum states
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the concept of state space in multi-qubit quantum systems
+    - Develop skills in constructing and understanding the basis of n-qubit systems
+    - Prepare for complex quantum computing operations involving multi-qubit states
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-WhichQubitBelongsToWhom
+  title: 15.5 Which Qubit belongs to whom?
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m15-StateSpaceOfANQubitSystem
+  concepts:
+  - Which Qubits belongs to whom
+  outcomes:
+  - Understand how to represent joint quantum systems with qubits controlled by different
+    entities
+  - Learn the notation and methods for keeping track of qubit ownership in multi-qubit
+    systems
+  - Grasp the concept of representing complex quantum systems involving multiple controllers
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the representation of multi-qubit systems with differentiated qubit control
+    - Apply notation techniques to specify ownership and control in joint quantum
+      systems
+    - Prepare for the exploration of quantum protocols and computing architectures
+      involving distributed qubit control
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-VectorNotationForJointState
+  title: m15-VectorNotationForJointState
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m15-WhichQubitBelongsToWhom
+  concepts:
+  - Which Qubits belongs to whom
+  outcomes:
+  - Understand the challenges of using vector notation to represent joint states in
+    multi-qubit systems
+  - Learn the importance of establishing a well-defined order for qubits in joint
+    state representation
+  - Grasp the method of representing joint states without ambiguity in the absence
+    of subscripts or grouping in vector notation
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Navigate the complexities of joint state representation in multi-qubit systems
+    - Apply structured approaches to describe the states of quantum systems comprising
+      multiple qubits
+    - Prepare for advanced quantum computing and communication scenarios involving
+      complex state representations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-JointStateVectorForm
+  title: m15-JointStateVectorForm
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m15-WhichQubitBelongsToWhom
+  - m15-VectorNotationForJointState
+  concepts:
+  - Which Qubits belongs to whom
+  outcomes:
+  - Express the joint state of multiple qubits in vector form, using the standard
+    basis for representation
+  - Understand the construction and significance of the standard basis vectors in
+    representing joint quantum states
+  - Learn the methodological approach to structuring and interpreting vector representations
+    of quantum systems
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the techniques for expressing and analyzing joint states of multi-qubit
+      systems in vector form
+    - Develop an in-depth understanding of the basis and dimensionality considerations
+      in quantum state representations
+    - Prepare for advanced studies in quantum computing involving complex multi-qubit
+      interactions and entanglement
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-GlobalPhaseMultiQubit
+  title: 15.6 Global Phase
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m11-GlobalAndRelativePhases
+  concepts:
+  - Global Phase
+  outcomes:
+  - Understand the concept of global phase in the context of joint quantum states
+  - Recognize that quantum states differing only in a global phase represent the same
+    physical state
+  - Apply the principle of global phase equivalence to multi-qubit systems
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the significance of global phase differences in the representation
+      of quantum states
+    - Master the interpretation of quantum state equivalence in multi-qubit systems
+    - Prepare for advanced quantum mechanics concepts involving state representation
+      and transformation
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-quiz-15.1
+  title: Quiz 15.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m15-GlobalPhaseMultiQubit
+  concepts:
+  - Global Phase
+  outcomes:
+  - Represent given qubits in joint state using both Ket and vector notations
+  - Translate specified quantum states into the Bell basis representation
+  - Apply knowledge of quantum state notation and transformation in practical exercises
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the techniques for expressing joint states of qubits in both Ket and
+      vector forms
+    - Understand and utilize the Bell basis for representing quantum states
+    - Enhance problem-solving skills in quantum state representation and basis transformation
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Multi-qubit Systems
+- cell_id: m15-finalQuiz-information
+  title: 'Final Quiz 15 is in a separate notebook with filename: finalquiz15.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the techniques for expressing joint states of qubits in both Ket and
+      vector forms
+    - Understand and utilize the Bell basis for representing quantum states
+    - Enhance problem-solving skills in quantum state representation and basis transformation
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Complex Numbers
+    module_title:
+    - Multi-qubit Systems

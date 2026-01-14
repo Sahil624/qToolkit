@@ -11,7 +11,7 @@ import { ServerConnection } from '@jupyterlab/services';
  */
 export async function makeApiRequest<T = any>(
   endPoint = '',
-  body: Object = {},
+  body: Object | null = {},
   init: RequestInit = {}
 ): Promise<T> {
   // Make request to Jupyter API
@@ -22,7 +22,9 @@ export async function makeApiRequest<T = any>(
     endPoint
   );
 
-  init.body = JSON.stringify(body);
+  if(body)
+    init.body = JSON.stringify(body);
+  
   init.method = init.method ?? 'POST';
   init.headers = init.headers ?? {};
   (init.headers as any)['Content-Type'] = 'application/json';

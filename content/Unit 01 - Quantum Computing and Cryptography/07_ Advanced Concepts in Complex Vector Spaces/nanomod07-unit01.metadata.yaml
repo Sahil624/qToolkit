@@ -1,0 +1,465 @@
+learning_objective_tree:
+  title:
+  - Advanced Concepts in Complex Vector Spaces
+  global_prerequisites:
+  - Linear Algebra
+  - Complex Numbers
+  - Introduction to Programming
+  - Python Basics
+  - Complex Vector Spaces
+  objectives:
+  - lo_id: LO-07-01
+    summary: Students will understand the definition and meaning of eigenvalues and
+      eigenvectors and compute them.
+    covered_by:
+    - m7-EigenvaluesEigenvectors
+    - m7-DefinitionEigenvectorsEigenvalues
+    - m7-Quiz-7.1
+    - m7-Quiz-7.1-interactive
+    learning_objectives:
+    - Understand the concept of eigenvalues and eigenvectors
+    - Identify examples of eigenvalues and eigenvectors
+    - Define eigenvectors and eigenvalues and understand their relationship to complex
+      matrices
+    - Identify examples of eigenvectors and eigenvalues
+    - Compute eigenvectors and eigenvalues for given matrices
+    - Verify Hermitian property for given matrices
+    - Compute eigenvectors and eigenvalues for given matrices
+    - Verify Hermitian property for given matrices
+    estimated_time_mins: 56
+    concepts:
+    - Eigenvalues and Eigenvectors
+    - Hermitian Matrices
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-07-02
+    summary: Students will prove properties of Hermitian and unitary matrices.
+    covered_by:
+    - m7-HermitianMatrices
+    - m7-Quiz-7.1
+    - m7-Quiz-7.1-interactive
+    - m7-UnitaryMatrices
+    learning_objectives:
+    - Understand the definition and properties of Hermitian matrices
+    - Identify examples of Hermitian matrices
+    - Compute eigenvectors and eigenvalues for given matrices
+    - Verify Hermitian property for given matrices
+    - Compute eigenvectors and eigenvalues for given matrices
+    - Verify Hermitian property for given matrices
+    - Understand the definition and properties of unitary matrices
+    - Identify examples of unitary matrices
+    estimated_time_mins: 56
+    concepts:
+    - Hermitian Matrices
+    - Unitary Matrices
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-07-03
+    summary: Students will be able to verify properties of unitary and Hermitian matrices.
+    covered_by:
+    - m7-Quiz-7.2
+    - m7-Quiz-7.2-interactive
+    learning_objectives:
+    - Verify unitary property for given matrices
+    - Prove preservation of inner product under unitary transformation
+    - Verify unitary property for given matrices
+    - Prove preservation of inner product under unitary transformation
+    estimated_time_mins: 25
+    concepts:
+    - Implications of Unitary Transformations
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-07-04
+    summary: Students will know the implication of unitary matrices as transformations
+      in quantum computing.
+    covered_by:
+    - m7-ImplicationUnitaryTransformations
+    learning_objectives:
+    - Understand the implications of unitary transformations on quantum systems
+    - Apply the concept of reversibility to quantum state operations
+    estimated_time_mins: 3
+    concepts:
+    - Implications of Unitary Transformations
+    - Unitary Matrices
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-07-05
+    summary: Students will be able to implement Python programs that check if a given
+      matrix is Hermitian or unitary.
+    covered_by:
+    - m7-final-quiz
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m7-LearningOutcomes
+  title: 7. Advanced Concepts in Complex Vector Spaces
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Understand eigenvalues and eigenvectors and compute them
+  - Prove properties of Hermitian and unitary matrices
+  - Verify properties of unitary and Hermitian matrices
+  - Understand the implication of unitary matrices in quantum computing
+  - Implement Python programs to check for Hermitian or unitary matrices
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Learning Outcomes
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-EigenvaluesEigenvectors
+  title: 7.1 Eigenvalues and Eigenvectors
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-OperationsScalar
+  - m4-MatrixMultiplication
+  concepts:
+  - Eigenvalues and Eigenvectors
+  outcomes:
+  - Understand the concept of eigenvalues and eigenvectors
+  - Identify examples of eigenvalues and eigenvectors
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Eigen Values and Eigen Vectors
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-DefinitionEigenvectorsEigenvalues
+  title: '7.2 Definition: Eigenvectors and eigenvalues'
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m7-EigenvaluesEigenvectors
+  concepts:
+  - Eigenvalues and Eigenvectors
+  outcomes:
+  - Define eigenvectors and eigenvalues and understand their relationship to complex
+    matrices
+  - Identify examples of eigenvectors and eigenvalues
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Definition of Eigen Vectors and Eigen Values
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-HermitianMatrices
+  title: 7.3 Hermitian Matrices
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m4-MatricesComplexVectorSpaces
+  concepts:
+  - Hermitian Matrices
+  outcomes:
+  - Understand the definition and properties of Hermitian matrices
+  - Identify examples of Hermitian matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Hermitian Matrices
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-Quiz-7.1
+  title: Quiz 7.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '25'
+  prerequisites:
+  - m7-EigenvaluesEigenvectors
+  - m7-DefinitionEigenvectorsEigenvalues
+  - m7-HermitianMatrices
+  concepts:
+  - Hermitian Matrices
+  outcomes:
+  - Compute eigenvectors and eigenvalues for given matrices
+  - Verify Hermitian property for given matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m7-Quiz-7.1-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 1
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-Quiz-7.1-interactive
+  title: m7-Quiz-7.1-interactive
+  type: code
+  estimated_time: '25'
+  prerequisites:
+  - m7-EigenvaluesEigenvectors
+  - m7-DefinitionEigenvectorsEigenvalues
+  - m7-HermitianMatrices
+  concepts:
+  - Hermitian Matrices
+  outcomes:
+  - Compute eigenvectors and eigenvalues for given matrices
+  - Verify Hermitian property for given matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m7-Quiz-7.1
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 7 interactive
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-UnitaryMatrices
+  title: 7.4 Unitary Matrices
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m7-HermitianMatrices
+  concepts:
+  - Unitary Matrices
+  outcomes:
+  - Understand the definition and properties of unitary matrices
+  - Identify examples of unitary matrices
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Unitary Matrices
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-ImplicationUnitaryTransformations
+  title: 7.5 Implication of Unitary Transformations
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m7-UnitaryMatrices
+  concepts:
+  - Unitary Matrices
+  - Implications of Unitary Transformations
+  outcomes:
+  - Understand the implications of unitary transformations on quantum systems
+  - Apply the concept of reversibility to quantum state operations
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Implication of Unitary Transformations
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-Quiz-7.2
+  title: Quiz 7.2 Self Assessment Quiz
+  type: markdown
+  estimated_time: '10'
+  prerequisites:
+  - m7-UnitaryMatrices
+  - m7-ImplicationUnitaryTransformations
+  concepts:
+  - Implications of Unitary Transformations
+  outcomes:
+  - Verify unitary property for given matrices
+  - Prove preservation of inner product under unitary transformation
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m7-Quiz-7.2-interactive
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 2
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-Quiz-7.2-interactive
+  title: m7-Quiz-7.2-interactive
+  type: code
+  estimated_time: '15'
+  prerequisites:
+  - m7-UnitaryMatrices
+  - m7-ImplicationUnitaryTransformations
+  concepts:
+  - Implications of Unitary Transformations
+  outcomes:
+  - Verify unitary property for given matrices
+  - Prove preservation of inner product under unitary transformation
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m7-Quiz-7.2
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 2 interactive
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces
+- cell_id: m7-finalQuiz-information
+  title: 'Final Quiz 7  is in a separate notebook with filename: finalquiz7.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: final Quiz 7
+    module_outcomes:
+    - Master advanced concepts in complex vector spaces
+    - Develop the ability to analyze and apply advanced mathematical concepts in practical
+      scenarios, particularly in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Programming
+    - Python Basics
+    - Complex Vector Spaces
+    module_title:
+    - Advanced Concepts in Complex Vector Spaces

@@ -1,0 +1,618 @@
+learning_objective_tree:
+  title: Multi-Qubit Gates and Operations
+  global_prerequisites:
+  - Linear Algebra
+  - Quantum Mechanics Fundamentals
+  - Single-Qubit Operations
+  objectives:
+  - lo_id: LO-18-01
+    summary: Students will be able to construct multi-qubit gates from single qubit
+      gates.
+    covered_by:
+    - m18-ComposingSingleQubitOperations
+    - m18-JointGateRepresentation
+    - m18-JointGateRepresentationConclusion
+    - m18-GateOperationOnJointQubits
+    learning_objectives:
+    - Learn how to compose multi-qubit operations from single qubit gates
+    - Understand the use of tensor products in creating complex quantum gates
+    - Apply knowledge of single qubit gates to construct operations on multi-qubit
+      systems
+    - Determine the joint gate representation for parallel operations on multi-qubit
+      systems
+    - Understand how individual gate operations combine to form the overall transformation
+      on joint states
+    - Visualize and analyze the circuit representation of parallel gate applications
+      on multi-qubit systems
+    - Understand the final representation of the joint gate through the tensor product
+      of individual gates
+    - Learn the mathematical formulation for combining gate operations on multi-qubit
+      systems
+    - Grasp the implications of joint gate operations for quantum computing and system
+      transformations
+    - Calculate the action of a two-qubit gate on the joint representation of qubits
+    - Verify the consistency of gate operations on joint states with individual qubit
+      transformations
+    - Understand the process of quantum state transformation in multi-qubit systems
+      through gate operations
+    estimated_time_mins: 4
+    concepts:
+    - Single Qubit to Mutii Qubit Operations
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-18-02
+    summary: Students will understand the operations of new multi-qubit gates.
+    covered_by:
+    - m18-TrueMultiQubitGates
+    - m18-TheCNOTGate
+    - m18-CNOTGateExample
+    - m18-CNOTGateXOR
+    learning_objectives:
+    - Understand the concept of true multi-qubit gates that act on multiple qubits
+      simultaneously
+    - Learn the matrix representation and effects of specific multi-qubit gates such
+      as CNOT, Toffoli, and Fredkin
+    - Appreciate the utility of true multi-qubit gates in performing operations beyond
+      the capability of single qubit gates
+    - Understand the structure and function of the CNOT gate in quantum computing
+    - Learn how the CNOT gate can be used to entangle and disentangle qubits
+    - Identify the roles of control and target qubits in the operation of the CNOT
+      gate
+    - Illustrate the conditional operation of the CNOT gate based on the state of
+      the control qubit
+    - Understand the resulting state of the target qubit after the CNOT gate operation
+    - Grasp the concept of entanglement as a result of conditional quantum gate operations
+    - Understand the operation of the CNOT gate in the context of the XOR logical
+      function
+    - Grasp the basis dependency of the CNOT gate's 'unchangeability' of the control
+      qubit
+    - Appreciate the nuances of applying classical logic notation to quantum operations
+    estimated_time_mins: 4
+    concepts:
+    - CNOT Gate
+    - True Multi-Qubit Gates
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-18-03
+    summary: Students will be able to compute outputs of circuits consisting of multiple
+      qubits.
+    covered_by:
+    - m18-CNOTUnitaryInverse
+    - m18-CNOTBasisDependency
+    - m18-CNOTForEntanglement
+    - m18-GeneralControlledOperation
+    - m18-CNOTForSwap
+    - m18-OtherMultiQubitGates
+    - m18-UniversalGateSet
+    learning_objectives:
+    - Recognize the CNOT gate as a unitary transformation
+    - Understand that the CNOT gate is its own inverse, allowing for reversible computing
+    - Appreciate the significance of unitary transformations in quantum computing
+      for ensuring reversibility
+    - Explore the basis dependency of the CNOT gate's operation within quantum circuits
+    - Challenge the assumption of reversibility in specific circuit configurations
+      involving the CNOT and Hadamard gates
+    - Encourage the computation of circuit outputs for various qubit states to understand
+      the nuanced behavior of quantum gates
+    - Understand how the CNOT gate can be used to entangle qubits when the control
+      qubit is in superposition
+    - Learn the specific circuit configuration used to create Bell pairs with the
+      CNOT gate
+    - Appreciate the role of input states in determining the outcome of entanglement
+      processes
+    - Understand the concept and representation of general controlled operations in
+      quantum computing
+    - Learn the matrix representation of a controlled operation involving an arbitrary
+      quantum gate
+    - Grasp the significance of controlled operations in constructing complex quantum
+      algorithms
+    - Preview the use of the CNOT gate in quantum teleportation
+    - Introduce a swap circuit constructed with CNOT gates
+    - Foreshadow the application of these concepts on a practical quantum computing
+      platform
+    - Understand the structure and function of the Toffoli and Fredkin gates in quantum
+      computing
+    - Learn the operational dynamics of these gates, including the requirement for
+      control bits to be on
+    - Grasp the application of complex multi-qubit operations in constructing quantum
+      algorithms
+    - Understand the concept of a universal gate set in both classical and quantum
+      circuits
+    - Learn which operations comprise a quantum universal gate set
+    - Appreciate the equivalency of certain gate sets in achieving universal computation
+      in quantum computing
+    estimated_time_mins: 7
+    concepts:
+    - CNOT Gate
+    - General Controlled Operation
+    - Other Multi Qubit Gates
+    - Universal Gate Set
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m18-LearningOutcomes
+  title: 18. Multi-Qubit Gates and Operations
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Construct multi-qubit gates from single qubit gates
+  - Understand the operations of new multi-qubit gates
+  - Compute outputs of circuits consisting of multiple qubits
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the construction and function of multi-qubit gates in quantum computing
+    - Analyze the behavior and output of quantum circuits involving multiple qubits
+    - Develop proficiency in applying quantum operations to complex quantum systems
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    - Single-Qubit Operations
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-ComposingSingleQubitOperations
+  title: 18.1 Composing Single Qubit Operations into Multi-qubit Operations
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Single Qubit to Mutii Qubit Operations
+  outcomes:
+  - Learn how to compose multi-qubit operations from single qubit gates
+  - Understand the use of tensor products in creating complex quantum gates
+  - Apply knowledge of single qubit gates to construct operations on multi-qubit systems
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the technique of composing multi-qubit gates from single qubit operations
+    - Analyze the resulting quantum operations from the combination of single qubit
+      gates on multi-qubit systems
+    - Develop skills in manipulating complex quantum systems through the application
+      of tensor products and gate operations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-JointGateRepresentation
+  title: m18-JointGateRepresentation
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-ComposingSingleQubitOperations
+  concepts:
+  - Single Qubit to Mutii Qubit Operations
+  outcomes:
+  - Determine the joint gate representation for parallel operations on multi-qubit
+    systems
+  - Understand how individual gate operations combine to form the overall transformation
+    on joint states
+  - Visualize and analyze the circuit representation of parallel gate applications
+    on multi-qubit systems
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the construction and analysis of joint gate operations in quantum
+      computing
+    - Apply principles of quantum mechanics to evaluate the effects of parallel gate
+      operations on joint states
+    - Prepare for advanced topics in quantum circuit design and optimization involving
+      multi-qubit operations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-JointGateRepresentationConclusion
+  title: m18-JointGateRepresentationConclusion
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-ComposingSingleQubitOperations
+  - m18-JointGateRepresentation
+  concepts:
+  - Single Qubit to Mutii Qubit Operations
+  outcomes:
+  - Understand the final representation of the joint gate through the tensor product
+    of individual gates
+  - Learn the mathematical formulation for combining gate operations on multi-qubit
+    systems
+  - Grasp the implications of joint gate operations for quantum computing and system
+    transformations
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the process of determining joint gate representations in multi-qubit
+      quantum operations
+    - Develop an understanding of the complexity and power of multi-qubit gates in
+      quantum computing
+    - Prepare for in-depth exploration of quantum algorithms and circuit design involving
+      complex gate combinations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-GateOperationOnJointQubits
+  title: m18-GateOperationOnJointQubits
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-ComposingSingleQubitOperations
+  - m18-JointGateRepresentation
+  - m18-JointGateRepresentationConclusion
+  concepts:
+  - Single Qubit to Mutii Qubit Operations
+  outcomes:
+  - Calculate the action of a two-qubit gate on the joint representation of qubits
+  - Verify the consistency of gate operations on joint states with individual qubit
+    transformations
+  - Understand the process of quantum state transformation in multi-qubit systems
+    through gate operations
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the application and analysis of multi-qubit gate operations on quantum
+      states
+    - Develop the ability to compute and interpret the outcomes of complex gate operations
+      in quantum computing
+    - Prepare for the design and analysis of quantum circuits involving sophisticated
+      multi-qubit transformations
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-TrueMultiQubitGates
+  title: 18.2 True Multi-Qubit Gates
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - True Multi-Qubit Gates
+  outcomes:
+  - Understand the concept of true multi-qubit gates that act on multiple qubits simultaneously
+  - Learn the matrix representation and effects of specific multi-qubit gates such
+    as CNOT, Toffoli, and Fredkin
+  - Appreciate the utility of true multi-qubit gates in performing operations beyond
+    the capability of single qubit gates
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the identification, representation, and application of true multi-qubit
+      gates in quantum computing
+    - Analyze the functionality and advantages of using complex gates like CNOT, Toffoli,
+      and Fredkin in quantum circuits
+    - Prepare for the design and analysis of quantum algorithms leveraging the unique
+      capabilities of multi-qubit gates
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-TheCNOTGate
+  title: 18.2.1 The CNOT Gate
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-TrueMultiQubitGates
+  concepts:
+  - CNOT Gate
+  outcomes:
+  - Understand the structure and function of the CNOT gate in quantum computing
+  - Learn how the CNOT gate can be used to entangle and disentangle qubits
+  - Identify the roles of control and target qubits in the operation of the CNOT gate
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the use and implications of the CNOT gate in the manipulation of qubit
+      states
+    - Develop the skills to incorporate the CNOT gate into quantum circuits for specific
+      computational tasks
+    - Prepare for advanced exploration of quantum entanglement and algorithms utilizing
+      the CNOT and other multi-qubit gates
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-CNOTGateExample
+  title: m18-CNOTGateExample
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-TheCNOTGate
+  concepts:
+  - CNOT Gate
+  outcomes:
+  - Illustrate the conditional operation of the CNOT gate based on the state of the
+    control qubit
+  - Understand the resulting state of the target qubit after the CNOT gate operation
+  - Grasp the concept of entanglement as a result of conditional quantum gate operations
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the functional dynamics and applications of the CNOT gate in quantum
+      circuits
+    - Develop the ability to predict and analyze the outcomes of applying the CNOT
+      gate in various quantum states
+    - Prepare for advanced studies in quantum circuit design and the practical use
+      of entanglement in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-CNOTGateXOR
+  title: m18-CNOTGateXOR
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-TheCNOTGate
+  - m18-CNOTGateExample
+  concepts:
+  - CNOT Gate
+  outcomes:
+  - Understand the operation of the CNOT gate in the context of the XOR logical function
+  - Grasp the basis dependency of the CNOT gate's 'unchangeability' of the control
+    qubit
+  - Appreciate the nuances of applying classical logic notation to quantum operations
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the analogy between the CNOT gate's function and the XOR operation in
+      classical computing
+    - Develop a deeper understanding of quantum gate operations and their classical
+      analogues
+    - Prepare for advanced exploration of quantum logic gates and their applications
+      in quantum algorithms
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-CNOTUnitaryInverse
+  title: m18-CNOTUnitaryInverse
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-TheCNOTGate
+  - m18-CNOTGateExample
+  - m18-CNOTGateXOR
+  concepts:
+  - CNOT Gate
+  outcomes:
+  - Recognize the CNOT gate as a unitary transformation
+  - Understand that the CNOT gate is its own inverse, allowing for reversible computing
+  - Appreciate the significance of unitary transformations in quantum computing for
+    ensuring reversibility
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the properties of the CNOT gate as a unitary and reversible operation
+    - Analyze the role of the CNOT gate in constructing reversible quantum circuits
+    - Prepare for the design and analysis of quantum algorithms leveraging the reversibility
+      of quantum gates
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-CNOTBasisDependency
+  title: m18-CNOTBasisDependency
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-TheCNOTGate
+  - m18-CNOTGateExample
+  - m18-CNOTGateXOR
+  - m18-CNOTUnitaryInverse
+  concepts:
+  - CNOT Gate
+  outcomes:
+  - Explore the basis dependency of the CNOT gate's operation within quantum circuits
+  - Challenge the assumption of reversibility in specific circuit configurations involving
+    the CNOT and Hadamard gates
+  - Encourage the computation of circuit outputs for various qubit states to understand
+    the nuanced behavior of quantum gates
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the complex, basis-dependent behavior of the CNOT gate in combination
+      with the Hadamard gate
+    - Develop critical thinking and problem-solving skills through computational exercises
+      involving quantum circuits
+    - Prepare for advanced quantum computing topics, including gate combinations and
+      circuit analysis
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-CNOTForEntanglement
+  title: CNOT for entanglement
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - CNOT Gate
+  outcomes:
+  - Understand how the CNOT gate can be used to entangle qubits when the control qubit
+    is in superposition
+  - Learn the specific circuit configuration used to create Bell pairs with the CNOT
+    gate
+  - Appreciate the role of input states in determining the outcome of entanglement
+    processes
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the use of the CNOT gate for generating entanglement in quantum systems
+    - Develop skills in designing quantum circuits that leverage entanglement for
+      quantum computing tasks
+    - Prepare for advanced studies in quantum information theory and entanglement-based
+      quantum protocols
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-GeneralControlledOperation
+  title: 18.2.2 General Controlled operation
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - General Controlled Operation
+  outcomes:
+  - Understand the concept and representation of general controlled operations in
+    quantum computing
+  - Learn the matrix representation of a controlled operation involving an arbitrary
+    quantum gate
+  - Grasp the significance of controlled operations in constructing complex quantum
+    algorithms
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the construction and application of controlled quantum operations in
+      quantum circuits
+    - Develop the ability to analyze and design quantum algorithms using controlled
+      operations
+    - Prepare for advanced exploration of quantum computing techniques and circuit
+      complexities
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-CNOTForSwap
+  title: m18-CNOTForSwap
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-GeneralControlledOperation
+  concepts:
+  - General Controlled Operation
+  outcomes:
+  - Preview the use of the CNOT gate in quantum teleportation
+  - Introduce a swap circuit constructed with CNOT gates
+  - Foreshadow the application of these concepts on a practical quantum computing
+    platform
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Prepare for the study of quantum teleportation and its implementation
+    - Understand the role of CNOT gates in creating swap circuits within quantum algorithms
+    - Anticipate the practical application of quantum computing concepts on simulation
+      platforms
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-OtherMultiQubitGates
+  title: 18.3 Other Multi-Qubit Gates
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m18-CNOTForSwap
+  concepts:
+  - Other Multi Qubit Gates
+  outcomes:
+  - Understand the structure and function of the Toffoli and Fredkin gates in quantum
+    computing
+  - Learn the operational dynamics of these gates, including the requirement for control
+    bits to be on
+  - Grasp the application of complex multi-qubit operations in constructing quantum
+    algorithms
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the identification, functionality, and application of the Toffoli and
+      Fredkin gates
+    - Develop skills in designing quantum circuits that incorporate complex multi-qubit
+      gates
+    - Prepare for advanced topics in quantum computing, focusing on the role of conditional
+      operations in quantum algorithms
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-UniversalGateSet
+  title: 18.4 Universal Gate Set
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Universal Gate Set
+  outcomes:
+  - Understand the concept of a universal gate set in both classical and quantum circuits
+  - Learn which operations comprise a quantum universal gate set
+  - Appreciate the equivalency of certain gate sets in achieving universal computation
+    in quantum computing
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the principles of universal computation in quantum computing using specific
+      gate sets
+    - Develop an understanding of the significance of Hadamard, CNOT, and phase shift
+      gates in quantum algorithms
+    - Prepare for advanced studies in quantum computing involving the design and analysis
+      of quantum circuits using universal gates
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multi-Qubit Gates and Operations
+- cell_id: m18-endmodule-information
+  title: End of nanomodule 18
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Comprehend the quantum mechanics principles underlying the success of the CHSH
+      game strategy
+    - Analyze the quantum advantage in achieving outcomes beyond classical limitations
+    - Prepare for advanced studies in quantum information theory, focusing on entanglement
+      and nonlocal correlations
+    module_prereqs:
+    - Quantum Mechanics Fundamentals
+    - Linear Algebra
+    - Probability
+    module_title:
+    - The EPR Paradox and CHSH Game

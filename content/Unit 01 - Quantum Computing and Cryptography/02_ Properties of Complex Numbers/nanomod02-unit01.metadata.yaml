@@ -1,0 +1,476 @@
+learning_objective_tree:
+  title: Properties of Complex Numbers
+  global_prerequisites:
+  - Algebra
+  - Introduction to Programming
+  - Python Basics
+  objectives:
+  - lo_id: LO-02-01
+    summary: Students will be able to represent complex numbers as ordered pairs.
+    covered_by:
+    - m2-background
+    learning_objectives:
+    - Develop intuition for complex numbers through geometric representation
+    - Represent complex numbers as ordered pairs
+    - Perform addition and multiplication on complex numbers represented as ordered
+      pairs
+    estimated_time_mins: 2
+    concepts:
+    - Properties of Complex Numbers
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-02-02
+    summary: Students will know some of the basic properties of complex numbers and
+      operations on them.
+    covered_by:
+    - m2-background
+    - m2-properties
+    - m2-propertiesContd
+    - m2-quiz-2.1
+    - m2-quiz-2.1-interactive
+    learning_objectives:
+    - Develop intuition for complex numbers through geometric representation
+    - Represent complex numbers as ordered pairs
+    - Perform addition and multiplication on complex numbers represented as ordered
+      pairs
+    - Understand the commutative and associative properties of addition and multiplication
+      with complex numbers
+    - Understand the distributive property of multiplication over addition with complex
+      numbers
+    - Apply negation to complex numbers
+    - Perform subtraction of complex numbers
+    - Understand and perform division of complex numbers
+    - Compute the product of complex numbers in cartesian representation
+    - Numerically verify the distributive property of multiplication over addition
+      with complex numbers
+    - Compute division of complex numbers in cartesian representation
+    - Compute the product of complex numbers in cartesian representation
+    - Numerically verify the distributive property of multiplication over addition
+      with complex numbers
+    - Compute division of complex numbers in cartesian representation
+    estimated_time_mins: 26
+    concepts:
+    - Properties of Complex Numbers
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-02-03
+    summary: Students will be able to compute the modulus and conjugate of complex
+      numbers.
+    covered_by:
+    - m2-modulusConjugation
+    - m2-quiz-2.2
+    - m2-quiz-2.2-interactive
+    learning_objectives:
+    - Understand the concept of modulus of a complex number
+    - Compute the modulus of complex numbers
+    - Understand the concept of conjugate of a complex number
+    - Compute the conjugate of complex numbers
+    - Compute the modulus of given complex numbers
+    - Compute the conjugate of given complex numbers
+    - Compute the modulus of given complex numbers
+    - Compute the conjugate of given complex numbers
+    estimated_time_mins: 18
+    concepts:
+    - Modulus and Conjugation
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-02-04
+    summary: Students will be able to prove basic properties of modulus and conjugate
+      operations.
+    covered_by:
+    - m2-modulusConjugation
+    - m2-quiz-2.2
+    - m2-quiz-2.2-interactive
+    learning_objectives:
+    - Understand the concept of modulus of a complex number
+    - Compute the modulus of complex numbers
+    - Understand the concept of conjugate of a complex number
+    - Compute the conjugate of complex numbers
+    - Compute the modulus of given complex numbers
+    - Compute the conjugate of given complex numbers
+    - Compute the modulus of given complex numbers
+    - Compute the conjugate of given complex numbers
+    estimated_time_mins: 18
+    concepts:
+    - Modulus and Conjugation
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-02-05
+    summary: Students will be able to implement programs to divide two complex numbers,
+      compute the modulus and conjugate.
+    covered_by:
+    - m2-final-quiz
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m2-LearningOutcomes
+  title: 2. Properties of Complex Numbers
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Learning Outcomes
+  outcomes:
+  - Know the outcomes of learning Basics of Complex Numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Learning Outcomes
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-background
+  title: 2.1 Background
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m1-complexNumbers
+  concepts:
+  - Properties of Complex Numbers
+  outcomes:
+  - Develop intuition for complex numbers through geometric representation
+  - Represent complex numbers as ordered pairs
+  - Perform addition and multiplication on complex numbers represented as ordered
+    pairs
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Complex Number Reprenstation
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-properties
+  title: 2.2 Properties of Complex Numbers
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m2-background
+  concepts:
+  - Properties of Complex Numbers
+  outcomes:
+  - Understand the commutative and associative properties of addition and multiplication
+    with complex numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Properties of Complex Numbers
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-propertiesContd
+  title: 2.3 Properties of Complex Numbers Contd.
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m2-background
+  - m2-properties
+  concepts:
+  - Properties of Complex Numbers
+  outcomes:
+  - Understand the distributive property of multiplication over addition with complex
+    numbers
+  - Apply negation to complex numbers
+  - Perform subtraction of complex numbers
+  - Understand and perform division of complex numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-quiz-2.1
+  title: Quiz 2.1 Self Assessment Quiz
+  type: markdown
+  estimated_time: '10'
+  prerequisites:
+  - m2-properties
+  - m2-propertiesContd
+  concepts:
+  - Properties of Complex Numbers
+  outcomes:
+  - Compute the product of complex numbers in cartesian representation
+  - Numerically verify the distributive property of multiplication over addition with
+    complex numbers
+  - Compute division of complex numbers in cartesian representation
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m2-quiz-2.1-interactive
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 1
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-quiz-2.1-interactive
+  title: m2-quiz-2.1-interactive
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m2-properties
+  - m2-propertiesContd
+  concepts:
+  - Properties of Complex Numbers
+  outcomes:
+  - Compute the product of complex numbers in cartesian representation
+  - Numerically verify the distributive property of multiplication over addition with
+    complex numbers
+  - Compute division of complex numbers in cartesian representation
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m2-quiz-2.1
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 1 interactive
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-modulusConjugation
+  title: 2.4 Modulus and Conjugation
+  type: markdown
+  estimated_time: '3'
+  prerequisites:
+  - m1-complexNumbers
+  concepts:
+  - Modulus and Conjugation
+  outcomes:
+  - Understand the concept of modulus of a complex number
+  - Compute the modulus of complex numbers
+  - Understand the concept of conjugate of a complex number
+  - Compute the conjugate of complex numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Modulus and Conjugation
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-quiz-2.2
+  title: Quiz 2.2 Self Assessment Quiz
+  type: markdown
+  estimated_time: '5'
+  prerequisites:
+  - m2-modulusConjugation
+  concepts:
+  - Modulus and Conjugation
+  outcomes:
+  - Compute the modulus of given complex numbers
+  - Compute the conjugate of given complex numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m2-quiz-2.2-interactive
+    cell_interactive: 'false'
+    cell_title: Self Assessment Quiz 2
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-quiz-2.2-interactive
+  title: m2-quiz-2.2-interactive
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m2-modulusConjugation
+  concepts:
+  - Modulus and Conjugation
+  outcomes:
+  - Compute the modulus of given complex numbers
+  - Compute the conjugate of given complex numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates:
+    - m2-quiz-2.2
+    cell_interactive: 'true'
+    cell_title: Self Assessment Quiz 2 interactive
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-summary
+  title: 2.5 Summary
+  type: markdown
+  estimated_time: '2'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Summarize the properties and basic operations on complex numbers
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: Summary
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Understand and apply basic properties of complex numbers
+    - Perform operations like addition, multiplication, division on complex numbers
+    - Compute modulus and conjugate of complex numbers
+    - Implement Python programs for complex number operations including addition,
+      multiplication, division, computing modulus, and conjugate
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - Properties of Complex Numbers
+- cell_id: m2-finalQuiz-information
+  title: 'Final Quiz 2 is in a separate notebook with filename: finalquiz2.ipynb.'
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes:
+  - Know the information about the final Quiz of this module
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    cell_title: final quiz 2
+    module_outcomes:
+    - Master the concept of complex number representations
+    - Perform basic additive and multiplicative operations on complex numbers
+    - Implement Python programs for addition and multiplication on complex numbers
+    module_prereqs:
+    - Algebra
+    - Introduction to Programming
+    - Python Basics
+    module_title:
+    - The Basics of Complex Numbers

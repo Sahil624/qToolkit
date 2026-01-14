@@ -1,0 +1,226 @@
+learning_objective_tree:
+  title: Post Quantum Cryptography
+  global_prerequisites:
+  - Introduction to Entanglement based QKD
+  objectives:
+  - lo_id: LO-28-01
+    summary: Students will understand the threat of quantum computers to classical
+      cryptography.
+    covered_by:
+    - m28-quantumThreat
+    learning_objectives:
+    - Students will understand the concept of post quantum cryptography.
+    estimated_time_mins: 1
+    concepts:
+    - Post Quantum Cryptography
+    prerequisites:
+    - Introduction to Entanglement based QKD
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-28-02
+    summary: Students will understand the difference between QKD and PQC
+    covered_by:
+    - m28-qkdPqc
+    learning_objectives:
+    - Students will understand the difference between QKD and PQC
+    estimated_time_mins: 1
+    concepts:
+    - QKD
+    - PQC
+    prerequisites:
+    - Introduction to Entanglement based QKD
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-28-03
+    summary: Students will understand the different types of post quantum cryptography.
+    covered_by:
+    - m28-postQuantumCryptography
+    learning_objectives:
+    - Students will understand the different types of post quantum cryptography.
+    estimated_time_mins: 1
+    concepts:
+    - Post Quantum Cryptography
+    prerequisites:
+    - Introduction to Entanglement based QKD
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+  - lo_id: LO-28-04
+    summary: Students will use PQC tools to perform practical encryption and decryption.
+    covered_by:
+    - m28-pqcTools
+    - m28-pqcToolsTool
+    learning_objectives:
+    - Students will use PQC tools to perform practical encryption and decryption.
+    estimated_time_mins: 1
+    concepts:
+    - PQC Tools
+    prerequisites:
+    - Introduction to Entanglement based QKD
+    kolb_phase: null
+    difficulty: intermediate
+    content_type: mixed
+cell_metadata:
+- cell_id: m28-pqcIntro
+  title: 28. Post Quantum Cryptography
+  type: markdown
+  estimated_time: 1
+  concepts:
+  - Post Quantum Cryptography
+  prerequisites:
+  - m22-3stageQkd2
+  outcomes:
+  - Understand the post quantum cryptography concepts.
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Understand the post quantum cryptography concepts.
+    module_prereqs:
+    - Introduction to Entanglement based QKD
+    module_title:
+    - Post Quantum Cryptography
+- cell_id: m28-quantumThreat
+  title: 28.1 Threat that quantum computers pose to classical cryptography
+  type: markdown
+  estimated_time: 1
+  concepts:
+  - Post Quantum Cryptography
+  prerequisites:
+  - m22-3stageQkd2
+  - m28-pqcIntro
+  outcomes:
+  - Understand the threat that quantum computers pose to classical cryptography.
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Understand the threat that quantum computers pose to classical cryptography.
+    module_prereqs:
+    - Introduction to Entanglement based QKD
+    module_title:
+    - Threat that quantum computers pose to classical cryptography
+- cell_id: m28-qkdPqc
+  title: 28.2 Difference between QKD and PQC.
+  type: markdown
+  estimated_time: 5
+  concepts:
+  - Post Quantum Cryptography
+  prerequisites:
+  - m28-quantumThreat
+  outcomes:
+  - Understand the difference between QKD and PQC
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Understand the difference between QKD and PQC.
+    module_prereqs:
+    - Introduction to Entanglement based QKD
+    module_title:
+    - Difference between QKD and PQC
+- cell_id: m28-postQuantumCryptography
+  title: 28.3 Introducing PQC algorithms
+  type: markdown
+  estimated_time: 5
+  concepts:
+  - Post Quantum Cryptography
+  prerequisites:
+  - m28-qkdPqc
+  outcomes:
+  - Understand the different types of post quantum cryptography.
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Understand the different types of post quantum cryptography.
+    module_prereqs:
+    - Introduction to Entanglement based QKD
+    module_title:
+    - Introducing PQC algorithms
+- cell_id: m28-pqcTools
+  title: 28.4  Use the PQC tools to perform a practical encryption and decryption
+    of a message
+  type: markdown
+  estimated_time: 5
+  concepts:
+  - PQC Tools
+  - Post Quantum Cryptography
+  prerequisites:
+  - m28-postQuantumCryptography
+  outcomes:
+  - Use PQC tools to perform practical encryption and decryption.
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Use PQC tools to perform practical encryption and decryption.
+    module_prereqs:
+    - Introduction to Entanglement based QKD
+    module_title:
+    - Use PQC tools to perform practical encryption and decryption
+- cell_id: m28-pqcToolsTool
+  title: 28.5  Use the PQC tools to perform a practical encryption and decryption
+    of a message
+  type: code
+  estimated_time: 5
+  concepts:
+  - PQC Tools
+  - Post Quantum Cryptography
+  prerequisites:
+  - m28-pqcTools
+  outcomes:
+  - Use PQC tools to perform practical encryption and decryption.
+  extra_props:
+    collapsed: true
+    editable: true
+    jupyter:
+      outputs_hidden: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Use PQC tools to perform practical encryption and decryption.
+    module_prereqs:
+    - Introduction to Entanglement based QKD
+    module_title:
+    - Use PQC tools to perform practical encryption and decryption

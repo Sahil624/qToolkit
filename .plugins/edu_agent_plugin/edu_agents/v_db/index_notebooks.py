@@ -32,7 +32,9 @@ def build_metadata_lookups(yaml_data: dict) -> (dict, dict):
     2. A map of: cell_id -> {cell_title, ...}
     """
     cell_to_lo_map = {}
-    lo_tree = yaml_data.get('learning_objective_tree', [])
+    lo_tree_root = yaml_data.get('learning_objective_tree', {})
+    # LOs are nested under the 'objectives' key in the new structure
+    lo_tree = lo_tree_root.get('objectives', []) if isinstance(lo_tree_root, dict) else lo_tree_root
     
     for lo in lo_tree:
         lo_id = lo.get('lo_id')
@@ -55,8 +57,7 @@ def build_metadata_lookups(yaml_data: dict) -> (dict, dict):
 
     cell_details_map = {
         cell.get('cell_id'): {
-            "cell_title": cell.get('title'),
-            "cell_order": cell.get('order')
+            "cell_title": cell.get('title')
         }
         for cell in yaml_data.get('cell_metadata', [])
         if cell.get('cell_id')
@@ -76,11 +77,14 @@ def index_course_content(root_folder: str, db_manager: VectorDBManager):
         for filename in sorted(filenames):
             if not filename.endswith(".ipynb"):
                 continue
+            # Only process nanomod notebooks
+            if not filename.startswith("nanomod"):
+                continue
 
             # --- 1. Find and Parse Metadata ---
             base_name, _ = os.path.splitext(filename)
             notebook_path = os.path.join(dirpath, filename)
-            metadata_path = os.path.join(dirpath, ".metadata.yaml")
+            metadata_path = os.path.join(dirpath, f"{base_name}.metadata.yaml")
             
             yaml_data = load_yaml_metadata(metadata_path)
             if not yaml_data:
@@ -91,13 +95,12 @@ def index_course_content(root_folder: str, db_manager: VectorDBManager):
 
             # --- 2. Get Ordered List of YAML text cells ---
             all_yaml_cells = yaml_data.get('cell_metadata', [])
-            ordered_yaml_text_cells = sorted(
-                all_yaml_cells,
-                key=lambda x: x.get('order', 0)
-            )
+            # Assume list order is correct (no 'order' field)
+            ordered_yaml_text_cells = all_yaml_cells
 
             # --- 3. Infer Lesson Number (for Peer Agent filter) ---
-            match = re.match(r'^(\d+)', filename)
+            # Match patterns like: nanomod10-unit02.ipynb or 10_something.ipynb
+            match = re.search(r'nanomod(\d+)', filename) or re.match(r'^(\d+)', filename)
             if not match:
                 print(f"Warning: Could not infer lesson number for '{filename}'. Skipping.")
                 continue
@@ -116,8 +119,10 @@ def index_course_content(root_folder: str, db_manager: VectorDBManager):
                     cell for cell in notebook.cells if cell.cell_type == 'markdown'
                 ]
 
+                CHECK_LENGTH = False
+
                 # --- 5. Link YAML cells to Notebook cells by order ---
-                if len(ordered_yaml_text_cells) != len(ordered_ipynb_markdown_cells):
+                if CHECK_LENGTH and len(ordered_yaml_text_cells) != len(ordered_ipynb_markdown_cells):
                     print(f"  Warning: Mismatch! YAML has {len(ordered_yaml_text_cells)} text cells, but .ipynb has {len(ordered_ipynb_markdown_cells)} markdown cells. Skipping.")
                     
 

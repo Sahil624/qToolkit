@@ -310,6 +310,11 @@ def maximize_courses(
 
     # Trace Logic (simplified)
     if DUMP_DECISION_TRACE:
+        # Update status for the selected schedule
+        for ev in evaluations:
+            if ev['subset'] == best_schedule:
+                ev['status'] = 'SELECTED'
+
         trace = {
              "metadata": {
                 "algorithm": "Cell-Level Knapsack",

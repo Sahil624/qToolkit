@@ -1,5 +1,866 @@
 learning_objective_tree:
-  title: Untitled Module
+  title: 21. B92 Quantum Key Distribution Protocol
   global_prerequisites: []
-  objectives: []
-cell_metadata: []
+  objectives:
+  - lo_id: LO-21-01
+    summary: Students will understand the working of B92 quantum key distribution
+      protocol
+    covered_by:
+    - m21-21-2-212TheB92Protoco
+    - m21-11-Mainprogramcontinu
+    - m21-12-codeMainprogramco
+    - m21-13-Step1oftheB92pr
+    - m21-14-codeStep1oftheB
+    learning_objectives:
+    - Apply the concept of classical bits to a quantum context
+    - Apply the bit to qubit mapping in the B92 protocol for Alice's and Bob's measurements.
+    - Understand the role of the quantum channel in information transmission
+    - Understand the principles of B92 protocol in quantum computing
+    - Understand the B92 protocol as a variation of BB84 with non-intuitive measurement
+      interpretation.
+    - Analyze the role of measurement in quantum mechanics and its implications for
+      quantum computing
+    - Apply knowledge of quantum state measurement to analyze quantum protocols
+    - Explain how polarization is used in quantum communication
+    - Describe the process of generating a candidate key in the B92 protocol
+    estimated_time_mins: 0
+    concepts:
+    - B92 protocol
+    - B92 Protocol
+    - Diagonal Basis
+    - Quantum states
+    - Rectilinear Basis
+    - Measurement in quantum mechanics
+    - BB84 Protocol
+    - Quantum computing protocols
+    - polarization
+    - quantum channel
+    - classical bits
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.95
+      reasoning: The cell content describes the first step of the B92 quantum key
+        distribution protocol, specifically how Alice sends a candidate key. This
+        is directly related to understanding the working of the B92 QKD protocol.
+      timestamp: '2026-01-28T18:48:10.114539'
+      needs_human_review: true
+  - lo_id: LO-21-02
+    summary: Students will understand the significance of non-orthogonal bases in
+      QKD protocol
+    covered_by:
+    - m21-21-1-211Background
+    - m21-21-4-214KeySifting
+    - m21-21-6-216SecurityofB92
+    - m21-15-Step2oftheB92pr
+    - m21-16-codeStep2oftheB
+    - m21-17-Step3ofB92protoc
+    - m21-18-codeStep3ofB92p
+    - m21-22-ProjectResearchQue
+    learning_objectives:
+    - Understand non-orthogonal states in quantum computing
+    - Understand the B92 protocol for quantum key distribution
+    - Analyze how measurement in the rectilinear basis affects the outcome in the
+      B92 protocol.
+    - Analyze the limitations of superdense coding in QKD
+    - 'Apply: Understand the principles of QKD'
+    - Apply Bell State measurement to decode qubits
+    - Explain how non-orthogonal states affect measurement
+    - Understand the security principle of B92
+    - Apply the concept of candidate key in quantum cryptography
+    - Apply knowledge of basis to distinguish quantum states
+    - 'Understand: Explain the purpose of classical discussion in B92 and BB84'
+    - Apply concept of simplification in protocols (e.g. BB84 -> B92)
+    - Recall B92 protocol
+    - Analyze the average length of a remaining subsequence after dropping unsure
+      bits
+    - 'Analyze: Compare the efficiency of B92 and BB84 protocols'
+    - Understand the B92 protocol and its application to quantum computing.
+    - Apply the concept of measuring qubits in an incorrect basis to a specific scenario.
+    estimated_time_mins: 0
+    concepts:
+    - BB84 protocol
+    - B92 protocol
+    - single measurement
+    - basis
+    - Measurement in incorrect basis
+    - candidate key
+    - orthogonality
+    - quantum key distribution (QKD)
+    - non-orthogonal states
+    - Quantum Key Distribution (QKD)
+    - Bell State Measurement
+    - quantum computing
+    - Qubits
+    - quantum cryptography
+    - B92
+    - Rectilinear basis
+    - Superdense Coding
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 1.0
+      reasoning: The cell content primarily focuses on exploring the significance
+        of non-orthogonal bases in QKD protocols by comparing different configurations
+        and scenarios, which aligns with understanding their role (LO-21-02). The
+        cell's focus is not on the working of B92 itself or applying concepts but
+        rather on analyzing the implications of non-orthogonal bases.
+      timestamp: '2026-01-28T18:48:10.114539'
+      needs_human_review: true
+  - lo_id: LO-21-03
+    summary: Students will apply the concept of measurement and non-orthogonal bases
+    covered_by:
+    - m21-21-3-213Discussion
+    learning_objectives:
+    - Analyze the effect of observing particles in different bases on measurement
+      outcomes
+    - Understand the principle of quantum teleportation using Bell states
+    - Apply superdense coding to encode information on a qubit
+    estimated_time_mins: 0
+    concepts:
+    - Bell states
+    - Observations in different bases
+    - Basis (quantum)
+    - Superdense coding
+    - Quantum teleportation
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.9
+      reasoning: The cell content demonstrates an application of the concept of measurement
+        and non-orthogonal bases in QKD protocol. It explains how Bob knows with certainty
+        which bit was transmitted by Alice based on his observations in different
+        bases. This matches the description of LO-21-03.
+      timestamp: '2026-01-28T18:48:10.114539'
+      needs_human_review: true
+  - lo_id: LO-21-04
+    summary: Students will be able to analyze the effect of an eavesdropper on a QKD
+      protocol
+    covered_by:
+    - m21-21-5-215TheEavesdroppi
+    - m21-7-uB92SimulatorIn
+    - m21-8-codeuB92Simulato
+    - m21-9-Untitled
+    - m21-10-codeUntitled
+    - m21-19-Step4oftheB92pr
+    - m21-20-codeStep4oftheB
+    learning_objectives:
+    - Analyze
+    - Analyze the effect of channel errors on the B92 protocol
+    - Apply
+    - Explain
+    - Understand the B92 protocol for secure quantum key distribution
+    - Apply the concept of eavesdropping detection in QKD protocols
+    - Understand the role of qubits in quantum communication protocols
+    - Analyze the implications of eavesdropping on secure communication
+    - Apply the BB84 protocol to detect eavesdropping
+    - Evaluate the security implications of an eavesdropper in QKD
+    - Apply parameters to simulate a B92 protocol
+    - Analyze the impact of Eve's presence on the protocol
+    - Understand the concept of eavesdropping in quantum cryptography
+    estimated_time_mins: 0
+    concepts:
+    - BB84 protocol
+    - Channel errors
+    - B92 protocol
+    - ),
+    - Eavesdropping
+    - qubits
+    - bias (X)
+    - quantum cryptography
+    - Quantum Computing
+    - Eve's activity
+    - Eavesdropping in Quantum Key Distribution (QKD)
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 1.0
+      reasoning: The cell content focuses on detecting an eavesdropper in the B92
+        protocol. It describes a step where Bob and Alice compare their bits to check
+        for channel errors or eavesdropping. This matches the semantic meaning of
+        LO-21-04, which requires students to analyze the effect of an eavesdropper
+        on a QKD protocol.
+      timestamp: '2026-01-28T18:48:10.114539'
+      needs_human_review: true
+cell_metadata:
+- cell_id: m21-21-1-211Background
+  title: 21.1 Background
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-8-Untitled
+  - m19-19-4-194TheNoCloning
+  - m19-12-Untitled
+  - m20-20-2-202Introduction
+  - m20-13-uBB84Simulatoru
+  - m20-19-Step1oftheBB84p
+  - m20-21-Step2oftheBB84p
+  - m20-25-Step4oftheBB84p
+  concepts:
+  - quantum computing
+  - B92 protocol
+  - non-orthogonal states
+  - BB84 protocol
+  outcomes:
+  - Recall B92 protocol
+  - Understand non-orthogonal states in quantum computing
+  - Apply concept of simplification in protocols (e.g. BB84 -> B92)
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell provides background information about B92 protocol
+      and specifically mentions non-orthogonal states, which is a key concept related
+      to LO-21-02.; Concepts: The content is clearly focused on introducing a specific
+      quantum key distribution protocol called B92. The text describes it as a simplification
+      of BB84 and highlights its key features. I''m confident that the extracted concepts
+      are accurate because they directly relate to the content presented. However,
+      my confidence in the learning outcomes might be lower (0.8) since Bloom''s taxonomy
+      requires more nuanced understanding of cognitive skills.'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-21-2-212TheB92Protoco
+  title: 21.2 The B92 Protocol
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m20-20-1-201Background
+  - m20-20-2-202Introduction
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-8-208SecurityofBB8
+  - m20-20-9-209BB84Widget
+  - m20-13-uBB84Simulatoru
+  - m20-21-Step2oftheBB84p
+  - m20-25-Step4oftheBB84p
+  - m20-27-ProjectResearchQue
+  concepts:
+  - B92 Protocol
+  - BB84 Protocol
+  - Rectilinear Basis
+  - Diagonal Basis
+  outcomes:
+  - Understand the B92 protocol as a variation of BB84 with non-intuitive measurement
+    interpretation.
+  - Apply the bit to qubit mapping in the B92 protocol for Alice's and Bob's measurements.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: This cell provides an overview of the B92 quantum key distribution
+      protocol and explains how Alice and Bob agree on a bit-to-qubit mapping. The
+      cell also interprets the results of measurements made by Bob in a non-intuitive
+      way, which is in line with the understanding of the working of the protocol
+      as specified by LO-21-01.; Concepts: The content explicitly mentions key concepts
+      such as B92 Protocol, BB84 Protocol, Rectilinear Basis, and Diagonal Basis.
+      The learning outcomes can be inferred from the instructions provided to the
+      reader (e.g., understanding the protocol and applying its principles). However,
+      I have some doubt about fully extracting all the possible key concepts and learning
+      outcomes due to the complexity of quantum computing terminology.'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-21-3-213Discussion
+  title: 21.3 Discussion
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-19-3-193ImpactofQuant
+  - m19-11-Untitled
+  - m19-12-Untitled
+  - m20-20-1-201Background
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-5-205KeyExchangePh
+  - m20-20-6-206KeySiftingPha
+  - m20-20-7-207EavesdropperDe
+  - m20-20-9-209BB84Widget
+  - m20-13-uBB84Simulatoru
+  - m20-19-Step1oftheBB84p
+  - m20-21-Step2oftheBB84p
+  - m20-25-Step4oftheBB84p
+  concepts:
+  - Quantum teleportation
+  - Superdense coding
+  - Bell states
+  - Basis (quantum)
+  - Observations in different bases
+  outcomes:
+  - Understand the principle of quantum teleportation using Bell states
+  - Apply superdense coding to encode information on a qubit
+  - Analyze the effect of observing particles in different bases on measurement outcomes
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell content demonstrates an application of the concept
+      of measurement and non-orthogonal bases in QKD protocol. It explains how Bob
+      knows with certainty which bit was transmitted by Alice based on his observations
+      in different bases. This matches the description of LO-21-03.; Concepts: The
+      content appears to be discussing quantum communication protocols, specifically
+      quantum teleportation and superdense coding. The concepts of Bell states, basis
+      (quantum), and observations in different bases are central to these topics.'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-21-4-214KeySifting
+  title: 21.4 Key Sifting
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m20-20-2-202Introduction
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-6-206KeySiftingPha
+  - m20-20-7-207EavesdropperDe
+  - m20-20-9-209BB84Widget
+  - m20-19-Step1oftheBB84p
+  - m20-21-Step2oftheBB84p
+  - m20-23-Step3ofBB84proto
+  - m20-27-ProjectResearchQue
+  concepts:
+  - B92 protocol
+  - Measurement in incorrect basis
+  - Rectilinear basis
+  - Qubits
+  outcomes:
+  - Understand the B92 protocol and its application to quantum computing.
+  - Apply the concept of measuring qubits in an incorrect basis to a specific scenario.
+  - Analyze how measurement in the rectilinear basis affects the outcome in the B92
+    protocol.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell discusses the concept of ''incorrect'' basis and
+      its role in B92 protocol, which directly relates to the significance of non-orthogonal
+      bases (LO-21-02). While it touches on measurement, its primary focus is not
+      on applying concepts but rather explaining a key aspect of QKD protocols.; Concepts: '
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-21-5-215TheEavesdroppi
+  title: 21.5 The Eavesdropping
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-19-3-193ImpactofQuant
+  - m19-8-Untitled
+  - m20-20-1-201Background
+  - m20-20-2-202Introduction
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-6-206KeySiftingPha
+  - m20-20-8-208SecurityofBB8
+  - m20-13-uBB84Simulatoru
+  - m20-19-Step1oftheBB84p
+  - m20-21-Step2oftheBB84p
+  - m20-23-Step3ofBB84proto
+  - m20-25-Step4oftheBB84p
+  concepts:
+  - Eavesdropping
+  - BB84 protocol
+  - quantum cryptography
+  outcomes:
+  - Understand the concept of eavesdropping in quantum cryptography
+  - Apply the BB84 protocol to detect eavesdropping
+  - Analyze the implications of eavesdropping on secure communication
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell content indicates that Alice and Bob are checking
+      for Eve''s presence in their QKD protocol, which is a key aspect of analyzing
+      the effect of an eavesdropper on the protocol.; Concepts: We can confidently
+      identify Eavesdropping, BB84 protocol, and quantum cryptography as key concepts
+      because they are explicitly mentioned in the content and are fundamental to
+      the topic of quantum computing security. However, we might be less confident
+      in extracting additional concepts or outcomes without more context.'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-21-6-216SecurityofB92
+  title: 21.6 Security of B92
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-5-205KeyExchangePh
+  - m20-20-6-206KeySiftingPha
+  - m20-20-7-207EavesdropperDe
+  - m20-20-8-208SecurityofBB8
+  - m20-21-Step2oftheBB84p
+  - m20-27-ProjectResearchQue
+  concepts:
+  - B92
+  - non-orthogonal states
+  - single measurement
+  - basis
+  outcomes:
+  - Understand the security principle of B92
+  - Explain how non-orthogonal states affect measurement
+  - Apply knowledge of basis to distinguish quantum states
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell primarily teaches the significance of non-orthogonal
+      bases in QKD protocol, as stated in the LO.; Concepts: '
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-7-uB92SimulatorIn
+  title: <u>B92 Simulator (Interactive)</u>
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m20-20-6-206KeySiftingPha
+  - m20-13-uBB84Simulatoru
+  - m20-21-Step2oftheBB84p
+  - m20-27-ProjectResearchQue
+  concepts:
+  - qubits
+  - bias (X)
+  - Eve's activity
+  outcomes:
+  - Understand the role of qubits in quantum communication protocols
+  - Apply parameters to simulate a B92 protocol
+  - Analyze the impact of Eve's presence on the protocol
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell content primarily involves analyzing the effect
+      of an eavesdropper (Eve) on a QKD protocol, which aligns with LO-21-04.; Concepts: '
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-8-codeuB92Simulato
+  title: 'Code: <u>B92 Simulator (Interactive)'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m21-7-uB92SimulatorIn
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'Inherited from parent markdown: <u>B92 Simulator (Interactive)</u>'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-9-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - ),
+  outcomes:
+  - Explain
+  - Apply
+  - Analyze
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell contains instructions to run cells one at a time,
+      which implies an experiment or analysis of some kind. The mention of "an eavesdropper"
+      is also suggestive of an external factor affecting the system, which aligns
+      with the goal of LO-21-04.; Concepts: The content appears to be introducing
+      a programming assignment in the context of quantum computing, but it does not
+      explicitly state key concepts or learning outcomes. However, based on the title
+      and cell description, I infer that the topic is related to quantum computing,
+      and the student should be able to explain, apply, and analyze algorithms and
+      their implementation.'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-10-codeUntitled
+  title: 'Code: Untitled'
+  type: code
+  estimated_time: '3'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m21-9-Untitled
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'Inherited from parent markdown: Untitled'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-11-Mainprogramcontinu
+  title: Main program continues now using the B92 protocol
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-19-3-193ImpactofQuant
+  - m19-8-Untitled
+  - m19-19-4-194TheNoCloning
+  - m19-11-Untitled
+  - m20-20-1-201Background
+  - m20-20-3-203Assumptions
+  - m20-20-5-205KeyExchangePh
+  - m20-20-6-206KeySiftingPha
+  - m20-20-7-207EavesdropperDe
+  - m20-20-9-209BB84Widget
+  - m20-13-uBB84Simulatoru
+  - m20-19-Step1oftheBB84p
+  - m20-25-Step4oftheBB84p
+  - m20-27-ProjectResearchQue
+  concepts:
+  - B92 protocol
+  - Quantum computing protocols
+  - Quantum states
+  - Measurement in quantum mechanics
+  outcomes:
+  - Understand the principles of B92 protocol in quantum computing
+  - Apply knowledge of quantum state measurement to analyze quantum protocols
+  - Analyze the role of measurement in quantum mechanics and its implications for
+    quantum computing
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell content mentions the B92 protocol, which suggests
+      it''s discussing a specific quantum key distribution protocol. This aligns closely
+      with LO-21-01.; Concepts: '
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-12-codeMainprogramco
+  title: 'Code: Main program continues now usi'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m21-11-Mainprogramcontinu
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'Inherited from parent markdown: Main program continues now using the
+      B92 protocol'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-13-Step1oftheB92pr
+  title: Step 1 of the B92 protocol -  Alice sends a candidate key
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-19-3-193ImpactofQuant
+  - m19-19-3-1932QuantumCrypt
+  - m19-11-Untitled
+  - m19-12-Untitled
+  - m20-20-1-201Background
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-13-uBB84Simulatoru
+  - m20-19-Step1oftheBB84p
+  concepts:
+  - quantum channel
+  - polarization
+  - classical bits
+  - B92 protocol
+  outcomes:
+  - Describe the process of generating a candidate key in the B92 protocol
+  - Explain how polarization is used in quantum communication
+  - Apply the concept of classical bits to a quantum context
+  - Understand the role of the quantum channel in information transmission
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell content describes the first step of the B92 quantum
+      key distribution protocol, specifically how Alice sends a candidate key. This
+      is directly related to understanding the working of the B92 QKD protocol.; Concepts:
+      The content specifically mentions quantum-related terms and requires learners
+      to understand their application in a real-world scenario (B92 protocol). The
+      tasks listed in Step 1 imply a specific sequence of actions and concepts that
+      need to be applied.'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-14-codeStep1oftheB
+  title: 'Code: Step 1 of the B92 protocol -  '
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m21-13-Step1oftheB92pr
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'Inherited from parent markdown: Step 1 of the B92 protocol -  Alice
+      sends a candidate key'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-15-Step2oftheB92pr
+  title: Step 2 of the B92 protocol - Bob receives a candidate key
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-4-Untitled
+  - m19-19-3-193ImpactofQuant
+  - m19-19-4-194TheNoCloning
+  - m19-12-Untitled
+  - m20-20-1-201Background
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-5-205KeyExchangePh
+  - m20-20-6-206KeySiftingPha
+  - m20-20-7-207EavesdropperDe
+  - m20-13-uBB84Simulatoru
+  - m20-21-Step2oftheBB84p
+  - m20-23-Step3ofBB84proto
+  - m20-25-Step4oftheBB84p
+  - m20-27-ProjectResearchQue
+  concepts:
+  - B92 protocol
+  - Quantum Key Distribution (QKD)
+  - Bell State Measurement
+  - Superdense Coding
+  outcomes:
+  - Understand the B92 protocol for quantum key distribution
+  - Apply Bell State measurement to decode qubits
+  - Analyze the limitations of superdense coding in QKD
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.85
+    reasoning: 'LO Match: The cell describes the specifics of Bob''s measurement in
+      the B92 protocol, which involves non-orthogonal bases (+ and ×). The discussion
+      of what happens when a measurement is made in each basis indicates an understanding
+      of the significance of these non-orthogonal bases.; Concepts: '
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-16-codeStep2oftheB
+  title: 'Code: Step 2 of the B92 protocol - B'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m21-15-Step2oftheB92pr
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 1.0
+    reasoning: 'Inherited from parent markdown: Step 2 of the B92 protocol - Bob receives
+      a candidate key'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-17-Step3ofB92protoc
+  title: Step 3 of B92 protocol - Alice and Bob evaluate the candidate key
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-19-1-191SecretKeyCryp
+  - m19-19-2-192PublicKeyCryp
+  - m19-5-AHybridSystem
+  - m19-8-Untitled
+  - m19-19-4-194TheNoCloning
+  - m19-12-Untitled
+  - m20-20-1-201Background
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-6-206KeySiftingPha
+  - m20-20-10-2010KeyReconcilia
+  - m20-19-Step1oftheBB84p
+  - m20-21-Step2oftheBB84p
+  - m20-23-Step3ofBB84proto
+  - m20-25-Step4oftheBB84p
+  concepts:
+  - B92 protocol
+  - candidate key
+  - quantum cryptography
+  outcomes:
+  - Understand the B92 protocol for quantum key distribution
+  - Apply the concept of candidate key in quantum cryptography
+  - Analyze the average length of a remaining subsequence after dropping unsure bits
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell discusses Bob and Alice dropping uncertain bits,
+      which implies understanding of non-orthogonal bases in QKD protocol.; Concepts:
+      I have extracted the main concepts related to quantum computing and cryptography,
+      specifically the B92 protocol, candidate key, and key principles of quantum
+      key distribution. The learning outcomes are relevant to understanding and applying
+      these concepts in a practical scenario. However, I may not have captured all
+      possible key concepts or outcomes, hence the moderate confidence level.'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-18-codeStep3ofB92p
+  title: 'Code: Step 3 of B92 protocol - Alice'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m21-17-Step3ofB92protoc
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.85
+    reasoning: 'Inherited from parent markdown: Step 3 of B92 protocol - Alice and
+      Bob evaluate the candidate key'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-19-Step4oftheB92pr
+  title: Step 4 of the B92 protocol - Alice and Bob check if there was an eavesdropper
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-19-1-191SecretKeyCryp
+  - m19-4-Untitled
+  - m19-5-AHybridSystem
+  - m19-6-Untitled
+  - m19-19-3-193ImpactofQuant
+  - m19-19-4-194TheNoCloning
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-6-206KeySiftingPha
+  - m20-20-8-208SecurityofBB8
+  - m20-20-10-2010KeyReconcilia
+  - m20-13-uBB84Simulatoru
+  - m20-19-Step1oftheBB84p
+  - m20-21-Step2oftheBB84p
+  - m20-23-Step3ofBB84proto
+  - m20-25-Step4oftheBB84p
+  concepts:
+  - Quantum Computing
+  - B92 protocol
+  - Eavesdropping in Quantum Key Distribution (QKD)
+  - Channel errors
+  outcomes:
+  - Understand the B92 protocol for secure quantum key distribution
+  - Apply the concept of eavesdropping detection in QKD protocols
+  - Analyze the effect of channel errors on the B92 protocol
+  - Evaluate the security implications of an eavesdropper in QKD
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell content focuses on detecting an eavesdropper in
+      the B92 protocol. It describes a step where Bob and Alice compare their bits
+      to check for channel errors or eavesdropping. This matches the semantic meaning
+      of LO-21-04, which requires students to analyze the effect of an eavesdropper
+      on a QKD protocol.; Concepts: '
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-20-codeStep4oftheB
+  title: 'Code: Step 4 of the B92 protocol - A'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m21-19-Step4oftheB92pr
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 1.0
+    reasoning: 'Inherited from parent markdown: Step 4 of the B92 protocol - Alice
+      and Bob check if there was an eavesdropper'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false
+- cell_id: m21-22-ProjectResearchQue
+  title: 'Project/Research Questions:'
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m19-19-3-193ImpactofQuant
+  - m19-19-4-194TheNoCloning
+  - m19-11-Untitled
+  - m19-12-Untitled
+  - m20-20-1-201Background
+  - m20-20-3-203Assumptions
+  - m20-20-4-204TheBB84Protoc
+  - m20-20-7-207EavesdropperDe
+  - m20-20-8-208SecurityofBB8
+  - m20-20-10-2010KeyReconcilia
+  - m20-23-Step3ofBB84proto
+  - m20-25-Step4oftheBB84p
+  concepts:
+  - quantum computing
+  - quantum key distribution (QKD)
+  - orthogonality
+  - non-orthogonal states
+  outcomes:
+  - 'Apply: Understand the principles of QKD'
+  - 'Analyze: Compare the efficiency of B92 and BB84 protocols'
+  - 'Understand: Explain the purpose of classical discussion in B92 and BB84'
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell content primarily focuses on exploring the significance
+      of non-orthogonal bases in QKD protocols by comparing different configurations
+      and scenarios, which aligns with understanding their role (LO-21-02). The cell''s
+      focus is not on the working of B92 itself or applying concepts but rather on
+      analyzing the implications of non-orthogonal bases.; Concepts: Based on the
+      content provided, I was able to identify some key concepts related to quantum
+      computing such as QKD, orthogonality and non-orthogonal states. The learning
+      outcomes I extracted are mostly based on applying and analyzing the principles
+      of QKD, with a focus on understanding specific protocols and their components.'
+    timestamp: '2026-01-28T18:48:10.114539'
+    needs_human_review: false

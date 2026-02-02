@@ -3,7 +3,7 @@ import os
 import argparse
 
 from edu_agents.v_db.vector_db_manager import VectorDBManager
-from edu_agents.v_db.index_notebooks import index_course_content
+from edu_agents.v_db.index_notebooks import index_course_content, build_knowledge_graph
 
 def re_index_notebooks(re_index_enabled):
     v_db_manager = VectorDBManager(path="data/vector_db")
@@ -14,6 +14,9 @@ def re_index_notebooks(re_index_enabled):
     index_course_content("./content", v_db_manager)
 
     v_db_manager.save()
+
+
+    build_knowledge_graph(v_db_manager)
 
 def run_search_test():
     v_db_manager = VectorDBManager(path="data/vector_db")

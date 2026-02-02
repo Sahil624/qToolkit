@@ -1,0 +1,145 @@
+# RAGAS Evaluation Dataset (Rewrite Logic + Retrieval)
+# Source: merged_nanomod_content.pdf
+# Size: 15 Scenarios
+
+scenarios:
+  # --- TOPIC: Complex Numbers ---
+  - id: "01_imaginary_definition"
+    chat_history:
+      - user: "I'm reviewing the basics of complex numbers."
+      - agent: "Okay, we usually start with the definition of imaginary units."
+    original_query: "How exactly is that number defined?"
+    gold_standard_query: "What is the definition of an imaginary number in the context of complex numbers?"
+    # Source: nanomod01-unit01 (1.3 Imaginary Numbers)
+    expected_chunk_text: "They denoted this number by $i$, such that $i=\\sqrt{-1}$. Indeed, $i^2=-1$."
+
+  - id: "02_complex_conjugate"
+    chat_history:
+      - user: "I have a complex number c = a + bi."
+      - agent: "That is the standard form. You can perform operations like addition or finding the conjugate."
+    original_query: "How do I find the conjugate of it?"
+    gold_standard_query: "How is the conjugate of a complex number c = a + bi defined?"
+    # Source: nanomod02-unit01 (2.4 Modulus and Conjugation)
+    expected_chunk_text: "Conjugate of a complex number, $c=a+bi$, is computed by simply changing the sign of the imaginary part."
+
+  # --- TOPIC: Linear Algebra & Matrices ---
+  - id: "03_hermitian_matrix"
+    chat_history:
+      - user: "I'm confused about different types of quantum matrices."
+      - agent: "There are Unitary matrices and Hermitian matrices, which are very common."
+    original_query: "When is a matrix considered Hermitian?"
+    gold_standard_query: "Define a Hermitian matrix."
+    # Source: nanomod07-unit01 (7.3 Hermitian Matrices)
+    expected_chunk_text: "Hermitian matrix: An $n\\times n$ matrix $A$ is called hermitian if $A^\\dagger=A$"
+
+  # --- TOPIC: Qubits & Visualization ---
+  - id: "04_bloch_sphere"
+    chat_history:
+      - user: "Is there a way to draw a qubit?"
+      - agent: "Yes, since a qubit is normalized, we can represent it geometrically."
+    original_query: "What is that representation called?"
+    gold_standard_query: "What geometric representation is used to visualize a single qubit?"
+    # Source: nanomod12-unit02 (12.1 Bloch Sphere)
+    expected_chunk_text: "Called the Bloch sphere every qubit can be thought of as a point on its surface"
+
+  - id: "05_superposition"
+    chat_history:
+      - user: "I understand 0 and 1, but quantum seems different."
+      - agent: "Yes, quantum systems can exist in a state called superposition."
+    original_query: "What does that concept mean?"
+    gold_standard_query: "Explain the concept of 'Superposition' in quantum mechanics."
+    # Source: nanomod10-unit02 (10.6 Superposition)
+    expected_chunk_text: "the system is simultaneously in both states $\\left|0\\right>$ and $\\left|1\\right>$! Therefore, we say that the system is in superposition."
+
+  - id: "06_hadamard_gate"
+    chat_history:
+      - user: "I need to put a qubit into superposition."
+      - agent: "You can use a specific quantum gate for that."
+    original_query: "Which transformation does that?"
+    gold_standard_query: "What is the Hadamard transformation?"
+    # Source: nanomod14-unit02 (14.2 Single Qubit Transformations)
+    expected_chunk_text: "Hadamard Transform We've seen the matrix ... It was used as a transition matrix from standard basis to the Hadamard basis."
+
+  - id: "07_entanglement"
+    chat_history:
+      - user: "What happens when two qubits interact?"
+      - agent: "They can become independent or they can become correlated in a special way."
+    original_query: "What is it called when they are strongly correlated?"
+    gold_standard_query: "What is an entangled state?"
+    # Source: nanomod15-unit02 (15.2 Exponential Growth)
+    expected_chunk_text: "Entanglement is a uniquely quantum phenomenon with no classical counterpart. In fact, most of the states in a multi-qubit quantum system are entangled!"
+
+  # --- TOPIC: Quantum Security Principles ---
+  - id: "08_no_cloning"
+    chat_history:
+      - user: "Can hackers just copy the key sent over the quantum channel?"
+      - agent: "No, the laws of physics prevent that."
+    original_query: "Which theorem forbids that?"
+    gold_standard_query: "What is the No-Cloning Theorem?"
+    # Source: nanomod19-unit03 (19.4 The No-Cloning Theorem)
+    expected_chunk_text: "Discovered in 1982, the no-cloning theorem ... says that an unknown arbitrary qubit cannot be cloned."
+
+  - id: "09_quantum_threat"
+    chat_history:
+      - user: "Why is RSA no longer safe?"
+      - agent: "Because algorithms like Shor's algorithm can break the math behind it."
+    original_query: "What is the primary threat quantum computers pose to it?"
+    gold_standard_query: "What is the primary threat quantum computers pose to classical cryptography?"
+    # Source: nanomod19-unit03 (19.3.1 Quantum Computing)
+    expected_chunk_text: "Shor's algorithm can be modified to solve the discrete logarithm problem as well. This implies that once a quantum computer is built, RSA, DH and ECC would no longer be secure!"
+
+  # --- TOPIC: QKD Protocols ---
+  - id: "10_bb84_security"
+    chat_history:
+      - user: "I am studying the BB84 protocol."
+      - agent: "It is the first quantum key distribution protocol."
+    original_query: "What properties does it rely on for security?"
+    gold_standard_query: "What are the two fundamental properties of qubits that BB84 relies on for security?"
+    # Source: nanomod20-unit03 (20.2 Introduction - BB84)
+    expected_chunk_text: "BB84 relies on the following fundamental properties of qubits for security: 1. No cloning theorem ... 2. Non-orthogonal qubits can not be reliable distinguished"
+
+  - id: "11_three_stage_protocol"
+    chat_history:
+      - user: "Is there a protocol that uses rotations?"
+      - agent: "Yes, there is one based on the concept of double-lock cryptography."
+    original_query: "How does that protocol work?"
+    gold_standard_query: "How does the 'Three-Stage Protocol' for Quantum Key Distribution work conceptually?"
+    # Source: nanomod22-unit03 (22.1 Background)
+    expected_chunk_text: "Students will understand the concept of double lock cryptography. ... The Three-stage ... provides perfect secrecy."
+
+  # --- TOPIC: Post-Quantum Cryptography (PQC) ---
+  - id: "12_pqc_definition"
+    chat_history:
+      - user: "Do we always need quantum hardware for security?"
+      - agent: "No, we can also use new classical algorithms that are resistant to quantum attacks."
+    original_query: "What is that field of cryptography called?"
+    gold_standard_query: "What is Post-Quantum Cryptography (PQC)?"
+    # Source: nanomod28-unit04 (28.3 Introducing PQC algorithms)
+    expected_chunk_text: "Post-Quantum Cryptography algorithms are classical algorithms designed to run on the computers we use today"
+
+  - id: "13_pqc_vs_qkd"
+    chat_history:
+      - user: "I keep confusing PQC and QKD."
+      - agent: "They are quite different. One is software-based, the other is hardware-based."
+    original_query: "What is the main difference between them?"
+    gold_standard_query: "What is the difference between QKD and PQC?"
+    # Source: nanomod28-unit04 (28.1 table/text)
+    expected_chunk_text: "Transmits qubits; eavesdropping is detected by measuring disturbances. Runs on classical computers and networks"
+
+  - id: "14_lattice_definition"
+    chat_history:
+      - user: "I heard PQC uses grids."
+      - agent: "Yes, many PQC algorithms are based on Lattice problems."
+    original_query: "What is a Lattice in this context?"
+    gold_standard_query: "What is a 'Lattice' in the context of Post-Quantum Cryptography?"
+    # Source: nanomod28-unit04 (28.3 What is a Lattice?)
+    expected_chunk_text: "Imagine a perfectly repeating grid of points, like the atoms in a crystal or a perfectly tiled floor"
+
+  - id: "15_lattice_hard_problem"
+    chat_history:
+      - user: "Why are lattices secure?"
+      - agent: "Because finding a specific point on a high-dimensional lattice is extremely difficult."
+    original_query: "What is that hard problem called?"
+    gold_standard_query: "What is the 'Hard Problem' associated with Lattices in cryptography?"
+    # Source: nanomod28-unit04 (28.3 The Hard Problem)
+    expected_chunk_text: "The Hard Problem: Closest Vector"

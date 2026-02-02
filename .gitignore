@@ -64,3 +64,4 @@ generated_course
 data/**/*.json
 case_studies
 scheduler_trace.json
+.cache/

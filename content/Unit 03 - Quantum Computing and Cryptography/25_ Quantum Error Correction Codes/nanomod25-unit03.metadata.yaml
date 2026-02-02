@@ -1,5 +1,663 @@
 learning_objective_tree:
-  title: Untitled Module
+  title: 25. Quantum Error Correction Codes
   global_prerequisites: []
-  objectives: []
-cell_metadata: []
+  objectives:
+  - lo_id: LO-25-01
+    summary: Students will learn about various types of quantum errors
+    covered_by:
+    - m25-25-1-251Introduction
+    - m25-25-2-252ErrorsinQubit
+    - m25-25-3-253UniqueChalleng
+    - m25-5-Untitled
+    - m25-25-5-255Correctingthe
+    - m25-9-Untitled
+    - m25-25-7-257CorrectingArbi
+    - m25-13-Untitled
+    - m25-25-8-258Conclusions
+    - m25-15-code258Conclusion
+    learning_objectives:
+    - Analyze how quantum error correction works through superposition collapse and
+      gate application
+    - Apply the concept of bit-flip and phase-flip errors to analyze quantum systems
+    - 'Apply: Correct phase-flip error in a quantum circuit using the Hadamard operation.'
+    - Apply basic concepts of quantum error correction using qubits
+    - Apply the concept of transmitting qubits in Hadamard basis to correct phase-flip
+      errors.
+    - Understand the definition of a qubit
+    - Apply CNOT gate and XOR operations to implement parity checks.
+    - Analyze the challenges posed by arbitrary errors in qubits
+    - Understand the implications of the No-cloning theorem on quantum error correction
+    - Apply knowledge of Pauli matrices to decompose an arbitrary single qubit operation
+      into a combination of basic operations.
+    - Analyze how fault-tolerant quantum computing addresses errors in encoding and
+      decoding processes
+    - Apply the concept of bit flip errors to describe how they affect a qubit
+    - Analyze the significance of Peter Shor's contribution to quantum computing (1995)
+    - Analyze how ancillary qubits are used to determine the error syndrome.
+    - 'Analyze: Understand how the Hadamard operation transforms qubits with phase-flip
+      errors.'
+    - Understand the challenges of quantum error correction due to qubit errors
+    - Understand the limitations of Shor's code in terms of qubit requirements
+    - Analyze the relationship between phase flip errors and bit flip errors
+    - Understand the relationship between arbitrary quantum errors and bit-flip or
+      phase-flip errors.
+    - Understand the concept of bit-flip errors in quantum computing.
+    - Understand the concept of linear independence in matrix space
+    - Apply knowledge of CSS code and its optimization by Laflamme, Miguel, Paz and
+      Zurek to real-world quantum computing scenarios
+    - Analyze the effect of applying a Hadamard gate to transform a logical qubit
+      from one basis to another.
+    - Analyze how arbitrary single qubit errors can be described using the Pauli matrix
+      representation.
+    - Understand how phase-flip errors can be converted to bit-flip errors in the
+      Hadamard basis.
+    - Apply the Pauli Matrix expansion to an arbitrary single qubit operation
+    estimated_time_mins: 0
+    concepts:
+    - No-cloning theorem
+    - Bit-flip and phase-flip errors
+    - arbitrary quantum error
+    - Goppa codes
+    - Qubits (quantum bits) and their properties
+    - Error syndrome
+    - Pauli matrices
+    - Qubit Operations
+    - Quantum superposition (α|-++⟩ + β|+--⟩)
+    - single qubit operation
+    - Quantum Error Correction Codes
+    - Ancillary qubits
+    - Phase-flip errors
+    - Quantum error correction
+    - quantum error correction
+    - Quantum cryptography features as hurdles in error correction
+    - bit-flip error
+    - CSS (Calderbank-Shor-Stiene) code
+    - Shor's code
+    - Linear Independence
+    - Bit-flip error
+    - bit flip error
+    - Arbitrary errors (small perturbations of qubit values)
+    - phase-flip error
+    - Hadamard operation
+    - Measurement collapse
+    - phase flip error
+    - phase-flip errors
+    - Pauli Matrices (I, X, Z)
+    - qubits
+    - Hadamard basis
+    - bit-flip errors
+    - quantum error correction techniques
+    - Quantum Error Correction
+    - Peter Shor's Quantum Error Correction Code
+    - qubit
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.95
+      reasoning: This cell discusses various error correction techniques and names
+        specific codes (Shor's code, CSS code) but focuses on describing existing
+        codes rather than constructing new ones or discussing the larger implications.
+        The primary purpose is to inform students about different types of quantum
+        errors.
+      timestamp: '2026-01-28T19:01:05.128798'
+      needs_human_review: true
+  - lo_id: LO-25-02
+    summary: Students will be able to construct quantum error correction codes
+    covered_by:
+    - m25-25-4-254Correctingthe
+    - m25-6-Untitled
+    - m25-7-Untitled
+    - m25-25-6-256CombiningtheP
+    - m25-11-Untitled
+    learning_objectives:
+    - Apply the concept of combining phase-flip and bit-flip error correction codes
+      to a 9-qubit system
+    - Explain how unentanglement occurs through CNOT operations
+    - Analyze the use of ancilla qubits in correcting qubit errors.
+    - Understand the process of encoding qubits for phase-flip error correction
+    - Analyze how entanglement is used for error correction
+    - Understand the concept of logical qubits in quantum computing
+    - Apply entanglement manipulation to retrieve a corrected state
+    - Understand the application of Shor's 9-qubit error correction code to correct
+      arbitrary qubit errors.
+    - Apply bit-flip and phase-flip error correction using parity checks.
+    - Analyze the difference between a 3-qubit and a 9-qubit error correction code
+    - Explain how CNOT operations are used for error detection and correction
+    - Apply the repetition code to correct a single qubit's state
+    - Recall the purpose of CNOT operations in quantum computing
+    - Apply X-gate to correct bit-flip errors
+    - Describe the process of entangling ancilla qubits with a logical qubit
+    estimated_time_mins: 0
+    concepts:
+    - Qubits
+    - Error correction
+    - CNOT gates
+    - phase-flip error correction codes
+    - bit-flip error correction
+    - Entanglement
+    - bit-flip error correction codes
+    - phase-flip error correction
+    - CNOT operations
+    - 9-qubit error correction code
+    - entanglement
+    - quantum bit-flip error correction
+    - CNOT operation
+    - ancilla qubits
+    - logical qubits
+    - entanglement using CNOT gate
+    - repetition code
+    - Shor's 9-qubit error correction code
+    - Quantum computing
+    - qubit
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 1.0
+      reasoning: This cell primarily teaches constructing Shor's 9-qubit error correction
+        code, which falls under LO-25-02. The content describes the procedure for
+        correcting errors using this code and its capabilities in correcting different
+        types of qubit errors. While it touches on various implications (LO-25-03)
+        and types of quantum errors (LO-25-01), the primary focus is on constructing
+        the code.
+      timestamp: '2026-01-28T19:01:05.128798'
+      needs_human_review: true
+  - lo_id: LO-25-03
+    summary: Students will understand larger implications of correcting errors in
+      quantum computing
+    covered_by: []
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.0
+      reasoning: ''
+      timestamp: ''
+      needs_human_review: true
+cell_metadata:
+- cell_id: m25-25-1-251Introduction
+  title: 25.1 Introduction
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24--241Introduction
+  - m24-3-Untitled
+  concepts:
+  - Quantum Error Correction Codes
+  - Qubits (quantum bits) and their properties
+  - Peter Shor's Quantum Error Correction Code
+  - Goppa codes
+  outcomes:
+  - Understand the challenges of quantum error correction due to qubit errors
+  - Apply basic concepts of quantum error correction using qubits
+  - Analyze the significance of Peter Shor's contribution to quantum computing (1995)
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.85
+    reasoning: 'LO Match: The cell content describes various types of quantum errors
+      and how they can occur in qubits, including bit flip errors and more complex
+      errors due to the continuum nature of qubit states. It also mentions Peter Shor''s
+      proof that single-qubit errors can be corrected using a coding scheme. This
+      suggests that the primary objective is for students to learn about various types
+      of quantum errors.; Concepts: The content provides a clear introduction to quantum
+      error correction codes and their importance in cryptography. Key terms such
+      as ''qubits'', ''Goppa codes'', and ''Peter Shor''s Quantum Error Correction
+      Code'' are explicitly mentioned. The tone suggests an introductory level of
+      explanation, making it suitable for learners who require foundational knowledge
+      in the subject. However, some sections appear to be an excerpt from a larger
+      text, which might limit the depth of analysis. Nevertheless, the provided information
+      enables extraction of relevant concepts and learning outcomes with moderate
+      confidence.'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-25-2-252ErrorsinQubit
+  title: 25.2 Errors in Qubits
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-3-Untitled
+  concepts:
+  - qubit
+  - bit flip error
+  - phase flip error
+  - quantum error correction
+  outcomes:
+  - Understand the definition of a qubit
+  - Apply the concept of bit flip errors to describe how they affect a qubit
+  - Analyze the relationship between phase flip errors and bit flip errors
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell primarily teaches about various types of quantum
+      errors, specifically bit flip and phase flip errors.; Concepts: The content
+      clearly defines key concepts such as qubits, bit flip errors, and phase flip
+      errors. The discussion on error correction is also well-explained. However,
+      some connections to specific algorithms or theorems are not explicitly mentioned.
+      Therefore, extracting only two learning outcomes related to understanding and
+      applying basic concepts in quantum computing.'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-25-3-253UniqueChalleng
+  title: 25.3 Unique Challenges in Quantum Error Correction
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-3-Untitled
+  - m24-4-Eavesdropping
+  concepts:
+  - No-cloning theorem
+  - Quantum cryptography features as hurdles in error correction
+  - Bit-flip and phase-flip errors
+  - Arbitrary errors (small perturbations of qubit values)
+  - Measurement collapse
+  outcomes:
+  - Understand the implications of the No-cloning theorem on quantum error correction
+  - Apply the concept of bit-flip and phase-flip errors to analyze quantum systems
+  - Analyze the challenges posed by arbitrary errors in qubits
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell primarily discusses the challenges and implications
+      of error correction in quantum computing due to unique properties such as no-cloning,
+      phase-flip errors, arbitrary errors, and the requirement for no-measurement.
+      This information aligns with LO-25-01: Students will learn about various types
+      of quantum errors.; Concepts: '
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-25-4-254Correctingthe
+  title: 25.4 Correcting the Quantum Bit-flip Error
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24-2-242TheGVProtocol
+  - m24-3-Untitled
+  concepts:
+  - quantum bit-flip error correction
+  - repetition code
+  - entanglement using CNOT gate
+  - logical qubits
+  outcomes:
+  - Understand the concept of logical qubits in quantum computing
+  - Apply the repetition code to correct a single qubit's state
+  - Analyze how entanglement is used for error correction
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell provides a specific example of constructing a quantum
+      error correction code, which fits with LO-25-02. It does not primarily focus
+      on describing types of errors (LO-25-01), nor does it discuss the broader implications
+      of correcting errors in quantum computing (LO-25-03).; Concepts: '
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-5-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24-2-242TheGVProtocol
+  concepts:
+  - Bit-flip error
+  - Quantum error correction
+  - Ancillary qubits
+  - Error syndrome
+  outcomes:
+  - Understand the concept of bit-flip errors in quantum computing.
+  - Apply CNOT gate and XOR operations to implement parity checks.
+  - Analyze how ancillary qubits are used to determine the error syndrome.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: This cell primarily teaches about various types of quantum
+      errors by explaining the states that a final received logical qubit may be in
+      due to a bit-flip error and how parities can be checked to distinguish which
+      qubit is different.; Concepts: This content appears to be discussing advanced
+      topics in quantum computing, specifically focusing on fault-tolerant methods
+      for correcting errors that occur during transmission. Key concepts extracted
+      include bit-flip errors, which is a fundamental concept in quantum computing;
+      quantum error correction, which is the process of detecting and correcting errors;
+      ancillary qubits, which are used to perform calculations without interfering
+      with the original qubit; and error syndrome, which is a way to detect the source
+      of an error. The learning outcomes indicate that students should be able to
+      understand the concept of bit-flip errors, apply CNOT gate and XOR operations
+      to implement parity checks, and analyze how ancillary qubits are used to determine
+      the error syndrome.'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-6-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24-2-242TheGVProtocol
+  - m24-3-Untitled
+  concepts:
+  - Quantum computing
+  - Qubits
+  - CNOT gates
+  - Error correction
+  - Entanglement
+  outcomes:
+  - Describe the process of entangling ancilla qubits with a logical qubit
+  - Explain how CNOT operations are used for error detection and correction
+  - Apply X-gate to correct bit-flip errors
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'LO Match: The cell provides a specific example of constructing quantum
+      error correction codes by applying CNOT operations to ancillary qubits and measuring
+      the syndrome. It then uses the syndrome to correct errors in the logical qubit.
+      This process demonstrates how to construct quantum error correction codes, matching
+      LO-25-02.; Concepts: '
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-7-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - qubit
+  - CNOT operation
+  - entanglement
+  outcomes:
+  - Recall the purpose of CNOT operations in quantum computing
+  - Apply entanglement manipulation to retrieve a corrected state
+  - Explain how unentanglement occurs through CNOT operations
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell content discusses a method for correcting errors
+      in quantum computing, which involves CNOT operations to retrieve and unentangle
+      qubits. This process is closely related to constructing quantum error correction
+      codes, as described in LO-25-02.; Concepts: '
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-25-5-255Correctingthe
+  title: 25.5 Correcting the Quantum Phase-flip Error
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24-2-242TheGVProtocol
+  - m24-4-Eavesdropping
+  concepts:
+  - phase-flip errors
+  - bit-flip errors
+  - Hadamard basis
+  - quantum error correction
+  outcomes:
+  - Understand how phase-flip errors can be converted to bit-flip errors in the Hadamard
+    basis.
+  - Apply the concept of transmitting qubits in Hadamard basis to correct phase-flip
+    errors.
+  - Analyze the effect of applying a Hadamard gate to transform a logical qubit from
+    one basis to another.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell discusses a specific type of quantum error (phase-flip
+      error) and how it can be transformed into another type of error (bit-flip error).
+      This is consistent with the LO-25-01 objective of learning about various types
+      of quantum errors.; Concepts: The content provides explicit explanations and
+      examples for converting phase-flip errors to bit-flip errors using the Hadamard
+      basis, making it clear that this is a key concept being taught. The learning
+      outcomes are also straightforward to infer from the content, especially the
+      first two outcomes which directly relate to the text. However, there may be
+      some ambiguity in the third outcome as it requires more critical thinking and
+      analysis of the transformation process. Nonetheless, I am confident that these
+      concepts and outcomes accurately represent the educational content.'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-9-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24-2-242TheGVProtocol
+  - m24-3-Untitled
+  concepts:
+  - Phase-flip errors
+  - Quantum superposition (α|-++⟩ + β|+--⟩)
+  - Hadamard operation
+  outcomes:
+  - 'Apply: Correct phase-flip error in a quantum circuit using the Hadamard operation.'
+  - 'Analyze: Understand how the Hadamard operation transforms qubits with phase-flip
+    errors.'
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.85
+    reasoning: 'LO Match: The cell content focuses on explaining how to handle a specific
+      type of quantum error (phase-flip), comparing it with a previously discussed
+      scenario (bit-flip). This suggests that the main goal is for students to understand
+      various types of quantum errors.; Concepts: The content appears to be teaching
+      quantum error correction, specifically phase-flip errors and the use of the
+      Hadamard operation to correct them. The key concepts extracted are directly
+      related to these topics. The learning outcomes are written in a clear and concise
+      manner that matches Bloom''s taxonomy format.'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-25-6-256CombiningtheP
+  title: 25.6 Combining the Phase-flip and Bit-flip Error Correction Codes
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - phase-flip error correction codes
+  - bit-flip error correction codes
+  - 9-qubit error correction code
+  outcomes:
+  - Understand the process of encoding qubits for phase-flip error correction
+  - Apply the concept of combining phase-flip and bit-flip error correction codes
+    to a 9-qubit system
+  - Analyze the difference between a 3-qubit and a 9-qubit error correction code
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell primarily teaches students how to construct quantum
+      error correction codes, specifically a 9-qubit code that can correct both phase-flip
+      and bit-flip errors. The content is focused on encoding qubits for bit-flip
+      error correction after the initial encoding for phase-flip error correction.;
+      Concepts: '
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-11-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24--241Introduction
+  - m24-24-2-242TheGVProtocol
+  concepts:
+  - Shor's 9-qubit error correction code
+  - bit-flip error correction
+  - phase-flip error correction
+  - ancilla qubits
+  - CNOT operations
+  outcomes:
+  - Understand the application of Shor's 9-qubit error correction code to correct
+    arbitrary qubit errors.
+  - Apply bit-flip and phase-flip error correction using parity checks.
+  - Analyze the use of ancilla qubits in correcting qubit errors.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'LO Match: This cell primarily teaches constructing Shor''s 9-qubit
+      error correction code, which falls under LO-25-02. The content describes the
+      procedure for correcting errors using this code and its capabilities in correcting
+      different types of qubit errors. While it touches on various implications (LO-25-03)
+      and types of quantum errors (LO-25-01), the primary focus is on constructing
+      the code.; Concepts: The content clearly outlines the key concepts related to
+      Shor''s 9-qubit error correction code, including its ability to correct bit-flip
+      and phase-flip errors as well as arbitrary qubit errors. The learning outcomes
+      are derived from the context of how these concepts are presented.'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-25-7-257CorrectingArbi
+  title: 25.7 Correcting Arbitrary Errors
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24-2-242TheGVProtocol
+  - m24-3-Untitled
+  - m24-4-Eavesdropping
+  concepts:
+  - arbitrary quantum error
+  - bit-flip error
+  - phase-flip error
+  - Pauli matrices
+  - single qubit operation
+  outcomes:
+  - Understand the relationship between arbitrary quantum errors and bit-flip or phase-flip
+    errors.
+  - Apply knowledge of Pauli matrices to decompose an arbitrary single qubit operation
+    into a combination of basic operations.
+  - Analyze how arbitrary single qubit errors can be described using the Pauli matrix
+    representation.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.85
+    reasoning: 'LO Match: The cell content primarily teaches about various types of
+      quantum errors, specifically how an arbitrary error can be converted to either
+      a bit-flip or phase-flip error, which are already known and correctable.; Concepts:
+      The content clearly explains the conversion of arbitrary quantum errors into
+      bit-flip or phase-flip errors and provides a mathematical foundation for this
+      process through the use of Pauli matrices.'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-13-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Linear Independence
+  - Qubit Operations
+  - Quantum Error Correction
+  - Pauli Matrices (I, X, Z)
+  outcomes:
+  - Understand the concept of linear independence in matrix space
+  - Apply the Pauli Matrix expansion to an arbitrary single qubit operation
+  - Analyze how quantum error correction works through superposition collapse and
+    gate application
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell primarily teaches students about various types
+      of quantum errors by describing a method to decompose an arbitrary single-qubit
+      operation U into a linear combination of I, X, Z and ZX operators, which are
+      likely representing the different types of error that can occur in quantum computing.;
+      Concepts: '
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-25-8-258Conclusions
+  title: 25.8 Conclusions
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m24-24--241Introduction
+  - m24-3-Untitled
+  concepts:
+  - Shor's code
+  - CSS (Calderbank-Shor-Stiene) code
+  - qubits
+  - quantum error correction techniques
+  outcomes:
+  - Understand the limitations of Shor's code in terms of qubit requirements
+  - Apply knowledge of CSS code and its optimization by Laflamme, Miguel, Paz and
+    Zurek to real-world quantum computing scenarios
+  - Analyze how fault-tolerant quantum computing addresses errors in encoding and
+    decoding processes
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: This cell discusses various error correction techniques
+      and names specific codes (Shor''s code, CSS code) but focuses on describing
+      existing codes rather than constructing new ones or discussing the larger implications.
+      The primary purpose is to inform students about different types of quantum errors.;
+      Concepts: The content discusses specific quantum error correction techniques
+      (Shor''s code, CSS code) and the process of optimizing them for fewer qubits.
+      This suggests a focus on applying theoretical knowledge to practical problems,
+      which is reflected in the learning outcomes.'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false
+- cell_id: m25-15-code258Conclusion
+  title: 'Code: 25.8 Conclusions'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m25-25-8-258Conclusions
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'Inherited from parent markdown: 25.8 Conclusions'
+    timestamp: '2026-01-28T19:01:05.128798'
+    needs_human_review: false

@@ -9,9 +9,11 @@ import nbformat  # <-- Added: The official library for reading notebooks
 # Ensure vector_db_manager is importable
 try:
     from .vector_db_manager import VectorDBManager
+    from .graph_rag import GraphRAG
 except ImportError:
     sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
     from dev.v_db.vector_db_manager import VectorDBManager
+    from dev.v_db.graph_rag import GraphRAG
 
 def load_yaml_metadata(metadata_path: str) -> dict | None:
     """Loads a YAML file and returns its content."""
@@ -164,6 +166,33 @@ def index_course_content(root_folder: str, db_manager: VectorDBManager):
             except Exception as e:
                 print(f"Error reading or parsing notebook {notebook_path}: {e}")
 
+
+def build_knowledge_graph(db_manager: VectorDBManager, graph_path: str = None):
+    """
+    Builds the GraphRAG knowledge graph from indexed content.
+    
+    Args:
+        db_manager: The VectorDBManager with indexed content
+        graph_path: Optional path for graph file (defaults to db_path/knowledge_graph.pkl)
+    """
+    if not db_manager.metadata:
+        print("No metadata found, skipping GraphRAG build.")
+        return
+    
+    if graph_path is None:
+        graph_path = os.path.join(db_manager.db_path, "knowledge_graph.pkl")
+    
+    print(f"Building GraphRAG knowledge graph at {graph_path}...")
+    graph_rag = GraphRAG(graph_path=graph_path)
+    
+    corpus = [
+        {"content": meta["content"], "source": str(key)} 
+        for key, meta in db_manager.metadata.items()
+    ]
+    
+    graph_rag.build_from_corpus(corpus)
+    print("GraphRAG build complete.")
+
 # --- Example Usage ---
 if __name__ == "__main__":
     # --- 1. Setup a dummy course structure for demonstration ---
@@ -221,6 +250,9 @@ cell_metadata:
     
     # --- 3. Save the newly populated database ---
     db_manager.save()
+    
+    # --- 3b. Build the knowledge graph ---
+    build_knowledge_graph(db_manager)
     print("-" * 30)
 
     # --- 4. Verify the indexing with a search ---

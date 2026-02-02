@@ -31,7 +31,7 @@ interface ChatPanelProps {
   onClose?: () => void;
 }
 
-const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
+const ChatPanel: React.FC<ChatPanelProps> = ({ onClose }) => {
   const [inputValue, setInputValue] = useState('');
   const [messages, setMessages] = useState<Message[]>([
     { sender: 'peer', text: "Hey! I'm your study buddy. Ask me anything about the course notes, and I'll try my best to explain it." }
@@ -333,7 +333,7 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
     setInputValue('');
     setIsLoading(true);
 
-    var studentProgress= -1;
+    var studentProgress = -1;
     // Find lesson number from url (Ex */04_core_protocols/*)
     const pathParts = window.location.pathname.split('/');
     for (let i = 0; i < pathParts.length; i++) {
@@ -357,6 +357,22 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
         method: 'POST',
       });
 
+      // Check if backend signaled escalation is needed
+      if (response.escalate) {
+        // Show Peer's escalation message with visual indicator
+        const escalateMessage: Message = {
+          sender: 'peer',
+          text: response.data + "\n\n🔄 *Auto-escalating to Tutor...*",
+          originalQuery: query
+        };
+        setMessages(prev => [...prev, escalateMessage]);
+
+        // Auto-trigger Tutor
+        console.log("Auto-escalating to Tutor based on relevance grading");
+        await handleEscalate(query);
+        return;
+      }
+
       const peerMessage: Message = { sender: 'peer', text: response.data, originalQuery: query };
       setMessages(prev => [...prev, peerMessage]);
 
@@ -366,24 +382,24 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
       setIsLoading(false);
     }
   };
-  
+
   const handleEscalate = async (originalQuery: string) => {
     setIsLoading(true);
     const thinkingMessage: Message = { sender: 'tutor', text: "Thinking..." };
     setMessages(prev => [...prev, thinkingMessage]);
 
     try {
-      
-    var studentProgress= -1;
-    // Find lesson number from url (Ex */04_core_protocols/*)
-    const pathParts = window.location.pathname.split('/');
-    for (let i = 0; i < pathParts.length; i++) {
-      if (pathParts[i].match(/^\d{2}_/)) {
-        studentProgress = parseInt(pathParts[i].substring(0, 2), 10);
-        console.log("Detected student progress from URL:", studentProgress);
-        break;
+
+      var studentProgress = -1;
+      // Find lesson number from url (Ex */04_core_protocols/*)
+      const pathParts = window.location.pathname.split('/');
+      for (let i = 0; i < pathParts.length; i++) {
+        if (pathParts[i].match(/^\d{2}_/)) {
+          studentProgress = parseInt(pathParts[i].substring(0, 2), 10);
+          console.log("Detected student progress from URL:", studentProgress);
+          break;
+        }
       }
-    }
 
       const response = await makeApiRequest('/ask', {
         query: originalQuery,
@@ -391,11 +407,11 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
         student_progress: studentProgress,
         history: messages,
       });
-      
+
       setMessages(prev => {
-          const newMessages = [...prev];
-          newMessages[newMessages.length - 1] = { sender: 'tutor', text: response.data };
-          return newMessages;
+        const newMessages = [...prev];
+        newMessages[newMessages.length - 1] = { sender: 'tutor', text: response.data };
+        return newMessages;
       });
 
     } catch (error) {
@@ -411,21 +427,21 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
     const errorMessage: Message = { sender: 'peer', text: `Sorry, an error occurred: ${err.message}` };
     setMessages(prev => [...prev, errorMessage]);
   };
-  
+
   return (
     <div className="chat-panel-container">
       <div className="chat-header">
-          Q-Toolkit Assistant
-          
-          <button className="header-btn" onClick={() => setIsInfoOpen(true)} title="Course Info">
-           <infoIcon.react tag="span" />
-         </button>
+        Q-Toolkit Assistant
+
+        <button className="header-btn" onClick={() => setIsInfoOpen(true)} title="Course Info">
+          <infoIcon.react tag="span" />
+        </button>
       </div>
-      
+
       {/* Info Dialog Overlay */}
-      <InfoDialog 
-        isOpen={isInfoOpen} 
-        onClose={() => setIsInfoOpen(false)} 
+      <InfoDialog
+        isOpen={isInfoOpen}
+        onClose={() => setIsInfoOpen(false)}
         currentLOid={getCurrentOpenedLOid()}
       />
 
@@ -436,8 +452,8 @@ const ChatPanel: React.FC<ChatPanelProps> = ({onClose}) => {
               <Markdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>{msg.text}</Markdown>
             </div>
             {msg.sender === 'peer' && msg.originalQuery && (
-              <button 
-                className="escalate-button" 
+              <button
+                className="escalate-button"
                 onClick={() => handleEscalate(msg.originalQuery!)}
                 disabled={isLoading}
               >

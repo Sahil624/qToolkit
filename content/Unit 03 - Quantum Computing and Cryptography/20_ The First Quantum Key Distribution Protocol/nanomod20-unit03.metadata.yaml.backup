@@ -1,0 +1,852 @@
+learning_objective_tree:
+  title: '20. BB84: The First Quantum Key Distribution Protocol'
+  global_prerequisites: []
+  objectives:
+  - lo_id: LO-20-01
+    summary: Students will apply the principle of superposition and no-cloning theorem
+      to construct a quantum key distribution protocol
+    covered_by: []
+    learning_objectives: []
+    estimated_time_mins: 0
+    concepts: []
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.0
+      reasoning: ''
+      timestamp: ''
+      needs_human_review: true
+  - lo_id: LO-20-02
+    summary: Students will apply quantum operations and measurement principles to
+      quantum key distribution
+    covered_by:
+    - m20-20-4-204TheBB84Protoc
+    - m20-20-5-205KeyExchangePh
+    - m20-20-6-206KeySiftingPha
+    - m20-20-9-209BB84Widget
+    - m20-10-code209BB84Widge
+    - m20-20-10-2010KeyReconcilia
+    - m20-13-uBB84Simulatoru
+    - m20-14-codeuBB84Simulat
+    - m20-15-Untitled
+    - m20-16-codeUntitled
+    - m20-19-Step1oftheBB84p
+    - m20-20-codeStep1oftheB
+    - m20-21-Step2oftheBB84p
+    - m20-22-codeStep2oftheB
+    - m20-23-Step3ofBB84proto
+    - m20-24-codeStep3ofBB84
+    - m20-27-ProjectResearchQue
+    learning_objectives:
+    - Understand the concept of key reconciliation and its necessity in quantum key
+      distribution
+    - Apply the principles of QKD to secure data transmission
+    - Describe the steps involved in determining the correct basis for a bit in BB84
+      protocol (Apply)
+    - Apply basic object-oriented programming (OOP) concepts in Python.
+    - Analyze the effect of privacy amplification on reducing Eve's information about
+      the final key
+    - Understand the process of generating random keys in quantum key exchange.
+    - Apply knowledge of photon basis measurement to determine correct or incorrect
+      key bits.
+    - Understand the process of sifting qubits to produce a shared key
+    - Analyze the potential impact of Eve's presence on the security of quantum key
+      exchange
+    - Understand the role of Eve as a passive eavesdropper in BB84
+    - Apply the concept of bases in quantum mechanics to identify incorrect measurements
+    - Apply BB84 protocol to simulate secure quantum communication
+    - Understand the structure of a simple programming paradigm.
+    - Apply the concept of qubits to represent quantum states
+    - Analyze the role of entanglement in the BB84 protocol
+    - Understand the BB84 quantum key distribution protocol
+    - Apply the principles of quantum key distribution
+    - Analyze the representation of a linearly polarized photon as a qubit in different
+      bases
+    - Understand the basics of quantum computing protocols
+    - Apply analysis to determine Eve's best measurement strategy for different scenarios
+    - Apply the concept of qubit transmission to a specific cryptographic scenario
+    - Apply different types of error correction protocols to correct errors in key
+      bits
+    - Explain the process of evaluating a candidate key in BB84 protocol (Understand)
+    - Analyze the effect of entanglement biasing on security in BB84
+    - Understand the role of random basis selection in quantum key distribution protocols
+      (BB84)
+    - Analyze the effect of eavesdropping on the sifted key
+    - Analyze the role of basis in quantum cryptography
+    - Evaluate the average length of the remaining subsequence after key evaluation
+      (Analyze)
+    - Analyze the effect of multi-photon emission on the security of BB84
+    - Understand the implications of using modified basis pairs on the security of
+      a quantum communication protocol
+    - Understand the concept of BB84 protocol
+    estimated_time_mins: 0
+    concepts:
+    - Photon basis measurement
+    - Bases
+    - BB84
+    - quantum computing
+    - Quantum Key Distribution (QKD) protocol
+    - qubit
+    - function
+    - Key reconciliation
+    - Hadamard basis
+    - Qubits
+    - Rectilinear basis
+    - Quantum teleportation
+    - quantum_state_vector
+    - basis measurement
+    - Error correction protocols (cascade error correction, turbo codes, polar codes)
+    - BB84 quantum key distribution algorithm
+    - Key Sifting Phase
+    - BB84_Protocol
+    - qubit transmission
+    - key evaluation
+    - Entanglement biasing
+    - main program
+    - classical bits
+    - Eavesdropping
+    - classes
+    - BB84 protocol
+    - Random n-bit strings
+    - Privacy amplification
+    - Key Exchange Phase
+    - quantum cryptography
+    - Universal hash function
+    - basis choice
+    - basis
+    - Eve (a hypothetical eavesdropper)
+    - key_terms
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.95
+      reasoning: The cell content involves applying quantum operations and measurement
+        principles to analyze different scenarios in QKD, such as modifying basis
+        pairs or dealing with multi-photon emissions.
+      timestamp: '2026-01-28T17:00:11.057598'
+      needs_human_review: true
+  - lo_id: LO-20-03
+    summary: Students will understand the importance of using non-orthogonal states
+      in QKD
+    covered_by:
+    - m20-20-1-201Background
+    - m20-20-2-202Introduction
+    - m20-20-3-203Assumptions
+    - m20-20-8-208SecurityofBB8
+    learning_objectives:
+    - Analyze the advantage of BB84 protocol over classical analogs
+    - Analyze the implications of using both quantum and classical channels for communication
+    - Understand the significance of the BB84 protocol in quantum cryptography
+    - 'Understand: Describe the mathematical representation of quantum states using
+      kets.'
+    - Understand the implications of no-cloning theorem on eavesdropping
+    - 'Apply: Compute the density matrix for a qubit in both rectilinear and diagonal
+      basis.'
+    - Understand the importance of single photons in secure quantum communication
+    - Apply the concept of authenticated channels to ensure secure communication
+    - Evaluate the assumptions required for the BB84 protocol to function securely
+    - Analyze the effects of active eavesdropping in BB84 protocol
+    - Apply knowledge of non-orthogonal qubits to distinguish between legitimate and
+      illegitimate signals
+    - 'Analyze: Explain why Eve cannot distinguish between qubits in rectilinear basis
+      and the diagonal basis.'
+    - Apply the concept of public key exchange using BB84 protocol
+    estimated_time_mins: 0
+    concepts:
+    - BB84 protocol
+    - Gilles Brassard
+    - single photon emissions
+    - Quantum state representation using kets (e.g., |0〉, |1〉)
+    - Non-orthogonal qubits
+    - Passive vs Active attacker
+    - Density matrix
+    - quantum cryptography
+    - Rectilinear basis vs Diagonal basis in quantum mechanics
+    - quantum computing
+    - public key exchange
+    - Charles Bennett
+    - No cloning theorem
+    - authenticated channels
+    - Mathematical equivalence of rectilinear and diagonal bases due to identical
+      density matrices
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 1.0
+      reasoning: The cell teaches about non-orthogonal states in QKD and explains
+        how they are used to prevent Eve from distinguishing between qubits in rectilinear
+        basis and diagonal basis. This aligns with LO-20-03 which requires students
+        to understand the importance of using non-orthogonal states in QKD.
+      timestamp: '2026-01-28T17:00:11.057598'
+      needs_human_review: true
+  - lo_id: LO-20-04
+    summary: Students will analyze the QKD protocol for detecting eavesdropping
+    covered_by:
+    - m20-20-7-207EavesdropperDe
+    - m20-25-Step4oftheBB84p
+    - m20-26-codeStep4oftheB
+    learning_objectives:
+    - Apply the BB84 protocol to detect potential eavesdroppers and discard compromised
+      data.
+    - Understand the process of eavesdropper detection in quantum key distribution
+      protocols.
+    - Analyze the relationship between measurement basis mismatch and error rates.
+    - Apply probability calculations to determine the likelihood of Eve being detected.
+    - Understand the concept of eavesdropper detection in QKD protocols.
+    estimated_time_mins: 0
+    concepts:
+    - BB84 protocol
+    - Eavesdropping detection
+    - Eavesdropper Detection
+    - Quantum Key Distribution (QKD)
+    - Measurement basis matching
+    - Channel errors
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 1.0
+      reasoning: The cell content primarily teaches analyzing the QKD protocol for
+        detecting eavesdropping, which aligns with LO-20-04.
+      timestamp: '2026-01-28T17:00:11.057598'
+      needs_human_review: true
+cell_metadata:
+- cell_id: m20-20-1-201Background
+  title: 20.1 Background
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - BB84 protocol
+  - quantum cryptography
+  - public key exchange
+  - Charles Bennett
+  - Gilles Brassard
+  outcomes:
+  - Understand the significance of the BB84 protocol in quantum cryptography
+  - Apply the concept of public key exchange using BB84 protocol
+  - Analyze the advantage of BB84 protocol over classical analogs
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'LO Match: This cell provides background information on the BB84 protocol
+      and its significance in quantum cryptography, but it does not provide any technical
+      details about applying superposition, non-orthogonal states, or detecting eavesdropping.;
+      Concepts: '
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-2-202Introduction
+  title: 20.2 Introduction - BB84
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - No cloning theorem
+  - Non-orthogonal qubits
+  - Passive vs Active attacker
+  - BB84 protocol
+  outcomes:
+  - Understand the implications of no-cloning theorem on eavesdropping
+  - Apply knowledge of non-orthogonal qubits to distinguish between legitimate and
+    illegitimate signals
+  - Analyze the effects of active eavesdropping in BB84 protocol
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: This cell primarily teaches the importance of using non-orthogonal
+      states in QKD.; Concepts: The content is a clear introduction to a specific
+      topic (BB84) and explains its fundamental properties using key concepts from
+      quantum computing. The language used suggests an introductory level, aiming
+      to educate readers about the principles behind the protocol rather than provide
+      implementation details.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-3-203Assumptions
+  title: 20.3 Assumptions
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - quantum computing
+  - BB84 protocol
+  - single photon emissions
+  - authenticated channels
+  outcomes:
+  - Understand the importance of single photons in secure quantum communication
+  - Apply the concept of authenticated channels to ensure secure communication
+  - Analyze the implications of using both quantum and classical channels for communication
+  - Evaluate the assumptions required for the BB84 protocol to function securely
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell primarily teaches the importance of using non-orthogonal
+      states in QKD, which aligns with LO-20-03.; Concepts: '
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-4-204TheBB84Protoc
+  title: 20.4 The BB84 Protocol
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - key_terms
+  - BB84_Protocol
+  - qubit
+  - quantum_state_vector
+  outcomes:
+  - Understand the basics of quantum computing protocols
+  - Apply the concept of qubits to represent quantum states
+  - Analyze the representation of a linearly polarized photon as a qubit in different
+    bases
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell primarily teaches quantum operations and measurement
+      principles to quantum key distribution as it describes the behavior of linearly
+      polarized photons, which are treated as qubits, and their corresponding state
+      vectors in different bases.; Concepts: I am confident that I have extracted
+      the key concepts and learning outcomes relevant to this educational content
+      on the BB84 Protocol. The text explicitly describes the protocol and its application
+      to quantum computing, which suggests that understanding these concepts is crucial
+      for readers to comprehend the material. The tone of the explanation implies
+      a level of abstraction, suggesting that students should be able to analyze and
+      apply the concepts rather than simply recall them.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-5-205KeyExchangePh
+  title: 20.5 Key Exchange Phase
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Key Exchange Phase
+  - Random n-bit strings
+  - Photon basis measurement
+  outcomes:
+  - Understand the process of generating random keys in quantum key exchange.
+  - Apply knowledge of photon basis measurement to determine correct or incorrect
+    key bits.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell describes the steps involved in the key exchange
+      phase of QKD, including Alice generating random strings and transmitting photons
+      based on a chosen basis. Bob then measures the received photons in a randomly
+      chosen basis and notes down his observations. This process involves applying
+      quantum operations and measurement principles to QKD, which aligns with LO-20-02.;
+      Concepts: I am confident that I have extracted relevant concepts and learning
+      outcomes from the provided content, but there may be additional nuances or details
+      not captured in this extraction. The content appears to be discussing a specific
+      aspect of quantum computing related to key exchange and photon measurement.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-6-206KeySiftingPha
+  title: 20.6 Key Sifting Phase
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Key Sifting Phase
+  - Qubits
+  - Bases
+  - Eavesdropping
+  outcomes:
+  - Understand the process of sifting qubits to produce a shared key
+  - Apply the concept of bases in quantum mechanics to identify incorrect measurements
+  - Analyze the effect of eavesdropping on the sifted key
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell describes the Key Sifting Phase in a quantum key
+      distribution protocol, focusing on how Bob and Alice determine which qubits
+      were measured correctly. This involves applying principles of quantum operations
+      and measurement to identify potential eavesdropping attempts. The emphasis is
+      on the process of measuring and correcting errors in the received bits, which
+      aligns with LO-20-02.; Concepts: I have extracted key concepts related to quantum
+      cryptography, specifically the Key Sifting Phase and its implications for a
+      shared key. The learning outcomes I''ve included focus on understanding the
+      process, applying relevant principles, and analyzing potential security threats
+      (eavesdropping). My confidence is 0.8 because while I believe these are accurate
+      representations of what''s being taught, I may have missed nuances or important
+      details specific to this content.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-7-207EavesdropperDe
+  title: 20.7 Eavesdropper Detection
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Eavesdropper Detection
+  - Quantum Key Distribution (QKD)
+  - Measurement basis matching
+  outcomes:
+  - Understand the concept of eavesdropper detection in QKD protocols.
+  - Apply probability calculations to determine the likelihood of Eve being detected.
+  - Analyze the relationship between measurement basis mismatch and error rates.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell content focuses on describing how to detect eavesdropping
+      in a QKD protocol, which aligns with analyzing the QKD protocol for detecting
+      eavesdropping.; Concepts: '
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-8-208SecurityofBB8
+  title: 20.8 Security of BB84
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Density matrix
+  - Rectilinear basis vs Diagonal basis in quantum mechanics
+  - Quantum state representation using kets (e.g., |0〉, |1〉)
+  - Mathematical equivalence of rectilinear and diagonal bases due to identical density
+    matrices
+  outcomes:
+  - 'Apply: Compute the density matrix for a qubit in both rectilinear and diagonal
+    basis.'
+  - 'Analyze: Explain why Eve cannot distinguish between qubits in rectilinear basis
+    and the diagonal basis.'
+  - 'Understand: Describe the mathematical representation of quantum states using
+    kets.'
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell teaches about non-orthogonal states in QKD and
+      explains how they are used to prevent Eve from distinguishing between qubits
+      in rectilinear basis and diagonal basis. This aligns with LO-20-03 which requires
+      students to understand the importance of using non-orthogonal states in QKD.;
+      Concepts: The content primarily focuses on explaining how density matrices are
+      used to describe quantum systems, particularly in the context of BB84 security
+      protocol. The extraction includes key concepts from quantum mechanics and algorithms
+      required for computing density matrices. Learning outcomes align with Bloom''s
+      taxonomy, evaluating knowledge from recall (Understand) to analysis and application.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-9-209BB84Widget
+  title: 20.9 BB84 Widget
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - BB84
+  - Quantum Key Distribution (QKD) protocol
+  outcomes:
+  - Understand the BB84 quantum key distribution protocol
+  - Apply the principles of QKD to secure data transmission
+  - Analyze the role of entanglement in the BB84 protocol
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell teaches students how to apply quantum operations
+      and measurement principles to quantum key distribution. It instructs them to
+      run a widget in order to understand the BB84 protocol, which is an example of
+      applying these principles. The widget likely demonstrates how quantum operations
+      are used to encode and decode messages.; Concepts: '
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-10-code209BB84Widge
+  title: 'Code: 20.9 BB84 Widget'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m20-20-9-209BB84Widget
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'Inherited from parent markdown: 20.9 BB84 Widget'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-10-2010KeyReconcilia
+  title: 20.10 Key Reconciliation and Privacy Amplification
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Key reconciliation
+  - Error correction protocols (cascade error correction, turbo codes, polar codes)
+  - Universal hash function
+  - Privacy amplification
+  outcomes:
+  - Understand the concept of key reconciliation and its necessity in quantum key
+    distribution
+  - Apply different types of error correction protocols to correct errors in key bits
+  - Analyze the effect of privacy amplification on reducing Eve's information about
+    the final key
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell content discusses key reconciliation and privacy
+      amplification, which are quantum operations and measurement principles applied
+      to QKD. The text explains how error correction and universal hash functions
+      reduce Eve''s information about the key, which is a direct application of these
+      principles.; Concepts: The content appears to be discussing specific concepts
+      related to quantum key distribution and security. The key concepts extracted
+      are relevant to the topic and align with common terminology in quantum computing.
+      The learning outcomes also seem to capture essential skills for understanding
+      and applying these concepts in a practical setting.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-13-uBB84Simulatoru
+  title: <u>BB84 Simulator<u>
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - BB84 quantum key distribution algorithm
+  - Quantum teleportation
+  - Entanglement biasing
+  - Eve (a hypothetical eavesdropper)
+  outcomes:
+  - Apply BB84 protocol to simulate secure quantum communication
+  - Analyze the effect of entanglement biasing on security in BB84
+  - Understand the role of Eve as a passive eavesdropper in BB84
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell provides widgets to set values for a quantum key
+      distribution (QKD) protocol, which suggests it is focused on the application
+      of quantum operations and measurement principles. LO-20-02 matches this description
+      as it involves applying these principles to QKD.; Concepts: '
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-14-codeuBB84Simulat
+  title: 'Code: <u>BB84 Simulator<u>'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m20-13-uBB84Simulatoru
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'Inherited from parent markdown: <u>BB84 Simulator<u>'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-15-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - classes
+  - function
+  - main program
+  outcomes:
+  - Understand the structure of a simple programming paradigm.
+  - Apply basic object-oriented programming (OOP) concepts in Python.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell appears to provide a series of options for running
+      cells related to quantum key distribution, which suggests it is building toward
+      applying quantum operations and measurement principles to QKD (LO-20-02). While
+      the other LOs may be tangentially relevant, they do not align as closely with
+      the content presented in this cell.; Concepts: The content appears to be teaching
+      introductory programming concepts using Python, specifically focusing on classes,
+      functions, and the main program as the core components. The emphasis is on understanding
+      these fundamental structures and applying them in a simple way. However, without
+      more context or specific details about quantum computing or algorithms, it''s
+      difficult to accurately extract key concepts directly related to those areas.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-16-codeUntitled
+  title: 'Code: Untitled'
+  type: code
+  estimated_time: '3'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m20-15-Untitled
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'Inherited from parent markdown: Untitled'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-19-Step1oftheBB84p
+  title: Step 1 of the BB84 protocol - Alice sends a candidate key
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - quantum computing
+  - BB84 protocol
+  - classical bits
+  - basis
+  outcomes:
+  - Understand the concept of BB84 protocol
+  - Apply the principles of quantum key distribution
+  - Analyze the role of basis in quantum cryptography
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell primarily teaches how to apply quantum operations
+      and measurement principles to QKD, as it describes Alice''s process of sending
+      classical bits in their appropriate basis using the BB84 protocol.; Concepts: '
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-20-codeStep1oftheB
+  title: 'Code: Step 1 of the BB84 protocol - '
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m20-19-Step1oftheBB84p
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'Inherited from parent markdown: Step 1 of the BB84 protocol - Alice
+      sends a candidate key'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-21-Step2oftheBB84p
+  title: Step 2 of the BB84 protocol - Bob receives a candidate key
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - BB84 protocol
+  - quantum cryptography
+  - basis measurement
+  - qubit transmission
+  outcomes:
+  - Understand the role of random basis selection in quantum key distribution protocols
+    (BB84)
+  - Apply the concept of qubit transmission to a specific cryptographic scenario
+  - Analyze the potential impact of Eve's presence on the security of quantum key
+    exchange
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell primarily teaches Bob to apply quantum operations
+      and measurement principles to quantum key distribution, as he uses random bases
+      to measure the qubits sent from Alice. This demonstrates an application of the
+      quantum operations principles which is closely related to LO-20-02.; Concepts:
+      The content provided appears to be discussing the BB84 protocol, which is a
+      fundamental quantum cryptography technique. The concepts of basis measurement
+      and qubit transmission are also relevant to the topic. The learning outcomes
+      extracted align with Bloom''s taxonomy levels, requiring students to understand,
+      apply, and analyze the concepts. However, some details may be missing in the
+      provided snippet, potentially affecting the extraction accuracy.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-22-codeStep2oftheB
+  title: 'Code: Step 2 of the BB84 protocol - '
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m20-21-Step2oftheBB84p
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'Inherited from parent markdown: Step 2 of the BB84 protocol - Bob
+      receives a candidate key'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-23-Step3ofBB84proto
+  title: Step 3 of BB84 protocol - Alice and Bob evaluate the candidate key
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - BB84 protocol
+  - quantum cryptography
+  - basis choice
+  - key evaluation
+  outcomes:
+  - Explain the process of evaluating a candidate key in BB84 protocol (Understand)
+  - Describe the steps involved in determining the correct basis for a bit in BB84
+    protocol (Apply)
+  - Evaluate the average length of the remaining subsequence after key evaluation
+    (Analyze)
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The provided cell content primarily teaches about Alice
+      and Bob''s evaluation of the candidate key in the BB84 protocol, which involves
+      quantum operations such as basis determination and measurement principles to
+      identify correct bits from incorrect ones.; Concepts: '
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-24-codeStep3ofBB84
+  title: 'Code: Step 3 of BB84 protocol - Alic'
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m20-23-Step3ofBB84proto
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'Inherited from parent markdown: Step 3 of BB84 protocol - Alice and
+      Bob evaluate the candidate key'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-25-Step4oftheBB84p
+  title: Step 4 of the BB84 protocol - Alice and Bob check if there was an eavesdropper
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - BB84 protocol
+  - Eavesdropping detection
+  - Channel errors
+  outcomes:
+  - Understand the process of eavesdropper detection in quantum key distribution protocols.
+  - Apply the BB84 protocol to detect potential eavesdroppers and discard compromised
+    data.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell content primarily teaches analyzing the QKD protocol
+      for detecting eavesdropping, which aligns with LO-20-04.; Concepts: The content
+      clearly outlines a specific step in the BB84 protocol (step 4) and its purpose
+      is to detect eavesdropping. The key concepts extracted are directly related
+      to this process. The learning outcomes focus on understanding and applying this
+      concept to detect potential eavesdroppers.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-26-codeStep4oftheB
+  title: 'Code: Step 4 of the BB84 protocol - '
+  type: code
+  estimated_time: '1'
+  prerequisites: []
+  concepts: []
+  outcomes: []
+  extra_props:
+    parent_cell: m20-25-Step4oftheBB84p
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'Inherited from parent markdown: Step 4 of the BB84 protocol - Alice
+      and Bob check if there was an eavesdropper'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false
+- cell_id: m20-27-ProjectResearchQue
+  title: Project/Research Questions
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Hadamard basis
+  - Rectilinear basis
+  - BB84 protocol
+  outcomes:
+  - Understand the implications of using modified basis pairs on the security of a
+    quantum communication protocol
+  - Apply analysis to determine Eve's best measurement strategy for different scenarios
+  - Analyze the effect of multi-photon emission on the security of BB84
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'LO Match: The cell content involves applying quantum operations and
+      measurement principles to analyze different scenarios in QKD, such as modifying
+      basis pairs or dealing with multi-photon emissions.; Concepts: The content focuses
+      on advanced concepts in quantum computing and cryptography, specifically the
+      BB84 protocol and its modifications. The questions demonstrate a high level
+      of abstraction and require a deep understanding of quantum mechanics and information
+      theory. The extraction reflects this complexity, capturing key terms and learning
+      outcomes that correspond to expert-level knowledge.'
+    timestamp: '2026-01-28T17:00:11.057598'
+    needs_human_review: false

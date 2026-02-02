@@ -1,0 +1,220 @@
+learning_objective_tree:
+  title: 24. The Goldenberg-Vaidman Protocol
+  global_prerequisites: []
+  objectives:
+  - lo_id: LO-24-01
+    summary: Students will learn quantum key distribution based on orthogonal quantum
+      states
+    covered_by:
+    - m24-24--241Introduction
+    - m24-4-Eavesdropping
+    learning_objectives:
+    - Apply the Goldenberg-Vaidman protocol as an example of a quantum cryptography
+      method.
+    - Understand the implications of using orthogonal vs non-orthogonal states in
+      QKD schemes.
+    - Analyze the importance of random sending times in ensuring the security of GV
+      protocol.
+    - Understand the concept of eavesdropping in quantum key distribution protocols.
+    - Apply the principle of entanglement to identify potential security threats.
+    - Analyze the differences between the GV protocol and BB84, including their similarities.
+    estimated_time_mins: 0
+    concepts:
+    - non-orthogonal states
+    - Entanglement
+    - Quantum State Measurement
+    - Goldenberg-Vaidman protocol
+    - BB84
+    - Quantum Key Distribution (QKD)
+    - Secure Quantum Key Distribution (GV protocol)
+    - Eavesdropping
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.95
+      reasoning: The content of this cell discusses eavesdropping detection in quantum
+        key distribution (QKD), which directly builds upon LO-24-01. The discussion
+        on comparing transmission and reception times, the role of random sending
+        time, and Eve's potential actions are all relevant to LO-24-01's objectives.
+      timestamp: '2026-01-28T17:03:43.671602'
+      needs_human_review: true
+  - lo_id: LO-24-02
+    summary: Students will use Mach-Zehnder interferometer for QKD
+    covered_by:
+    - m24-24-2-242TheGVProtocol
+    - m24-3-Untitled
+    learning_objectives:
+    - 'Apply: Recognize and interpret the orthogonal states (superposition of wave
+      packets) representing bit values 0 and 1.'
+    - Understand the basic principles of Quantum Key Distribution (QKD) and its application
+      in secure communication.
+    - Analyze the importance of wave-packet delay in ensuring security against eavesdropping
+      in QKD systems.
+    - Apply the concept of Mach-Zehnder Interferometer to analyze the timing of wave
+      packets in QKD protocols.
+    - 'Analyze: Understand how the Mach-Zehnder Interferometer is used to implement
+      the GV protocol.'
+    - 'Understand: Comprehend the concept of qubit storage in a delay loop within
+      the transmission line, as required by the GV protocol.'
+    estimated_time_mins: 0
+    concepts:
+    - Superdense Cryption
+    - Wave-packet delay
+    - Quantum Key Distribution (QKD)
+    - Qubit storage using delay loop in transmission line
+    - Mach-Zehnder Interferometer as an implementation of the GV protocol
+    - Mach-Zehnder Interferometer
+    - Orthogonal states represented by superposition of wave packets
+    - 'Quantum computing protocol: GV (Gottesman-Vladisov) protocol'
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.9
+      reasoning: The text primarily explains how a Mach-Zehnder interferometer can
+        be used for quantum key distribution (QKD), which is the key concept addressed
+        in LO-24-02.
+      timestamp: '2026-01-28T17:03:43.671602'
+      needs_human_review: true
+cell_metadata:
+- cell_id: m24-24--241Introduction
+  title: 24. 1 Introduction
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Quantum Key Distribution (QKD)
+  - Goldenberg-Vaidman protocol
+  - non-orthogonal states
+  - BB84
+  outcomes:
+  - Understand the implications of using orthogonal vs non-orthogonal states in QKD
+    schemes.
+  - Apply the Goldenberg-Vaidman protocol as an example of a quantum cryptography
+    method.
+  - Analyze the differences between the GV protocol and BB84, including their similarities.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell discusses quantum key distribution and specifically
+      mentions a protocol (Goldenber-Vaidman) claiming to use orthogonal states for
+      QKD, which aligns with the LO of using Mach-Zehnder interferometer for QKD is
+      not explicitly mentioned but the concept of QKD with orthogonal states matches;
+      Concepts: The content focuses on introducing a specific quantum cryptography
+      protocol (GV) and its implications in the field, highlighting the distinction
+      from another known protocol (BB84). Key concepts such as QKD, non-orthogonal
+      states, and protocols can be easily identified. Learning outcomes emphasize
+      understanding and applying knowledge of these concepts.'
+    timestamp: '2026-01-28T17:03:43.671602'
+    needs_human_review: false
+- cell_id: m24-24-2-242TheGVProtocol
+  title: 24.2 The GV Protocol
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - 'Quantum computing protocol: GV (Gottesman-Vladisov) protocol'
+  - Qubit storage using delay loop in transmission line
+  - Mach-Zehnder Interferometer as an implementation of the GV protocol
+  - Orthogonal states represented by superposition of wave packets
+  outcomes:
+  - 'Analyze: Understand how the Mach-Zehnder Interferometer is used to implement
+    the GV protocol.'
+  - 'Apply: Recognize and interpret the orthogonal states (superposition of wave packets)
+    representing bit values 0 and 1.'
+  - 'Understand: Comprehend the concept of qubit storage in a delay loop within the
+    transmission line, as required by the GV protocol.'
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.95
+    reasoning: 'LO Match: The cell content discusses the GV protocol and its implementation
+      using a Mach-Zehnder Interferometer, which is a key concept in LO-24-02. The
+      mention of orthogonal quantum states is related to LO-24-01, but it is secondary
+      to the primary discussion of the interferometer.; Concepts: The content provides
+      clear explanations and examples to support the extraction. Key concepts are
+      explicitly mentioned or implied through mathematical representations (e.g.,
+      superposition of wave packets) and visual aids (Mach-Zehnder Interferometer
+      diagram). The learning outcomes focus on understanding and applying the GV protocol''s
+      implementation, reinforcing key concepts.'
+    timestamp: '2026-01-28T17:03:43.671602'
+    needs_human_review: false
+- cell_id: m24-3-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Mach-Zehnder Interferometer
+  - Superdense Cryption
+  - Quantum Key Distribution (QKD)
+  - Wave-packet delay
+  outcomes:
+  - Understand the basic principles of Quantum Key Distribution (QKD) and its application
+    in secure communication.
+  - Apply the concept of Mach-Zehnder Interferometer to analyze the timing of wave
+    packets in QKD protocols.
+  - Analyze the importance of wave-packet delay in ensuring security against eavesdropping
+    in QKD systems.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The text primarily explains how a Mach-Zehnder interferometer
+      can be used for quantum key distribution (QKD), which is the key concept addressed
+      in LO-24-02.; Concepts: I''m fairly confident that these concepts and learning
+      outcomes are relevant to the content, but I might have missed some finer details.
+      The text describes a basic setup for quantum key distribution using Mach-Zehnder
+      Interferometer, which implies an understanding of QKD principles is required.
+      The text also discusses wave-packet delay as a security measure, indicating
+      that learners should be able to apply this concept in the context of QKD.'
+    timestamp: '2026-01-28T17:03:43.671602'
+    needs_human_review: false
+- cell_id: m24-4-Eavesdropping
+  title: Eavesdropping
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Eavesdropping
+  - Secure Quantum Key Distribution (GV protocol)
+  - Quantum State Measurement
+  - Entanglement
+  outcomes:
+  - Understand the concept of eavesdropping in quantum key distribution protocols.
+  - Apply the principle of entanglement to identify potential security threats.
+  - Analyze the importance of random sending times in ensuring the security of GV
+    protocol.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The content of this cell discusses eavesdropping detection
+      in quantum key distribution (QKD), which directly builds upon LO-24-01. The
+      discussion on comparing transmission and reception times, the role of random
+      sending time, and Eve''s potential actions are all relevant to LO-24-01''s objectives.;
+      Concepts: The content appears to be discussing the principles of secure quantum
+      key distribution, specifically the Eavesdropping problem and its solution in
+      the GV protocol. The key concepts extracted relate to these topics. The learning
+      outcomes are based on the explicit mentions of understanding and applying concepts
+      within the text.'
+    timestamp: '2026-01-28T17:03:43.671602'
+    needs_human_review: false

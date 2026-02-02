@@ -8,6 +8,7 @@ import pickle
 import os
 
 from .utils import singleton, find_project_root
+from .hybrid_retriever import HybridRetriever
 
 @singleton
 class VectorDBManager:
@@ -62,6 +63,9 @@ class VectorDBManager:
             self.metadata = {}
 
         print(f"Initialized FAISS index with {self.index.ntotal} vectors.")
+        
+        # Hybrid retriever (lazy initialization)
+        self.hybrid_retriever = None
 
     def _get_ollama_embedding(self, text: str) -> np.ndarray:
         """Generates an embedding for the given text using the Ollama API."""
@@ -87,12 +91,25 @@ class VectorDBManager:
             print(f"Error processing Ollama response: {e}")
             return None
 
+    def _init_hybrid_retriever(self):
+        """Initializes the BM25 index for hybrid search from existing metadata."""
+        if not self.metadata:
+            print("No metadata available for hybrid retriever initialization.")
+            return
+        
+        corpus = [meta["content"] for meta in self.metadata.values()]
+        metadata_keys = list(self.metadata.keys())
+        self.hybrid_retriever = HybridRetriever(corpus, metadata_keys)
+        print("Hybrid retriever initialized.")
+
     def save(self):
         """Saves the FAISS index and metadata to disk."""
         print(f"Saving FAISS index to {self.index_file}")
         faiss.write_index(self.index, self.index_file)
         with open(self.metadata_file, 'wb') as f:
             pickle.dump(self.metadata, f)
+        # Reset hybrid retriever so it gets rebuilt on next search
+        self.hybrid_retriever = None
         print("Save complete.")
 
     def save_course_manifest_copy(self, manifest: Dict):
@@ -184,7 +201,8 @@ class VectorDBManager:
     
     def filter_with_lo_ids(self, query: str, num_results: int = 2, lo_ids: Union[List[str], None] = None):
         """
-        Searches the database for content relevant to a query using learning object ID filtering.
+        Searches the database for content relevant to a query using hybrid search
+        (BM25 + dense vector) with learning object ID filtering.
 
         Args:
             query (str): The user's question or search term.
@@ -193,20 +211,27 @@ class VectorDBManager:
         Returns:
             list: A list of the most relevant document contents.
         """
-        # Filter the metadata based on learning object IDs
         if self.index.ntotal == 0:
             return []
-        # Create embedding for the query using Ollama
+        
+        # Initialize hybrid retriever if needed (lazy init)
+        if self.hybrid_retriever is None and self.metadata:
+            self._init_hybrid_retriever()
+        
+        # Use hybrid search if available, otherwise fall back to pure dense search
+        if self.hybrid_retriever is not None:
+            return self.hybrid_retriever.hybrid_search(query, num_results, lo_ids, self)
+        
+        # Fallback: pure dense search (original logic)
         query_vector = self._get_ollama_embedding(query)
         if query_vector is None:
             return []
-        # Search the index for more results than we need, to allow for filtering
+        
         search_k = max(10, num_results * 5)
         distances, indices = self.index.search(np.array(query_vector, dtype=np.float32), k=min(search_k, self.index.ntotal))
-        # Filter the results based on metadata
+        
         filtered_results = []
         if lo_ids is None:
-            # No filtering, return top results
             for i in indices[0]:
                 if i in self.metadata:
                     filtered_results.append(self.metadata[i]["content"])

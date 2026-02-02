@@ -1,0 +1,543 @@
+learning_objective_tree:
+  title: 19. Classical and Quantum Cryptography
+  global_prerequisites: []
+  objectives:
+  - lo_id: LO-19-01
+    summary: Students will learn the relationship between classical cryptography and
+      quantum cryptography
+    covered_by:
+    - m19-19-1-191SecretKeyCryp
+    - m19-2-Untitled
+    - m19-19-3-1932QuantumCrypt
+    learning_objectives:
+    - Apply knowledge of the mathematical basis for modern cryptosystems
+    - Apply the concept of superposition to describe quantum cryptographic protocols.
+    - Understand the definition of perfect secrecy
+    - Understand how quantum cryptography uses physical laws for security instead
+      of mathematical problems.
+    - Understand the differences between secret key and classical cryptography
+    - Analyze the limitations of AES, 3DES, Serpent, and Blowfish
+    - Analyze the importance of key security in secret key cryptography
+    - Analyze the role of entanglement in ensuring security in quantum key distribution.
+    - Apply the concept of one-time pad to secure communication
+    estimated_time_mins: 0
+    concepts:
+    - permutations
+    - Entanglement
+    - Non-orthogonal qubit states
+    - substitution
+    - Superposition
+    - Vernam cipher (One-Time-Pad)
+    - perfect secrecy
+    - Measurement (in the context of quantum mechanics)
+    - homomorphic encryption
+    - Quantum Cryptography
+    - secret key cryptography
+    - classical cryptography
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 0.95
+      reasoning: This cell primarily teaches about Quantum Cryptography and its relation
+        to classical cryptography. It highlights how Quantum Cryptography was invented
+        as a replacement for public key cryptography and provides security based on
+        the laws of Physics.
+      timestamp: '2026-01-28T16:58:41.676877'
+      needs_human_review: true
+  - lo_id: LO-19-02
+    summary: Students will understand the impact of quantum computing on classical
+      cryptography
+    covered_by:
+    - m19-19-2-192PublicKeyCryp
+    - m19-4-Untitled
+    - m19-5-AHybridSystem
+    - m19-6-Untitled
+    - m19-19-3-193ImpactofQuant
+    - m19-8-Untitled
+    learning_objectives:
+    - Describe the underlying mathematical problems for RSA, DH, and ECC
+    - Identify the type of problem that each cryptosystem depends on
+    - Apply the concept of linear scalability to compare cryptographic algorithms
+    - Analyze the impact of quantum computing on public-key cryptography (RSA, ECC)
+    - Apply knowledge of trapdoor information in the context of public-key cryptography.
+    - Explain the concept of a 'trapdoor' in cryptography
+    - Understand how ECC scales compared to RSA for key exchange and authentication
+    - Understand the limitations of AES-256 in the presence of quantum computers
+    - Analyze how public-key algorithms use two different keys for encryption and
+      decryption, with one being publicly known and the other kept secret.
+    - Analyze the security implications of a potential widespread adoption of quantum
+      computers.
+    - Apply knowledge of hash functions (SHA-256, SHA-3) to predict their vulnerability
+      to larger output sizes needed for security
+    - Understand the relationship between quantum computing and classical cryptography.
+    - Recall the relationship between AES 256 security level and RSA modulus size
+    - Analyze the role of public key cryptography in key exchange phases
+    - Apply knowledge of algorithms to determine the most efficient method for bulk
+      data encryption
+    - Apply knowledge of Shor's algorithm to explain its implications for cryptographic
+      systems.
+    - Understand the concept of public-key cryptography as a solution to the authentication
+      problem in key exchange.
+    - Understand the trade-off between security levels and key sizes in public key
+      vs secret key systems
+    estimated_time_mins: 0
+    concepts:
+    - quantum computing
+    - Authentication Problem
+    - bulk data encryption
+    - ECC (Elliptic Curve Cryptography)
+    - classical cryptography
+    - Diffie-Hellman (DH)
+    - Key Sizes
+    - Quantum computing's impact on symmetric encryption
+    - ECC
+    - Trapdoor Information
+    - Public-key cryptography (RSA, ECC) and its potential breach by quantum computers
+    - Shor's algorithm
+    - Symmetric Key
+    - RSA
+    - key exchange phase
+    - secret key cryptography
+    - Hash functions and their vulnerability to quantum computers
+    - public key cryptography
+    - Public-Key Cryptography
+    - factorization problem
+    - Digital Signature Algorithm (finite field based)
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 1.0
+      reasoning: This cell primarily teaches about the impact of quantum computing
+        on classical cryptography, which aligns with LO-19-02.
+      timestamp: '2026-01-28T16:58:41.676877'
+      needs_human_review: true
+  - lo_id: LO-19-03
+    summary: Students will learn no-cloning theorem of quantum mechanics
+    covered_by:
+    - m19-19-4-194TheNoCloning
+    - m19-11-Untitled
+    - m19-12-Untitled
+    learning_objectives:
+    - Apply linear operations to qubits in a superposition state
+    - Understand the concept of quantum teleportation and its application in transporting
+      a qubit from one place to another
+    - Analyze the difference between cloning a qubit state and teleporting it, including
+      the implications for information preservation
+    - Understand the No-Cloning Theorem
+    - Apply the no-cloning theorem to demonstrate that cloning of an arbitrary qubit
+      state is not possible
+    - Understand the concept of no-cloning theorem
+    - Apply knowledge of qubits to understand limitations in quantum computing
+    - Analyze the implications of the no-cloning theorem on quantum information processing
+    - Analyze implications of the No-Cloning Theorem on eavesdropping
+    estimated_time_mins: 0
+    concepts:
+    - Linear operations in quantum mechanics
+    - CNOT gate
+    - Qubit cloning machine/operation
+    - quantum teleportation
+    - Quantum superposition
+    - qubit state
+    - no-cloning theorem
+    - No-cloning theorem
+    - No-Cloning Theorem
+    - Quantum Mechanics
+    - quantum cloning
+    - Qubit
+    - Quantum Cryptographic Protocols
+    prerequisites: []
+    difficulty: intermediate
+    content_type: mixed
+    llm_generation:
+      is_llm_generated: true
+      model: llama3.1:8b
+      confidence: 1.0
+      reasoning: The cell content primarily teaches the no-cloning theorem of quantum
+        mechanics, which is a fundamental concept in quantum information science.
+      timestamp: '2026-01-28T16:58:41.676877'
+      needs_human_review: true
+cell_metadata:
+- cell_id: m19-19-1-191SecretKeyCryp
+  title: 19.1 Secret Key Cryptography
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - secret key cryptography
+  - classical cryptography
+  - homomorphic encryption
+  outcomes:
+  - Understand the differences between secret key and classical cryptography
+  - Apply knowledge of the mathematical basis for modern cryptosystems
+  - Analyze the importance of key security in secret key cryptography
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell primarily teaches about classical cryptography
+      and its applications, which directly relates to LO-19-01.; Concepts: This content
+      seems to introduce basic concepts in cryptography, focusing on secret key cryptography
+      as a fundamental approach with its own strengths and limitations compared to
+      classical cryptography. I''ve tried to cover the most relevant terms and learning
+      outcomes that can be inferred from this text. The main challenge is that the
+      content doesn''t explicitly state specific algorithms or theorems; it''s more
+      focused on laying groundwork for further exploration of these concepts.'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-2-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - substitution
+  - permutations
+  - perfect secrecy
+  - Vernam cipher (One-Time-Pad)
+  outcomes:
+  - Understand the definition of perfect secrecy
+  - Analyze the limitations of AES, 3DES, Serpent, and Blowfish
+  - Apply the concept of one-time pad to secure communication
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: This cell primarily discusses classical cryptography and
+      its relationship to quantum cryptography, introducing concepts such as Shannon''s
+      definition of perfect secrecy and comparing it with modern algorithms like AES,
+      which relates to the foundational knowledge needed for understanding LO-19-01.;
+      Concepts: I have identified key concepts in quantum computing and cryptography,
+      but I''ve noticed that the content is more focused on classical cryptography
+      theory. The extraction is based on my understanding of the context and relevance
+      of these terms to the field of cryptography.'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-19-2-192PublicKeyCryp
+  title: 19.2 Public-Key Cryptography
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Public-Key Cryptography
+  - Authentication Problem
+  - Trapdoor Information
+  outcomes:
+  - Understand the concept of public-key cryptography as a solution to the authentication
+    problem in key exchange.
+  - Analyze how public-key algorithms use two different keys for encryption and decryption,
+    with one being publicly known and the other kept secret.
+  - Apply knowledge of trapdoor information in the context of public-key cryptography.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell discusses public-key cryptography and how it addresses
+      the issue of key exchange in classical cryptography, which aligns with the objective
+      of understanding the impact of quantum computing on classical cryptography.;
+      Concepts: The content provides a clear introduction to public-key cryptography,
+      its benefits over conventional algorithms, and key characteristics such as the
+      use of two different keys. The concepts are well-defined and directly addressed
+      in the provided text. However, some minor details regarding specific algorithms
+      or implementations are not explicitly mentioned.'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-4-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - RSA
+  - Diffie-Hellman (DH)
+  - ECC (Elliptic Curve Cryptography)
+  outcomes:
+  - Describe the underlying mathematical problems for RSA, DH, and ECC
+  - Identify the type of problem that each cryptosystem depends on
+  - Explain the concept of a 'trapdoor' in cryptography
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell discusses public key cryptosystems and how they
+      are vulnerable to potential quantum computer attacks (e.g., factoring, discrete
+      logarithms), which is directly related to LO-19-02.; Concepts: '
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-5-AHybridSystem
+  title: A Hybrid System
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - public key cryptography
+  - secret key cryptography
+  - bulk data encryption
+  - key exchange phase
+  outcomes:
+  - Understand the trade-off between security levels and key sizes in public key vs
+    secret key systems
+  - Analyze the role of public key cryptography in key exchange phases
+  - Apply knowledge of algorithms to determine the most efficient method for bulk
+    data encryption
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: The cell content primarily discusses the relationship between
+      public key cryptography (used for initial key exchange) and secret key cryptography
+      (used for bulk data encryption), highlighting their differences in security
+      levels and usage. This discussion directly impacts understanding of how quantum
+      computing affects classical cryptography, making LO-19-02 the best match.; Concepts: '
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-6-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Symmetric Key
+  - RSA
+  - ECC
+  - Key Sizes
+  outcomes:
+  - Recall the relationship between AES 256 security level and RSA modulus size
+  - Understand how ECC scales compared to RSA for key exchange and authentication
+  - Apply the concept of linear scalability to compare cryptographic algorithms
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell content discusses the impact of quantum computing
+      on classical cryptography by comparing key sizes for different cryptographic
+      systems. It explains how RSA modulus size becomes problematic with increasing
+      security requirements due to the limitations imposed by quantum computing.;
+      Concepts: The content provides a clear table comparing symmetric key sizes with
+      RSA and ECC key sizes. The text then explains why RSA modulus size is problematic
+      at certain levels, leading into an introduction of ECC''s advantages. This makes
+      it possible to identify the concepts of symmetric keys, RSA, and ECC as well
+      as key sizes. Additionally, the discussion on AES 256 security level and RSA
+      modulus size indicates that the reader should be able to recall this relationship.
+      Furthermore, understanding ECC''s linear scalability implies that the reader
+      can apply this concept to compare cryptographic algorithms.'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-19-3-193ImpactofQuant
+  title: 19.3 Impact of Quantum Computing on Classical Cryptography
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - quantum computing
+  - factorization problem
+  - classical cryptography
+  - Shor's algorithm
+  outcomes:
+  - Understand the relationship between quantum computing and classical cryptography.
+  - Apply knowledge of Shor's algorithm to explain its implications for cryptographic
+    systems.
+  - Analyze the security implications of a potential widespread adoption of quantum
+    computers.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell discusses the impact of quantum computing on classical
+      cryptography and specifically mentions that RSA, DH, and ECC would no longer
+      be secure if a quantum computer is built. This aligns with LO-19-02''s objective
+      of understanding how quantum computing affects classical cryptography.; Concepts:
+      This content primarily focuses on the impact of quantum computing on classical
+      cryptography, introducing key concepts and algorithms that will revolutionize
+      cryptography as we know it today. The learning outcomes reflect this focus,
+      aiming to help learners understand the relationship between these two areas,
+      apply Shor''s algorithm to analyze its implications for cryptographic systems,
+      and analyze the security implications of a potential widespread adoption of
+      quantum computers.'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-8-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Quantum computing's impact on symmetric encryption
+  - Hash functions and their vulnerability to quantum computers
+  - Public-key cryptography (RSA, ECC) and its potential breach by quantum computers
+  - Digital Signature Algorithm (finite field based)
+  outcomes:
+  - Understand the limitations of AES-256 in the presence of quantum computers
+  - Apply knowledge of hash functions (SHA-256, SHA-3) to predict their vulnerability
+    to larger output sizes needed for security
+  - Analyze the impact of quantum computing on public-key cryptography (RSA, ECC)
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: This cell primarily teaches about the impact of quantum
+      computing on classical cryptography, which aligns with LO-19-02.; Concepts:
+      The provided content clearly outlines specific cryptosystems and their vulnerabilities
+      in the face of quantum computers, making it easy to extract key concepts and
+      learning outcomes. However, there may be some nuances or implications not explicitly
+      mentioned that could affect the accuracy of the extracted information.'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-19-3-1932QuantumCrypt
+  title: 19.3.2 Quantum Cryptography
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Quantum Cryptography
+  - Superposition
+  - Entanglement
+  - Measurement (in the context of quantum mechanics)
+  - Non-orthogonal qubit states
+  outcomes:
+  - Understand how quantum cryptography uses physical laws for security instead of
+    mathematical problems.
+  - Apply the concept of superposition to describe quantum cryptographic protocols.
+  - Analyze the role of entanglement in ensuring security in quantum key distribution.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: This cell primarily teaches about Quantum Cryptography and
+      its relation to classical cryptography. It highlights how Quantum Cryptography
+      was invented as a replacement for public key cryptography and provides security
+      based on the laws of Physics.; Concepts: The content provides a clear overview
+      of quantum cryptography and its underlying concepts, making it straightforward
+      to identify key concepts such as superposition, entanglement, and measurement.
+      The learning outcomes capture the main ideas presented in the text and are expressed
+      in a format consistent with Bloom''s taxonomy.'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-19-4-194TheNoCloning
+  title: 19.4 The No-Cloning Theorem
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Quantum Mechanics
+  - No-Cloning Theorem
+  - Qubit
+  - Quantum Cryptographic Protocols
+  outcomes:
+  - Understand the No-Cloning Theorem
+  - Apply knowledge of qubits to understand limitations in quantum computing
+  - Analyze implications of the No-Cloning Theorem on eavesdropping
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.8
+    reasoning: 'LO Match: This cell primarily teaches the no-cloning theorem of quantum
+      mechanics.; Concepts: '
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-11-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - No-cloning theorem
+  - Quantum superposition
+  - Linear operations in quantum mechanics
+  - Qubit cloning machine/operation
+  outcomes:
+  - Understand the concept of no-cloning theorem
+  - Apply linear operations to qubits in a superposition state
+  - Analyze the implications of the no-cloning theorem on quantum information processing
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell content primarily teaches the no-cloning theorem
+      of quantum mechanics, which is a fundamental concept in quantum information
+      theory. The discussion focuses on the mathematical representation and implications
+      of the no-cloning theorem, demonstrating its relationship to qubits, linear
+      operations, and superposition states. While the topic may have indirect connections
+      to LO-19-01 (classical vs. quantum cryptography) and LO-19-02 (quantum computing''s
+      impact on classical cryptography), these are not the primary focus of the cell
+      content.; Concepts: I''m fairly confident that I''ve extracted the key concepts
+      and learning outcomes because they are explicitly mentioned in the content as
+      main ideas being discussed (e.g., ''Let''s look at the details of the no-cloning
+      theorem''). The language used is also indicative of educational tone, suggesting
+      that the author is aiming to convey complex concepts to learners.'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false
+- cell_id: m19-12-Untitled
+  title: Untitled
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - quantum cloning
+  - CNOT gate
+  - quantum teleportation
+  - qubit state
+  - no-cloning theorem
+  outcomes:
+  - Apply the no-cloning theorem to demonstrate that cloning of an arbitrary qubit
+    state is not possible
+  - Understand the concept of quantum teleportation and its application in transporting
+    a qubit from one place to another
+  - Analyze the difference between cloning a qubit state and teleporting it, including
+    the implications for information preservation
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
+    model: llama3.1:8b
+    confidence: 0.9
+    reasoning: 'LO Match: The cell content primarily teaches the no-cloning theorem
+      of quantum mechanics, which is a fundamental concept in quantum information
+      science.; Concepts: I am confident in my extraction because I have identified
+      key concepts related to quantum computing, specifically those dealing with qubits
+      and their manipulation. The learning outcomes align with Bloom''s taxonomy levels
+      of application (Applying the no-cloning theorem) and understanding (Understanding
+      the concept of quantum teleportation). I have also captured an analysis outcome,
+      which requires a higher level of cognitive reasoning (Analyzing the difference
+      between cloning and teleporting a qubit state).'
+    timestamp: '2026-01-28T16:58:41.676877'
+    needs_human_review: false

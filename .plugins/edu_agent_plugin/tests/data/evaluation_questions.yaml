@@ -1,0 +1,142 @@
+# Evaluation Questions Dataset
+# =============================
+# This file contains questions for evaluating the Peer and Tutor agents.
+# Add more questions following this format.
+
+questions:
+  - id: Q001
+    question: How does the "Double Lock" analogy explain the security mechanism of the Three-Stage QKD protocol?
+    relevant_lo_ids: ["LO-22-01", "LO-22-02"]
+    reference_answer: |
+      The Double Lock analogy describes a scenario where Alice wants to send a secret message to Bob without exchanging keys. The process is:
+      1. Alice locks the message in a strong box with her unique lock and sends it to Bob.
+      2. Bob adds his own unique lock to the box and sends it back to Alice.
+      3. Alice removes her lock and sends the box back to Bob.
+      4. Bob removes his lock and opens the box to read the message.
+      This demonstrates how a message can remain secure during transit without the parties ever needing to exchange or reveal their specific keys.
+  - id: Q002
+    question: How does the "High-tech courier" versus "New type of lock" analogy describe the difference between Quantum Key Distribution (QKD) and Post-Quantum Cryptography (PQC)?
+    relevant_lo_ids: ["LO-28-02"]
+    reference_answer: |
+      QKD is analogous to a high-tech courier system where any attempt to peek inside the box during transit is immediately detected by the laws of physics. In contrast, PQC is like designing a new type of mathematical lock that is so complex that no known "key-picker" (including quantum computers) can open it.
+  - id: Q003
+    question: Mathematically, why is it impossible to decompose a Bell state, such as \frac{|00\rangle + |11\rangle}{\sqrt{2}}, into a tensor product of two individual qubits?
+    relevant_lo_ids: ["LO-16-02", "LO-08-03"]
+    reference_answer: |
+      If we assume the Bell state can be written as the tensor product of two qubits, expanding the product (\alpha_0|0\rangle + \alpha_1|1\rangle) \otimes (\beta_0|0\rangle + \beta_1|1\rangle) yields coefficients like \alpha_0\beta_0 for |00\rangle and \alpha_0\beta_1 for |01\rangle. For the Bell state, the coefficients for |01\rangle and |10\rangle must be 0, implying either \alpha_0=0 or \beta_1=0. However, for the |00\rangle and |11\rangle terms to be non-zero, all coefficients \alpha_0, \beta_0, \alpha_1, \beta_1 must be non-zero. This creates a mathematical contradiction, proving decomposition is impossible.
+  - id: Q004
+    question: What is the "Photon Number Splitting" (PNS) attack, and why does it emphasize the need for single photon emitters in BB84?
+    relevant_lo_ids: [LO-20-04]
+    reference_answer: |
+      The PNS attack exploits real-world photon emitters (like attenuated lasers) that sometimes produce more than one photon in a single pulse. If a pulse contains multiple photons, Eve can siphon off one photon to measure later and let the other pass to Bob. This allows Eve to steal information without introducing errors in the quantum bit error rate (QBER) or being detected.
+  - id: Q005
+    question: In the context of the B92 protocol, why are the measurement results of observing a \rightarrow (0 degrees) in the + (rectilinear) basis considered inconclusive?
+    relevant_lo_ids: ["LO-21-01", "LO-21-03"]
+    reference_answer: |
+      In B92, Alice transmits either \rightarrow (0°) or \nearrow (45°). If Bob measures in the + basis, a \rightarrow observation is inconclusive because it could result from Alice sending a \rightarrow photon (which passes the filter) or from Alice sending a \nearrow photon (which has a probability of passing the rectilinear filter). Bob cannot distinguish which bit was sent in this specific case.
+  - id: Q006
+    question: How does the 3-qubit bit-flip error correction code protect a quantum state |\psi\rangle = \alpha|0\rangle + \beta|1\rangle?
+    relevant_lo_ids: ["LO-25-02"]
+    reference_answer: |
+      The code introduces redundancy by entangling the original qubit with two ancillary qubits using CNOT gates, mapping the logical |0\rangle to |000\rangle and |1\rangle to |111\rangle. If a bit-flip error occurs, the receiver uses parity checks between pairs of qubits (e.g., qubits 1&2 and 2&3) to identify which specific qubit flipped without measuring the actual state values \alpha and \beta, thus preserving the superposition.
+  - id: Q007
+    question: What are the three fundamental facts that provide security in Quantum Key Distribution (QKD) protocols?
+    relevant_lo_ids: ["LO-20-01", "LO-19-03"]
+    reference_answer: |
+      The security of QKD relies on:
+      1. The No-Cloning Theorem, which ensures an unknown quantum state cannot be copied.
+      2. The fact that measurement in the wrong basis disturbs the qubit.
+      3. The fact that non-orthogonal qubit states cannot be reliably distinguished from one another.
+  - id: Q008
+    question: Describe the procedure for calculating the tensor product of two matrices, A and B, as defined in the notes.
+    relevant_lo_ids: ["LO-08-01", "LO-08-05"]
+    reference_answer: |
+      The tensor product $A \otimes B$ is calculated by taking every individual element of the first matrix ($A$) and scalar multiplying it with the entire second matrix ($B$). This results in a larger block matrix containing these scaled sub-matrices.
+  - id: Q009
+    question: In the Three-Stage QKD protocol, what specific condition must the secret rotation transformations U_a (Alice's) and U_b (Bob's) satisfy?
+    relevant_lo_ids: ["LO-22-02"]
+    reference_answer: |
+      The secret rotation transformations must be commutative, meaning they must satisfy the condition U_a U_b = U_b U_a. This allows the sequence of rotations and inverse rotations to successfully retrieve the original state regardless of the order in which they were applied.
+  - id: Q010
+    question: What is the difference between "Global Phase" and "Relative Phase" in a qubit, and which one has physical significance?
+    relevant_lo_ids: ["LO-11-04"]
+    reference_answer: |
+      A global phase is a complex number c = e^{i\phi} multiplying the entire qubit state (e.g., c(\alpha|0\rangle + \beta|1\rangle)) and has no physical meaning or measurable effect. A relative phase is a complex factor acting on only one component of the superposition (e.g., \alpha|0\rangle + e^{i\phi}\beta|1\rangle); it distinguishes unique quantum states and can affect measurement outcomes.
+  - id: Q011
+    question: Using the classroom experiment with polarizing filters, what happens to the light intensity if a third filter polarized at 45 degrees is placed between a vertical filter and a horizontal filter?
+    relevant_lo_ids: ["LO-09-04"]
+    reference_answer: |
+      If a vertical filter and a horizontal filter are placed sequentially, no light passes through. However, inserting a 45 degree filter in the middle allows light to pass. The vertical filter polarizes the light vertically; the 45 degree filter transmits half of those photons (re-polarizing them to 45 degrees), and the final horizontal filter transmits half of those remaining photons. Thus, the screen becomes bright rather than dark.
+  - id: Q012
+    question: What is the main difference between how QKD and Post-Quantum Cryptography (PQC) secure data?
+    relevant_lo_ids: ["LO-28-02"]
+    reference_answer: |
+      QKD is physics-based, guaranteeing security through the laws of quantum mechanics (detecting disturbances). Post-Quantum Cryptography (PQC) is math-based, relying on new mathematical problems (like lattice problems) that are believed to be hard even for quantum computers to solve.
+  - id: Q013
+    question: Why is the random sending time so critical for it?
+    relevant_lo_ids: ["LO-24-01"]
+    reference_answer: |
+      In the Goldenberg-Vaidman (GV) protocol, the random sending time $t_s$ is critical to prevent a specific intercept-resend attack. If Eve knew the transmission time, she could intercept the first wave packet |a>, send a fake one to Bob, and hold the real one. When the second packet |b> arrives, she could measure the combined state to distinguish the bit, and then forge the correct packet for Bob. Randomizing $t_s$ prevents Eve from delaying the signal without being detected.
+    conversation_history:
+      - user: "How does the Goldenberg-Vaidman protocol work?"
+      - agent: "It uses orthogonal states but separates them in time using a delay loop in a Mach-Zehnder Interferometer."
+  - id: Q014
+    question: Can you show me the exact circuit diagram for Shor's Algorithm to factor the number 15?
+    relevant_lo_ids: ["LO-19-02"]
+    reference_answer: |
+      The course notes do not provide the exact circuit diagram for Shor's algorithm. While Module 19 discusses Shor's algorithm (and its ability to solve factorization in log(n) steps) as the reason RSA is no longer secure, the detailed circuit implementation is not included in the provided lessons.
+    conversation_history: []
+  - id: Q015
+    question: How exactly does the 3-qubit bit-flip code use ancilla qubits to detect an error without measuring the data?
+    relevant_lo_ids: ["LO-25-02"]
+    reference_answer: |
+      To detect a bit flip without collapsing the state, the code entangles the logical qubit with two ancillary qubits (initialized to |0>) using CNOT gates. We perform parity checks between pairs of qubits (e.g., qubits 1&2 and 2&3). For example, if the received state is alpha|100> + beta|011> (indicating an error on qubit 1), the parity measurement on the ancilla will yield a specific syndrome (like 10) that identifies exactly which qubit flipped, allowing us to apply a Pauli-X gate to correct it.
+    conversation_history:
+      - user: "What happens if a bit flips in transit?"
+      - agent: "We can use a 3-qubit repetition code to fix it."
+  - id: Q016
+    question: According to the notes, how is the storage of qubits physically realized in the Goldenberg-Vaidman (GV) protocol?
+    relevant_lo_ids: ["LO-24-02"]
+    reference_answer: |
+      The GV protocol realizes the necessary storage of qubits using a delay loop in the transmission line. The notes state that the most common implementation for this is a Mach-Zehnder Interferometer.
+    conversation_history: []
+  - id: Q017
+    question: In the E91 protocol, what is the specific purpose of the measurements made in different bases?
+    relevant_lo_ids: ["LO-22-05"]
+    reference_answer: |
+      In the E91 protocol, the qubits measured in *different* bases are used to detect any eavesdropper (or decoherence). This is done by checking if the results violate Bell's inequality (specifically the CHSH game). [cite_start]If they satisfy the inequality, it indicates the qubits are independent (not entangled)[cite: 5], implying the presence of an eavesdropper.
+    conversation_history: []
+  - id: Q018
+    question: According to the notes, what is the fundamental difference between a bit-flip error and a phase-flip error in a qubit?
+    relevant_lo_ids: ["LO-25-01"]
+    reference_answer: |
+      A bit-flip error swaps the amplitudes of the qubit states: it changes $|\psi\rangle=\alpha|0\rangle+\beta|1\rangle$ to $\beta|0\rangle+\alpha|1\rangle$. [cite_start]A phase-flip error changes the relative sign between the amplitudes: it changes $|\psi\rangle=\alpha|0\rangle+\beta|1\rangle$ to $\alpha|0\rangle-\beta|1\rangle$[cite: 7].
+    conversation_history: []
+  - id: Q019
+    question: According to the provided table, why is Elliptic Curve Cryptography (ECC) preferred over RSA for providing security equivalent to AES-256?
+    relevant_lo_ids: ["LO-19-02"]
+    reference_answer: |
+      ECC is preferred because it scales more linearly than RSA. [cite_start]To provide security equivalent to AES-256, RSA would require a key size of 15,360 bits, which is "very problematic to work with"[cite: 3]. [cite_start]In contrast, ECC only requires a key size of 521 bits to achieve the same security level[cite: 3].
+    conversation_history: []
+  - id: Q020
+    question: "You mentioned CNOT is unitary. If I put a Hadamard gate before the control qubit of a CNOT, and the input is |00>, what specific state do I get outputted? And is this resulting state entangled?"
+    relevant_lo_ids: ["LO-16-01", "LO-16-02"]
+    reference_answer: |
+      If you apply a Hadamard gate to the control qubit (initialized to |0>) and then a CNOT gate (with the second qubit also initialized to |0>), you generate the Bell state: (|00> + |11>) / sqrt(2). Yes, this resulting state is an entangled pair (specifically an EPR pair), as it cannot be factored into the tensor product of two independent qubit states.
+    conversation_history:
+      - user: "What is i?"
+      - agent: "It is the imaginary unit, defined as the square root of -1."
+      - user: "Okay, what is i to the power of 2?"
+      - agent: "-1."
+      - user: "Moving on to light. If I place a vertical filter and then a horizontal filter, does any light get through?"
+      - agent: "No, because the filters are orthogonal (90 degrees apart), so all light is blocked."
+      - user: "What if I put a diagonal filter in between them?"
+      - agent: "Then light will pass through! The middle filter rotates the polarization, allowing a portion of the photons to pass the final filter."
+      - user: "That's weird. Okay, changing topics to entanglement. Can I write a Bell state as a tensor product of two single qubits?"
+      - agent: "No, that is actually the definition of entanglement. An entangled state cannot be decomposed into the tensor product of individual states."
+      - user: "Why not?"
+      - agent: "Mathematically, the coefficients don't allow it. For example, in the Bell state, the cross terms are zero while the outer terms are non-zero, which creates a contradiction if you try to factor it."
+      - user: "I see. Let's talk about gates. What does a CNOT gate do?"
+      - agent: "The CNOT (Controlled-NOT) gate flips the target qubit if and only if the control qubit is |1>. Otherwise, it does nothing."
+      - user: "Is it reversible?"
+      - agent: "Yes, the CNOT gate is a unitary transformation, meaning it is its own inverse and is reversible."

@@ -11,60 +11,6 @@ from .course_completed import mark_course_if_completed
 from .v_db.vector_db_manager import get_db_manager_instance
 from .prompt import get_peer_prompt, get_tutor_prompt, format_chat_history
 
-# # This helper function would be in your Python server logic
-# def _format_chat_history(history: list[dict]) -> str:
-#     """Converts the message list from the front-end into a clean string for the LLM."""
-#     if not history:
-#         return "No recent conversation history."
-    
-#     formatted_history = []
-#     for msg in history:
-#         # Use simple role names
-#         role = "Student" if msg.get('sender') == 'user' else "Agent"
-#         formatted_history.append(f"{role}: {msg.get('text', '')}")
-    
-#     return "\n".join(formatted_history)
-
-# def get_tutor_prompt(
-#     user_query: str, 
-#     context_string: str,
-#     chat_history: list[dict]  # This is the new parameter
-# ) -> str:
-#     """
-#     Builds the complete prompt for the Tutor Agent during an escalation,
-#     now with conversation history.
-#     """
-    
-#     # Format the history for the prompt
-#     history_string = _format_chat_history(chat_history)
-#     peer_answer = chat_history[-1]['text'] if chat_history else "No previous answer."
-    
-#     return f"""
-#     You are an expert Tutor and course instructor.
-#     Your tone is encouraging, supportive, clear, and precise.
-
-#     First, here is the recent conversation history to give you context:
-#     ---
-#     [CONVERSATION HISTORY]
-#     {history_string}
-#     ---
-
-#     **YOUR CURRENT TASK:**
-#     A student is asking for a deeper explanation of a concept from that conversation.
-#     - Their peer (a fellow student) just gave this simple answer: "{peer_answer}"
-
-#     Your job is to provide a comprehensive, expert-level follow-up. You can affirm what the peer said, but then go into much more detail, using the conversation history for context.
-
-#     Please provide a detailed and accurate explanation based *only* on the provided course context.
-
-#     CRITICAL RULES FOR YOUR RESPONSE:
-#     1.  **BE COMPREHENSIVE:** This is an expert answer. Explain concepts thoroughly, define technical terms, and be precise.
-#     2.  **DO NOT ASK THE STUDENT ANY QUESTIONS.** End your answer cleanly.
-#     3.  **STICK TO THE CONTEXT.** You must base your answer on the course materials provided.
-
-#     Your Expert Answer:
-#     """
-
 class AskAgentHandler(APIHandler):
     """
     The handler that listens for API calls from the React front-end.
@@ -104,16 +50,33 @@ class AskAgentHandler(APIHandler):
             if not query:
                 raise ValueError("No query provided")
 
-            # For now, we'll just echo the query back as a fake answer
             print(f"Received query for {agent_type}: {query}")
+            
             if agent_type == 'peer':
-                answer = self.peer_agent.answer_question(query, get_peer_prompt(), completed_lo_ids=completed_lo_ids, chat_history = history)
+                result = self.peer_agent.answer_question(
+                    query, 
+                    get_peer_prompt(), 
+                    completed_lo_ids=completed_lo_ids, 
+                    chat_history=history
+                )
+                answer = result["answer"]
+                escalate = result.get("escalate", False)
             else:
-                answer = self.peer_agent.answer_question(query, get_tutor_prompt(query, history), completed_lo_ids = None, chat_history = history)
+                # Tutor: skip grading, use all content
+                result = self.peer_agent.answer_question(
+                    query, 
+                    get_tutor_prompt(query, history), 
+                    completed_lo_ids=None,  # Tutor has access to all content
+                    chat_history=history,
+                    skip_grading=True
+                )
+                answer = result["answer"]
+                escalate = False  # Tutor never escalates
 
             # 3. Send the response back to the front-end
             self.finish(json.dumps({
-                "data": answer
+                "data": answer,
+                "escalate": escalate
             }))
 
         except Exception as e:
@@ -201,9 +164,24 @@ class VectorDatabaseHandler(APIHandler):
                 self.finish(json.dumps({"status": "vector database cleared"}))
             elif operation == "reindex":
                 from .v_db.index_notebooks import index_course_content
+                from .v_db.graph_rag import GraphRAG
+                import os
+                
+                # Reindex FAISS
                 index_course_content("./content", self.db_manager)
                 self.db_manager.save()
-                self.finish(json.dumps({"status": "vector database re-indexed"}))
+                
+                # Build GraphRAG from indexed content
+                print("Building GraphRAG knowledge graph...")
+                graph_path = os.path.join(self.db_manager.db_path, "knowledge_graph.pkl")
+                graph_rag = GraphRAG(graph_path=graph_path)
+                corpus = [
+                    {"content": meta["content"], "source": str(key)} 
+                    for key, meta in self.db_manager.metadata.items()
+                ]
+                graph_rag.build_from_corpus(corpus)
+                
+                self.finish(json.dumps({"status": "vector database and knowledge graph re-indexed"}))
             else:
                 raise ValueError(f"Unknown operation: {operation}")
 

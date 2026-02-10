@@ -102,18 +102,17 @@ learning_objective_tree:
     - Polarization angle (θ) as a parameter for qubit state
     - single photon emissions
     - basis measurement
-    - Key Exchange Phase
+    - key exchange phase
     - authenticated channels
     - eavesdropping detection
     - basis selection
     - Qubit representation of linearly polarized photon
-    - classical bits
+    - Classical Bits
     - Qubit
     - key reconciliation
     - Non-orthogonal bases (rectilinear & diagonal)
     - Quantum computing widget
     - Quantum Key Distribution (QKD)
-    - BB84 Protocol
     - quantum computing
     - Eve's measurement strategy
     - Bit strings
@@ -123,9 +122,9 @@ learning_objective_tree:
     - Eve's eavesdropping attack
     - Key bit
     - quantum channels
-    - qubits
+    - Qubits
     - key evaluation
-    - Measurement basis
+    - Measurement Basis
     - bases
     prerequisites: []
     difficulty: intermediate
@@ -203,7 +202,7 @@ learning_objective_tree:
     - Quantum mechanics (basis mismatch, measurement bases)
     - Quantum cryptography
     - Channel errors
-    - Eavesdropping detection
+    - eavesdropping detection
     - Eavesdropper detection
     prerequisites: []
     difficulty: intermediate
@@ -230,10 +229,10 @@ cell_metadata:
   - m19-19-3-1932QuantumCrypt
   - m19-12-Untitled
   concepts:
-  - The BB84 protocol
-  - Quantum cryptography
-  - Fundamental laws of quantum mechanics
-  - Cryptographic key exchange protocols
+  - BB84 Protocol
+  - Public Key Exchange
+  - Post Quantum Cryptography
+  - Entanglement based QKD
   outcomes:
   - Understand the significance of the BB84 protocol in establishing quantum cryptography
     as a field.
@@ -262,10 +261,10 @@ cell_metadata:
   - m19-11-Untitled
   - m19-12-Untitled
   concepts:
-  - BB84
-  - no cloning theorem
-  - non-orthogonal qubits
-  - passive vs active attacker
+  - No Cloning Theorem
+  - Non-Orthogonal Qubits
+  - Passive Attacker
+  - Active Eavesdropper
   outcomes:
   - Understand the security properties of BB84 protocol
   - Explain how the no-cloning theorem applies to quantum communication
@@ -295,10 +294,9 @@ cell_metadata:
   - m19-19-4-194TheNoCloning
   - m19-11-Untitled
   concepts:
-  - single photon emissions
-  - authenticated channels
-  - quantum channels
-  - BB84 protocol
+  - Single Photon Emissions
+  - Authentic Channel
+  - Quantum and Classical Channels
   outcomes:
   - Understand the assumptions of secure quantum communication protocols
   - Apply the concept of single photon emissions in quantum key distribution
@@ -327,9 +325,10 @@ cell_metadata:
   - m19-12-Untitled
   concepts:
   - BB84 Protocol
-  - Non-orthogonal bases (rectilinear & diagonal)
-  - Qubit representation of linearly polarized photon
-  - Polarization angle (θ) as a parameter for qubit state
+  - Rectilinear Basis
+  - Diagonal Basis
+  - Polarized Photon
+  - Qubit State Vector
   outcomes:
   - Understand the BB84 protocol's pre-agreement steps, including basis choice and
     bit-qubit mapping.
@@ -367,9 +366,9 @@ cell_metadata:
   - m19-19-3-193ImpactofQuant
   concepts:
   - Key Exchange Phase
-  - Quantum Key Distribution (QKD)
-  - Bit strings
-  - Measurement basis
+  - Quantum Key Distribution
+  - Random Measurement Basis
+  - Photon Polarization States
   outcomes:
   - Understand the process of quantum key distribution using the Key Exchange Phase
     protocol
@@ -400,10 +399,9 @@ cell_metadata:
   - m19-5-AHybridSystem
   - m19-8-Untitled
   concepts:
-  - key sifting phase
-  - qubits
-  - basis measurement
-  - eavesdropping detection
+  - Measurement Basis
+  - Qubits
+  - Eavesdropping Detection
   outcomes:
   - Apply eavesdropping detection protocol
   - Understand the concept of basis measurement in quantum key distribution
@@ -437,10 +435,10 @@ cell_metadata:
   - m19-8-Untitled
   - m19-12-Untitled
   concepts:
-  - Eavesdropper detection
-  - Quantum mechanics (basis mismatch, measurement bases)
-  - Probability of eavesdropping detection (1/2)
-  - Error correction in quantum communications
+  - Eavesdropper Detection
+  - Probabilistic Basis Mismatch
+  - EPR Protocol Security
+  - Quantum Measurement Error
   outcomes:
   - 'Analyze: Understand the probability of eavesdropping detection and its implications
     on error correction'
@@ -504,8 +502,9 @@ cell_metadata:
   - m19-11-Untitled
   - m19-12-Untitled
   concepts:
-  - BB84 protocol
-  - Quantum computing widget
+  - BB84 Protocol
+  - Interactive Widget
+  - QKD Protocol
   outcomes:
   - Understand how the BB84 protocol works
   - Apply the principles of quantum key distribution (QKD) in a simulated environment
@@ -550,11 +549,9 @@ cell_metadata:
   - m19-6-Untitled
   - m19-8-Untitled
   concepts:
-  - key reconciliation
-  - error correction
-  - cascade error correction scheme
-  - turbo codes
-  - polar codes
+  - Key Reconciliation
+  - Error Correction
+  - Privacy Amplification
   outcomes:
   - Understand the concept of key reconciliation as a form of error correction.
   - Apply cascade error correction schemes, turbo codes or polar codes to correct
@@ -581,7 +578,7 @@ cell_metadata:
   - m19-12-Untitled
   concepts:
   - quantum computing
-  - qubits
+  - Qubits
   - Eve (eavesdropping)
   - BB84 protocol
   outcomes:
@@ -668,9 +665,10 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - BB84 protocol
-  - classical bits
-  - bases
+  - Classical Bits
+  - Key Generation
+  - Bit Basis Choice
+  - Measurement Basis
   outcomes:
   - Understand the BB84 protocol
   - Explain how classical bits are used in the BB84 protocol
@@ -718,10 +716,9 @@ cell_metadata:
   - m19-19-4-194TheNoCloning
   - m19-12-Untitled
   concepts:
-  - BB84 protocol
-  - Quantum Key Distribution (QKD)
-  - Eve's eavesdropping attack
-  - Basis measurement in quantum computing
+  - Basis Measurement
+  - Eve's Interception
+  - Random Basis Selection
   outcomes:
   - Understand the purpose of Bob's random basis measurement in the BB84 protocol
   - Apply the concept of Eve's potential eavesdropping attack on QKD systems
@@ -771,8 +768,8 @@ cell_metadata:
   - m19-8-Untitled
   concepts:
   - BB84 protocol
-  - basis selection
-  - key evaluation
+  - Basis
+  - Qubits and Measurement
   outcomes:
   - Understand the BB84 protocol
   - Apply basis selection for key evaluation
@@ -820,10 +817,10 @@ cell_metadata:
   - m19-19-4-194TheNoCloning
   - m19-12-Untitled
   concepts:
-  - BB84 protocol
-  - Eavesdropping detection
-  - Channel errors
-  - Quantum cryptography
+  - Eavesdropper Detection
+  - Channel Errors
+  - Comparison Matching
+  - Discarding Unreliable Data
   outcomes:
   - Understand the BB84 protocol
   - Apply eavesdropping detection
@@ -877,10 +874,10 @@ cell_metadata:
   - m19-5-AHybridSystem
   - m19-12-Untitled
   concepts:
-  - Qubit
-  - Basis
-  - Key bit
-  - Eve's measurement strategy
+  - Modified QKD Protocol
+  - Photon Emission Failure
+  - Multiple Photon Issue
+  - Multi-Qubit Pulse Security
   outcomes:
   - Understand the implications of using non-standard basis pairs in a quantum key
     distribution protocol.

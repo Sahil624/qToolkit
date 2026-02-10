@@ -383,7 +383,7 @@ def on_generate_clicked(b):
                 cell_details_map=cell_id_to_details_map,
                 total_time=total_time,
                 user_selection=selected_target_los,
-                known_topics=fully_known_lo_ids, 
+                known_concepts=selected_concepts, 
                 skippable_cells=skippable_cell_ids,
                 activity_preference=activity_pref,
                 log_function=debug_print

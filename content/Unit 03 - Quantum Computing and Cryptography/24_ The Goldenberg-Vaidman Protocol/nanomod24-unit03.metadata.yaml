@@ -57,7 +57,7 @@ learning_objective_tree:
     - quantum entanglement
     - Mach-Zehnder Interferometer
     - wave packets
-    - qubits
+    - Qubits
     - quantum computing
     - GV protocol
     - orthogonal states
@@ -84,10 +84,9 @@ cell_metadata:
   - m22-3Stage-Simulator-heading
   - m22-3Stage-Simulator
   concepts:
-  - Quantum Key Distribution (QKD) scheme
-  - orthogonal states
-  - non-orthogonal qubits
-  - Goldenberg-Vaidman protocol
+  - Quantum Key Distribution
+  - Golden-BV Protocol
+  - Orthogonal States
   outcomes:
   - Understand the concept of QKD schemes
   - Apply the distinction between orthogonal and non-orthogonal states in quantum
@@ -123,7 +122,7 @@ cell_metadata:
   - quantum computing
   - GV protocol
   - Mach-Zehnder Interferometer
-  - qubits
+  - Qubits
   - orthogonal states
   outcomes:
   - Understand the concept of qubits in quantum computing
@@ -153,10 +152,10 @@ cell_metadata:
   prerequisites:
   - m22-Introduction-EntanglementQKD
   concepts:
-  - quantum computing
   - Mach-Zehnder Interferometer
-  - wave packets
-  - quantum entanglement
+  - Quantum Key Distribution (QKD
+  - Wave Packet
+  - Entangled Systems
   outcomes:
   - Apply Mach-Zehnder Interferometer to encode qubits
   - Analyze the role of wave packet delay in secure quantum communication
@@ -185,10 +184,10 @@ cell_metadata:
   - m22-E91-Protocol
   - m22-EPRbasedQkdResearchQuestions
   concepts:
-  - Eavesdropping
-  - GV protocol
-  - "Quantum state superposition ($\rvert \rangle$ notation)"
-  - Quantum measurement
+  - GV Protocol
+  - Eavesdropping Detection
+  - Transmission Time Check
+  - Probabilistic Measurement
   outcomes:
   - Understand the role of random transmission time in the GV protocol
   - Apply the comparison of received and transmission times to detect eavesdropping

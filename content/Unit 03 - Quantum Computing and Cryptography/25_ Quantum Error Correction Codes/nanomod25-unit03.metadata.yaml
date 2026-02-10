@@ -60,7 +60,7 @@ learning_objective_tree:
     - Goppa codes
     - Qubits (quantum bits) and their properties
     - Error syndrome
-    - Pauli matrices
+    - Pauli Matrices
     - Qubit Operations
     - Quantum superposition (α|-++⟩ + β|+--⟩)
     - single qubit operation
@@ -68,28 +68,23 @@ learning_objective_tree:
     - Ancillary qubits
     - Phase-flip errors
     - Quantum error correction
-    - quantum error correction
     - Quantum cryptography features as hurdles in error correction
     - bit-flip error
     - CSS (Calderbank-Shor-Stiene) code
     - Shor's code
     - Linear Independence
-    - Bit-flip error
     - bit flip error
-    - Arbitrary errors (small perturbations of qubit values)
     - phase-flip error
     - Hadamard operation
     - Measurement collapse
     - phase flip error
-    - phase-flip errors
     - Pauli Matrices (I, X, Z)
-    - qubits
+    - Qubits
     - Hadamard basis
     - bit-flip errors
     - quantum error correction techniques
-    - Quantum Error Correction
     - Peter Shor's Quantum Error Correction Code
-    - qubit
+    - Qubit
     prerequisites: []
     difficulty: intermediate
     content_type: mixed
@@ -133,25 +128,18 @@ learning_objective_tree:
     estimated_time_mins: 0
     concepts:
     - Qubits
-    - Error correction
+    - error correction
     - CNOT gates
     - phase-flip error correction codes
     - bit-flip error correction
     - Entanglement
     - bit-flip error correction codes
     - phase-flip error correction
-    - CNOT operations
-    - 9-qubit error correction code
-    - entanglement
     - quantum bit-flip error correction
-    - CNOT operation
-    - ancilla qubits
     - logical qubits
-    - entanglement using CNOT gate
     - repetition code
-    - Shor's 9-qubit error correction code
-    - Quantum computing
-    - qubit
+    - quantum computing
+    - Qubit
     prerequisites: []
     difficulty: intermediate
     content_type: mixed
@@ -193,10 +181,9 @@ cell_metadata:
   - m24-24--241Introduction
   - m24-3-Untitled
   concepts:
-  - Quantum Error Correction Codes
-  - Qubits (quantum bits) and their properties
-  - Peter Shor's Quantum Error Correction Code
-  - Goppa codes
+  - Quantum Error Correction
+  - Qubit Errors
+  - Single Qubit Error Correction
   outcomes:
   - Understand the challenges of quantum error correction due to qubit errors
   - Apply basic concepts of quantum error correction using qubits
@@ -231,10 +218,10 @@ cell_metadata:
   prerequisites:
   - m24-3-Untitled
   concepts:
-  - qubit
+  - Qubit
   - bit flip error
   - phase flip error
-  - quantum error correction
+  - Quantum error correction
   outcomes:
   - Understand the definition of a qubit
   - Apply the concept of bit flip errors to describe how they affect a qubit
@@ -266,7 +253,6 @@ cell_metadata:
   - No-cloning theorem
   - Quantum cryptography features as hurdles in error correction
   - Bit-flip and phase-flip errors
-  - Arbitrary errors (small perturbations of qubit values)
   - Measurement collapse
   outcomes:
   - Understand the implications of the No-cloning theorem on quantum error correction
@@ -322,10 +308,10 @@ cell_metadata:
   prerequisites:
   - m24-24-2-242TheGVProtocol
   concepts:
-  - Bit-flip error
-  - Quantum error correction
-  - Ancillary qubits
-  - Error syndrome
+  - Single Qubit Error Model
+  - Error Syndrome
+  - Parity Checks
+  - Ancillary Qubits
   outcomes:
   - Understand the concept of bit-flip errors in quantum computing.
   - Apply CNOT gate and XOR operations to implement parity checks.
@@ -361,11 +347,11 @@ cell_metadata:
   - m24-24-2-242TheGVProtocol
   - m24-3-Untitled
   concepts:
-  - Quantum computing
-  - Qubits
-  - CNOT gates
-  - Error correction
-  - Entanglement
+  - Tensor Product
+  - CNOT Gate
+  - Quantum Error Correction
+  - Qubits and Measurement
+  - Ancilla Qubits
   outcomes:
   - Describe the process of entangling ancilla qubits with a logical qubit
   - Explain how CNOT operations are used for error detection and correction
@@ -390,9 +376,9 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - qubit
-  - CNOT operation
-  - entanglement
+  - CNOT Operations
+  - Entanglement
+  - Corrected State
   outcomes:
   - Recall the purpose of CNOT operations in quantum computing
   - Apply entanglement manipulation to retrieve a corrected state
@@ -418,10 +404,10 @@ cell_metadata:
   - m24-24-2-242TheGVProtocol
   - m24-4-Eavesdropping
   concepts:
-  - phase-flip errors
-  - bit-flip errors
-  - Hadamard basis
-  - quantum error correction
+  - Phase-flip Error
+  - Hadamard Basis
+  - Logical Qubit
+  - Qubit Transformations
   outcomes:
   - Understand how phase-flip errors can be converted to bit-flip errors in the Hadamard
     basis.
@@ -487,9 +473,9 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - phase-flip error correction codes
-  - bit-flip error correction codes
-  - 9-qubit error correction code
+  - Quantum Error Correction
+  - Nine Qubit Code
+  - Phase-flip Correction
   outcomes:
   - Understand the process of encoding qubits for phase-flip error correction
   - Apply the concept of combining phase-flip and bit-flip error correction codes
@@ -520,8 +506,6 @@ cell_metadata:
   - Shor's 9-qubit error correction code
   - bit-flip error correction
   - phase-flip error correction
-  - ancilla qubits
-  - CNOT operations
   outcomes:
   - Understand the application of Shor's 9-qubit error correction code to correct
     arbitrary qubit errors.
@@ -554,11 +538,10 @@ cell_metadata:
   - m24-3-Untitled
   - m24-4-Eavesdropping
   concepts:
-  - arbitrary quantum error
-  - bit-flip error
-  - phase-flip error
-  - Pauli matrices
-  - single qubit operation
+  - Pauli Matrices
+  - Single Qubit Operation
+  - Arbitrary Quantum Error
+  - Quantum Error Correction
   outcomes:
   - Understand the relationship between arbitrary quantum errors and bit-flip or phase-flip
     errors.
@@ -588,9 +571,9 @@ cell_metadata:
   prerequisites: []
   concepts:
   - Linear Independence
-  - Qubit Operations
+  - Single Qubit Operations
+  - Measurement Basis
   - Quantum Error Correction
-  - Pauli Matrices (I, X, Z)
   outcomes:
   - Understand the concept of linear independence in matrix space
   - Apply the Pauli Matrix expansion to an arbitrary single qubit operation
@@ -618,10 +601,10 @@ cell_metadata:
   - m24-24--241Introduction
   - m24-3-Untitled
   concepts:
-  - Shor's code
-  - CSS (Calderbank-Shor-Stiene) code
-  - qubits
-  - quantum error correction techniques
+  - Quantum Error Correction
+  - Shor's Code
+  - CSS Code
+  - Fault-Tolerant Computing
   outcomes:
   - Understand the limitations of Shor's code in terms of qubit requirements
   - Apply knowledge of CSS code and its optimization by Laflamme, Miguel, Paz and

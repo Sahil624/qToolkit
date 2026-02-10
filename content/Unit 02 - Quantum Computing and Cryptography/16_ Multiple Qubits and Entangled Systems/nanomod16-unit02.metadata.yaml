@@ -49,6 +49,8 @@ learning_objective_tree:
     summary: Students will understand the notion of entangled quantum systems.
     covered_by:
     - m16-EntangledSystems
+    - m16-snakesAndLadderGame
+    - m16-snakesAndLadderGameCode
     learning_objectives:
     - Understand the concept of entanglement in quantum systems involving multiple
       qubits
@@ -316,6 +318,63 @@ cell_metadata:
     - Develop the skills to analyze and construct entangled states in quantum mechanics
     - Prepare for advanced studies in quantum computing, including algorithms and
       protocols leveraging entanglement
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-snakesAndLadderGame
+  title: 16.4 Quantum Snakes and Ladders
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m16-EntangledSystems
+  concepts:
+  - Entangled Systems
+  outcomes:
+  - Apply the concept of entanglement to analyze quantum systems
+  - Use the tensor product to represent composite quantum states
+  - Understand the significance of entanglement in quantum computing
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply the concept of entanglement to analyze quantum systems
+    - Use the tensor product to represent composite quantum states
+    - Understand the significance of entanglement in quantum computing
+    module_prereqs:
+    - Linear Algebra
+    - Quantum Mechanics Fundamentals
+    module_title:
+    - Multiple Qubits and Entangled Systems
+- cell_id: m16-snakesAndLadderGameCode
+  title: 16.4 Quantum Snakes and Ladders
+  type: code
+  estimated_time: '15'
+  prerequisites:
+  - m16-EntangledSystems
+  - m16-snakesAndLadderGame
+  concepts:
+  - Entangled Systems
+  outcomes:
+  - Apply the concept of entanglement to analyze quantum systems
+  - Use the tensor product to represent composite quantum states
+  - Understand the significance of entanglement in quantum computing
+  extra_props:
+    editable: true
+    slideshow:
+      slide_type: slide
+    tags: []
+    cell_alternates: []
+    cell_interactive: 'true'
+    module_outcomes:
+    - Apply the concept of entanglement to analyze quantum systems
+    - Use the tensor product to represent composite quantum states
+    - Understand the significance of entanglement in quantum computing
     module_prereqs:
     - Linear Algebra
     - Quantum Mechanics Fundamentals

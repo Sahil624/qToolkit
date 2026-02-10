@@ -10,7 +10,7 @@ learning_objective_tree:
     learning_objectives: []
     estimated_time_mins: 1
     concepts:
-    - 3stage background
+    - 3 stage QKD protocol
     prerequisites: []
     kolb_phase: null
     difficulty: intermediate
@@ -25,9 +25,7 @@ learning_objective_tree:
     learning_objectives: []
     estimated_time_mins: 3
     concepts:
-    - 3 Stage Qkd Protocol
     - 3 stage QKD protocol
-    - 3Stage Protocol Flow
     prerequisites: []
     kolb_phase: null
     difficulty: intermediate
@@ -125,7 +123,7 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - 3stage background
+  - 3 stage QKD protocol
   outcomes: []
   extra_props:
     slideshow:
@@ -188,7 +186,7 @@ cell_metadata:
   - m22-Background
   - m22-3stageQkd
   concepts:
-  - 3 Stage Qkd Protocol
+  - 3 stage QKD protocol
   outcomes: []
   extra_props:
     slideshow:
@@ -221,7 +219,7 @@ cell_metadata:
   - m22-3stageQkd
   - m22-3stageQkd2
   concepts:
-  - 3Stage Protocol Flow
+  - 3 QK
   outcomes: []
   extra_props:
     slideshow:

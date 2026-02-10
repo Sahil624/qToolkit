@@ -83,9 +83,9 @@ learning_objective_tree:
     - factorization problem
     - Superposition
     - Public Key Cryptography (e.g., RSA, ECC)
-    - classical cryptography
+    - Classical Cryptography
     - bulk encryption
-    - secret key cryptography
+    - Secret Key Cryptography
     - public-key cryptography
     - Entanglement
     - 'Diffie-Hellman (DH) '
@@ -101,7 +101,6 @@ learning_objective_tree:
     - trapdoor information
     - key exchange
     - Polarization of photons
-    - Quantum computing
     - Digital Signatures
     - public key cryptography
     - aes (Advanced Encryption Standard)
@@ -124,6 +123,8 @@ learning_objective_tree:
     - m19-19-4-194TheNoCloning
     - m19-11-Untitled
     - m19-12-Untitled
+    - m19-13-eavesdropperGame
+    - m19-13-eavesdropperGameCode
     learning_objectives:
     - Apply the concept of tensor product to represent qubit states
     - Analyze the implications of the no-cloning theorem on quantum information processing
@@ -137,14 +138,12 @@ learning_objective_tree:
     concepts:
     - Quantum Cryptographic Protocols
     - No-cloning theorem
-    - Arbitrary quantum states
     - Linear operations in quantum mechanics
     - Superposition
     - Quantum cloning
     - Quantum cloning machine
     - Qubit states
     - 'Tensor product ( '
-    - No-Cloning Theorem
     - Quantum teleportation
     prerequisites: []
     difficulty: intermediate
@@ -168,8 +167,6 @@ cell_metadata:
   prerequisites: []
   concepts:
   - Secret Key Cryptography
-  - Classical Cryptography
-  - Homomorphic Encryption
   outcomes:
   - Understand the concept of secret key cryptography and its limitations.
   - Analyze the evolution of classical cryptography from non-mathematical to mathematically
@@ -201,13 +198,10 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - Perfect secrecy
-  - Information theory (as defined by Claude Shannon)
-  - Vernam cipher (One-Time-Pad, OTP)
-  - AES
-  - 3DES
-  - Serpent
-  - Blowfish
+  - Perfect Secrecy
+  - Information Theory
+  - One-Time-Pad
+  - AES Algorithm
   outcomes:
   - Understand how information theory defines perfect secrecy.
   - Apply knowledge of key sizes and resistance to cryptanalysis for various algorithms.
@@ -236,10 +230,10 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - public-key cryptography
-  - key exchange
-  - authentication
-  - trapdoor information
+  - Public-Key Algorithms
+  - Encryption Key
+  - Decryption Key
+  - Trapdoor Information
   outcomes:
   - Understand the concept of public-key cryptography
   - Apply knowledge to explain the trade-off between key exchange and authentication
@@ -268,10 +262,9 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - public key cryptosystems
-  - RSA (Rivest-Shamir-Adleman)
-  - 'Diffie-Hellman (DH) '
-  - ECC (Elliptic Curve Cryptography)
+  - Public Key Cryptosystems
+  - Elliptic Curve Cryptography
+  - Diffie-Hellman Protocol
   outcomes:
   - Understand the concept of public key cryptosystems and their use in cryptography.
   - Identify the underlying mathematical problems that each system relies on.
@@ -297,10 +290,9 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - public key cryptography
-  - secret key cryptography
-  - bulk encryption
-  - key exchange phase
+  - Public Key Cryptography
+  - Secret Key Cryptography
+  - Hybrid System
   outcomes:
   - Explain the difference between public key cryptography and secret key cryptography.
   - Describe the role of public key cryptography in generating an encryption key.
@@ -331,10 +323,9 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - RSA (Rivest-Shamir-Adleman) encryption
-  - ECC (Elliptic Curve Cryptography)
-  - key sizes in cryptography
-  - aes (Advanced Encryption Standard)
+  - ECC Key Sizes
+  - RSA and DH Key Sizes
+  - Symmetric Key Sizes
   outcomes:
   - Understand the relationship between key sizes and security levels
   - Apply the concept of key size scalability to different cryptographic algorithms
@@ -358,10 +349,10 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - quantum computing
-  - classical cryptography
-  - factorization problem
-  - Shor's algorithm
+  - Quantum Computing
+  - Shor's Algorithm
+  - RSA Cryptography
+  - Quantum Security Risk
   outcomes:
   - Understand the limitations of classical cryptography in a post-quantum era
   - Explain how Shor's algorithm achieves exponential speedup over classical algorithms
@@ -383,11 +374,10 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - Quantum computing
-  - Symmetric Key Algorithms (e.g., AES-256)
-  - Public Key Cryptography (e.g., RSA, ECC)
-  - Hash Functions (e.g., SHA-256, SHA-3)
-  - Digital Signatures
+  - Symmetric Key Algorithm
+  - Public Key Cryptography
+  - Quantum Impact on RSA
+  - Impact on SHA Hash Functions
   outcomes:
   - Understand how quantum computers impact the security of classical cryptosystems
   - Apply knowledge to identify algorithms that are resistant to quantum computer
@@ -418,7 +408,8 @@ cell_metadata:
   concepts:
   - Superposition
   - Entanglement
-  - Polarization of photons
+  - Measurement Basis
+  - Polarization of Photons
   outcomes:
   - Understand the principle of quantum state cloning (no cloning theorem)
   - Apply the concept of measurement in a wrong basis to analyze qubit disturbance
@@ -444,6 +435,7 @@ cell_metadata:
   concepts:
   - No-Cloning Theorem
   - Quantum Cryptographic Protocols
+  - Arbitrary Qubit
   outcomes:
   - Understand the concept of the No-Cloning Theorem
   - Apply knowledge of the no-cloning theorem to quantum cryptographic protocols
@@ -467,11 +459,11 @@ cell_metadata:
   - m18-ComposingSingleQubitOperations
   - m18-JointGateRepresentation
   - m18-JointGateRepresentationConclusion
+  - m19-19-4-194TheNoCloning
   concepts:
-  - No-cloning theorem
-  - Quantum cloning machine
-  - Linear operations in quantum mechanics
-  - Arbitrary quantum states
+  - No-Cloning Theorem
+  - Linear Operation
+  - Tensor Product
   - Superposition
   outcomes:
   - Understand the no-cloning theorem as a fundamental limit in quantum computing
@@ -498,11 +490,13 @@ cell_metadata:
   prerequisites:
   - m18-ComposingSingleQubitOperations
   - m18-JointGateRepresentation
+  - m19-19-4-194TheNoCloning
   concepts:
-  - Quantum cloning
-  - Qubit states
-  - 'Tensor product ( '
-  - Quantum teleportation
+  - Cloning Machine
+  - No Cloning Theorem
+  - Quantum Teleportation
+  - CNOT Operation
+  - Tensor Product
   outcomes:
   - Understand the concept of quantum cloning and its limitations
   - Apply the concept of tensor product to represent qubit states
@@ -525,3 +519,45 @@ cell_metadata:
       quantum information processing.'
     timestamp: '2026-01-28T18:39:57.820042'
     needs_human_review: false
+- cell_id: m19-13-eavesdropperGame
+  title: Eavesdropper's Dilemma
+  type: markdown
+  estimated_time: '2'
+  prerequisites:
+  - m18-ComposingSingleQubitOperations
+  - m18-JointGateRepresentation
+  - m19-19-4-194TheNoCloning
+  - m19-12-Untitled
+  concepts:
+  - No Cloning Theorem
+  - Quantum Bit Error Rate
+  - Quantum State Measurement
+  outcomes:
+  - Understand the concept of quantum cloning and its limitations
+  - Apply the concept of tensor product to represent qubit states
+  - Analyze the relationship between quantum cloning and quantum teleportation
+  extra_props:
+    slideshow:
+      slide_type: slide
+- cell_id: m19-13-eavesdropperGameCode
+  title: Eavesdropper's Dilemma
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m18-ComposingSingleQubitOperations
+  - m18-JointGateRepresentation
+  - m19-19-4-194TheNoCloning
+  - m19-12-Untitled
+  - m19-13-eavesdropperGame
+  concepts:
+  - No Cloning Theorem
+  - Quantum Bit Error Rate
+  - Quantum State Measurement
+  outcomes:
+  - Understand the concept of quantum cloning and its limitations
+  - Apply the concept of tensor product to represent qubit states
+  - Analyze the relationship between quantum cloning and quantum teleportation
+  extra_props:
+    slideshow:
+      slide_type: slide
+

@@ -271,7 +271,7 @@ def maximize_courses(
     cell_details_map: Dict[str, Dict],  # REQUIRED
     total_time: int,
     user_selection: List[str],
-    known_topics: Set[str],
+    known_concepts: Set[str],
     skippable_cells: Set[str] = set(),
     activity_preference: str = 'balanced',
     log_function: Callable[[str], None] = print
@@ -286,8 +286,38 @@ def maximize_courses(
     lo_to_cell_map = {}
     for c in courses:
         lo_to_cell_map[c['lo_id']] = c.get('covered_by', [])
-
-    pending_targets = [t for t in user_selection if t not in known_topics]
+    
+    # Determine which LOs are "fully covered" by known concepts
+    # An LO is fully covered if ALL its cells' concepts are known
+    known_concepts_lower = {c.lower() for c in known_concepts}
+    skipped_due_to_known = []
+    
+    for lo_id in user_selection:
+        cell_ids = lo_to_cell_map.get(lo_id, [])
+        if not cell_ids:
+            continue
+        
+        # Check if all cells' concepts are covered
+        all_concepts_known = True
+        for cell_id in cell_ids:
+            cell = cell_details_map.get(cell_id, {})
+            cell_concepts = cell.get('concepts', [])
+            if cell_concepts:
+                # Check if at least one concept is NOT known
+                for concept in cell_concepts:
+                    if concept.lower() not in known_concepts_lower:
+                        all_concepts_known = False
+                        break
+            if not all_concepts_known:
+                break
+        
+        if all_concepts_known and cell_ids:
+            skipped_due_to_known.append(lo_id)
+    
+    pending_targets = [t for t in user_selection if t not in skipped_due_to_known]
+    
+    if skipped_due_to_known:
+        log_function(f"Skipping {len(skipped_due_to_known)} LOs (all concepts already known): {skipped_due_to_known}")
     
     if not pending_targets:
         log_function("All targets known.")
@@ -319,7 +349,11 @@ def maximize_courses(
              "metadata": {
                 "algorithm": "Cell-Level Knapsack",
                 "time_budget": total_time,
-                "targets": user_selection
+                "targets": user_selection,
+                "known_concepts": list(known_concepts) if known_concepts else [],
+                "skipped_due_to_known": skipped_due_to_known,
+                "pending_targets": pending_targets,
+                "skippable_cells": list(skippable_cells) if skippable_cells else []
             },
             "evaluations": evaluations,
             "final_schedule": best_schedule

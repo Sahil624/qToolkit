@@ -85,6 +85,8 @@ learning_objective_tree:
       qubit.
     covered_by:
     - m10-Basis
+    - m10-spaceExplorerGame
+    - m10-spaceExplorerGameCode
     learning_objectives:
     - Understand the concept of basis in the context of vector spaces and quantum
       mechanics
@@ -415,6 +417,51 @@ cell_metadata:
   - Grasp the importance of orthonormality and how to determine if vectors are orthogonal
     or orthonormal
   - Familiarize with Dirac's bra-ket notation for expressing inner products
+- cell_id: m10-spaceExplorerGame
+  title: 10.7 Active Experiment Quantum Space Explorer
+  type: markdown
+  estimated_time: '1'
+  prerequisites:
+  - m5-Basis
+  - m6-InnerProduct
+  - m10-LinearCombinationAndExample
+  concepts:
+  - Basis
+  outcomes:
+  - Explore the concept of basis in quantum mechanics through interactive gameplay
+  - Apply the principles of basis and orthonormality in a simulated quantum environment
+  - Enhance understanding of quantum state representation through hands-on experimentation
+  extra_props:
+    slideshow:
+      slide_type: slide
+    cell_alternates: []
+    cell_interactive: 'false'
+    module_outcomes:
+    - Apply the concept of basis and orthonormality in quantum state representation
+    - Analyze and compute inner products using Dirac's notation
+    - Master the foundational aspects of quantum mechanics through the understanding
+      of vector space representations
+    module_prereqs:
+    - Linear Algebra
+    - Complex Numbers
+    - Introduction to Quantum Mechanics
+    module_title:
+    - Basics of Quantum Computing/Cryptography
+- cell_id: m10-spaceExplorerGameCode
+  title: 10.7 Active Experiment Quantum Space Explorer
+  type: code
+  estimated_time: '10'
+  prerequisites:
+  - m5-Basis
+  - m6-InnerProduct
+  - m10-LinearCombinationAndExample
+  - m10-spaceExplorerGame
+  concepts:
+  - Basis
+  outcomes:
+  - Explore the concept of basis in quantum mechanics through interactive gameplay
+  - Apply the principles of basis and orthonormality in a simulated quantum environment
+  - Enhance understanding of quantum state representation through hands-on experimentation
   extra_props:
     slideshow:
       slide_type: slide

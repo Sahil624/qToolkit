@@ -26,16 +26,15 @@ learning_objective_tree:
     estimated_time_mins: 0
     concepts:
     - B92 protocol
-    - B92 Protocol
-    - Diagonal Basis
+    - diagonal basis
     - Quantum states
-    - Rectilinear Basis
+    - rectilinear basis
     - Measurement in quantum mechanics
-    - BB84 Protocol
+    - BB84 protocol
     - Quantum computing protocols
     - polarization
     - quantum channel
-    - classical bits
+    - Classical Bits
     prerequisites: []
     difficulty: intermediate
     content_type: mixed
@@ -85,19 +84,18 @@ learning_objective_tree:
     - BB84 protocol
     - B92 protocol
     - single measurement
-    - basis
+    - Basis
     - Measurement in incorrect basis
     - candidate key
     - orthogonality
-    - quantum key distribution (QKD)
-    - non-orthogonal states
     - Quantum Key Distribution (QKD)
+    - non-orthogonal states
     - Bell State Measurement
     - quantum computing
     - Qubits
-    - quantum cryptography
+    - Quantum cryptography
     - B92
-    - Rectilinear basis
+    - rectilinear basis
     - Superdense Coding
     prerequisites: []
     difficulty: intermediate
@@ -127,7 +125,7 @@ learning_objective_tree:
     - Bell states
     - Observations in different bases
     - Basis (quantum)
-    - Superdense coding
+    - Superdense Coding
     - Quantum teleportation
     prerequisites: []
     difficulty: intermediate
@@ -172,12 +170,11 @@ learning_objective_tree:
     - BB84 protocol
     - Channel errors
     - B92 protocol
-    - ),
     - Eavesdropping
-    - qubits
+    - Qubits
     - bias (X)
-    - quantum cryptography
-    - Quantum Computing
+    - Quantum cryptography
+    - quantum computing
     - Eve's activity
     - Eavesdropping in Quantum Key Distribution (QKD)
     prerequisites: []
@@ -209,10 +206,10 @@ cell_metadata:
   - m20-21-Step2oftheBB84p
   - m20-25-Step4oftheBB84p
   concepts:
-  - quantum computing
-  - B92 protocol
-  - non-orthogonal states
-  - BB84 protocol
+  - Non-Orthogonal States
+  - Polarization Basis
+  - Rectilinear Basis
+  - Diagonal Basis
   outcomes:
   - Recall B92 protocol
   - Understand non-orthogonal states in quantum computing
@@ -250,8 +247,7 @@ cell_metadata:
   - m20-25-Step4oftheBB84p
   - m20-27-ProjectResearchQue
   concepts:
-  - B92 Protocol
-  - BB84 Protocol
+  - Polarized Photon
   - Rectilinear Basis
   - Diagonal Basis
   outcomes:
@@ -297,11 +293,11 @@ cell_metadata:
   - m20-21-Step2oftheBB84p
   - m20-25-Step4oftheBB84p
   concepts:
-  - Quantum teleportation
-  - Superdense coding
-  - Bell states
-  - Basis (quantum)
-  - Observations in different bases
+  - Entanglement
+  - EPR Paradox
+  - Quantum Channel
+  - Density Matrices
+  - Measurement Basis
   outcomes:
   - Understand the principle of quantum teleportation using Bell states
   - Apply superdense coding to encode information on a qubit
@@ -337,10 +333,10 @@ cell_metadata:
   - m20-23-Step3ofBB84proto
   - m20-27-ProjectResearchQue
   concepts:
-  - B92 protocol
-  - Measurement in incorrect basis
-  - Rectilinear basis
-  - Qubits
+  - Key Sifting
+  - Basis Measurement
+  - Qubits Retention
+  - Conclusive Output
   outcomes:
   - Understand the B92 protocol and its application to quantum computing.
   - Apply the concept of measuring qubits in an incorrect basis to a specific scenario.
@@ -378,9 +374,10 @@ cell_metadata:
   - m20-23-Step3ofBB84proto
   - m20-25-Step4oftheBB84p
   concepts:
-  - Eavesdropping
-  - BB84 protocol
-  - quantum cryptography
+  - Eavesdropping Detection
+  - Quantum Key Distribution (QKD
+  - Entanglement Based QKD
+  - Measurement Inconsistencies
   outcomes:
   - Understand the concept of eavesdropping in quantum cryptography
   - Apply the BB84 protocol to detect eavesdropping
@@ -418,7 +415,7 @@ cell_metadata:
   - B92
   - non-orthogonal states
   - single measurement
-  - basis
+  - Basis
   outcomes:
   - Understand the security principle of B92
   - Explain how non-orthogonal states affect measurement
@@ -444,9 +441,9 @@ cell_metadata:
   - m20-21-Step2oftheBB84p
   - m20-27-ProjectResearchQue
   concepts:
-  - qubits
-  - bias (X)
-  - Eve's activity
+  - Qubit Transmission
+  - Eve's Activity Status
+  - Bias Control
   outcomes:
   - Understand the role of qubits in quantum communication protocols
   - Apply parameters to simulate a B92 protocol
@@ -484,7 +481,10 @@ cell_metadata:
   estimated_time: '1'
   prerequisites: []
   concepts:
-  - ),
+  - Qubit Transformations
+  - Measurement Basis
+  - Unitary Matrices
+  - Bloch Sphere
   outcomes:
   - Explain
   - Apply
@@ -543,10 +543,10 @@ cell_metadata:
   - m20-25-Step4oftheBB84p
   - m20-27-ProjectResearchQue
   concepts:
-  - B92 protocol
-  - Quantum computing protocols
-  - Quantum states
-  - Measurement in quantum mechanics
+  - B92 Protocol
+  - True Multi-Qubit Gates
+  - Entanglement Based QKD
+  - Quantum State Collapse
   outcomes:
   - Understand the principles of B92 protocol in quantum computing
   - Apply knowledge of quantum state measurement to analyze quantum protocols
@@ -596,10 +596,10 @@ cell_metadata:
   - m20-13-uBB84Simulatoru
   - m20-19-Step1oftheBB84p
   concepts:
-  - quantum channel
-  - polarization
-  - classical bits
-  - B92 protocol
+  - Complex Numbers
+  - Operations with Complex Vector Spaces
+  - Polar Representation of Complex Numbers
+  - Modulus and Conjugation
   outcomes:
   - Describe the process of generating a candidate key in the B92 protocol
   - Explain how polarization is used in quantum communication
@@ -659,10 +659,10 @@ cell_metadata:
   - m20-25-Step4oftheBB84p
   - m20-27-ProjectResearchQue
   concepts:
-  - B92 protocol
-  - Quantum Key Distribution (QKD)
-  - Bell State Measurement
+  - Basis Measurement
+  - Qubit Measurement
   - Superdense Coding
+  - Measurement Basis
   outcomes:
   - Understand the B92 protocol for quantum key distribution
   - Apply Bell State measurement to decode qubits
@@ -718,9 +718,10 @@ cell_metadata:
   - m20-23-Step3ofBB84proto
   - m20-25-Step4oftheBB84p
   concepts:
-  - B92 protocol
-  - candidate key
-  - quantum cryptography
+  - B92 Protocol
+  - Key Evaluation
+  - Candidate Key
+  - Subsequence Length
   outcomes:
   - Understand the B92 protocol for quantum key distribution
   - Apply the concept of candidate key in quantum cryptography
@@ -780,10 +781,10 @@ cell_metadata:
   - m20-23-Step3ofBB84proto
   - m20-25-Step4oftheBB84p
   concepts:
-  - Quantum Computing
-  - B92 protocol
-  - Eavesdropping in Quantum Key Distribution (QKD)
-  - Channel errors
+  - Bloch Sphere
+  - Linear Combination
+  - Measurement Basis
+  - Eavesdropper Detection
   outcomes:
   - Understand the B92 protocol for secure quantum key distribution
   - Apply the concept of eavesdropping detection in QKD protocols
@@ -838,10 +839,10 @@ cell_metadata:
   - m20-23-Step3ofBB84proto
   - m20-25-Step4oftheBB84p
   concepts:
-  - quantum computing
-  - quantum key distribution (QKD)
-  - orthogonality
-  - non-orthogonal states
+  - Non-Orthogonal States
+  - Error Rate Channel
+  - Eve Detection Methods
+  - Classical Phase Protocol
   outcomes:
   - 'Apply: Understand the principles of QKD'
   - 'Analyze: Compare the efficiency of B92 and BB84 protocols'

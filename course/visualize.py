@@ -100,6 +100,52 @@ def _visualize_knapsack(data, metadata):
         f.write(f"Targets: {metadata.get('targets')}\n")
         f.write(f"Budget: {total_budget} mins\n")
         f.write("="*60 + "\n\n")
+        
+        # =========================================================
+        # NEW: KNOWN TOPICS IMPACT SECTION
+        # =========================================================
+        known_concepts = metadata.get('known_concepts', [])
+        skipped_due_to_known = metadata.get('skipped_due_to_known', [])
+        pending_targets = metadata.get('pending_targets', [])
+        skippable_cells = metadata.get('skippable_cells', [])
+        
+        f.write("KNOWN CONCEPTS IMPACT:\n")
+        f.write("-" * 60 + "\n")
+        
+        if known_concepts:
+            f.write(f"User marked {len(known_concepts)} concept(s) as already known:\n")
+            for topic in known_concepts[:20]:  # Limit display
+                f.write(f"  ✓ {topic}\n")
+            if len(known_concepts) > 20:
+                f.write(f"  ... and {len(known_concepts) - 20} more\n")
+        else:
+            f.write("No concepts marked as known.\n")
+        
+        f.write("\n")
+        
+        if skipped_due_to_known:
+            f.write(f"LOs SKIPPED (already covered by known topics):\n")
+            for lo in skipped_due_to_known:
+                f.write(f"  ⏭ {lo} - SKIPPED (user knows this topic)\n")
+            f.write(f"\n  Total LOs skipped: {len(skipped_due_to_known)}\n")
+        else:
+            f.write("No LOs were skipped due to known topics.\n")
+        
+        f.write("\n")
+        
+        if pending_targets:
+            f.write(f"LOs PROCEEDING TO EVALUATION ({len(pending_targets)}):\n")
+            for lo in pending_targets:
+                f.write(f"  → {lo}\n")
+        
+        if skippable_cells:
+            f.write(f"\nCELLS SKIPPED (covered by known topics): {len(skippable_cells)}\n")
+            for cell in skippable_cells[:10]:
+                f.write(f"  ⏭ {cell}\n")
+            if len(skippable_cells) > 10:
+                f.write(f"  ... and {len(skippable_cells) - 10} more\n")
+        
+        f.write("\n" + "="*60 + "\n\n")
 
         # Sort evaluations by Value (desc) then Cost (asc) for readability
         sorted_evals = sorted(evaluations, key=lambda x: (-x['value'], x['cost']))
@@ -114,7 +160,7 @@ def _visualize_knapsack(data, metadata):
             status = e['status']
             f.write(f"{status:<12} | {e['value']:<5} | {e['cost']:<5} | {subset_str}\n")
             
-            # --- NEW: DETAILED CHAIN INFO ---
+            # --- DETAILED CHAIN INFO ---
             if 'debug_chain_info' in e:
                 info = e['debug_chain_info']
                 f.write(f"    --> Total Cells: {info.get('total_cell_count', 0)}\n")
@@ -122,6 +168,16 @@ def _visualize_knapsack(data, metadata):
                 if 'chain_sample' in info:
                     f.write(f"    --> Chain Sample: {info['chain_sample']}...\n")
                 f.write("\n")
+        
+        # Final summary
+        f.write("\n" + "="*60 + "\n")
+        f.write("FINAL SELECTION SUMMARY:\n")
+        f.write("-" * 60 + "\n")
+        if skipped_due_to_known:
+            f.write(f"LOs skipped (known topics): {len(skipped_due_to_known)}\n")
+        f.write(f"LOs evaluated: {len(pending_targets)}\n")
+        f.write(f"LOs selected: {len(final_schedule)}\n")
+        f.write(f"Selected: {final_schedule}\n")
 
     print(f"Case Study saved in: {case_dir}")
 

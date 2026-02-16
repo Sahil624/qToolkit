@@ -63,7 +63,7 @@ try:
     _MARGIN_CSS = \"""
     <style>
         body, .jp-Notebook, .voila-notebook-container {{
-            max-width: 960px !important;
+            max-width: 90% !important;
             margin: 0 auto !important;
             padding-left: 20px !important;
             padding-right: 20px !important;

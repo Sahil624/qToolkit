@@ -160,6 +160,23 @@ learning_objective_tree:
       timestamp: '2026-01-28T18:39:57.820042'
       needs_human_review: true
 cell_metadata:
+- cell_id: m19-19-0-Intro
+  title: 19 Intro
+  type: markdown
+  estimated_time: '1'
+  prerequisites: []
+  concepts:
+  - Secret Key Cryptography
+  outcomes:
+  - Understand the concept of secret key cryptography and its limitations.
+  - Analyze the evolution of classical cryptography from non-mathematical to mathematically
+    modeled systems.
+  - Apply knowledge of homomorphic encryption as an example of esoteric protocols.
+  extra_props:
+    slideshow:
+      slide_type: slide
+  llm_generation:
+    is_llm_generated: true
 - cell_id: m19-19-1-191SecretKeyCryp
   title: 19.1 Secret Key Cryptography
   type: markdown

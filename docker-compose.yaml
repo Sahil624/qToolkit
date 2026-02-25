@@ -1,0 +1,31 @@
+# Combined stack: Toolkit (Jupyter) + Simulator (q-sim) in a single container.
+# Build with: git submodule update --init q-sim && docker compose build
+# Run with: docker compose up
+#
+# Logs: All service logs go to files inside the container (terminal stays clean).
+# - View recent logs:  docker exec qeducation-toolkit /home/toolkit/view-logs.sh
+# - Export support bundle (logs + Redis): docker exec qeducation-toolkit /home/toolkit/export-support-bundle.sh
+# - Then copy out:    docker cp qeducation-toolkit:/home/toolkit/logs/toolkit-support-bundle-*.tar.gz ./
+# Optional: mount logs to host for easy access: add - ./logs:/home/toolkit/logs under volumes
+services:
+  toolkit-with-simulator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: qeducation-toolkit
+    ports:
+      - "8888:8888"   # Jupyter Lab
+      - "8001:80"     # Simulator UI (Caddy)
+    environment:
+      - SIMULATOR_HOST=http://localhost:8001
+    volumes:
+      - content:/home/toolkit/content
+      - toolkit-logs:/home/toolkit/logs
+    # Optional: override SIMULATOR_HOST when accessing from another host
+    # - SIMULATOR_HOST=http://host.docker.internal:8001
+    # Optional: bind-mount logs to host folder ./logs for easy access
+    # - ./logs:/home/toolkit/logs
+
+volumes:
+  content:
+  toolkit-logs:

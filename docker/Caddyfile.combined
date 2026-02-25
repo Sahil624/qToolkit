@@ -1,0 +1,29 @@
+# Caddyfile for combined container: simulator UI + API proxy.
+# Python server runs as 127.0.0.1:8000 inside the same container.
+:80 {
+    log {
+        output stdout
+        format json
+        level INFO
+    }
+
+    header {
+        X-Request-ID {http.request.uuid}
+        X-Real-IP {http.request.remote_host}
+    }
+
+    reverse_proxy /ws/* 127.0.0.1:8000 {
+        header_up Host {upstream_hostport}
+        header_up X-Real-IP {remote_host}
+        header_up X-Forwarded-For {remote_host}
+        header_up X-Forwarded-Proto {scheme}
+        header_up Connection {>Connection}
+        header_up Upgrade {>Upgrade}
+    }
+
+    reverse_proxy /api/* 127.0.0.1:8000
+    reverse_proxy /health 127.0.0.1:8000
+
+    root * /home/toolkit/q-sim/ui/dist
+    file_server
+}

@@ -1,0 +1,61 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version for zip name (e.g. v1.0.0); used only when run manually'
+        required: false
+        default: 'snapshot'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository with submodules
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Set version for zip and release
+        id: version
+        run: |
+          if [ "${{ github.ref_type }}" = "tag" ]; then
+            echo "version=${{ github.ref_name }}" >> $GITHUB_OUTPUT
+          else
+            echo "version=${{ github.event.inputs.version || 'snapshot' }}-${{ github.run_id }}" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create release zip (excluding .git)
+        run: |
+          VERSION="${{ steps.version.outputs.version }}"
+          ZIP_NAME="qToolkit-${VERSION}.zip"
+          zip -r "${ZIP_NAME}" . \
+            -x '.git/*' \
+            -x '.git*' \
+            -x '*.git/*' \
+            -x '.github/*'
+          echo "ZIP_NAME=${ZIP_NAME}" >> $GITHUB_ENV
+          ls -la "${ZIP_NAME}"
+
+      - name: Upload zip as artifact (manual run)
+        if: github.ref_type != 'tag'
+        uses: actions/upload-artifact@v4
+        with:
+          name: qToolkit-${{ steps.version.outputs.version }}
+          path: ${{ env.ZIP_NAME }}
+
+      - name: Create GitHub Release and upload zip (tag push)
+        if: github.ref_type == 'tag'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          files: ${{ env.ZIP_NAME }}
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

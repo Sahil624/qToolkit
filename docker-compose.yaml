@@ -18,6 +18,12 @@ services:
       - "8001:80"     # Simulator UI (Caddy)
     environment:
       - SIMULATOR_HOST=http://localhost:8001
+      # Ollama on your computer: use host so the container can reach it (localhost inside container is not the host)
+      - LLM_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_API_URL=http://host.docker.internal:11434
+    extra_hosts:
+      # So host.docker.internal resolves on Linux (Docker Desktop already has it on Mac/Windows)
+      - "host.docker.internal:host-gateway"
     volumes:
       - content:/home/toolkit/content
       - toolkit-logs:/home/toolkit/logs

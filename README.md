@@ -1,106 +1,115 @@
 # Quantum Education Toolkit
 
-Run the Quantum Education Toolkit and simulator in one place using Docker. No need to install Python or Node.js on your computer.
+Run the toolkit and simulator together with Docker. You don’t need to install Python or Node.js.
 
 ---
 
-## Prerequisites
+## What you need
 
-You only need **Docker** installed. Nothing else.
-
----
-
-## 1. Install Docker
-
-Install Docker for your operating system using the official guide:
-
-- **All platforms (recommended):** [Get Docker](https://docs.docker.com/get-docker/) — this page helps you pick the right version.
-- **Windows:** [Docker Desktop for Windows](https://docs.docker.com/desktop/install/windows-install/)
-- **macOS:** [Docker Desktop for Mac](https://docs.docker.com/desktop/install/mac-install/)
-- **Linux:** [Docker Engine for Linux](https://docs.docker.com/engine/install/) or [Docker Desktop for Linux](https://docs.docker.com/desktop/install/linux-install/)
-
-After installation, open Docker Desktop (on Windows or Mac) or start the Docker service (on Linux). Make sure Docker is running before the next steps.
+- **Docker** — [Get Docker](https://docs.docker.com/get-docker/) (choose your OS). After installing, start Docker and keep it running.
 
 ---
 
-## 2. Download the release
+## 1. Get the toolkit
 
-1. Go to **Releases**: [https://github.com/Sahil624/qToolkit/releases](https://github.com/Sahil624/qToolkit/releases)
-2. Open the **latest release** (top of the list).
-3. Download the **zip file** attached to that release (for example, `qToolkit-v1.0.0.zip`).
-
-**Important:** Use the zip file attached to the release, not the "Source code (zip)" button on the main repo page. The release zip includes everything needed to run the toolkit (including the simulator).
+1. Open **[Releases](https://github.com/Sahil624/qToolkit/releases)** and click the latest release.
+2. Download the **zip file** from that release (e.g. `qToolkit-v1.0.0.zip`). Don’t use the green “Code” → “Download ZIP” — use the zip linked in the release.
+3. Unzip it to a folder you can find (e.g. Desktop). Remember that folder.
 
 ---
 
-## 3. Unzip the file
+## 2. Open a terminal in that folder
 
-Unzip the downloaded file to a folder you can find easily (for example, Desktop or Documents). Remember where you put it — you will open that folder in the next step.
-
----
-
-## 4. Open a terminal in that folder
-
-- **Windows:** Open Command Prompt or PowerShell. Use `cd` to go to the folder where you unzipped the file, for example:
-  ```text
+- **Windows:** Open PowerShell, then:
+  ```powershell
   cd C:\Users\YourName\Desktop\qToolkit-v1.0.0
   ```
-  (Replace with your actual path and folder name.)
+  (Change the path to where you actually unzipped.)
 
-- **Mac:** Open Terminal. Use `cd` to go to the folder, for example:
-  ```text
+- **Mac / Linux:** Open Terminal, then:
+  ```bash
   cd ~/Desktop/qToolkit-v1.0.0
   ```
-
-- **Linux:** Open Terminal and `cd` to the folder where you unzipped the file.
+  (Change the path if needed.)
 
 ---
 
-## 5. Build and run with Docker
+## 3. Run the toolkit
 
-In the same terminal, run:
+In that same terminal, run:
 
-**First time (build the image):**
-```bash
-docker compose build
-```
-
-**Start the toolkit:**
-```bash
-docker compose up
-```
-
-Or do both in one step:
 ```bash
 docker compose up --build
 ```
 
-Wait until you see a short message with two web addresses (URLs). That means the toolkit is ready.
+Wait until you see a short message with two web links. Then in your browser open:
 
----
-
-## 6. Use the toolkit in your browser
-
-Open your web browser and go to:
-
-- **Jupyter Lab (notebooks and course):** [http://localhost:8888](http://localhost:8888)
+- **Notebooks:** [http://localhost:8888](http://localhost:8888)
 - **Simulator:** [http://localhost:8001](http://localhost:8001)
 
-You can use both at the same time.
+---
+
+## 4. AI / language model
+
+**Default:** The toolkit uses **Ollama** on your computer (see section 5). Good if you have a capable GPU. When you run with Docker, it is already set up to use Ollama on your machine (the container reaches it via the host), so install and run Ollama on your computer before starting the toolkit.
+
+**No GPU?** You can use a cloud API instead (e.g. Google Gemini). One way is [OpenRouter](https://openrouter.ai): get a free key, then run the toolkit with it.
+
+### Example Run with Google Gemini
+
+1. Get an API key from [OpenRouter](https://openrouter.ai/keys) (free tier available).
+2. In the folder where you unzipped the toolkit, run this in your terminal. **Replace `YOUR_OPENROUTER_KEY` with your key.**
+
+   **Mac / Linux:**
+   ```bash
+   OPENAI_API_KEY=YOUR_OPENROUTER_KEY LLM_PROVIDER=openai LLM_MODEL=google/gemini-2.0-flash-exp LLM_BASE_URL=https://openrouter.ai/api/v1 docker compose up --build
+   ```
+
+   **Windows (PowerShell):**
+   ```powershell
+   $env:OPENAI_API_KEY="YOUR_OPENROUTER_KEY"; $env:LLM_PROVIDER="openai"; $env:LLM_MODEL="google/gemini-2.0-flash-exp"; $env:LLM_BASE_URL="https://openrouter.ai/api/v1"; docker compose up --build
+   ```
+
+3. When you see the message with the two URLs, open [http://localhost:8888](http://localhost:8888) and [http://localhost:8001](http://localhost:8001) in your browser.
+
+### Other cloud APIs (OpenAI, etc.)
+
+Same idea: set `OPENAI_API_KEY`, `LLM_PROVIDER=openai`, `LLM_MODEL`, and `LLM_BASE_URL` for your provider, then run `docker compose up`. For more options, see [DockerSetup.md](DockerSetup.md).
 
 ---
 
-## 7. Stop the toolkit
+## 5. Using Ollama on your computer (recommended if you have a GPU)
 
-- In the terminal where `docker compose up` is running, press **Ctrl+C** to stop it.
-- If you want to stop and remove the container completely, run:
-  ```bash
-  docker compose down
-  ```
+Best experience if your machine has a **GPU with 6–8 GB VRAM** (or more) and **16 GB RAM**. Slower but possible on CPU only.
+
+**Install Ollama:** [https://ollama.com](https://ollama.com) — pick your operating system and follow the steps.
+
+**Linux (one command):**
+```bash
+curl -fsSL https://ollama.com/install.sh | sh
+```
+
+**Then download the two models** (run these in any terminal):
+
+```bash
+ollama pull llama3.1:8b
+ollama pull nomic-embed-text:latest
+```
+
+After that, run the toolkit as in section 3 (`docker compose up --build`). No extra setup needed. (When using Docker, the toolkit is configured to use Ollama on your host machine automatically.)
+
+---
+
+## 6. Stop the toolkit
+
+Press **Ctrl+C** in the terminal. To remove the container as well:
+
+```bash
+docker compose down
+```
 
 ---
 
 ## Need help?
 
-- For **logs, support bundle export, and troubleshooting**, see [DockerSetup.md](DockerSetup.md).
-- If something goes wrong, you can export a support bundle (logs and data) and share it; instructions are in DockerSetup.md.
+See [DockerSetup.md](DockerSetup.md) for logs, support bundle, and troubleshooting.

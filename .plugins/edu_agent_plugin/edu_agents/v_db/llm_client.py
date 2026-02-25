@@ -1,11 +1,26 @@
 """
 LLM Client Module
 
-Common Ollama LLM client with Outlines structured output support.
-Provides Pydantic models for type-safe responses and eliminates
-redundant LLM calling code across modules.
+Unified LLM client with structured output support.
+
+By default this talks to a **local Ollama** instance, but it can also
+use any **OpenAI-compatible API** (OpenAI, Gemini, Anthropic via a
+gateway, etc.) based on environment variables. The same environment
+variables are shared with q-sim so users can configure the LLM in one
+place.
+
+Environment variables (shared with q-sim):
+
+- LLM_PROVIDER (or provider)      – "ollama" (default), "openai", "gemini", "anthropic", ...
+- LLM_MODEL   (or model)         – model name/tag (default: "llama3.1:8b")
+- LLM_BASE_URL (or base_url)     – API base URL
+    - Ollama default:   http://localhost:11434  (native Ollama API)
+    - OpenAI default:   https://api.openai.com/v1
+- OPENAI_API_KEY                 – API key for OpenAI-compatible endpoints
+- OLLAMA_API_URL                 – Backwards-compatible base URL for Ollama (if set)
 """
 import os
+import json
 import requests
 from typing import List, Optional, Type, TypeVar, Union, Dict
 from pydantic import BaseModel, Field
@@ -84,36 +99,65 @@ JSON Response:"""
 
 class OllamaClient:
     """
-    Unified Ollama LLM client with structured output support.
+    Unified LLM client with structured output support.
     
-    Uses Outlines-style JSON schema prompting to get structured responses,
-    with Pydantic validation for type safety.
+    By default this uses a local Ollama instance, but it can also talk
+    to any OpenAI-compatible API (OpenAI, Gemini, Anthropic via a
+    gateway, etc.) based on environment variables.
     
     Attributes:
-        base_url: Ollama API base URL
+        provider: Backend provider ("ollama" by default)
+        base_url: API base URL
         model: Default model name
         timeout: Request timeout in seconds
     """
     
     def __init__(
         self,
-        base_url: str = None,
+        base_url: Optional[str] = None,
         model: str = "llama3.1:8b",
-        timeout: int = 60
+        timeout: int = 60,
+        provider: Optional[str] = None,
+        api_key: Optional[str] = None,
     ):
         """
-        Initializes the OllamaClient.
+        Initializes the LLM client.
         
         Args:
-            base_url: Ollama API base URL (defaults to OLLAMA_API_URL env var)
-            model: Default model to use
-            timeout: Request timeout in seconds
+            base_url: API base URL. If omitted, derived from env and provider.
+            model: Default model to use (chat model name / tag).
+            timeout: Request timeout in seconds.
+            provider: Optional explicit provider override.
+            api_key: Optional explicit API key for OpenAI-compatible endpoints.
         """
-        self.base_url = base_url or os.getenv("OLLAMA_API_URL", "http://localhost:11434")
-        self.chat_url = f"{self.base_url}/api/chat"
-        self.model = model
+        # Resolve provider and core config from environment with sensible defaults.
+        env_provider = os.getenv("LLM_PROVIDER") or os.getenv("provider")
+        self.provider = (provider or env_provider or "ollama").lower()
+
+        env_model = os.getenv("LLM_MODEL") or os.getenv("model")
+        self.model = env_model or model or "llama3.1:8b"
+
+        # Shared API key for OpenAI-compatible backends
+        self.api_key = api_key or os.getenv("OPENAI_API_KEY")
+
+        # Base URL resolution:
+        # - For Ollama, prefer LLM_BASE_URL/base_url, then OLLAMA_API_URL, then localhost.
+        # - For non-Ollama, default to OpenAI's public endpoint.
+        env_base_url = os.getenv("LLM_BASE_URL") or os.getenv("base_url")
+        if self.provider == "ollama":
+            raw_base = base_url or env_base_url or os.getenv("OLLAMA_API_URL", "http://localhost:11434")
+            # Native Ollama API (we add /api/chat ourselves)
+            self.base_url = raw_base.rstrip("/")
+            self.chat_url = f"{self.base_url}/api/chat"
+            self.ollama = ollama.Client(host=self.base_url)
+        else:
+            # OpenAI-compatible chat-completions endpoint
+            raw_base = base_url or env_base_url or "https://api.openai.com/v1"
+            self.base_url = raw_base.rstrip("/")
+            self.chat_url = f"{self.base_url}/chat/completions"
+            self.ollama = None
+
         self.timeout = timeout
-        self.ollama = ollama.Client(host=self.base_url)
     
     def generate(self, prompt: str, model: str = None, system_prompt: str = None, expected_structure: Optional[BaseModel] = None) -> Union[str, BaseModel]:
         """
@@ -130,46 +174,43 @@ class OllamaClient:
         Returns:
             Raw response text
         """
-        messages = []
+        messages: List[Dict] = []
         
         if system_prompt:
             messages.append({"role": "system", "content": system_prompt})
         
         messages.append({"role": "user", "content": prompt})
         answer = self.generate_chat(messages, model=model, expected_structure=expected_structure)
-        return answer, {'messages': messages, 'raw_answer': answer.model_dump_json() if isinstance(answer, BaseModel) else answer }
+        return answer, {
+            'messages': messages,
+            'raw_answer': answer.model_dump_json() if isinstance(answer, BaseModel) else answer,
+        }
     
-    def generate_chat(self, messages: list, model: str = None, expected_structure: Optional[BaseModel] = None) -> str:
-        """
-        Generates a response using the chat API with explicit message roles.
-        
-        Args:
-            messages: List of message dicts with 'role' and 'content' keys.
-                      Roles can be 'system', 'user', or 'assistant'.
-            model: Optional model override
-            
-        Returns:
-            Raw response text
-        """
+    def _generate_chat_ollama(
+        self,
+        messages: List[Dict],
+        model: Optional[str] = None,
+        expected_structure: Optional[BaseModel] = None,
+    ) -> Union[str, BaseModel]:
+        """Generate a response using native Ollama HTTP or structured chat."""
         payload = {
             "model": model or self.model,
             "messages": messages,
             "stream": False,
             "options": {
-                "repeat_penalty": 1.15  # Prevent question echoing on 8B models
+                "repeat_penalty": 1.15,  # Prevent question echoing on 8B models
             }
         }
         
         try:
             if expected_structure:
-                response = self.generate_structured(messages, expected_structure)
-                return response
-            else:
-                response = requests.post(
-                    self.chat_url, 
-                    json=payload, 
-                    timeout=self.timeout
-                )
+                return self.generate_structured(messages, expected_structure)
+
+            response = requests.post(
+                self.chat_url, 
+                json=payload, 
+                timeout=self.timeout
+            )
             response.raise_for_status()
             result = response.json()
             # Chat API returns response in message.content
@@ -177,6 +218,70 @@ class OllamaClient:
         except requests.exceptions.RequestException as e:
             print(f"OllamaClient error: {e}")
             raise e
+
+    def _generate_chat_openai_compatible(
+        self,
+        messages: List[Dict],
+        model: Optional[str] = None,
+        expected_structure: Optional[BaseModel] = None,
+    ) -> Union[str, BaseModel]:
+        """Generate a response using an OpenAI-compatible chat-completions endpoint."""
+        if not self.api_key:
+            raise ValueError("OPENAI_API_KEY must be set to use non-Ollama providers.")
+
+        payload: Dict[str, any] = {
+            "model": model or self.model,
+            "messages": messages,
+        }
+
+        headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json",
+        }
+
+        try:
+            response = requests.post(
+                self.chat_url,
+                json=payload,
+                headers=headers,
+                timeout=self.timeout,
+            )
+            response.raise_for_status()
+            result = response.json()
+            content = result["choices"][0]["message"]["content"]
+
+            if expected_structure:
+                # Ask the model to return strictly JSON and validate it.
+                json_text = self._extract_json(content)
+                return expected_structure.model_validate_json(json_text)
+
+            return content
+        except requests.exceptions.RequestException as e:
+            print(f"LLM client HTTP error: {e}")
+            raise e
+
+    def generate_chat(
+        self,
+        messages: List[Dict],
+        model: Optional[str] = None,
+        expected_structure: Optional[BaseModel] = None
+    ) -> Union[str, BaseModel]:
+        """
+        Generates a response using the chat API with explicit message roles.
+        
+        Args:
+            messages: List of message dicts with 'role' and 'content' keys.
+                      Roles can be 'system', 'user', or 'assistant'.
+            model: Optional model override
+            expected_structure: Optional Pydantic model for structured output
+            
+        Returns:
+            Raw response text or a validated Pydantic model.
+        """
+        if self.provider == "ollama":
+            return self._generate_chat_ollama(messages, model=model, expected_structure=expected_structure)
+        else:
+            return self._generate_chat_openai_compatible(messages, model=model, expected_structure=expected_structure)
     
     def generate_structured(
         self, 
@@ -207,18 +312,44 @@ class OllamaClient:
         else:
             messages = prompt
 
+        # Ollama supports JSON schema natively via `format=...`.
+        if self.provider == "ollama":
+            response = self.ollama.chat(
+                model=self.model,
+                messages=messages,
+                format=response_model.model_json_schema()
+            )
 
-        response = ollama.chat(
-            model=self.model,
-            messages=messages,
-            format=response_model.model_json_schema()
-        )
+            try:
+                return response_model.model_validate_json(response.message.content)
+            except Exception as e:
+                print("==== Exception While parsing structured response", e)
+                print("=== Raw Response", response.message.content)
+                raise e
+
+        # OpenAI-compatible: instruct model to return JSON and validate.
+        schema = response_model.model_json_schema()
+        schema_text = json.dumps(schema, indent=2)
+
+        if messages:
+            # Append explicit JSON-only instruction to the last user message.
+            messages = list(messages)
+            last = messages[-1].copy()
+            last["content"] = (
+                f"{last['content']}\n\n"
+                "You MUST respond with ONLY JSON that matches this Pydantic schema:\n"
+                f"{schema_text}\n"
+            )
+            messages[-1] = last
+
+        raw = self._generate_chat_openai_compatible(messages, model=self.model, expected_structure=None)
 
         try:
-            return response_model.model_validate_json(response.message.content)
+            json_text = self._extract_json(raw)
+            return response_model.model_validate_json(json_text)
         except Exception as e:
             print("==== Exception While parsing structured response", e)
-            print("=== Raw Response", response.message.content)
+            print("=== Raw Response", raw)
             raise e
     
     def _extract_json(self, text: str) -> str:

@@ -1,0 +1,24 @@
+services:
+  toolkit-with-simulator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # container_name: Removed to prevent naming collisions
+    ports:
+      - "${JUPYTER_PORT}:8888"
+      - "${SIM_PORT}:80"
+    environment:
+      - SIMULATOR_HOST=http://localhost:${SIM_PORT}
+      - LLM_BASE_URL=http://host.docker.internal:11434
+      - OLLAMA_API_URL=http://host.docker.internal:11434
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    volumes:
+      # Docker Compose automatically prefixes these volumes with the Project Name
+      # This ensures Machine 101 and Machine 102 have separate storage.
+      - content:/home/toolkit/content
+      - toolkit-logs:/home/toolkit/logs
+
+volumes:
+  content:
+  toolkit-logs:

@@ -287,6 +287,8 @@ activity_widget = widgets.Dropdown(
     style=style, layout=widgets.Layout(width='95%')
 )
 
+activity_widget.layout.visibility = 'hidden'
+
 # 3. Known Concepts (Responsive Layout)
 concept_checkboxes_list = []
 for concept in sorted(list(all_unique_concepts)):

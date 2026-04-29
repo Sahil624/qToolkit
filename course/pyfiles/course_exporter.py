@@ -253,6 +253,13 @@ def _copy_attachments(source_notebook_paths, output_lo_dir):
     if not source_notebook_paths: return
     for source_notebook_path in source_notebook_paths:
         src_dir = os.path.dirname(source_notebook_path)
+
+        # Copy simulator URL util file for simulator exercises.
+        py_files_path = os.path.join(output_lo_dir, 'pyfiles')
+        os.makedirs(py_files_path, exist_ok=True)
+        print(os.getcwd())
+        print(os.listdir(os.getcwd()))
+        shutil.copy('./pyfiles/simulator_url.py', py_files_path)
         
         for folder in ['pyfiles', 'images']:
             src = os.path.join(src_dir, folder)

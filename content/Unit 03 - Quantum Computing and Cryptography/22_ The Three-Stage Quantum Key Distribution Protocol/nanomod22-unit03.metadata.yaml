@@ -34,7 +34,6 @@ learning_objective_tree:
     summary: Students will be able to apply the concepts of orthogonality of basis,
       measurement and indistinguishability of non-orthogonal states.
     covered_by:
-    - m22-3Stage-Simulator-heading
     - m22-3Stage-Simulator
     learning_objectives: []
     estimated_time_mins: 2
@@ -282,6 +281,7 @@ cell_metadata:
   - m22-3stageQkd
   - m22-3stageQkd2
   - m22-3stageQkdFlow
+  - m22-3Stage-Simulator-heading
   concepts:
   - The 3Stage protocol simulator
   outcomes: []
